@@ -1,11 +1,25 @@
 Greendrive::Application.routes.draw do
   devise_for :users
+
+  get "pages/dashboard"
+
+  get "users/index"
+
+  get "users/show"
+
+  get "users/new"
+
+  get "users/edt"
+
+  get "users/create"
+
+  get "users/update"
+
+  get "users/destroy"
+
+  root :to => "pages#dashboard"
   
-  devise_scope :user do
-    root to: "devise/sessions#new"
-  end
-
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
