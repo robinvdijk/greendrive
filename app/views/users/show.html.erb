@@ -9,9 +9,9 @@
 <%= @user.email %>
 </p>
 
-<% if @user.company.present? %>
+<% if @user.company_name.present? %>
 <p>
 <strong>Bedrijf</strong>
-<%= @user.company %>
+<%= @user.company_name %>
 </p>
 <% end %>
