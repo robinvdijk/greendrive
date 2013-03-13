@@ -10,35 +10,35 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+<!--   <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
   <%= f.password_field :password, :autocomplete => "off" %></div>
 
   <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+  <%= f.password_field :password_confirmation %></div> -->
 
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <%= f.password_field :current_password %></div>
-
-  <div><%= f.label :first_name, "Firstname" %><br />
+  <div><%= f.label :first_name, "Voornaam" %><br />
   <%= f.text_field :first_name %></div>
   
-  <div><%= f.label :last_name, "Lastname" %><br />
+  <div><%= f.label :last_name, "Achternaam" %><br />
     <%= f.text_field :last_name %>
   </div>
   
-  <div> <%= f.label :user_name, "Username" %><br />
+  <div> <%= f.label :user_name, "Gebruikersnaam" %><br />
     <%= f.text_field :user_name %>
   </div>
   
-  <div><%= f.label :license_plate, "License Plate" %><br />
+  <div><%= f.label :license_plate, "Kenteken" %><br />
     <%= f.text_field :license_plate %>
-  </div>
+  </div><br />
 
-  <div><%= f.submit "Update" %></div>
+  <div><%= f.label :current_password, "Huidig password" %> <i>(Om uw veranderingen door te voeren moet u uw wachtwoord opnieuw invoeren.)</i><br />
+  <%= f.password_field :current_password %></div>
+
+  <div><%= f.submit "Bijwerken" %></div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h3>Account verwijderen</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
+<p>Klik hieronder om uw account te verwijderen. <%= button_to "Verwijder mijn account", registration_path(resource_name), :data => { :confirm => "Weet u het zeker?" }, :method => :delete %>.</p>
 
-<%= link_to "Back", :back %>
+<%= link_to "Terug", :back %>
