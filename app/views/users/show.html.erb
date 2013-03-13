@@ -1,2 +1,17 @@
-<h1>@user.name</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><%= @user.name %></h1>
+<p>
+<strong>Naam</strong>
+<%= @user.first_name%> <%= @user.last_name %>
+</p>
+
+<p>
+<strong>E-mailadres</strong>
+<%= @user.email %>
+</p>
+
+<% if @user.company.present? %>
+<p>
+<strong>Bedrijf</strong>
+<%= @user.company %>
+</p>
+<% end %>
