@@ -1,18 +1,21 @@
-<h1><%= @user.user_name %> - Bewerken</h1>
+<%= form_for(@user) do %>
 
-<p>
-<strong>Naam</strong>
-<%= @user.first_name%> <%= @user.last_name %>
-</p>
+	<h1><%= @user.user_name %> - Bewerken</h1>
 
-<p>
-<strong>E-mailadres</strong>
-<%= @user.email %>
-</p>
+	<p>
+	<strong>Naam</strong>
+	<%= @user.first_name%> <%= @user.last_name %>
+	</p>
 
-<% if @user.company_name.present? %>
-<p>
-<strong>Bedrijf</strong>
-<%= @user.company_name %>
-</p>
+	<p>
+	<strong>E-mailadres</strong>
+	<%= @user.email %>
+	</p>
+
+	<% if @user.company_name.present? %>
+	<p>
+	<strong>Bedrijf</strong>
+	<%= @user.company_name %>
+	</p>
+	<% end %>
 <% end %>
