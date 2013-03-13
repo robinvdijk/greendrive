@@ -36,5 +36,6 @@ class UsersController < ApplicationController
     @user.destroy
     respond_to do |format|
       format.html {redirect_to user_url}
+    end
   end
 end
