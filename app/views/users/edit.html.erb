@@ -1,4 +1,4 @@
-<h1>@user.name - Bewerken</h1>
+<h1><%= @user.user_name %> - Bewerken</h1>
 
 <p>
 <strong>Naam</strong>
@@ -10,9 +10,9 @@
 <%= @user.email %>
 </p>
 
-<% if @user.company.present? %>
+<% if @user.company_name.present? %>
 <p>
 <strong>Bedrijf</strong>
-<%= @user.company %>
+<%= @user.company_name %>
 </p>
 <% end %>
