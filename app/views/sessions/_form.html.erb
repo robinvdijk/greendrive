@@ -1,6 +1,9 @@
-<%= form_tag session_path %>
+<%= form_tag sessions_path do %>
 
 <%= text_field_tag :email, params[:email], :placeholder => "E-mailadres" %>
 <%= password_field_tag :password, '', :placeholder => "Wachtwoord" %>
 
 <%= submit_tag 'Inloggen!' %>
+
+	Nog geen account? Registreer <%= link_to 'hier', new_user_path %>
+<% end %>
