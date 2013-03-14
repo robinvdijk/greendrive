@@ -160,6 +160,9 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   jquery-rails
+  jruby-openssl
+  oauth2
+  omniauth
   omniauth-facebook (= 1.4.0)
   rails (= 3.2.8)
   sass-rails (~> 3.2.3)
