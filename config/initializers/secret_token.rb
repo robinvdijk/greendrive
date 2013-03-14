@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Greendrive::Application.config.secret_token = '1bae055ab00e21dccf51477e611b50688c7ef8fa8840713be4b2bf901785d5ce866178846df536f71cc76c4e1b4d69c8bdb307f56fc8095055fe21aa7b4a7bf4'
+Greendrive::Application.config.secret_token = '9e3d14e4e96f01dacb2db36df16b399292c2903811354bf416a038a4debdcdf44d05079832461a1d80ef90eed859c3c369b3887f42cdfae56f92c66bde42e4ff'

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.12'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -21,13 +21,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'devise'
-gem 'savon'
-gem 'omniauth'
-gem 'omniauth-facebook', '1.4.0'
-gem 'oauth2'
-
-gem 'jruby-openssl', :platform => :jruby
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -1,15 +1,4 @@
 Greendrive::Application.routes.draw do
-  devise_for :users, :path_names => { sign_up: "register", sign_in: "login", sign_out: "logout"  }
-  match 'users/:id' => 'users#show'
-  resources :users, only: [:show, :edit, :update]
-
-  root :to => "pages#dashboard"
-  
-  match 'auth/:provider/callback', to: 'authentications#create'
-  match 'auth/failure', to: redirect('/')
-  match 'signout', to: 'sessions#destroy', as: 'signout'
-
-  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
