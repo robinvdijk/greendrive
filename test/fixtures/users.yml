@@ -2,8 +2,7 @@
 
 one:
   email: MyString
-  password: MyString
-  password_confirmation: MyString
+  password_digest: MyString
   first_name: MyString
   last_name: MyString
   user_name: MyString
@@ -11,8 +10,7 @@ one:
 
 two:
   email: MyString
-  password: MyString
-  password_confirmation: MyString
+  password_digest: MyString
   first_name: MyString
   last_name: MyString
   user_name: MyString

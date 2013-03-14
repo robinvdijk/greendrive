@@ -1,7 +1,12 @@
 Greendrive::Application.routes.draw do
+  get "pages/dashboard"
+
   resources :users
+  
+  resources :pages
 
-
+  root :to => "pages#dashboard"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -10,8 +10,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
-    render :layout => 'login'       
+    @user = User.new    
   end
     
   def edit
@@ -19,16 +18,19 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(params[:user])
-    
-    respond_to do |format|
-      if @user.save
-        format.html  { redirect_to(new_session_path) }
-        flash[:success] = "U bent succesvol geregistreerd."     
-      else
-        format.html  { render :action => "new" }
-      end
-    end    
+    user = User.find_by_email(params[:email])
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect_to root_url, :notice => "Logged in!"
+    else
+      flash.now.alert = "Invalid email or password"
+      render "new"
+    end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to root_url, :notice => "Logged out!"
   end
   
   def update
@@ -40,14 +42,6 @@ class UsersController < ApplicationController
       else
         format.html  { render :action => "edit" }
       end       
-    end
-  end
-
-  def destroy
-    @user = User.find(params[:id])
-    @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url }
     end
   end  
 end
