@@ -8,6 +8,11 @@ Greendrive::Application.routes.draw do
 
   root :to => "pages#dashboard"
   
+  controller :sessions do
+    get "login" => "sessions#new"
+    post "login" => "sessions#create"
+    delete "logout" => "sessions#destroy"
+end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -17,23 +17,24 @@
   		<%= f.text_field :email, :autofocus => true %>
 	</div>
     
-  	<div><%= f.label :first_name, "Firstname" %><br />
+  	<div><%= f.label :first_name %><br />
     	<%= f.text_field :first_name %></div>
     
-  	<div><%= f.label :last_name, "Lastname" %><br />
+  	<div><%= f.label :last_name %><br />
      	<%= f.text_field :last_name %>
     </div>
     
-  	<div> <%= f.label :user_name, "Username" %><br />
+  	<div> <%= f.label :user_name %><br />
      	 <%= f.text_field :user_name %>
     </div>
     
-  	<div><%= f.label :license_plate, "License Plate" %><br />
+  	<div><%= f.label :license_plate %><br />
       	<%= f.text_field :license_plate %>
     </div>
 
+    <div><%= f.submit %></div>
 <% end %>
 
 
 <%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', root_path %>
