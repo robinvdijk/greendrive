@@ -42,7 +42,8 @@ class UsersController < ApplicationController
       if @user.update_attributes(params[:user])
         format.html  { redirect_to(@user, :notice => 'Uw profiel is succesvol aangepast.') }
       else
-        format.html  { render :action => "edit" }
+        format.html  { render :action => "edit", :notice => 'Er is iets misgegaan. Mogelijk zijn niet alle velden correct ingevuld.' }
+
       end       
     end
   end  

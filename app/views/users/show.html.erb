@@ -1,4 +1,3 @@
-<%= render 'layouts/header' %>
 <p id="notice"><%= notice %></p>
 <h1><%= @user.user_name %></h1>
 
@@ -17,27 +16,27 @@
   <% end %>
   
   	<div>
-  		<strong><%= f.label :email %>:</strong>
+  		<strong><%= f.label :email, 'E-mail' %>:</strong>
   		<%= mail_to @user.email, @user.email %>
 	</div>
     
   	<div>
-  		<strong><%= f.label :first_name%>:</strong>
+  		<strong><%= f.label :first_name, 'Voornaam' %>:</strong>
     	<%= @user.first_name %>
     </div>
     
   	<div>
-  		<strong><%= f.label :last_name %>:</strong>
+  		<strong><%= f.label :last_name, 'Achternaam' %>:</strong>
     	<%= @user.last_name %>
     </div>
 
     <div>
-    	<strong><%= f.label :birthday %>:</strong>
+    	<strong><%= f.label :birthday, 'Geboortedatum' %>:</strong>
     	<%= @user.birthday %>
     </div>
 
   	<div>
-  		<strong><%= f.label :license_plate %>:</strong>
+  		<strong><%= f.label :license_plate, 'Kenteken' %>:</strong>
       	<%= @user.license_plate %>
     </div>
 
@@ -45,5 +44,5 @@
 
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', :root %>
+<%= link_to 'Bewerken', edit_user_path(@user) %> |
+<%= link_to 'Terug', :root %>
