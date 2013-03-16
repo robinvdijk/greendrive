@@ -3,9 +3,6 @@
 <h1><%= @user.user_name %></h1>
 
 
-<p><strong>E-mailadres:</strong>
- <%= mail_to @user.email, @user.email %>
-	</p>
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -19,23 +16,28 @@
     </div>
   <% end %>
   
-  	<div><strong><%= f.label :email %>:</strong>
+  	<div>
+  		<strong><%= f.label :email %>:</strong>
   		<%= mail_to @user.email, @user.email %>
 	</div>
     
-  	<div><strong><%= f.label :first_name %>:</strong>
+  	<div>
+  		<strong><%= f.label :first_name%>:</strong>
     	<%= @user.first_name %>
     </div>
     
-  	<div><strong><%= f.label :last_name %>:</strong>
+  	<div>
+  		<strong><%= f.label :last_name %>:</strong>
     	<%= @user.last_name %>
     </div>
-    
-  	<div><strong><%= f.label :user_name %>:</strong>
-    	<%= @user.user_name %>
+
+    <div>
+    	<strong><%= f.label :birthday %>:</strong>
+    	<%= @user.birthday %>
     </div>
-    
-  	<div><strong><%= f.label :license_plate %>:</strong>
+
+  	<div>
+  		<strong><%= f.label :license_plate %>:</strong>
       	<%= @user.license_plate %>
     </div>
 

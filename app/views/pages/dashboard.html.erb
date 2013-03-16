@@ -1,11 +1,11 @@
 <h1>Dashboard</h1>
 
 <% if current_user %>
-	<h2>Hello, <%= current_user.user_name %></h2>
-		<p><%= link_to "All users", users_path %></p>
-	<p><%= link_to "My profile", user_path(current_user) %></p>
-	<p><%= link_to "Logout", logout_path, :method => :delete %></p>
-	
+	<h2>Hallo, <%= current_user.user_name %></h2>
+		<p><%= link_to "Alle gebruikers", users_path %></p>
+	<p><%= link_to "Mijn profiel", user_path(current_user) %></p>
+	<p><%= link_to "Uitloggen", logout_path, :method => :delete %></p>
+
 	<% else %>
-		Please <%= link_to "login", new_session_path %> or <%= link_to "register", new_user_path %>.
+		<p><%= link_to "Login", new_session_path %> of <%= link_to "registeer", new_user_path %>.</p>
 <% end %>

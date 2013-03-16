@@ -28,8 +28,11 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
-    redirect_to root_url, :notice => "Logged out!"
+    @user = User.find(params[:id])
+    @user.destroy
+    respond_to do |format|
+      format.html { redirect_to users_url }
+    end
   end
   
   def update

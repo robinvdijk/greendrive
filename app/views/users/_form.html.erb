@@ -10,31 +10,35 @@
       </ul>
     </div>
   <% end %>
-  
-  	<div><%= f.label :email %><br />
-  		<%= f.text_field :email, :autofocus => true %>
+  <div> <%= f.label :user_name, "Gebruikersnaam" %><br />
+       <%= f.text_field :user_name %>
+    </div>
+
+  	<div><%= f.label :email, 'E-mail' %><br />
+  		<%= f.text_field :email, :autofocus => true, :placeholder => 'info@test.nl' %>
 	</div>
   
-  	<div><%= f.label :password %><br />
+  	<div><%= f.label :password, 'Wachtwoord' %><br />
     	<%= f.password_field :password %>
 	</div>
   
-  	<div><%= f.label :password_confirmation %><br />
+  	<div><%= f.label :password_confirmation, 'Wachtwoord verificatie' %><br />
     	<%= f.password_field :password_confirmation %>
 	</div>
     
-  	<div><%= f.label :first_name, "Firstname" %><br />
+  	<div><%= f.label :first_name, "Voornaam" %><br />
     	<%= f.text_field :first_name %></div>
     
-  	<div><%= f.label :last_name, "Lastname" %><br />
+  	<div><%= f.label :last_name, "Achternaam" %><br />
      	<%= f.text_field :last_name %>
     </div>
-    
-  	<div> <%= f.label :user_name, "Username" %><br />
-     	 <%= f.text_field :user_name %>
+
+    <div>
+      <%= f.label :birthday, "Geboortedatum" %>
+      <%= f.datetime_select :birthday%>
     </div>
-    
-  	<div><%= f.label :license_plate, "License Plate" %><br />
+
+  	<div><%= f.label :license_plate, 'Kenteken' %><br />
       	<%= f.text_field :license_plate %>
     </div>
   
