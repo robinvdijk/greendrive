@@ -22,8 +22,13 @@ ActiveRecord::Schema.define(:version => 20130318062016) do
     t.string   "license_plate"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+<<<<<<< HEAD
     t.string   "avatar"
     t.date     "birthday"
+=======
+    t.date     "birthday"
+    t.string   "avatar"
+>>>>>>> afbb336f49197571ffeb8dce4fa0669749f9318a
   end
 
 end

@@ -39,7 +39,10 @@ gem "bcrypt-ruby", :require => "bcrypt"
 
 gem 'omniauth-facebook', "1.4.0"
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> afbb336f49197571ffeb8dce4fa0669749f9318a
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
