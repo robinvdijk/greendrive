@@ -7,10 +7,7 @@ gem 'cancan'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # used for avatar uploading
-<<<<<<< HEAD
-=======
 
->>>>>>> 8203298b73f6f34083cccf15603459974ebb0710
 gem 'carrierwave'
 
 gem 'mini_magick'
