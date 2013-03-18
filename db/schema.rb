@@ -20,12 +20,6 @@ ActiveRecord::Schema.define(:version => 20130318102533) do
     t.string   "last_name"
     t.string   "user_name"
     t.string   "license_plate"
-<<<<<<< HEAD
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-    t.date     "birthday"
-    t.string   "avatar"
-=======
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
     t.date     "birthday"
@@ -33,7 +27,6 @@ ActiveRecord::Schema.define(:version => 20130318102533) do
     t.string   "auth_token"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
->>>>>>> b9a7e9f92291d6495878a902b8c1042268e58508
   end
 
 end
