@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :first_name, :last_name, :license_plate, :password_confirmation, :clean_data, :password, :user_name, :avatar, :birthday
 
   has_secure_password 
-  before_validation :clean_data
+
   validates_presence_of :password, :on => :create
   validates_format_of :password, :with => /(?=^.{6,20}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/
   #Password: Minimum 6 characters, maximum 20, waarvan 1 lowercase, 1 uppercase, 1 special character OF getal
