@@ -4,7 +4,7 @@
 
 
 <!--Used to show avatar  -->
-<%= image_tag user.avatar_url(:thumb) if user.avatar? %>
+<%= image_tag @user.avatar_url(:thumb) if @user.avatar? %>
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
