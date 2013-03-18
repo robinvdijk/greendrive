@@ -31,8 +31,10 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
+    # Used to remove connected files (avatar photos) from users
     @user.remove_file
-    FileUtils.remove_dir("#{Rails.root}/public/uploads/user/avatar/#{@user.id}", :force => true)    
+    FileUtils.remove_dir("#{Rails.root}/public/uploads/user/avatar/#{@user.id}", :force => true)  
+      
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url }

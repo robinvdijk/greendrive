@@ -8,6 +8,7 @@ gem 'cancan'
 
 
 gem 'sqlite3'
+# used for avatar uploading
 gem 'carrierwave'
 gem 'mini_magick'
 
