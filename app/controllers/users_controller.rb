@@ -1,10 +1,16 @@
 class UsersController < ApplicationController
   before_filter :user_required, :except => [:new, :create]
+<<<<<<< HEAD
   before_validation :clean_data
 
 def clean_data
   self.license_plate = self.license_plate.gsub(/[ \-]/, '') unless self.license_plate.nil?
 end
+=======
+  
+  UserMailer.password_reset(@user).deliver
+  
+>>>>>>> b9a7e9f92291d6495878a902b8c1042268e58508
 
   def index
    @users = User.all
@@ -34,8 +40,10 @@ end
 
   def destroy
     @user = User.find(params[:id])
+    # Used to remove connected files (avatar photos) from users
     @user.remove_file
-    FileUtils.remove_dir("#{Rails.root}/public/uploads/user/avatar/#{@user.id}", :force => true)    
+    FileUtils.remove_dir("#{Rails.root}/public/uploads/user/avatar/#{@user.id}", :force => true)  
+      
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url }

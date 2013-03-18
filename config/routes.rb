@@ -1,5 +1,7 @@
 Greendrive::Application.routes.draw do
   
+  resources :password_resets
+
     
     match 'auth/:provider/callback', to: 'sessions#create'
     
