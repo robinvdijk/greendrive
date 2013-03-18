@@ -5,28 +5,21 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by_email(params[:email])
-    
-    # user = User.from_omniauth(env["omniauth.auth"])
-    #    session[:user_id] = user.id
-    #    redirect_to root_url
-       
     if user && user.authenticate(params[:password])
-      if params[:remember_me] == 'true'
-        # user.refresh_remember_token
-        # cookies[:auth_token] = { :value => user.remember_token, :expires => 2.weeks.from_now }
-      end      
-      flash[:success] = 'U bent succesvol ingelogd!'
-      session[:user_id] = user.id
-      #cookies[:login] = { :value => "ingelogd", :expires => Time.now + 3600*24*7*52}
-      redirect_to root_path
+      if params[:remember_me]
+        cookies.permanent[:auth_token] = user.auth_token
+      else
+        cookies[:auth_token] = user.auth_token
+      end
+      redirect_to root_url, :notice => "Logged in!"
     else
-      flash[:notice] = 'Uw ingevoerde gegevens komen niet overeen met onze database.'
-      redirect_to new_session_path
+      flash.now.alert = "Invalid email or password"
+      render "new"
     end
   end
 
   def destroy
-    session[:user_id] = nil
+    cookies.delete(:auth_token)
     redirect_to root_url, :notice => "Logged out!"
   end
 

@@ -6,10 +6,10 @@ gem 'cancan'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-
-gem 'sqlite3'
 gem 'carrierwave'
 gem 'rmagick'
+
+gem 'mail', '2.4.4'
 
 group :development do 
   gem 'sqlite3'
