@@ -1,22 +1,8 @@
 class User < ActiveRecord::Base
-<<<<<<< HEAD
-=======
 
-<<<<<<< HEAD
-=======
->>>>>>> afbb336f49197571ffeb8dce4fa0669749f9318a
-
-  attr_accessible :email, :first_name, :last_name, :license_plate, :password_confirmation, :password, :user_name, :avatar, :birthday
-
-<<<<<<< HEAD
- has_secure_password
-=======
-  attr_accessible :email, :first_name, :last_name, :license_plate, :password_confirmation, :password, :user_name, :birthday
-
->>>>>>> 87eb8b7a9b9e61e55200f437e13846bc78e8ed1d
   attr_accessible :email, :first_name, :last_name, :license_plate, :clean_data, :password_confirmation, :password, :user_name, :birthday
   has_secure_password
->>>>>>> afbb336f49197571ffeb8dce4fa0669749f9318a
+
   validates_presence_of :password, :on => :create
   
   validates :first_name, :presence => true
