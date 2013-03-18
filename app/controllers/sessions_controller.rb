@@ -6,10 +6,10 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by_email(params[:email])
     
-    user = User.from_omniauth(env["omniauth.auth"])
-       session[:user_id] = user.id
-       redirect_to root_url
-    
+    # user = User.from_omniauth(env["omniauth.auth"])
+    #    session[:user_id] = user.id
+    #    redirect_to root_url
+       
     if user && user.authenticate(params[:password])
       if params[:remember_me] == 'true'
         # user.refresh_remember_token
