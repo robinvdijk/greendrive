@@ -9,7 +9,7 @@ gem 'cancan'
 
 gem 'sqlite3'
 gem 'carrierwave'
-	
+
 gem 'mini_magick'
 
 group :development do 

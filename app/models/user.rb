@@ -1,9 +1,14 @@
 class User < ActiveRecord::Base
+<<<<<<< HEAD
 
   attr_accessible :email, :first_name, :last_name, :license_plate, :password_confirmation, :clean_data, :password, :user_name, :avatar, :birthday
 
  has_secure_password
 
+=======
+  attr_accessible :email, :first_name, :last_name, :license_plate, :password_confirmation, :password, :user_name, :avatar, :birthday, :clean_data
+  has_secure_password
+>>>>>>> 1266f0f459ebec34abbb6ad80ca85aa6c2766c69
 
   validates_presence_of :password, :on => :create
   
