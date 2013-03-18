@@ -57,13 +57,29 @@
                                     'September', 'Oktober', 'November', 'December']) %>
     </div>
         <br/>
+<<<<<<< HEAD
+  	<div>
+      <strong><%= f.label :license_plate, 'Kenteken' %></strong><br />
+      <p>Het kenteken bestaat uit zes tekens. Er worden geen "-"tekens ingevuld.</p>
+      <%= f.text_field :license_plate %>
+    </div>
+<<<<<<< HEAD
+	<!-- Form field for uploading avatar -->
+	<div><%= f.label :avatar %><br />
+	<%= f.file_field :avatar %></div>
+  
+  <div><%= f.submit "Sign up" %></div>
+=======
+=======
 
+>>>>>>> a59135dc9cd67b8558a6a18f01904048bd6a1255
     
     <% if current_user %>
       <div><%= f.submit "Opslaan" %></div>
     <% else %>
       <div><%= f.submit "Registreer" %></div>
     <% end %>
+>>>>>>> 93c22395c853619ae22ae0d32133ed0bd96a0e59
 
 <% end %>
 

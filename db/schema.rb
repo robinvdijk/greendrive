@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+ActiveRecord::Schema.define(:version => 20130315135520) do
+=======
+ActiveRecord::Schema.define(:version => 20130315185525) do
+>>>>>>> 93c22395c853619ae22ae0d32133ed0bd96a0e59
+=======
 ActiveRecord::Schema.define(:version => 20130318062016) do
+>>>>>>> a59135dc9cd67b8558a6a18f01904048bd6a1255
 
   create_table "users", :force => true do |t|
     t.string   "email"
@@ -22,7 +30,15 @@ ActiveRecord::Schema.define(:version => 20130318062016) do
     t.string   "license_plate"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+<<<<<<< HEAD
+<<<<<<< HEAD
+    t.string   "avatar"
+=======
+    t.datetime "birthday"
+>>>>>>> 93c22395c853619ae22ae0d32133ed0bd96a0e59
+=======
     t.date     "birthday"
+>>>>>>> a59135dc9cd67b8558a6a18f01904048bd6a1255
   end
 
 end

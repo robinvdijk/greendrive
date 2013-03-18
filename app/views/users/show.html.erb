@@ -2,6 +2,14 @@
 <h1><%= @user.user_name %></h1>
 
 
+
+<!--Used to show avatar  -->
+<%= image_tag user.avatar_url(:thumb) if user.avatar? %>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -46,3 +54,4 @@
 
 <%= link_to 'Bewerken', edit_user_path(@user) %> |
 <%= link_to 'Terug', :root %>
+>>>>>>> 93c22395c853619ae22ae0d32133ed0bd96a0e59
