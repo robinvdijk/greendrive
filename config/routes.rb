@@ -12,6 +12,11 @@ Greendrive::Application.routes.draw do
     get "login" => "sessions#new"
     post "login" => "sessions#create"
     delete "logout" => "sessions#destroy"
+    
+    match 'auth/:provider/callback', to: 'sessions#create'
+    match 'auth/failure', to: redirect('/')
+    match 'signout', to: 'sessions#destroy', as: 'signout'
+    
 end
   # The priority is based upon order of creation:
   # first created -> highest priority.

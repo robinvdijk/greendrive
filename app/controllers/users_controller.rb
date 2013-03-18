@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   before_filter :user_required, :except => [:new, :create]
-  
+  before_validation :clean_data
+
+  def clean_data
+    self.license_plate = self.license_plate.gsub(/[ \-]/, '') unless self.license_plate.nil?
+  end
+
   def index
    @users = User.all
   end
