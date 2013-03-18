@@ -1,20 +1,16 @@
 class User < ActiveRecord::Base
-<<<<<<< HEAD
 
   attr_accessible :email, :first_name, :last_name, :license_plate, :password_confirmation, :clean_data, :password, :user_name, :avatar, :birthday
 
- has_secure_password
-
-=======
-  attr_accessible :email, :first_name, :last_name, :license_plate, :password_confirmation, :password, :user_name, :avatar, :birthday, :clean_data
-  has_secure_password
->>>>>>> 1266f0f459ebec34abbb6ad80ca85aa6c2766c69
-
+  has_secure_password 
+  before_validation :clean_data
   validates_presence_of :password, :on => :create
-  
+  validates_format_of :password, :with => /(?=^.{6,20}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/
+  #Password: Minimum 6 characters, maximum 20, waarvan 1 lowercase, 1 uppercase, 1 special character OF getal
+
   validates :first_name, :presence => true
   validates :last_name, :presence => true
-  validates :user_name, :presence => true, :uniqueness => true, :length => {:maximum => 16}
+  validates :user_name, :presence => true, :uniqueness => true, :length => {:minimum => 4,:maximum => 20}
   validates :license_plate, :presence => true, :uniqueness => true, :length => {:minimum => 6, :maximum => 6}
   validates :email, :uniqueness => true, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i}
 
@@ -35,4 +31,4 @@ class User < ActiveRecord::Base
   end
   
 
-end
+end 
