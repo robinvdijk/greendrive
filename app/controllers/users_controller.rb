@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_filter :user_required, :except => [:new, :create]
+<<<<<<< HEAD
 
   before_validation :clean_data
 
@@ -10,6 +11,10 @@ end
   
   UserMailer.password_reset(@user).deliver
   
+=======
+
+
+>>>>>>> 3c766cb26731970dc52332ed67d466685457288b
 
 
   def index
