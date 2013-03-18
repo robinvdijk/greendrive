@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130315185525) do
+ActiveRecord::Schema.define(:version => 20130318062016) do
 
   create_table "users", :force => true do |t|
     t.string   "email"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20130315185525) do
     t.string   "license_plate"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
-    t.datetime "birthday"
+    t.date     "birthday"
   end
 
 end
