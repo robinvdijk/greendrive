@@ -9,6 +9,7 @@ gem 'cancan'
 # used for avatar uploading
 
 gem 'carrierwave'
+
 gem 'mini_magick'
 
 gem 'mail', '2.4.4'
