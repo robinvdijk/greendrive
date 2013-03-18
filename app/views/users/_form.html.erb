@@ -61,10 +61,7 @@
 	<!-- Form field for uploading avatar -->
 	<div><%= f.label :avatar %><br />
 	<%= f.file_field :avatar %></div>
-  
-  <div><%= f.submit "Sign up" %></div>
 
-    
     <% if current_user %>
       <div><%= f.submit "Opslaan" %></div>
     <% else %>

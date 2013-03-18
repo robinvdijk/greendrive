@@ -1,22 +1,22 @@
 <h1>Alle gebruikers</h1>
-<% if @user.any? %>
-<table>
+<% if @users.any? %>
+  <table>
   <tr>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
-<% @user.each do |user| %>
+  <% @users.each do |user| %>
   <tr>
     <td><%= link_to user.user_name, user %> |</td>
     <td><%= link_to 'Bewerk', edit_user_path(user) %></td>
     <td><%= link_to 'Verwijder', user, method: :delete, data: { confirm: 'Weet u het zeker?' } %></td>
   </tr>
-<% end %>
-</table>
+  <% end %>
+  </table>
 <% else %>
-<p>No users.</p>
+  <p>No users.</p>
 <% end %>
 <br />
 
