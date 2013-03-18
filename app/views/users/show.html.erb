@@ -6,10 +6,6 @@
 <!--Used to show avatar  -->
 <%= image_tag @user.avatar_url(:thumb) if @user.avatar? %>
 
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
-
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">

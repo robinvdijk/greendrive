@@ -9,7 +9,12 @@ gem 'cancan'
 
 gem 'sqlite3'
 gem 'carrierwave'
+<<<<<<< HEAD
 gem 'mini_magick'
+=======
+gem 'rmagick'
+gem 'koala'
+>>>>>>> 5271968cdfae6772451dd758a6426d96342f58c8
 
 group :development do 
   gem 'sqlite3'
@@ -36,8 +41,8 @@ gem 'jquery-rails'
 
 gem "bcrypt-ruby", :require => "bcrypt"
 
-
-gem 'omniauth-facebook', "1.4.0"
+gem 'omniauth', '~> 1.1.1'
+gem 'omniauth-facebook', '~> 1.4.0'
 
 
 
