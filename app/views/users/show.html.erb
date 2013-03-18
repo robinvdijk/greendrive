@@ -1,4 +1,6 @@
 <p id="notice"><%= notice %></p>
+<h1><%= @user.user_name %></h1>
+
 
 
 <!--Used to show avatar  -->
@@ -7,3 +9,49 @@
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  	<div>
+  		<strong><%= f.label :email, 'E-mail' %>:</strong>
+  		<%= mail_to @user.email, @user.email %>
+	</div>
+    
+  	<div>
+  		<strong><%= f.label :first_name, 'Voornaam' %>:</strong>
+    	<%= @user.first_name %>
+    </div>
+    
+  	<div>
+  		<strong><%= f.label :last_name, 'Achternaam' %>:</strong>
+    	<%= @user.last_name %>
+    </div>
+
+    <div>
+    	<strong><%= f.label :birthday, 'Geboortedatum' %>:</strong>
+    	<%= @user.birthday %>
+    </div>
+
+  	<div>
+  		<strong><%= f.label :license_plate, 'Kenteken' %>:</strong>
+      	<%= @user.license_plate %>
+    </div>
+
+<% end %>
+
+
+
+<%= link_to 'Bewerken', edit_user_path(@user) %> |
+<%= link_to 'Terug', :root %>
+>>>>>>> 93c22395c853619ae22ae0d32133ed0bd96a0e59

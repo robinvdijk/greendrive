@@ -10,37 +10,59 @@
       </ul>
     </div>
   <% end %>
-  
-  	<div><%= f.label :email %><br />
+    <div> 
+      <strong><%= f.label :user_name, "Gebruikersnaam" %></strong><br />
+      <%= f.text_field :user_name %>
+    </div>
+
+  	<div>
+      <strong><%= f.label :email, 'E-mail' %></strong><br />
   		<%= f.text_field :email, :autofocus => true %>
-	</div>
+	  </div>
   
-  	<div><%= f.label :password %><br />
+  	<div>
+      <strong><%= f.label :password, 'Wachtwoord' %></strong><br />
     	<%= f.password_field :password %>
-	</div>
+	  </div>
   
-  	<div><%= f.label :password_confirmation %><br />
+  	<div>
+      <strong><%= f.label :password_confirmation, 'Wachtwoord verificatie' %></strong><br />
     	<%= f.password_field :password_confirmation %>
-	</div>
+	  </div>
     
-  	<div><%= f.label :first_name, "Firstname" %><br />
+  	<div>
+      <strong><%= f.label :first_name, "Voornaam" %></strong><br />
     	<%= f.text_field :first_name %></div>
     
-  	<div><%= f.label :last_name, "Lastname" %><br />
+  	<div>
+      <strong><%= f.label :last_name, "Achternaam" %></strong><br />
      	<%= f.text_field :last_name %>
     </div>
-    
-  	<div> <%= f.label :user_name, "Username" %><br />
-     	 <%= f.text_field :user_name %>
+
+    <div>
+      <strong><%= f.label :birthday, "Geboortedatum" %></strong><br />
+      <%= f.datetime_select :birthday %>
     </div>
-    
-  	<div><%= f.label :license_plate, "License Plate" %><br />
-      	<%= f.text_field :license_plate %>
+        <br/>
+  	<div>
+      <strong><%= f.label :license_plate, 'Kenteken' %></strong><br />
+      <p>Het kenteken bestaat uit zes tekens. Er worden geen "-"tekens ingevuld.</p>
+      <%= f.text_field :license_plate %>
     </div>
+<<<<<<< HEAD
 	<!-- Form field for uploading avatar -->
 	<div><%= f.label :avatar %><br />
 	<%= f.file_field :avatar %></div>
   
   <div><%= f.submit "Sign up" %></div>
+=======
+    
+    <% if current_user %>
+      <div><%= f.submit "Opslaan" %></div>
+    <% else %>
+      <div><%= f.submit "Registreer" %></div>
+    <% end %>
+>>>>>>> 93c22395c853619ae22ae0d32133ed0bd96a0e59
 
 <% end %>
+

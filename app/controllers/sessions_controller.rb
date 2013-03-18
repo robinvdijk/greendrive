@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by_email(params[:email].downcase)
+    user = User.find_by_email(params[:email])
     
     if user && user.authenticate(params[:password])
       if params[:remember_me] == 'true'
@@ -23,9 +23,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    cookies.delete :login
-    flash[:notice] = 'U bent succesvol uitgelogd.'
-    redirect_to new_session_path
+    redirect_to root_url, :notice => "Logged out!"
   end
 
 end

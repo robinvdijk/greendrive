@@ -1,12 +1,11 @@
-<h1>Pages#dashboard</h1>
-<<<<<<< HEAD
-<p>
-	<%= link_to "Login", new_session_path %>
-	<%= link_to "Register", new_user_path %>
-</p>
+<h1>Dashboard</h1>
 
-=======
-<p><%= link_to "Register", new_user_path %></p>
+<% if current_user %>
+	<h2>Hallo, <%= current_user.user_name %></h2>
+		<p><%= link_to "Alle gebruikers", users_path %></p>
+	<p><%= link_to "Mijn profiel", user_path(current_user) %></p>
+	<p><%= link_to "Uitloggen", logout_path, :method => :delete %></p>
 
-<p><%= link_to "My profile" %></p>
->>>>>>> d3bda316094f90926ec539ba2d079b653c274498
+	<% else %>
+		<p><%= link_to "Login", new_session_path %> of <%= link_to "registeer", new_user_path %>.</p>
+<% end %>

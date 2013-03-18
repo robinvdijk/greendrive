@@ -2,11 +2,12 @@ class UsersController < ApplicationController
   before_filter :user_required, :except => [:new, :create]
   
   def index
-   
+   @users = User.all
   end
   
   def show
    @user = User.find(params[:id])
+
   end
 
   def new
@@ -14,7 +15,7 @@ class UsersController < ApplicationController
   end
     
   def edit
-   
+   @user = User.find(params[:id])
   end
   
   def create
@@ -27,8 +28,11 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
-    redirect_to root_url, :notice => "Logged out!"
+    @user = User.find(params[:id])
+    @user.destroy
+    respond_to do |format|
+      format.html { redirect_to users_url }
+    end
   end
   
   def update
@@ -38,7 +42,8 @@ class UsersController < ApplicationController
       if @user.update_attributes(params[:user])
         format.html  { redirect_to(@user, :notice => 'Uw profiel is succesvol aangepast.') }
       else
-        format.html  { render :action => "edit" }
+        format.html  { render :action => "edit", :notice => 'Er is iets misgegaan. Mogelijk zijn niet alle velden correct ingevuld.' }
+
       end       
     end
   end  

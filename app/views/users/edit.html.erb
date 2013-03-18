@@ -1,39 +1,6 @@
-<h1><%= @user.user_name %> - Edit</h1>
-
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<h1><%= @user.user_name %> - Bewerken</h1>
   
-  	<div><%= f.label :email %><br />
-  		<%= f.text_field :email, :autofocus => true %>
-	</div>
-    
-  	<div><%= f.label :first_name, "Firstname" %><br />
-    	<%= f.text_field :first_name %></div>
-    
-  	<div><%= f.label :last_name, "Lastname" %><br />
-     	<%= f.text_field :last_name %>
-    </div>
-    
-  	<div> <%= f.label :user_name, "Username" %><br />
-     	 <%= f.text_field :user_name %>
-    </div>
-    
-  	<div><%= f.label :license_plate, "License Plate" %><br />
-      	<%= f.text_field :license_plate %>
-    </div>
+<%= render 'form' %>
 
-<% end %>
+<%= link_to 'Annuleren', @user %>
 
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
