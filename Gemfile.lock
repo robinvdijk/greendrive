@@ -143,14 +143,10 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 3.2.1)
   jquery-rails
-<<<<<<< HEAD
   mail (= 2.4.4)
-  omniauth-facebook (= 1.4.0)
-=======
   mini_magick
   omniauth (~> 1.1.1)
   omniauth-facebook (~> 1.4.0)
->>>>>>> 1266f0f459ebec34abbb6ad80ca85aa6c2766c69
   pg
   rails (= 3.2.12)
   sass-rails (~> 3.2.3)
