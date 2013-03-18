@@ -7,7 +7,7 @@ gem 'cancan'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'carrierwave'
-gem 'rmagick'
+gem 'mini_magick'
 
 gem 'mail', '2.4.4'
 
@@ -36,8 +36,9 @@ gem 'jquery-rails'
 
 gem "bcrypt-ruby", :require => "bcrypt"
 
+gem 'omniauth', '~> 1.1.1'
+gem 'omniauth-facebook', '~> 1.4.0'
 
-gem 'omniauth-facebook', "1.4.0"
 
 
 # To use ActiveModel has_secure_password

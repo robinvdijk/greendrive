@@ -1,22 +1,30 @@
 <h1>Alle gebruikers</h1>
 <% if @users.any? %>
+<<<<<<< HEAD
 <table>
+=======
+  <table>
+>>>>>>> 1266f0f459ebec34abbb6ad80ca85aa6c2766c69
   <tr>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
+<<<<<<< HEAD
 <% @users.each do |user| %>
+=======
+  <% @users.each do |user| %>
+>>>>>>> 1266f0f459ebec34abbb6ad80ca85aa6c2766c69
   <tr>
     <td><%= link_to user.user_name, user %> |</td>
     <td><%= link_to 'Bewerk', edit_user_path(user) %></td>
     <td><%= link_to 'Verwijder', user, method: :delete, data: { confirm: 'Weet u het zeker?' } %></td>
   </tr>
-<% end %>
-</table>
+  <% end %>
+  </table>
 <% else %>
-<p>No users.</p>
+  <p>No users.</p>
 <% end %>
 <br />
 
