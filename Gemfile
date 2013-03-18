@@ -6,11 +6,16 @@ gem 'cancan'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+<<<<<<< HEAD
 
 gem 'sqlite3'
 # used for avatar uploading
+=======
+>>>>>>> 4f22d8ff2e566cec7857690a394df5065640aa29
 gem 'carrierwave'
 gem 'mini_magick'
+
+gem 'mail', '2.4.4'
 
 group :development do 
   gem 'sqlite3'
