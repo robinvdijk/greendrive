@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
+gem 'cancan'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -29,7 +30,10 @@ gem 'jquery-rails'
 
 gem "bcrypt-ruby", :require => "bcrypt"
 
+<<<<<<< HEAD
 gem 'omniauth-facebook', "1.4.0"
+=======
+>>>>>>> 70bdd860b8d2b39e20c88380d7be22e82c068534
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

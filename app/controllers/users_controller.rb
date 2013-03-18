@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   before_filter :user_required, :except => [:new, :create]
-  
+  before_validation :clean_data
+
+  def clean_data
+    self.license_plate = self.license_plate.gsub(/[ \-]/, '') unless self.license_plate.nil?
+  end
+
   def index
    @user = User.all
   end
@@ -28,8 +33,11 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
-    redirect_to root_url, :notice => "Logged out!"
+    @user = User.find(params[:id])
+    @user.destroy
+    respond_to do |format|
+      format.html { redirect_to users_url }
+    end
   end
   
   def update
@@ -39,7 +47,8 @@ class UsersController < ApplicationController
       if @user.update_attributes(params[:user])
         format.html  { redirect_to(@user, :notice => 'Uw profiel is succesvol aangepast.') }
       else
-        format.html  { render :action => "edit" }
+        format.html  { render :action => "edit", :notice => 'Er is iets misgegaan. Mogelijk zijn niet alle velden correct ingevuld.' }
+
       end       
     end
   end  
