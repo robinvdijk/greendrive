@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
   has_secure_password 
 
   validates_presence_of :password, :on => :create
-  validates_format_of :password, :with => /(?=^.{6,20}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/
+  validates_presence_of :password_confirmation, :on => :create  
+  validates_format_of :password, :with => /(?=^.{6,20}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/, on: :create
   #Password: Minimum 6 characters, maximum 20, waarvan 1 lowercase, 1 uppercase, 1 special character OF getal
 
   validates :first_name, :presence => true
@@ -13,6 +14,7 @@ class User < ActiveRecord::Base
   validates :user_name, :presence => true, :uniqueness => true, :length => {:minimum => 4,:maximum => 20}
   validates :license_plate, :presence => true, :uniqueness => true, :length => {:minimum => 6, :maximum => 6}
   validates :email, :uniqueness => true, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i}
+
 
 
   before_create { generate_token(:auth_token) }
