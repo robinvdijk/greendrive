@@ -1,16 +1,16 @@
 class UsersController < ApplicationController
   before_filter :user_required, :except => [:new, :create]
-<<<<<<< HEAD
+
   before_validation :clean_data
 
 def clean_data
   self.license_plate = self.license_plate.gsub(/[ \-]/, '') unless self.license_plate.nil?
 end
-=======
+
   
   UserMailer.password_reset(@user).deliver
   
->>>>>>> b9a7e9f92291d6495878a902b8c1042268e58508
+
 
   def index
    @users = User.all
