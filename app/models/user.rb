@@ -8,7 +8,6 @@ class User < ActiveRecord::Base
   validates :user_name, :presence => true, :uniqueness => true, :length => {:maximum => 16}
   validates :license_plate, :presence => true, :uniqueness => true, :length => {:minimum => 6, :maximum => 6}
 
-<<<<<<< HEAD
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
       user.provider = auth.provider
@@ -20,7 +19,4 @@ class User < ActiveRecord::Base
     end
   end
   
-=======
-
->>>>>>> 70bdd860b8d2b39e20c88380d7be22e82c068534
 end
