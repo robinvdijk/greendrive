@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails'
+gem 'thin'
 gem 'cancan'
 
 # Bundle edge Rails instead:
