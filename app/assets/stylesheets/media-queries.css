@@ -1,3 +1,21 @@
+ @media screen and (max-width: 1500px) {
+	 #left_profile {
+	    float:left; 
+		position:relative;
+		left:10%;
+	    width:400px;
+	 }
+	
+	 #right_profile{
+	    background-color: white;
+	    margin:10px;
+	 	overflow:hidden;
+	 }
+	
+  }
+ 
+ 
+ 
  /************************************************************************************
 smaller than 980
 *************************************************************************************/
@@ -31,7 +49,9 @@ smaller than 980
 		height: auto;
 		min-height: 300px;
 	}
+	
 
+	
 }
 
 /************************************************************************************
@@ -101,8 +121,10 @@ smaller than 650
 		min-height: 250px;
 	}
 
-}
 
+
+
+}
 /************************************************************************************
 smaller than 560
 *************************************************************************************/
@@ -119,5 +141,16 @@ smaller than 560
 		padding: 10px 8px;
 	}
 
+	#left_profile { 
+		float: none; 
+	    margin-right:0;
+	    width:auto;
+	    border:0;
+	}
+	
+	#right_profile {
+		position:relative;
+		left:10%;
+	}
 }
 

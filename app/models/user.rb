@@ -32,7 +32,11 @@ class User < ActiveRecord::Base
     end while User.exists?(column => self[column])
   end
 
+  before_validation :clean_data #Filters out whitespaces and special characters
 
+   def clean_data
+     self.license_plate = self.license_plate.gsub(/[ \-]/, '') unless self.license_plate.nil?
+   end
 
  
   #used to add avatar to user profile

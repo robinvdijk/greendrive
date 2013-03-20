@@ -60,8 +60,6 @@ module Greendrive
     
     config.assets.initialize_on_precompile = false
     
-    config.action_mailer.raise_delivery_errors = true
-    
     
   end
 end

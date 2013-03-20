@@ -1,6 +1,18 @@
-<% if current_user %>
-	<td><p><%= link_to 'Alle gebruikers', users_path %>
+<% if @current_user %>
+<div id="header">
+	
+	<%= link_to raw("<i class='icon-white icon-home'></i>"), root_path %>
+	
+		
+		
+		
+		
+		
+</div>
+
+<!-- <%= link_to 'Alle gebruikers', users_path %>
 	<%= link_to 'Mijn profiel', user_path(current_user) %>
-	<%= link_to 'Uitloggen', logout_path, :method => :delete %></p></td>
+	<%= link_to 'Uitloggen', logout_path, :method => :delete %> -->
+
 	<hr />	
 <% end %>
