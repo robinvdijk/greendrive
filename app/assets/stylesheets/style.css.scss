@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500);
+
 /************************************************************************************
 RESET
 *************************************************************************************/
@@ -78,7 +80,6 @@ STRUCTURE
 #pagewrap {
 	width: 980px;
 	margin: 0 auto;
-    border: 2px solid #000; 
     overflow:hidden;
 }
 
@@ -86,11 +87,27 @@ STRUCTURE
 HEADER
 *************************************************************************************/
 #header {
-	position: relative;
-	height: 160px;
-	width: 100px;
-	color:#48b237;
+	background-color:#48b237;
+	margin-bottom:10px;
+	width:1020px;
+	height:50px;
 }
+
+#header a {
+	color:white;
+	padding-right:10px;
+	height:30px;
+	text-decoration:none;
+}
+
+#header a:hover{
+	border:none;
+}
+
+#icon_home {
+	margin:9px 0 0 10px;
+}
+
 
 /* site logo */
 #site-logo {
@@ -235,17 +252,25 @@ CONTENT
 	margin: 0 0 15px;
 }
 
+#username{	
+	text-align:center;
+}
+
+
+
 .button	{
 	margin:10px 0 10px 0;
+	text-align:center;
 }
 
 .button a {	
 	background-color:#48b237;
 	color:white;
 	text-decoration:none;
+	
 	height:23px;
 	width:152px;
-	padding: 5px 50px 5px 50px;
+	padding: 5px 20% 5px 20%;
 	border-radius:3px;
 	font-size:11px;
 	font-family:"Ubuntu";

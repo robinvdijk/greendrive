@@ -2,16 +2,38 @@
 	 #left_profile {
 	    float:left; 
 		position:relative;
-		left:10%;
-	    width:400px;
+	    width:50%;
+	 }
+	 
+	 #left_profile_content {
+		 width:40%;
+		 position:relative;
+		 left:30%;
 	 }
 	
 	 #right_profile{
-	    background-color: white;
-	    margin:10px;
 	 	overflow:hidden;
 	 }
 	
+	 #icon_line {
+	 	display:none;
+	 }
+	 
+	 #icon_search {
+		 position:absolute;
+		 right:17%; 
+		 margin-top:11px;
+	 }
+	 
+	 .title {
+	 	position:absolute;
+	 	left:48%;
+ 		top:-3%;
+		font-size:36px;
+		color:white;
+		font-family:'Ubuntu', sans-serif;
+	 }
+	 
   }
  
  
@@ -143,14 +165,33 @@ smaller than 560
 
 	#left_profile { 
 		float: none; 
-	    margin-right:0;
-	    width:auto;
-	    border:0;
 	}
 	
-	#right_profile {
-		position:relative;
-		left:10%;
+	 #left_profile_content {
+		 left:20%;
+ 	}
+ 
+ 	#right_profile {
+ 		margin-left:10%;
+ 	}
+	
+	#header {
+		width:320px;
 	}
+
+	#icon_line {
+		display:inline;
+		position:absolute;
+		right:5%;
+		margin-top:16px;
+	}
+	
+ 	.title {
+ 	   left:36%;
+	 }
+	 
+
+	 
+	 
 }
 

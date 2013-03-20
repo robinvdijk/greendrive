@@ -79,4 +79,11 @@ Greendrive::Application.configure do
   config.action_mailer.raise_delivery_errors = true
   
   
+  # Add the fonts path
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
+  # Precompile additional assets
+  config.assets.precompile += %w( .svg .eot .woff .ttf )
+  
+  
 end
