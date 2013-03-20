@@ -1,6 +1,6 @@
 <h1>Dashboard</h1>
 
-<% if current_user %>
+<% if @current_user %>
 	<h2>Hallo, <%= current_user.user_name %></h2>
 		<p><%= link_to "Alle gebruikers", users_path %></p>
 	<p><%= link_to "Mijn profiel", user_path(current_user) %></p>

@@ -4,7 +4,7 @@
 
 
 <!--Used to show avatar  -->
-<%= image_tag @user.avatar_url(:thumb) if @user.avatar? %>
+
 
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
@@ -20,7 +20,7 @@
   <% end %>
   
   	<div>
-		<%= image_tag @user.avatar %>
+		<%= image_tag @user.avatar_url(:thumb) if @user.avatar? %>§
 	</div>
   
   	<div>
