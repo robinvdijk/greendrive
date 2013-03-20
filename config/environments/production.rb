@@ -72,7 +72,6 @@ Greendrive::Application.configure do
     port: 25,
     user_name: "jeroenstevens0@gmail.com",
     password: ENV['SMTP_PASSWORD'],
-    :authentication => :plain
   }
   
   config.action_mailer.default_url_options = { :host => "rocky-woodland-7345.herokuapp.com" }
