@@ -1,5 +1,6 @@
 <% if current_user %>
-	<td><p><%= link_to 'Alle gebruikers', users_path %>
+	<td><p>Ingelogd als <%= current_user.user_name %> (<%= current_user.role%>).
+	<%= link_to 'Alle gebruikers', users_path %>
 	<%= link_to 'Mijn profiel', user_path(current_user) %>
 	<%= link_to 'Uitloggen', logout_path, :method => :delete %></p></td>
 	<hr />	

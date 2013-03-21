@@ -12,6 +12,10 @@
   <% end %>
 
     <div>
+      <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
+    </div>
+    
+    <div>
       <strong><%= f.label :first_name, 'Voornaam *' %></strong><br />
       <%= f.text_field :first_name %>
     </div>

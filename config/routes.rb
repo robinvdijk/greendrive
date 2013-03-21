@@ -1,9 +1,13 @@
 Greendrive::Application.routes.draw do
   
+  resources :authentications
+
+  resources :authentications
+
   resources :password_resets
 
-    
-    match 'auth/:provider/callback', to: 'sessions#create'
+    match '/auth/:provider/callback' => 'authentications#create'
+
     
     match "/auth/failure" => redirect("/")
     match 'signout', to: 'sessions#destroy', as: 'signout'

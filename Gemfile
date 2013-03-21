@@ -19,11 +19,12 @@ group :development do
   gem 'sqlite3'
 end
 
-
 group :production do 
   gem 'pg'
 end
 
+gem "nifty-generators", :group => :development
+gem 'mongrel', '1.2.0.pre2'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -57,3 +58,5 @@ gem 'omniauth-facebook', '~> 1.4.0'
 
 # To use debugger
 # gem 'debugger'
+
+gem "mocha", :group => :test
