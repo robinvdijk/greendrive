@@ -67,7 +67,7 @@
 	<div><%= f.label :avatar %><br />
 	<%= f.file_field :avatar %></div>
 
-    <% if current_user %>
+    <% if @current_user %>
       <div><%= f.submit "Opslaan" %></div>
     <% else %>
       <div><%= f.submit "Registreer" %></div>

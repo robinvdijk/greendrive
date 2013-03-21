@@ -36,6 +36,16 @@ class User < ActiveRecord::Base
     end while User.exists?(column => self[column])
   end
 
+<<<<<<< HEAD
+=======
+  before_validation :clean_data #Filters out whitespaces and special characters
+
+   def clean_data
+     self.license_plate = self.license_plate.gsub(/[ \-]/, '') unless self.license_plate.nil?
+   end
+
+ 
+>>>>>>> 504229939afc819261e3378f51923ed42a51e2e7
   #used to add avatar to user profile
   mount_uploader :avatar, AvatarUploader
 
