@@ -41,15 +41,20 @@
       <%= f.text_field :license_plate %>
     </div>
 
+    <% if "app/views/users/new.html.erb" %>
+
   	<div>
       <strong><%= f.label :password, 'Wachtwoord *' %></strong><br />
     	<%= f.password_field :password %>
 	  </div>
-  
+    
   	<div>
       <strong><%= f.label :password_confirmation, 'Wachtwoord verificatie *' %></strong><br />
     	<%= f.password_field :password_confirmation %>
 	  </div>
+    <% end %>
+
+
 
     <div>
       <strong><%= f.label :birthday, 'Geboortedatum' %></strong><br />

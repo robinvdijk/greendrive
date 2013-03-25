@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  attr_accessible :role, :email, :first_name, :last_name, :license_plate, :password_confirmation, :clean_data, :password, :user_name, :avatar, :birthday
+  attr_accessible :provider, :uid, :role, :email, :first_name, :last_name, :license_plate, :password_confirmation, :clean_data, :password, :user_name, :avatar, :birthday
 
   has_secure_password 
   has_many :authentications
@@ -36,12 +36,6 @@ class User < ActiveRecord::Base
     end while User.exists?(column => self[column])
   end
 
-
-  before_validation :clean_data #Filters out whitespaces and special characters
-
-   def clean_data
-     self.license_plate = self.license_plate.gsub(/[ \-]/, '') unless self.license_plate.nil?
-   end
 
   #used to add avatar to user profile
   mount_uploader :avatar, AvatarUploader
