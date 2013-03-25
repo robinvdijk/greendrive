@@ -67,12 +67,12 @@ Greendrive::Application.configure do
   
   config.action_mailer.delivery_method = :smtp
   
-  # config.action_mailer.smtp_settings = {
-  #   address: "smtp.gmail.com","smtp.live.nl"
-  #   port: 25,
-  #   user_name: "jeroenstevens0@gmail.com",
-  #   password: ENV['SMTP_PASSWORD'],
-  # }
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com","smtp.live.nl"
+    port: 25,
+    user_name: "jeroenstevens0@gmail.com",
+    password: ENV['SMTP_PASSWORD'],
+  }
   
   config.action_mailer.default_url_options = { :host => "rocky-woodland-7345.herokuapp.com" }
 

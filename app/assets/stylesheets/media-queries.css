@@ -1,197 +1,153 @@
- @media screen and (max-width: 1500px) {
-	 #left_profile {
-	    float:left; 
-		position:relative;
-	    width:50%;
-	 }
-	 
-	 #left_profile_content {
-		 width:40%;
-		 position:relative;
-		 left:30%;
-	 }
-	
-	 #right_profile{
-	 	overflow:hidden;
-	 }
-	
-	 #icon_line {
-	 	display:none;
-	 }
-	 
-	 #icon_search {
-		 position:absolute;
-		 right:17%; 
-		 margin-top:11px;
-	 }
-	 
-	 .title {
-	 	position:absolute;
-	 	left:48%;
- 		top:-3%;
-		font-size:36px;
-		color:white;
-		font-family:'Ubuntu', sans-serif;
-	 }
-	 
-  }
- 
- 
- 
- /************************************************************************************
-smaller than 980
-*************************************************************************************/
-@media screen and (max-width: 980px) {
+/* set html5 elements to block */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
+    display: block;
+}
 
-	/* pagewrap */
-	#pagewrap {
-		width: 95%;
-	}
-
-	/* content */
-	#content {
-		width: 60%;
-		padding: 3% 4%;
-	}
-
-	/* sidebar */
-	#sidebar {
-		width: 30%;
-	}
-	#sidebar .widget {
-		padding: 8% 7%;
-		margin-bottom: 10px;
-	}
-
-	/* embedded videos */
-	.video embed,
-	.video object,
-	.video iframe {
-		width: 100%;
-		height: auto;
-		min-height: 300px;
-	}
-	
-
-	
+#pagewrap {
+	width: 980px;
+	max-width: 100%;
+	margin: 0 auto;
+	font-family:"Ubuntu" sans-serif;
+/*	background-color:blue;*/
+}	
+.wrapper {
+	overflow: hidden;
 }
 
 /************************************************************************************
-smaller than 650
+COLUMN
 *************************************************************************************/
-@media screen and (max-width: 650px) {
+.col {
+	float: left;
+	margin-left: 3.2%;
+	margin-bottom: 30px;
+/*	background-color:red;*/
+}
 
-	/* header */
-	#header {
-		height: auto;
-	}
-
-	/* search form */
-	#searchform {
-		position: absolute;
-		top: 5px;
-		right: 0;
-		z-index: 100;
-		height: 40px;
-	}
-	#searchform #s {
-		width: 70px;
-	}
-	#searchform #s:focus {
-		width: 150px;
-	}
-
-	/* main nav */
-	#main-nav {
-		position: static;
-	}
-
-	/* site logo */
-	#site-logo {
-		margin: 15px 100px 5px 0;
-		position: static;
-	}
-
-	/* site description */
-	#site-description {
-		margin: 0 0 15px;
-		position: static;
-	}
-
-	/* content */
-	#content {
-		width: auto;
-		float: none;
-		margin: 20px 0;
-	}
-
-	/* sidebar */
-	#sidebar {
-		width: 100%;
-		margin: 0;
-		float: none;
-	}
-	#sidebar .widget {
-		padding: 3% 4%;
-		margin: 0 0 10px;
-	}
-
-	/* embedded videos */
-	.video embed,
-	.video object,
-	.video iframe {
-		min-height: 250px;
-	}
-
-
-
+.col ul {
+	list-style:none;
 
 }
+
+.col ul li  {
+	font-size:14px;
+	font-family:"Ubuntu" sans-serif;
+	margin-bottom:15px;
+}
+.fullwidth .col {
+	float: left;
+	width: 100%;
+}
+/* grid4 col */
+.grid4 .col {
+	width: 22.6%;
+}
+/* grid3 col */
+.grid3 .col {
+	width: 31.2%;
+}
+/* grid2 col */
+.grid2 .col {
+	width: 48.4%;
+	margin-top:75px;
+}
+/* clear col */
+.grid4 .col:nth-of-type(4n+1),
+.grid3 .col:nth-of-type(3n+1),
+.grid2 .col:nth-of-type(2n+1) {
+	margin-left: 0;
+	clear: left;
+}
+
 /************************************************************************************
-smaller than 560
+MEDIA QUERIES
 *************************************************************************************/
-@media screen and (max-width: 480px) {
+/* reset cols to 3-column */
+@media screen and (max-width: 740px) {
+	/* grid4 */
+	.grid4 .col {
+		width: 31.2%;
+	}
+	.grid4 .col:nth-of-type(4n+1) {
+		margin-left: 3.2%;
+		clear: none;
+	}
+	.grid4 .col:nth-of-type(3n+1) {
+		margin-left: 0;
+		clear: left;
+	}
+}
 
-	/* disable webkit text size adjust (for iPhone) */
-	html {
-		-webkit-text-size-adjust: none;
+/* reset cols to 2-column */
+@media screen and (max-width: 600px) {
+	/* grid4 */
+	.grid4 .col {
+		width: 48.4%;
+	}
+	.grid4 .col:nth-of-type(3n+1) {
+		margin-left: 3.2%;
+		clear: none;
+	}
+	.grid4 .col:nth-of-type(2n+1) {
+		margin-left: 0;
+		clear: left;
 	}
 
-	/* main nav */
-	#main-nav a {
-		font-size: 90%;
-		padding: 10px 8px;
+	/* grid3 */
+	.grid3 .col {
+		width: 48.4%;
 	}
+	.grid3 .col:nth-of-type(3n+1) {
+		margin-left: 3.2%;
+		clear: none;
+	}
+	.grid3 .col:nth-of-type(2n+1) {
+		margin-left: 0;
+		clear: left;
+	}
+}
 
-	#left_profile { 
-		float: none; 
+/* reset cols to fullwidth */
+@media screen and (max-width: 400px) {
+	/* grid4 */
+	.col {
+		margin-left: 0 !important;
+		float:none;
+		
 	}
 	
-	 #left_profile_content {
-		 left:20%;
- 	}
- 
- 	#right_profile {
- 		margin-left:10%;
- 	}
 	
-	#header {
-		width:320px;
+	
+	.inner_col {
+		margin-left:12%;
 	}
-
+	
+	.grid1 {
+		width:80%;
+		margin:0px auto;
+	}
+	.grid1 ul {
+			list-style:none;
+	}
+	
+	#profile_info {
+		margin-left:6%;
+	}
+	
+	#profile_info li {
+		margin-bottom:15px !important;
+	}
+	
 	#icon_line {
-		display:inline;
-		position:absolute;
-		right:5%;
-		margin-top:16px;
+		display:inline !important;
+		position:relative;
+		left:22%;
 	}
 	
- 	.title {
- 	   left:36%;
-	 }
-	 
+	#icon_search {
+		position:relative;
+		left:22%;
+		float:none !important;
 
-	 
-	 
+	}
 }
-

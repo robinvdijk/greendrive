@@ -1,29 +1,20 @@
 
 <% if current_user %>
-	<td><p>Ingelogd als <%= current_user.user_name %> (<%= current_user.role%>).
-	<%= link_to 'Alle gebruikers', users_path %>
+	<!-- <td><p>Ingelogd als <%= current_user.user_name %> (<%= current_user.role%>).
+	<%= link_to 'Alle gebruikers', users_path %> -->
 
-<div id="header">
-	
-	
-	
-	<%= link_to image_tag("glyphicons_020_home.png", id: "icon_home"), root_path %>
-	<h3 class="title"> Profiel </h3>
-	<%= link_to image_tag("glyphicons_027_search.png", id: "icon_search")%>
-			
-	<%= link_to image_tag("glyphicons_158_show_lines.png", id: "icon_line") %>
-			
-	<!-- <%= link_to "Gebruikers", users_path %> -->
+	<div class="header">
 		
-		
-
-</div>
+		<%= link_to image_tag("glyphicons_020_home.png", id: "icon_home"), root_path %>
+	
+		<%= link_to image_tag("glyphicons_027_search.png", id: "icon_search")%>
+			
+		<%= link_to image_tag("glyphicons_158_show_lines.png", id: "icon_line") %>
+			
+		<!-- <%= link_to "Gebruikers", users_path %> -->
+	</div>
 
 <% end %>
 		
 
 
-<!-- <%= link_to 'Alle gebruikers', users_path %>
->>>>>>> 504229939afc819261e3378f51923ed42a51e2e7
-	<%= link_to 'Mijn profiel', user_path(current_user) %>
-	<%= link_to 'Uitloggen', logout_path, :method => :delete %> -->

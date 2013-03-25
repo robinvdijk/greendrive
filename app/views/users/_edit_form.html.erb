@@ -4,20 +4,48 @@
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
       <ul>
-      <% @user.errors.full_messages.each do |msg| %>
+      <% @user.errors.flil_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
  	  </ul>
     </div>
   <% end %>
-
-<div class="col">
+<div class="grid2"> 	
+	<div class="col">
+		<div class="inner_col">
 	  <ul>
 	    <li>
 	      <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
 	    </li>
 
+		<%= image_tag @user.avatar_url(:thumb) if @user.avatar? %>
+				
+		<li>
+			<%= f.label :avatar %><br />
+			<%= f.file_field :avatar %>
+		</li>
+				
 	    <li>
+	      <%= f.label :license_plate, 'Kenteken *' %><br />
+	      <p>
+			  Het kenteken bestaat uit zes tekens. Er worden geen "-"tekens ingevuld.
+		  </p>
+	      <%= f.text_field :license_plate, class: 'field'  %>
+	    </li>
+	   </ul>
+	   </div>
+	   
+   </div>
+	
+	<div class="col">
+		<div class="vertical-line">	    
+	 <ul> 
+	    <li> 
+	      <%= f.label :user_name, 'Gebruikersnaam *' %><br />
+	      <%= f.text_field :user_name, class: 'field'  %>
+	    </li>
+		
+		<li>
 	      <%= f.label :first_name, 'Voornaam *' %><br />
 	      <%= f.text_field :first_name, class: 'field' %>
 	    </li>
@@ -26,33 +54,7 @@
 	      <%= f.label :last_name, 'Achternaam *' %><br />
 	      <%= f.text_field :last_name, class: 'field'  %>
 	    </li>
-
-	    <li>
-	      <%= f.label :email, 'E-mail *' %><br />
-	      <%= f.text_field :email, :autofocus => true, class: 'field'  %>
-	    </li>
-
-	    <li> 
-	      <%= f.label :user_name, 'Gebruikersnaam *' %><br />
-	      <%= f.text_field :user_name, class: 'field'  %>
-	    </li>
-
-	    <li>
-	      <%= f.label :license_plate, 'Kenteken *' %><br />
-	      <p>Het kenteken bestaat uit zes tekens. Er worden geen "-"tekens ingevlid.</p>
-	      <%= f.text_field :license_plate, class: 'field'  %>
-	    </li>
-
-	  	<li>
-	      <%= f.label :password, 'Wachtwoord *' %><br />
-	    	<%= f.password_field :password, class: 'field'  %>
-		  </li>
-  
-	  	<li>
-	      <%= f.label :password_confirmation, 'Wachtwoord verificatie *' %><br />
-	    	<%= f.password_field :password_confirmation, class: 'field'  %>
-		  </li>
-
+		
 	    <li>
 	      <%= f.label :birthday, 'Geboortedatum' %><br />
 	      <%= f.date_select("birthday", :start_year => Date.current.year - 18, 
@@ -61,13 +63,22 @@
 	                                    :prompt => {:day => 'Dag', :month => 'Maand', :year => 'Jaar'},
 	                                    :use_month_names => ['Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Jlii', 'Augustus',
 	                                    'September', 'Oktober', 'November', 'December']) %>
+	    </li><br />       
+			
+	    <li>
+	      <%= f.label :email, 'E-mail *' %><br />
+	      <%= f.text_field :email, :autofocus => true, class: 'field'  %>
 	    </li>
-	        <br/>
 
+	  	<li>
+	      <%= f.label :password, 'Wachtwoord *' %><br />
+	      <%= f.password_field :password, class: 'field'  %>
+		</li>
   
-
-		<li><%= f.label :avatar %><br />
-		<%= f.file_field :avatar %></li>
+	  	<li>
+	      <%= f.label :password_confirmation, 'Wachtwoord verificatie *' %><br />
+	      <%= f.password_field :password_confirmation, class: 'field'  %>
+		</li>
 
 	    <% if @current_user %>
 	      <li><%= f.submit "Opslaan" %></li>
@@ -76,4 +87,7 @@
 	    <% end %>
 	  </ul>
 	<% end %>
+	
+  </div>
+  
 </div>
