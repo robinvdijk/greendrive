@@ -5,10 +5,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 #pagewrap {
 	width: 980px;
-	max-width: 100%;
+	max-width: 96%;
 	margin: 0 auto;
-	font-family:"Ubuntu" sans-serif;
-/*	background-color:blue;*/
 }	
 .wrapper {
 	overflow: hidden;
@@ -18,22 +16,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 COLUMN
 *************************************************************************************/
 .col {
+	
 	float: left;
 	margin-left: 3.2%;
 	margin-bottom: 30px;
-/*	background-color:red;*/
+	background: red;
+	
 }
 
-.col ul {
-	list-style:none;
-
-}
-
-.col ul li  {
-	font-size:14px;
-	font-family:"Ubuntu" sans-serif;
-	margin-bottom:15px;
-}
 .fullwidth .col {
 	float: left;
 	width: 100%;
@@ -49,7 +39,6 @@ COLUMN
 /* grid2 col */
 .grid2 .col {
 	width: 48.4%;
-	margin-top:75px;
 }
 /* clear col */
 .grid4 .col:nth-of-type(4n+1),
@@ -111,43 +100,16 @@ MEDIA QUERIES
 @media screen and (max-width: 400px) {
 	/* grid4 */
 	.col {
+		width: 100% !important;
 		margin-left: 0 !important;
-		float:none;
-		
+		clear: none !important;
 	}
 	
-	
-	
-	.inner_col {
-		margin-left:12%;
+	#register {
+		display: none;
 	}
 	
-	.grid1 {
-		width:80%;
-		margin:0px auto;
-	}
-	.grid1 ul {
-			list-style:none;
-	}
-	
-	#profile_info {
-		margin-left:6%;
-	}
-	
-	#profile_info li {
-		margin-bottom:15px !important;
-	}
-	
-	#icon_line {
-		display:inline !important;
-		position:relative;
-		left:22%;
-	}
-	
-	#icon_search {
-		position:relative;
-		left:22%;
-		float:none !important;
-
+	#link-register {
+		visibility: visible !important;
 	}
 }

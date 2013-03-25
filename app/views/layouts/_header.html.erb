@@ -1,24 +1,28 @@
 
 <% if current_user %>
+<<<<<<< HEAD
 	<td><p>Ingelogd als <%= current_user.user_name %> (<%= current_user.role %>).
 	<%= link_to 'Alle gebruikers', users_path %>
+=======
+	<!-- <td><p>Ingelogd als <%= current_user.user_name %> (<%= current_user.role%>).
+	<%= link_to 'Alle gebruikers', users_path %> -->
+>>>>>>> 9ae7702e25a6b76664191d47bf83c9a76142385c
 
-<div id="header">
-	
-	
-	
-	<%= link_to image_tag("glyphicons_020_home.png", id: "icon_home"), root_path %>
-	<h3 class="title"> Profiel </h3>
-	<%= link_to image_tag("glyphicons_027_search.png", id: "icon_search")%>
-			
-	<%= link_to image_tag("glyphicons_158_show_lines.png", id: "icon_line") %>
-			
-	<!-- <%= link_to "Gebruikers", users_path %> -->
+	<div class="header">
 		
-		
-
-</div>
+		<%= link_to image_tag("glyphicons_020_home.png", id: "icon_home"), root_path %>
+	
+		<%= link_to image_tag("glyphicons_027_search.png", id: "icon_search")%>
+			
+		<%= link_to image_tag("glyphicons_158_show_lines.png", id: "icon_line") %>
+			
+		<!-- <%= link_to "Gebruikers", users_path %> -->
+	</div>
 
 <% end %>
 		
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9ae7702e25a6b76664191d47bf83c9a76142385c

@@ -1,6 +1,115 @@
-<h1>Log in</h1>
+<div class="fullwidth header">	</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Terug', root_path %>
-
+<div id="pagewrap">	
+	<div class="wrapper grid3">				
+		
+		<article class="col">
+			<div class="align-center">
+				<%= form_tag sessions_path do %>
+						
+				<h2>Inloggen</h2>		
+					
+				<ul class="align-center">
+					<li>
+						<div class="logo align-center"></div>
+					</li>
+					<li>
+						<%= label :email, 'E-mail'%><br />
+						<%= text_field_tag :email, params[:email], :class => 'field align-center', :placeholder => "E-mailadres" %><br />
+					</li>
+					<li>
+						<%= label :password, 'Wachtwoord'%><br />
+						<%= password_field_tag :password, '', :class => 'field', :placeholder => "Wachtwoord" %>
+					</li>
+					<li>
+						<%= link_to "Wachtwoord vergeten?", new_password_reset_path %></p>
+					</li>
+					<li>
+						  <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+						  <%= label_tag :remember_me, 'Onthoud mij' %>
+					</li>
+					<li>
+						<%= submit_tag 'Inloggen!', :class => "button" %>
+					</li>
+				</ul>
+					
+				<% end %>
+				<div id="link-register">
+					<%= link_to 'Nog geen account? Klik dan hier', new_user_path %>
+				</div>			
+			</div>			
+		</article>
+				
+				
+				
+								
+		<article class="col">
+			<div id="register">
+				<div class="align-center">
+				<%= form_for(@user) do |f| %>
+				
+					<div class="vertical-line">
+						<h2>Registreren</h2>
+			
+						<ul>
+							<li>
+							    <%= f.label :first_name, 'Voornaam *' %></strong><br>
+							    <%= f.text_field :first_name, :class => 'field' %>
+							</li>
+							<li>
+				  			    <%= f.label :last_name, 'Achternaam *' %></strong><br>
+				  			    <%= f.text_field :last_name, :class => 'field' %>
+							</li>
+							<li>
+				  			    <%= f.label :email, 'E-mail *' %></strong><br />
+				  			    <%= f.text_field :email, :autofocus => true, :class => 'field' %>
+								</li>
+							<li>
+				  			    <%= f.label :user_name, 'Gebruikersnaam *' %></strong><br />
+				  			    <%= f.text_field :user_name, :class => 'field' %>
+							</li>
+							<li>
+							    <%= f.label :license_plate, 'Kenteken *' %></strong><br />
+							    <%= f.text_field :license_plate, :placeholder => '81TRR8', :class => 'field' %>
+							</li>
+							<li>
+							    <%= f.label :password, 'Wachtwoord *' %></strong><br />
+							    <%= f.password_field :password, :class => 'field' %>
+							</li>
+							<li>
+							    <%= f.label :password_confirmation, 'Wachtwoord verificatie *' %></strong><br />
+							    <%= f.password_field :password_confirmation, :class => 'field' %>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</article>
+			
+		<article class="col">
+			<div id="register">	
+				<div class="align-center">
+					<div class="avatar_pre"></div>		
+						<br />
+						<%= f.file_field :avatar%>
+						<br />
+						<br />
+						<small><%= check_box :terms_of_service, 'true' %>
+						Ik ga akkoord met de voorwaarden *</small>
+						<br />
+						<small><%= check_box :terms_of_privacy, 'true' %>
+						Ik ga akkoord met de privacyverklaring *</small>
+						<br />	
+						<br />	
+	
+					    <% if @current_user %>
+							<div><%= f.submit "Opslaan" %></div>
+					    <% else %>
+					      	<div><%= f.submit "Account aanmaken", :class => 'button' %></div>
+					    <% end %>
+					<% end %>
+				</div>
+			</div>
+		</article>		
+	</div>
+</div>

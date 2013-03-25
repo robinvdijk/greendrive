@@ -1,3 +1,5 @@
+<% provide(:title, @user.user_name)%>
+
 <p id="notice"><%= notice %></p>
 	
 
@@ -16,40 +18,45 @@
   <% end %>
 <% end %>
 
-<div id="left_profile">
-	<div id="left_profile_content">		
+<div class="grid2">	
+	<div class="col">	
+		<div class="align-center">
+			
 		<%= image_tag @user.avatar_url(:thumb) if @user.avatar? %>
 	
 	  	<h1 id="username"><%= @user.user_name %></h1>
 
-		<div class="button">
-		<%= link_to 'Bewerken', edit_user_path(@user) %> </div>
+		<%= link_to 'Bewerken', edit_user_path(@user), class: "button" %>
 		
-		<div class="button">
-		<%= link_to "Badges" %>	</div>
-		
-	  	<strong>Kenteken:</strong>
+	  	<ul>Kenteken:</ul>
 	    <%= @user.license_plate %>
+		
 	
-		<%= link_to 'Terug', :root %>
+		<%= link_to "Badges", class: "button" %>	
+		
+							<!-- <%= link_to 'Terug', :root %> -->
+		</div>
 	</div>
-</div>
-
-<div id="right_profile">
 	
- 	<strong>Email:</strong>
-  	<%= mail_to @user.email, @user.email %><br />
+	<div class="col">
+		<div class="vertical-line">
+			<ul id="profile_info">
+			 	<li>Email:
+			  	<%= mail_to @user.email, @user.email %><br /></li>
 	 
-  	<strong>Voornaam:</strong>
-   	<%= @user.first_name %><br />
+			  	<li>Voornaam:
+			   	<%= @user.first_name %><br /></li>
    
-  	<strong>Achternaam:</strong>
-    <%= @user.last_name %><br />
+			  	<li>Achternaam:
+			    <%= @user.last_name %><br /> </li>
 
-    <strong>Geboortedatum:</strong>
-    <%= @user.birthday %>	<br />
+			    <li>Geboortedatum:
+			    <%= @user.birthday %>	<br /></li>
+			</ul>
+		</div>
+	</div>
+	
 </div>
-
 
 
 
