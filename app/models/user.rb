@@ -14,6 +14,9 @@ class User < ActiveRecord::Base
   validates :user_name, :presence => true, :uniqueness => true, :length => {:minimum => 4,:maximum => 20}
   validates :license_plate, :presence => true, :uniqueness => true, :length => {:minimum => 6, :maximum => 6}
   validates :email, :uniqueness => true, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i}
+  # Dit is voor het registeren form
+  validates :terms_of_service, :acceptance => true
+  validates :terms_of_privacy, :acceptance => true
 
 
 

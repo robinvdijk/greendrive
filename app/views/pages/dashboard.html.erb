@@ -1,4 +1,4 @@
-<h1>Dashboard</h1>
+<h1>Inloggen</h1>
 
 <% if @current_user %>
 	<h2>Hallo, <%= current_user.user_name %></h2>
@@ -9,5 +9,7 @@
 	<% else %>
 		<p><%= link_to "Login", new_session_path %> of <%= link_to "registeer", new_user_path %>.</p>
 		<%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+		
+
 
 <% end %>

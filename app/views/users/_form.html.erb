@@ -13,52 +13,35 @@
 
     <div>
       <strong><%= f.label :first_name, 'Voornaam *' %></strong><br />
-      <%= f.text_field :first_name %>
+      <%= f.text_field :first_name, :class => 'field' %>
     </div>
     
     <div>
       <strong><%= f.label :last_name, 'Achternaam *' %></strong><br />
-      <%= f.text_field :last_name %>
+      <%= f.text_field :last_name, :class => 'field' %>
     </div>
 
     <div>
       <strong><%= f.label :email, 'E-mail *' %></strong><br />
-      <%= f.text_field :email, :autofocus => true %>
+      <%= f.text_field :email, :autofocus => true, :class => 'field' %>
     </div>
 
     <div> 
       <strong><%= f.label :user_name, 'Gebruikersnaam *' %></strong><br />
-      <%= f.text_field :user_name %>
+      <%= f.text_field :user_name, :class => 'field' %>
     </div>
 
     <div>
-      <strong><%= f.label :license_plate, 'Kenteken *' %></strong><br />
-      <p>Het kenteken bestaat uit zes tekens. Er worden geen "-"tekens ingevuld.</p>
-      <%= f.text_field :license_plate %>
+      
     </div>
 
   	<div>
-      <strong><%= f.label :password, 'Wachtwoord *' %></strong><br />
-    	<%= f.password_field :password %>
+      
 	  </div>
   
   	<div>
-      <strong><%= f.label :password_confirmation, 'Wachtwoord verificatie *' %></strong><br />
-    	<%= f.password_field :password_confirmation %>
-	  </div>
-
-    <div>
-      <strong><%= f.label :birthday, 'Geboortedatum' %></strong><br />
-      <%= f.date_select("birthday", :start_year => Date.current.year - 18, 
-                                    :end_year => Date.current.year - 90,
-                                    :order => [:day, :month, :year],
-                                    :prompt => {:day => 'Dag', :month => 'Maand', :year => 'Jaar'},
-                                    :use_month_names => ['Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus',
-                                    'September', 'Oktober', 'November', 'December']) %>
-    </div>
-        <br/>
-
-  
+      
+	  </div>  
 
 	<div><%= f.label :avatar %><br />
 	<%= f.file_field :avatar %></div>
