@@ -1,15 +1,28 @@
+<<<<<<< HEAD
 <h1>Inloggen</h1>
+=======
+<% provide(:title, "Dashboard")  %>
 
-<% if @current_user %>
-	<h2>Hallo, <%= current_user.user_name %></h2>
+<h1>Dashboard</h1>
+>>>>>>> 6583f190510596418c0437a461f3d0c6ea8e88d2
+
+
+<% if current_user %>
+	<h2>Hallo, <%= current_user.user_name %> de <%= current_user.role %>.</h2>
+	
 		<p><%= link_to "Alle gebruikers", users_path %></p>
 	<p><%= link_to "Mijn profiel", user_path(current_user) %></p>
 	<p><%= link_to "Uitloggen", logout_path, :method => :delete %></p>
 
 	<% else %>
 		<p><%= link_to "Login", new_session_path %> of <%= link_to "registeer", new_user_path %>.</p>
+<<<<<<< HEAD
 		<%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
 		
 
+=======
+		<%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %><br />
+		<%= link_to "Sign in with Facebook/Callback", "/auth/facebook/callback", id: "sign_in" %>
+>>>>>>> 6583f190510596418c0437a461f3d0c6ea8e88d2
 
 <% end %>

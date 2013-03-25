@@ -65,4 +65,25 @@ Greendrive::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   
+  config.action_mailer.delivery_method = :smtp
+  
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com","smtp.live.nl"
+    port: 25,
+    user_name: "jeroenstevens0@gmail.com",
+    password: ENV['SMTP_PASSWORD'],
+  }
+  
+  config.action_mailer.default_url_options = { :host => "rocky-woodland-7345.herokuapp.com" }
+
+  config.action_mailer.raise_delivery_errors = true
+  
+  
+  # Add the fonts path
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
+  # Precompile additional assets
+  config.assets.precompile += %w( .svg .eot .woff .ttf )
+  
+  
 end

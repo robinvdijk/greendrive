@@ -1,16 +1,14 @@
+<% provide(:title, @user.user_name)%>
+
 <p id="notice"><%= notice %></p>
-<h1><%= @user.user_name %></h1>
-
-
+	
 
 <!--Used to show avatar  -->
-
 
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
       <ul>
       <% @user.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -18,38 +16,50 @@
       </ul>
     </div>
   <% end %>
-  
-  	<div>
-		<%= image_tag @user.avatar_url(:thumb) if @user.avatar? %>§
-	</div>
-  
-  	<div>
-  		<strong><%= f.label :email, 'E-mail' %>:</strong>
-  		<%= mail_to @user.email, @user.email %>
-	</div>
-    
-  	<div>
-  		<strong><%= f.label :first_name, 'Voornaam' %>:</strong>
-    	<%= @user.first_name %>
-    </div>
-    
-  	<div>
-  		<strong><%= f.label :last_name, 'Achternaam' %>:</strong>
-    	<%= @user.last_name %>
-    </div>
-
-    <div>
-    	<strong><%= f.label :birthday, 'Geboortedatum' %>:</strong>
-    	<%= @user.birthday %>
-    </div>
-
-  	<div>
-  		<strong><%= f.label :license_plate, 'Kenteken' %>:</strong>
-      	<%= @user.license_plate %>
-    </div>
-
 <% end %>
 
+<div class="grid2">	
+	<div class="col">	
+		<div class="align-center">
+			
+		<%= image_tag @user.avatar_url(:thumb) if @user.avatar? %>
+	
+	  	<h1 id="username"><%= @user.user_name %></h1>
 
-<%= link_to 'Bewerken', edit_user_path(@user) %> |
-<%= link_to 'Terug', :root %>
+		<%= link_to 'Bewerken', edit_user_path(@user), class: "button" %>
+		
+	  	<ul>Kenteken:</ul>
+	    <%= @user.license_plate %>
+		
+	
+		<%= link_to "Badges", class: "button" %>	
+		
+							<!-- <%= link_to 'Terug', :root %> -->
+		</div>
+	</div>
+	
+	<div class="col">
+		<div class="vertical-line">
+			<ul id="profile_info">
+			 	<li>Email:
+			  	<%= mail_to @user.email, @user.email %><br /></li>
+	 
+			  	<li>Voornaam:
+			   	<%= @user.first_name %><br /></li>
+   
+			  	<li>Achternaam:
+			    <%= @user.last_name %><br /> </li>
+
+			    <li>Geboortedatum:
+			    <%= @user.birthday %>	<br /></li>
+			</ul>
+		</div>
+	</div>
+	
+</div>
+
+
+
+	
+
+

@@ -1,5 +1,7 @@
+<% provide(:title, "Alle gebruikers")%>
 <h1>Alle gebruikers</h1>
 <% if @users.any? %>
+
   <table>
 
 
@@ -7,8 +9,13 @@
 
   <tr>
     <td><%= link_to user.user_name, user %> |</td>
-    <td><%= link_to 'Bewerk', edit_user_path(user) %></td>
-    <td><%= link_to 'Verwijder', user, method: :delete, data: { confirm: 'Weet u het zeker?' } %></td>
+    <% if can? :update, User %>
+        <td><%= link_to 'Bewerk', edit_user_path(user) %></td>
+    <% end %>
+    <% if can? :destroy, User %>
+        <td><%= link_to 'Verwijder', user, method: :delete, data: { confirm: 'Weet u het zeker?' } %></td>
+    <% end %>
+    <td><%= user.role %></td>
   </tr>
   <% end %>
   </table>

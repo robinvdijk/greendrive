@@ -1,9 +1,6 @@
 class UsersController < ApplicationController
   before_filter :user_required, :except => [:new, :create]
-
-
-
-
+  
   def index
    @users = User.all
   end
@@ -20,7 +17,8 @@ class UsersController < ApplicationController
   def edit
    @user = User.find(params[:id])
   end
-  
+
+
   def create
     @user = User.new(params[:user])
     if @user.save
