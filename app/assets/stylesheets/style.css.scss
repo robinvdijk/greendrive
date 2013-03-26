@@ -1,14 +1,11 @@
-<<<<<<< HEAD
-=======
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500);
->>>>>>> 6583f190510596418c0437a461f3d0c6ea8e88d2
+
 $green: #48b237;
 $white: #fff;
 $grey: #313131;
 $darkgreen: #339933;
 $lightgrey: #eeeeee;
-<<<<<<< HEAD
-=======
+
 
 /************************************************************************************
 RESET
@@ -20,7 +17,9 @@ strong, sub, sup, tt, var, legend, fieldset {
 	margin: 0;
 	padding: 0;
 }
->>>>>>> 6583f190510596418c0437a461f3d0c6ea8e88d2
+
+
+/* General CSS */
 
 body {
 	background: url('/images/subtlenet2.png') repeat;	
@@ -37,9 +36,22 @@ body {
 	margin-right: auto !important;
 }
 
+p, strong {
+	color: $grey;
+}
 
+.button {
+	width: 220px;
+	height: 25px;
+	background: $green;
+	border-radius: 3px;
+	color: $white;
+	border: 1px solid $darkgreen;
+    -moz-box-shadow:    inset 1px 2px 2px rgba(255,255,255,0.4);
+    -webkit-box-shadow: inset 1px 2px 2px rgba(255,255,255,0.4);
+    box-shadow:         inset 1px 2px 2px rgba(255,255,255,0.4);
+}
 
-<<<<<<< HEAD
 /* Header */
 .header {
 	background: url('/images/groen_patroon.png') repeat;
@@ -52,21 +64,13 @@ body {
 	box-shadow: 0 1px 5px $grey;
 	h2 {
 		color: $white; 
-		text-align: center;}
-=======
-
-body {
-	background: url('/assets/subtlenet2.png') repeat;	
-	z-index: -3;
-	margin-top: -10px;
-	right: 0;
-	overflow-x: hidden;
-
->>>>>>> 6583f190510596418c0437a461f3d0c6ea8e88d2
+		text-align: center;
+	}
+	a {
+		background: none;
+	}
 }
 
-
-<<<<<<< HEAD
 /* Registreren & Inloggen */
 
 .logo {
@@ -74,72 +78,27 @@ body {
 	height: 150px;
 	background: $grey;
 	border-radius: 7px;
-=======
-/************************************************************************************
-STRUCTURE
-*************************************************************************************/
-#pagewrap {
-	width: 980px;
-	margin: 0 auto;
-    overflow:hidden;
+}
+
+#link-register {
+	visibility: hidden;
+	margin-top: 10px;
+	padding: 20px 0;
 }
 
 /************************************************************************************
 ICONS
 *************************************************************************************/
-#icon_home {
-	padding:1.2% 0 0 1.5%;
-}
 
-#icon_search {
-	padding:1.2% 1.5% 0 0;
-	float:right;
-}
 
-#icon_line {
-	display:none;
-}
 
 /************************************************************************************
 HEADER
 *************************************************************************************/
-/*#header {
-	background-color:#48b237;
-	margin-bottom:10px;
-	width:1020px;
-	height:50px;
-}
 
-#header a {
-	color:white;
-	padding-right:10px;
-	height:30px;
-	text-decoration:none;
-}*/
 
-.header {
 
-	background: url('/assets/groen_patroon.png') repeat;
-	margin: 0 -10px !important;
-	padding: 5px !important;
-    -moz-box-shadow:    inset 0 10px 10px rgba(255,255,255,0.4);
-    -webkit-box-shadow: inset 0 10px 10px rgba(255,255,255,0.4);
-    box-shadow:         inset 0 10px 10px rgba(255,255,255,0.4);
-	box-shadow: 0 1px 5px #313131;
-	h2 {
-		color: $white; 
-		text-align: center;
-	}
-}
 
-#header a:hover{
-	border:none;
->>>>>>> 6583f190510596418c0437a461f3d0c6ea8e88d2
-}
-
-p, strong {
-	color: $grey;
-}
 
 .field {
 	width: 220px;
@@ -156,8 +115,8 @@ ul {
 	margin: 0;
 	padding: 0;
 	li {
+		width: 220px;
 		margin-top: 25px;
-		width: 96%;
 		margin-left: auto;
 		margin-right: auto;}
 }
@@ -170,144 +129,29 @@ ul {
 	border-radius: 7px;
 }
 
-<<<<<<< HEAD
-.button {
-	width: 220px;
-	height: 25px;
-	background: $green;
-	border-radius: 3px;
-	color: $white;
-	border: 1px solid $darkgreen;
-    -moz-box-shadow:    inset 1px 2px 2px rgba(255,255,255,0.4);
-    -webkit-box-shadow: inset 1px 2px 2px rgba(255,255,255,0.4);
-    box-shadow:         inset 1px 2px 2px rgba(255,255,255,0.4);
-=======
-.avatar_pre {
-	width: 150px;
-	height: 150px;
-	margin-top: 50px;
-	background: $grey;
-	border-radius: 7px;
-}
-
-.vertical-line {
+#vertical-line {
 	border-left: 1px solid green;
 	padding-left: 55px;
 }
 
-.field {
-	width: 220px;
-	height: 20px;
-	border-radius: 3px;
-	border: 1px solid $darkgreen;
-}
-
-.align-center {
-	width:96%;
-	margin-left:auto;
-	margin-right:auto;
-}
+/************************************************************************************
+PROFILE
+*************************************************************************************/
 
 #profile_info li {
 	margin-bottom:50px;
 }
-/* post */
-.post {
-	margin-bottom: 40px;
-}
-.post-title {
-	margin: 0 0 5px;
-	padding: 0;
-	font: bold 26px/120% Arial, Helvetica, sans-serif;
-}
-.post-title a {
-	text-decoration: none;
-	color: #000;
-}
-.post-meta {
-	margin: 0 0 10px;
-	font-size: 90%;
->>>>>>> 6583f190510596418c0437a461f3d0c6ea8e88d2
-}
 
-.vertical-line {
-	border-left: 1px solid $grey;
-	padding-left: 55px;
-}
-
-<<<<<<< HEAD
 .col {
 	h2 {
 		margin-top: 40px;}
-=======
-/*#username{	
-	text-align:center;
-}*/
-
-
-
-.button {
-	width: 220px;
-	height: 25px;
-	background: $green;
-	border-radius: 3px;
-	color: $white;
-	border: 1px solid $darkgreen;
-    -moz-box-shadow:    inset 1px 2px 2px rgba(255,255,255,0.4);
-    -webkit-box-shadow: inset 1px 2px 2px rgba(255,255,255,0.4);
-    box-shadow:         inset 1px 2px 2px rgba(255,255,255,0.4);
 }
 
 .button a {	
-	background-color:#48b237;
 	color:white;
 	text-decoration:none;
 	font-size:11px;
 	font-family:"Ubuntu";
 }	
-	
 
 
-/************************************************************************************
-SIDEBAR
-*************************************************************************************/
-#sidebar {
-	width: 280px;
-	float: right;
-	margin: 30px 0 30px;
-}
-.widget {
-	background: #fff;
-	margin: 0 0 30px;
-	padding: 10px 20px;
-	/* rounded corner */
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	border-radius: 8px;
-	/* box shadow */
-	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.4);
-	-moz-box-shadow: 0 1px 3px rgba(0,0,0,.4);
-	box-shadow: 0 1px 3px rgba(0,0,0,.4);
-}
-.widgettitle {
-	margin: 0 0 5px;
-	padding: 0;	
-}
-.widget ul {
-	margin: 0;
-	padding: 0;
-}
-.widget li {
-	margin: 0;
-	padding: 6px 0;
-	list-style: none;
-	clear: both;
-	border-top: solid 1px #eee;
->>>>>>> 6583f190510596418c0437a461f3d0c6ea8e88d2
-}
-
-#link-register {
-	visibility: hidden;
-	margin-top: 10px;
-	padding: 20px 0;
-}
