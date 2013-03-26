@@ -8,6 +8,7 @@
 
   
   <meta name="viewport" content="width=device-width; initial-scale=1.0">
+<<<<<<< HEAD
 
 </head>
 <body>
@@ -58,9 +59,26 @@
 </script>
 
 	<div id="pagewrap">
+=======
+  
+</head>
+<body>
+	
+	<% if controller_name == "sessions"%>
+	 	<%= render "layouts/header-login" %>
+	<% else %>
+>>>>>>> ac130d6bc18f7c24cf05706f9464806df6636b94
 		<%= render "layouts/header" %>
+	<% end %>
 		
+			
 		<%= yield %>
-	</div>
+		
+	
+		
+
+
 </body>
 </html>
+
+

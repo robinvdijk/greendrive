@@ -20,7 +20,6 @@ COLUMN
 	float: left;
 	margin-left: 3.2%;
 	margin-bottom: 30px;
-	background: red;
 	
 }
 
@@ -100,7 +99,7 @@ MEDIA QUERIES
 @media screen and (max-width: 400px) {
 	/* grid4 */
 	.col {
-		width: 100% !important;
+		width: auto !important;
 		margin-left: 0 !important;
 		clear: none !important;
 	}
@@ -111,5 +110,15 @@ MEDIA QUERIES
 	
 	#link-register {
 		visibility: visible !important;
+	}
+	
+	#vertical-line {
+		display: none;
+	}
+	
+	ul {
+		li {
+			width: 80% !important;
+		}
 	}
 }

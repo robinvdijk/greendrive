@@ -1,12 +1,20 @@
+<<<<<<< HEAD
 
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500);
+=======
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500);
+
+>>>>>>> ac130d6bc18f7c24cf05706f9464806df6636b94
 $green: #48b237;
 $white: #fff;
 $grey: #313131;
 $darkgreen: #339933;
 $lightgrey: #eeeeee;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ac130d6bc18f7c24cf05706f9464806df6636b94
 
 /************************************************************************************
 RESET
@@ -19,6 +27,11 @@ strong, sub, sup, tt, var, legend, fieldset {
 	padding: 0;
 }
 
+<<<<<<< HEAD
+=======
+
+/* General CSS */
+>>>>>>> ac130d6bc18f7c24cf05706f9464806df6636b94
 
 body {
 	background: url('/images/subtlenet2.png') repeat;	
@@ -35,9 +48,26 @@ body {
 	margin-right: auto !important;
 }
 
+p, strong {
+	color: $grey;
+}
 
+.button {
+	width: 220px;
+	height: 25px;
+	background: $green;
+	border-radius: 3px;
+	color: $white;
+	border: 1px solid $darkgreen;
+    -moz-box-shadow:    inset 1px 2px 2px rgba(255,255,255,0.4);
+    -webkit-box-shadow: inset 1px 2px 2px rgba(255,255,255,0.4);
+    box-shadow:         inset 1px 2px 2px rgba(255,255,255,0.4);
+}
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ac130d6bc18f7c24cf05706f9464806df6636b94
 /* Header */
 .header {
 	background: url('/images/groen_patroon.png') repeat;
@@ -50,6 +80,7 @@ body {
 	box-shadow: 0 1px 5px $grey;
 	h2 {
 		color: $white; 
+<<<<<<< HEAD
 		text-align: center;}
 
 body {
@@ -61,12 +92,22 @@ body {
 }}
 
 
+=======
+		text-align: center;
+	}
+	a {
+		background: none;
+	}
+}
+
+>>>>>>> ac130d6bc18f7c24cf05706f9464806df6636b94
 /* Registreren & Inloggen */
 
 .logo {
 	width: 220px;
 	height: 150px;
 	background: $grey;
+<<<<<<< HEAD
 	border-radius: 7px;}
 /************************************************************************************
 STRUCTURE
@@ -75,63 +116,36 @@ STRUCTURE
 	width: 980px;
 	margin: 0 auto;
     overflow:hidden;
+=======
+	border-radius: 7px;
+}
+
+#link-register {
+	visibility: hidden;
+	margin-top: 10px;
+	padding: 20px 0;
+>>>>>>> ac130d6bc18f7c24cf05706f9464806df6636b94
 }
 
 /************************************************************************************
 ICONS
 *************************************************************************************/
-#icon_home {
-	padding:1.2% 0 0 1.5%;
-}
 
-#icon_search {
-	padding:1.2% 1.5% 0 0;
-	float:right;
-}
 
-#icon_line {
-	display:none;
-}
 
 /************************************************************************************
 HEADER
 *************************************************************************************/
-/*#header {
-	background-color:#48b237;
-	margin-bottom:10px;
-	width:1020px;
-	height:50px;
-}
 
-#header a {
-	color:white;
-	padding-right:10px;
-	height:30px;
-	text-decoration:none;
-}*/
 
-.header {
 
-	background: url('/assets/groen_patroon.png') repeat;
-	margin: 0 -10px !important;
-	padding: 5px !important;
-    -moz-box-shadow:    inset 0 10px 10px rgba(255,255,255,0.4);
-    -webkit-box-shadow: inset 0 10px 10px rgba(255,255,255,0.4);
-    box-shadow:         inset 0 10px 10px rgba(255,255,255,0.4);
-	box-shadow: 0 1px 5px #313131;
-	h2 {
-		color: $white; 
-		text-align: center;
-	}
-}
-
+<<<<<<< HEAD
 #header a:hover{
 	border:none;
 }
+=======
+>>>>>>> ac130d6bc18f7c24cf05706f9464806df6636b94
 
-p, strong {
-	color: $grey;
-}
 
 .field {
 	width: 220px;
@@ -148,8 +162,8 @@ ul {
 	margin: 0;
 	padding: 0;
 	li {
+		width: 220px;
 		margin-top: 25px;
-		width: 96%;
 		margin-left: auto;
 		margin-right: auto;}
 }
@@ -162,6 +176,7 @@ ul {
 	border-radius: 7px;
 }
 
+<<<<<<< HEAD
 .button {
 	width: 220px;
 	height: 25px;
@@ -181,26 +196,21 @@ ul {
 }}
 
 .vertical-line {
+=======
+#vertical-line {
+>>>>>>> ac130d6bc18f7c24cf05706f9464806df6636b94
 	border-left: 1px solid green;
 	padding-left: 55px;
 }
 
-.field {
-	width: 220px;
-	height: 20px;
-	border-radius: 3px;
-	border: 1px solid $darkgreen;
-}
-
-.align-center {
-	width:96%;
-	margin-left:auto;
-	margin-right:auto;
-}
+/************************************************************************************
+PROFILE
+*************************************************************************************/
 
 #profile_info li {
 	margin-bottom:50px;
 }
+<<<<<<< HEAD
 /* post */
 .post {
 	margin-bottom: 40px;
@@ -244,18 +254,23 @@ ul {
     -moz-box-shadow:    inset 1px 2px 2px rgba(255,255,255,0.4);
     -webkit-box-shadow: inset 1px 2px 2px rgba(255,255,255,0.4);
     box-shadow:         inset 1px 2px 2px rgba(255,255,255,0.4);
+=======
+
+.col {
+	h2 {
+		margin-top: 40px;}
+>>>>>>> ac130d6bc18f7c24cf05706f9464806df6636b94
 }
 
 .button a {	
-	background-color:#48b237;
 	color:white;
 	text-decoration:none;
 	font-size:11px;
 	font-family:"Ubuntu";
 }	
-	
 
 
+<<<<<<< HEAD
 /************************************************************************************
 SIDEBAR
 *************************************************************************************/
@@ -298,3 +313,5 @@ SIDEBAR
 	margin-top: 10px;
 	padding: 20px 0;
 }
+=======
+>>>>>>> ac130d6bc18f7c24cf05706f9464806df6636b94
