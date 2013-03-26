@@ -11,55 +11,16 @@
     </div>
   <% end %>
 
-<<<<<<< HEAD
-    <div>
-      <strong><%= f.label :first_name, 'Voornaam *' %></strong><br />
-      <%= f.text_field :first_name, :class => 'field' %>
-    </div>
-    
-    <div>
-      <strong><%= f.label :last_name, 'Achternaam *' %></strong><br />
-      <%= f.text_field :last_name, :class => 'field' %>
-    </div>
 
-    <div>
-      <strong><%= f.label :email, 'E-mail *' %></strong><br />
-      <%= f.text_field :email, :autofocus => true, :class => 'field' %>
-    </div>
-
-    <div> 
-      <strong><%= f.label :user_name, 'Gebruikersnaam *' %></strong><br />
-      <%= f.text_field :user_name, :class => 'field' %>
-    </div>
-
-    <div>
-      
-    </div>
-
-    <% if "app/views/users/new.html.erb" %>
-
-  	<div>
-      
-	  </div>
-    
-  	<div>
-<<<<<<< HEAD
-      <strong><%= f.label :password_confirmation, 'Wachtwoord verificatie *' %></strong><br />
-    	<%= f.password_field :password_confirmation %>
-	  </div>
-    <% end %>
-
-
-=======
-      
-	  </div>  
-=======
 <div class="col">
 	  <ul>
+	  	<% if @user.new_record? %>
+	  	<% else %>
 	    <li>
 	      <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
 	    </li>
->>>>>>> 9ae7702e25a6b76664191d47bf83c9a76142385c
+	    <% end %>
+
 
 	    <li>
 	      <%= f.label :first_name, 'Voornaam *' %><br />
@@ -87,15 +48,17 @@
 	      <%= f.text_field :license_plate, class: 'field'  %>
 	    </li>
 
-	  	<li>
-	      <%= f.label :password, 'Wachtwoord *' %><br />
-	    	<%= f.password_field :password, class: 'field'  %>
-		  </li>
-  
-	  	<li>
-	      <%= f.label :password_confirmation, 'Wachtwoord verificatie *' %><br />
-	    	<%= f.password_field :password_confirmation, class: 'field'  %>
-		  </li>
+	    <% if @user.new_record? %>
+		  	<li>
+		      <%= f.label :password, 'Wachtwoord *' %><br />
+		    	<%= f.password_field :password, class: 'field'  %>
+			  </li>
+	  
+		  	<li>
+		      <%= f.label :password_confirmation, 'Wachtwoord verificatie *' %><br />
+		    	<%= f.password_field :password_confirmation, class: 'field'  %>
+			  </li>
+		  <% end %>
 
 	    <li>
 	      <%= f.label :birthday, 'Geboortedatum' %><br />
@@ -108,8 +71,6 @@
 	    </li>
 	        <br/>
 
-  
->>>>>>> 6583f190510596418c0437a461f3d0c6ea8e88d2
 
 		<li><%= f.label :avatar %><br />
 		<%= f.file_field :avatar %></li>

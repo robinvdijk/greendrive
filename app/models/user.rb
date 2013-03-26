@@ -6,24 +6,25 @@ class User < ActiveRecord::Base
   has_many :authentications
 
   validates_presence_of :password, :on => :create
-  validates_presence_of :password_confirmation, :on => :create  
+  validates_presence_of :password_confirmation, :on => :create
   validates_format_of :password, :with => /(?=^.{6,20}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/, on: :create
   #Password: Length between 6-20 characters, which consists of [at least] 1 lowercase, 1 uppercase and 1 special character OR digit
+
+  validates :password, :presence => {:on => :create}
+                       
 
   validates :first_name, :presence => true
   validates :last_name, :presence => true
   validates :user_name, :presence => true, :uniqueness => true, :length => {:minimum => 4,:maximum => 20}
   validates :license_plate, :presence => true, :uniqueness => true, :length => {:minimum => 6, :maximum => 6}
   validates :email, :uniqueness => true, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i}
-<<<<<<< HEAD
+
   # Dit is voor het registeren form
   validates :terms_of_service, :acceptance => true
   validates :terms_of_privacy, :acceptance => true
 
 
 
-=======
->>>>>>> 6583f190510596418c0437a461f3d0c6ea8e88d2
   before_create { generate_token(:auth_token) }
   
   before_validation :clean_data #Filters out whitespaces and special characters
