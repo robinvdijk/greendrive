@@ -2,8 +2,6 @@ Greendrive::Application.routes.draw do
   
   resources :authentications
 
-  resources :authentications
-
   resources :password_resets
 
     match '/auth/:provider/callback' => 'authentications#create'
@@ -18,7 +16,7 @@ Greendrive::Application.routes.draw do
   
   resources :pages
 
-  root :to => "sessions#new"
+  root :to => "pages#dashboard"
   
   controller :sessions do
     get "login" => "sessions#new"

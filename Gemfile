@@ -15,6 +15,8 @@ gem 'mini_magick'
 
 gem 'mail', '2.4.4'
 
+gem "jquery-rails"
+
 group :development do 
   gem 'sqlite3'
 end

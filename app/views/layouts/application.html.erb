@@ -5,10 +5,49 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+<head>
 
+
+<meta charset="utf-8" />
+<title>jQuery UI Progressbar - Default functionality</title>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css" />
+
+
+<script>
+// $(function() {
+// $("#progressbar").progressbar({ value: 0 });
+// setTimeout(updateProgress, 500);
+// });
+
+// function updateProgress() {
+//   var progress;
+//   progress = $("#progressbar")
+//     .progressbar("option","value");
+//   if (progress < 100) {
+//       $("#progressbar")
+//         .progressbar("option", "value", progress + 5);
+//       setTimeout(updateProgress, 500);
+//   }
+//   }
+
+
+$(document).ready(function() {
+	function progress(percent){
+  $("#progressbar").progressbar({value: Math.round((percent*100))})}
+});
+
+
+</script>
+
+
+</head>
+<body>
   
   <meta name="viewport" content="width=device-width; initial-scale=1.0">
-<<<<<<< HEAD
+
 
 </head>
 <body>
@@ -59,7 +98,7 @@
 </script>
 
 	<div id="pagewrap">
-=======
+
   
 </head>
 <body>
@@ -67,16 +106,10 @@
 	<% if controller_name == "sessions"%>
 	 	<%= render "layouts/header-login" %>
 	<% else %>
->>>>>>> ac130d6bc18f7c24cf05706f9464806df6636b94
 		<%= render "layouts/header" %>
 	<% end %>
 		
-			
 		<%= yield %>
-		
-	
-		
-
 
 </body>
 </html>

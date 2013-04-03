@@ -24,11 +24,6 @@ class User < ActiveRecord::Base
   validates :terms_of_privacy, :acceptance => true
 
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> ac130d6bc18f7c24cf05706f9464806df6636b94
   before_create { generate_token(:auth_token) }
   
   before_validation :clean_data #Filters out whitespaces and special characters

@@ -49,9 +49,11 @@
    
 			  	<li>Achternaam:
 			    <%= @user.last_name %><br /> </li>
-
-			    <li>Geboortedatum:
-			    <%= @user.birthday %>	<br /></li>
+			    
+			    <% if @user.birthday %>
+				    <li>Geboortedatum:
+				    <%= @user.birthday %>	<br /></li>
+			    <% end %>
 			</ul>
 		</div>
 	</div>
