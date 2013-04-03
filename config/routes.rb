@@ -1,6 +1,4 @@
-Greendrive::Application.routes.draw do
-  
-  resources :authentications
+Greendrive::Application.routes.draw do  
 
   resources :authentications
 
@@ -14,7 +12,9 @@ Greendrive::Application.routes.draw do
 
   resources :sessions
 
-  resources :users
+  resources :users 
+  
+  resources :traces 
   
   resources :pages
 

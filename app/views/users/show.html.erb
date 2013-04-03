@@ -31,6 +31,13 @@
 	  	<ul>Kenteken:</ul>
 	    <%= @user.license_plate %>
 		
+		<ul>
+		  <li>Model:			<%= @trace.title %></li>
+		  <li>Kenteken:			<%= @trace.licence_plate %></li>
+		  <li>GPS Longitude:	<%= @trace.gps_longitude %></li>
+		  <li>GPS Latitude:		<%= @trace.gps_latitude %></li>
+
+		</ul>
 	
 		<%= link_to "Badges", class: "button" %>	
 		
@@ -52,10 +59,47 @@
 
 			    <li>Geboortedatum:
 			    <%= @user.birthday %>	<br /></li>
+				
+				<script type="text/javascript" charset="utf-8">
+				$(function(){
+					new Highcharts.Chart({
+				        chart: {
+				          renderTo: "orders_chart"
+				        },
+				        title: {
+				          text: "Traces by day"
+				        },
+				        xAxis: {
+				          type: "datetime"
+				        },
+				        yAxis: {
+				          title: {
+				            text: "Battery by percent"
+				          }
+				        },
+				        tooltip: {
+				          formatter: function() {
+				            return Highcharts.dateFormat("%B %e, %Y", this.x) + ': ' +
+				              "$" + Highcharts.numberFormat(this.y, 2);
+				          }
+				        },
+				        series: [
+				        {
+
+				          pointInterval: <%= 1.day * 1000 %>,
+				          pointStart: <%= 3.weeks.ago.to_i * 1000 %>,
+				        },
+				
+				        ]
+					});
+				});
+				</script>
+					<div id="orders_chart" style="width:560px; 							height300px;"></div>
+					
 			</ul>
 		</div>
 	</div>
-	
+
 </div>
 
 
