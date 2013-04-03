@@ -1,6 +1,10 @@
+<<<<<<< HEAD
+<h1>Inloggen</h1>
+=======
 <% provide(:title, "Dashboard")  %>
 
 <h1>Dashboard</h1>
+>>>>>>> 6583f190510596418c0437a461f3d0c6ea8e88d2
 
 
 <% if current_user %>
@@ -14,7 +18,13 @@
 
 	<% else %>
 		<p><%= link_to "Login", new_session_path %> of <%= link_to "registeer", new_user_path %>.</p>
+<<<<<<< HEAD
+		<%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+		
+
+=======
 		<%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %><br />
 		<%= link_to "Sign in with Facebook/Callback", "/auth/facebook/callback", id: "sign_in" %>
+>>>>>>> 6583f190510596418c0437a461f3d0c6ea8e88d2
 
 <% end %>
