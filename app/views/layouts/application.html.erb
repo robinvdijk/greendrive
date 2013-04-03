@@ -11,7 +11,9 @@
   
 </head>
 <body>
-	
+	<% if flash[:notice] %>
+	     <p class="notice"><%= flash[:notice] %></p>
+	 <% end %>
 	<% if controller_name == "sessions"%>
 	 	<%= render "layouts/header-login" %>
 	<% else %>

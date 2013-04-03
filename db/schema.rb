@@ -14,16 +14,12 @@
 ActiveRecord::Schema.define(:version => 20130329205252) do
 
   create_table "traces", :force => true do |t|
-    t.string   "title"
-    t.string   "licence_plate"
-    t.float    "gps_longitude"
-    t.float    "gps_latitude"
-    t.datetime "date"
-    t.time     "hour"
-    t.time     "minute"
-    t.time     "second"
-    t.float    "battery_value"
-    t.float    "ambient_temp"
+    t.string "title"
+    t.string "licence_plate"
+    t.float  "gps_longitude"
+    t.float  "gps_latitude"
+    t.float  "battery_value"
+    t.float  "ambient_temp"
   end
 
   create_table "users", :force => true do |t|
