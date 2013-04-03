@@ -58,51 +58,16 @@
 
 			    <li>Geboortedatum:
 			    <%= @user.birthday %>	<br /></li>
+				
+				<li>Batterij status <%= number_to_percentage(@trace.battery_value, :precision => 2) %></li>
 					
 			</ul>
 		</div>
 	</div>
 	
-		<div id="container" style="width:560px; 							height300px;"></div>
-	
-	<script type="text/javascript" charset="utf-8">
-	$(function(){
-		$('#container').highcharts({
-					chart: {
-			            type: 'bar'
-			        },
-			        title: {
-			            text: 'Fruit Consumption'
-			        },
-			        xAxis: {
-			            categories: ['Apples', 'Bananas', 'Oranges']
-			        },
-			        yAxis: {
-			            title: {
-			                text: 'Fruit eaten'
-			            }
-			        },
-			        series: [{
-			            name: 'Jane',
-			            data: [1, 0, 4]
-			        }, {
-			            name: 'John',
-			            data: [5, 7, 3]
-			        }]
-			    });
-			});
-	</script>
-	
-
-
-	<table class="traces" border="1" cellspacing="5" cellpadding="10">
-		<tr>
-			<th>Battery</th>
-			<th>Gps_Longitude</th>
-			<th>Omgevingstemperatuur</th>
-		</tr>
-	
-	</table>
+	<div id="chart_div" style="width:500px; height:250px"></div>
+	<div id="chart_div2" style="width:500px; height:250px"></div>
+	<div id="chart_div3" style="width:500px; height:250px"></div>
 </div>
 
 

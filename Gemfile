@@ -4,7 +4,7 @@ gem 'rails'
 gem 'thin'
 gem 'cancan'
 gem 'savon'
-gem 'rails_best_practices'
+gem 'rails_best_practices' 
 
 
 # Bundle edge Rails instead:
