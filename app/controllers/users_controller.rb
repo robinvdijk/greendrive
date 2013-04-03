@@ -7,6 +7,10 @@ class UsersController < ApplicationController
   
   def show
    @user = User.find(params[:id])
+<<<<<<< HEAD
+=======
+   @trace = Trace.find(params[:id])
+>>>>>>> ffc40da0d57fb282807198db309e040fcf0b018c
   end
 
   def new

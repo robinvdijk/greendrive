@@ -28,7 +28,11 @@ GEM
     activesupport (3.2.12)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    akami (1.2.0)
+      gyoku (>= 0.4.0)
+      nokogiri (>= 1.4.0)
     arel (3.0.2)
+    awesome_print (1.1.0)
     bcrypt-ruby (3.0.1)
     bcrypt-ruby (3.0.1-x86-mingw32)
     builder (3.0.4)
@@ -36,6 +40,8 @@ GEM
     carrierwave (0.8.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
+    code_analyzer (0.3.1)
+      sexp_processor
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -43,6 +49,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.1)
+    colored (1.2)
     daemons (1.0.10)
     erubis (2.7.0)
     eventmachine (1.0.3)
@@ -52,9 +59,13 @@ GEM
     faraday (0.8.6)
       multipart-post (~> 1.1)
     gem_plugin (0.2.3)
+    gyoku (1.0.0)
+      builder (>= 2.1.2)
     hashie (1.2.0)
     hike (1.2.1)
     httpauth (0.2.0)
+    httpi (2.0.2)
+      rack
     i18n (0.6.4)
     journey (1.0.4)
     jquery-rails (2.2.1)
@@ -73,11 +84,17 @@ GEM
       subexec (~> 0.2.1)
     mocha (0.13.3)
       metaclass (~> 0.0.1)
+    mongrel (1.2.0.pre2)
+      daemons (~> 1.0.10)
+      gem_plugin (~> 0.2.3)
     mongrel (1.2.0.pre2-x86-mingw32)
       gem_plugin (~> 0.2.3)
     multi_json (1.7.1)
     multipart-post (1.2.0)
     nifty-generators (0.4.6)
+    nokogiri (1.5.9)
+    nokogiri (1.5.9-x86-mingw32)
+    nori (2.0.4)
     oauth2 (0.8.1)
       faraday (~> 0.8)
       httpauth (~> 0.1)
@@ -110,6 +127,14 @@ GEM
       activesupport (= 3.2.12)
       bundler (~> 1.0)
       railties (= 3.2.12)
+    rails_best_practices (1.13.4)
+      activesupport
+      awesome_print
+      code_analyzer
+      colored
+      erubis
+      i18n
+      ruby-progressbar
     railties (3.2.12)
       actionpack (= 3.2.12)
       activesupport (= 3.2.12)
@@ -120,11 +145,21 @@ GEM
     rake (10.0.3)
     rdoc (3.12.2)
       json (~> 1.4)
+    ruby-progressbar (1.0.2)
     sass (3.2.7)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    savon (2.1.0)
+      akami (~> 1.2.0)
+      builder (>= 2.1.2)
+      gyoku (~> 1.0.0)
+      httpi (~> 2.0.2)
+      nokogiri (>= 1.4.0)
+      nori (~> 2.0.3)
+      wasabi (~> 3.0.0)
+    sexp_processor (4.2.0)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -146,6 +181,9 @@ GEM
     uglifier (1.3.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    wasabi (3.0.0)
+      httpi (~> 2.0)
+      nokogiri (>= 1.4.0)
 
 PLATFORMS
   ruby
@@ -166,7 +204,9 @@ DEPENDENCIES
   omniauth-facebook (~> 1.4.0)
   pg
   rails
+  rails_best_practices
   sass-rails
+  savon
   sqlite3
   thin
   uglifier (>= 1.0.3)
