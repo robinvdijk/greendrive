@@ -36,8 +36,11 @@
 		  <li>Kenteken:			<%= @trace.licence_plate %></li>
 		  <li>GPS Longitude:	<%= @trace.gps_longitude %></li>
 		  <li>GPS Latitude:		<%= @trace.gps_latitude %></li>
+<<<<<<< HEAD
 		  <li>Batterij status	<%= number_to_percentage(@trace.battery_value, :precision => 2) %></li> 
 
+=======
+>>>>>>> 27512afb272ff66a1d15da13c3e644f6f467ba91
 		</ul>
 	
 		<%= link_to "Badges", class: "button" %>	
@@ -61,15 +64,27 @@
    
 			  	<li>Achternaam:
 			    <%= @user.last_name %><br /> </li>
+<<<<<<< HEAD
 			    
 			    <% if @user.birthday %>
 				    <li>Geboortedatum:
 				    <%= @user.birthday %>	<br /></li>
 			    <% end %>
+=======
+
+			    <li>Geboortedatum:
+			    <%= @user.birthday %>	<br /></li>
+				
+				<li>Batterij status <%= number_to_percentage(@trace.battery_value, :precision => 2) %></li>
+					
+>>>>>>> 27512afb272ff66a1d15da13c3e644f6f467ba91
 			</ul>
 		</div>
 	</div>
-
+	
+	<div id="chart_div" data-miles="<%= @miles.to_json %>" style="width:500px; height:250px"></div>
+	<div id="chart_div2" style="width:500px; height:250px"></div>
+	<div id="chart_div3" style="width:500px; height:250px"></div>
 </div>
 
 
