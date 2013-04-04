@@ -36,6 +36,7 @@
 		  <li>Kenteken:			<%= @trace.licence_plate %></li>
 		  <li>GPS Longitude:	<%= @trace.gps_longitude %></li>
 		  <li>GPS Latitude:		<%= @trace.gps_latitude %></li>
+		  <li>Batterij status	<%= number_to_percentage(@trace.battery_value, :precision => 2) %></li> 
 
 		</ul>
 	
@@ -48,6 +49,10 @@
 	<div class="col">
 		<div class="vertical-line">
 			<ul id="profile_info">
+			<img src="//chart.googleapis.com/chart?chbh=a,2&chs=120x220&cht=bvs&chco=67738B,8CE451&chd=t:80|20&chdl=Totale+verbruik|Elektrisch&chdlp=b&chma=5,5,5,25&chtt=Verhouding" width="120" height="220" alt="Verhouding tussen elektrische en totale kilometers" />
+				 
+
+
 			 	<li>Email:
 			  	<%= mail_to @user.email, @user.email %><br /></li>
 	 
@@ -56,54 +61,11 @@
    
 			  	<li>Achternaam:
 			    <%= @user.last_name %><br /> </li>
-<<<<<<< HEAD
 			    
 			    <% if @user.birthday %>
 				    <li>Geboortedatum:
 				    <%= @user.birthday %>	<br /></li>
 			    <% end %>
-=======
-
-			    <li>Geboortedatum:
-			    <%= @user.birthday %>	<br /></li>
-				
-				<script type="text/javascript" charset="utf-8">
-				$(function(){
-					new Highcharts.Chart({
-				        chart: {
-				          renderTo: "orders_chart"
-				        },
-				        title: {
-				          text: "Traces by day"
-				        },
-				        xAxis: {
-				          type: "datetime"
-				        },
-				        yAxis: {
-				          title: {
-				            text: "Battery by percent"
-				          }
-				        },
-				        tooltip: {
-				          formatter: function() {
-				            return Highcharts.dateFormat("%B %e, %Y", this.x) + ': ' +
-				              "$" + Highcharts.numberFormat(this.y, 2);
-				          }
-				        },
-				        series: [
-				        {
-
-				          pointInterval: <%= 1.day * 1000 %>,
-				          pointStart: <%= 3.weeks.ago.to_i * 1000 %>,
-				        },
-				
-				        ]
-					});
-				});
-				</script>
-					<div id="orders_chart" style="width:560px; 							height300px;"></div>
-					
->>>>>>> ffc40da0d57fb282807198db309e040fcf0b018c
 			</ul>
 		</div>
 	</div>

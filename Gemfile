@@ -1,10 +1,11 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails'
 gem 'thin'
 gem 'cancan'
 gem 'savon'
 gem 'rails_best_practices'
+gem "flot-rails"
 
 
 # Bundle edge Rails instead:
@@ -19,6 +20,10 @@ gem 'mini_magick'
 gem 'mail', '2.4.4'
 
 gem "jquery-rails"
+
+gem 'googlecharts', :require => 'gchart'
+
+gem 'gon'
 
 group :development do 
   gem 'sqlite3'

@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     actionmailer (3.2.12)
       actionpack (= 3.2.12)
@@ -58,7 +58,13 @@ GEM
       multi_json (~> 1.0)
     faraday (0.8.6)
       multipart-post (~> 1.1)
+    flot-rails (0.0.2)
+      jquery-rails
     gem_plugin (0.2.3)
+    gon (4.0.2)
+      actionpack (>= 2.3.0)
+      json
+    googlecharts (1.6.8)
     gyoku (1.0.0)
       builder (>= 2.1.2)
     hashie (1.2.0)
@@ -194,6 +200,9 @@ DEPENDENCIES
   cancan
   carrierwave
   coffee-rails
+  flot-rails
+  gon
+  googlecharts
   jquery-rails
   mail (= 2.4.4)
   mini_magick
