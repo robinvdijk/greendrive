@@ -1,0 +1,63 @@
+  // Load the Visualization API library and the piechart library.
+  google.load('visualization', '1.0', {'packages':['corechart']});
+  google.setOnLoadCallback(drawChart);
+     // ... draw the chart...
+	 
+   function drawChart() {
+		  
+	   var miles = $('#chart_div').data('miles');
+		 
+		 var battery = $('#chart_div3').data('battery');
+
+               // Create the data table.
+               var data = new google.visualization.DataTable();
+               data.addColumn('string', 'Ratio');    
+               data.addColumn('number', 'Slices');
+               data.addRows([
+                 ['Electic', miles.electric],
+                 ['Fossile', miles.fossile]
+	                 
+               ]);
+				   
+               var data2 = new google.visualization.arrayToDataTable([
+                 ['Ratio','Electic', 'Fossile'],
+                 ['', 450, 210]      
+               ]);
+               // Create the data table.
+
+               var data3 = new google.visualization.DataTable();
+               data3.addColumn('string', 'Week');
+               data3.addColumn('number', 'Battery Value');
+               data3.addRows([
+                 [battery.created_at, battery.battery_value],
+								 [battery.created_at, 4],
+								 [battery.created_at, 6],
+								 [battery.created_at, 1],
+								 [battery.created_at, 3]
+
+	          
+               ]);
+
+               // Set chart options
+               var options = {'title':'Ratio of Fuel',
+                              'width':400,
+                              'height':300};
+               // Set chart options
+               var options2 = {'title':'Ratio of Fuel',
+                              width:400,
+                              height:300,
+						  	  isStacked: true};
+               // Set chart options
+               var options3 = {'title':'Battery',
+                              'width':400,
+                              'height':300};
+
+               // Instantiate and draw our chart, passing in some options.
+               var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+               chart.draw(data, options);
+               var chart2 = new google.visualization.BarChart(document.getElementById('chart_div2'));
+               chart2.draw(data2, options2);
+               var chart3 = new google.visualization.LineChart(document.getElementById('chart_div3'));
+               chart3.draw(data3, options3);
+
+             }

@@ -12,9 +12,9 @@ Greendrive::Application.routes.draw do
 
   resources :sessions
 
-  resources :users 
-  
-  resources :traces 
+  resources :users do
+    resources :traces 
+  end
   
   resources :pages
 

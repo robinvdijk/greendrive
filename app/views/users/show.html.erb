@@ -2,7 +2,6 @@
 
 <p id="notice"><%= notice %></p>
 	
-
 <!--Used to show avatar  -->
 
 <%= form_for(@user) do |f| %>
@@ -57,17 +56,22 @@
 			    <%= @user.last_name %><br /> </li>
 
 			    <li>Geboortedatum:
-			    <%= @user.birthday %>	<br /></li>
+			    <%= @user.birthday %><br /></li>
 				
-				<li>Batterij status <%= number_to_percentage(@trace.battery_value, :precision => 2) %></li>
+				<li>Electric:
+				<%= @trace.electric %><br /></li>
 					
+				<li>Fossile: 
+				<%= @trace.fossile %><br /></li>
+							
+				<li>Batterij status <%= number_to_percentage(@trace.battery_value, :precision => 2) %></li>					
 			</ul>
 		</div>
 	</div>
 	
 	<div id="chart_div" data-miles="<%= @miles.to_json %>" style="width:500px; height:250px"></div>
 	<div id="chart_div2" style="width:500px; height:250px"></div>
-	<div id="chart_div3" style="width:500px; height:250px"></div>
+	<div id="chart_div3" data-battery="<%= @battery.to_json %>" style="width:500px; height:250px"></div>
 </div>
 
 

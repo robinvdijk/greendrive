@@ -1,11 +1,15 @@
 class Trace < ActiveRecord::Base
+  belongs_to :user 
+
+  def init
+    response = HTTParty.get('http://360-ev.com/Services/Authentication.svc/json/Authenticate?username=[greenflux2012]&password=[green2012]')
+    puts response.body
+  end
   
-  def pull
-    client = Savon.client(wsdl: "http://360-ev.com/Services/Authentication.svc?wsdl")
-    response = client.call(:authenticate, xml: '<env:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/"><env:Body><tem:Authenticate><ins0:username>greenflux2012</ins0:username><ins0:password>green2012</ins0:password></tns:Authenticate></env:Body></env:Envelope>')
-      if response.success?
-        client2 = Savon.client(wsdl: "http://360-ev.com/Services/SegmentData.svc?wsdl")
-      end
+  def init_2
+    auth = {username: "greenflux2012", password: "green2012"}
+    response = HTTParty.get('http://360-ev.com/Services/Authentication.svc/json/Authenticate?', basic_auth: auth)
+    
   end
   
   def fetch
@@ -18,16 +22,6 @@ class Trace < ActiveRecord::Base
          self.gps_longitude = data[:gps_longitude]
          self.gps_latitude = data[:gps_latitude]
          self.licence_plate = data[:licence_plate]
-         puts data
-      end
-    end
-    if response.success?
-      data = response.to_hash[:get_last_trace_of_device_with_licence_plate_response][:get_last_trace_of_device_with_licence_plate_result][:last_trace][:time_utc]
-      if data 
-         self.date = data[:day]
-         self.hour = data[:hour]
-         self.minute = data[:minute]
-         self.second = data[:second]
          puts data
       end
     end

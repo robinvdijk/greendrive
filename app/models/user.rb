@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 
   has_secure_password 
   has_many :authentications
+  has_many :traces
 
   validates_presence_of :password, :on => :create
   validates_presence_of :password_confirmation, :on => :create  
@@ -19,9 +20,6 @@ class User < ActiveRecord::Base
   # Dit is voor het registeren form
   validates :terms_of_service, :acceptance => true
   validates :terms_of_privacy, :acceptance => true
-
-
-
 
   before_create { generate_token(:auth_token) }
   

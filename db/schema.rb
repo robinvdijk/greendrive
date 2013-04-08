@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130403131703) do
+ActiveRecord::Schema.define(:version => 20130404113027) do
 
   create_table "traces", :force => true do |t|
     t.string   "title"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(:version => 20130403131703) do
     t.float    "battery_value"
     t.float    "ambient_temp"
     t.datetime "created_at"
+    t.float    "electric"
+    t.float    "fossile"
   end
 
   create_table "users", :force => true do |t|

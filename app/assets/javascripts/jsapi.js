@@ -1,3 +1,5 @@
+// Javascript file of Google Visualization
+
 if(!window['googleLT_']){window['googleLT_']=(new Date()).getTime();}if (!window['google']) {
 window['google'] = {};
 }
