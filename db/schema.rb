@@ -11,6 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130411122015) do
 
   create_table "segments", :force => true do |t|
@@ -20,6 +21,20 @@ ActiveRecord::Schema.define(:version => 20130411122015) do
     t.integer  "drive_electric_ratio"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
+=======
+ActiveRecord::Schema.define(:version => 20130404113027) do
+
+  create_table "traces", :force => true do |t|
+    t.string   "title"
+    t.string   "licence_plate"
+    t.float    "gps_longitude"
+    t.float    "gps_latitude"
+    t.float    "battery_value"
+    t.float    "ambient_temp"
+    t.datetime "created_at"
+    t.float    "electric"
+    t.float    "fossile"
+>>>>>>> 3ec4d890f30b1e8012d390a4b95b2b8b83cb48b9
   end
 
   create_table "users", :force => true do |t|

@@ -1,3 +1,10 @@
+
+	
+	#chart_div {
+		rect {
+			background: none;}
+	}
+
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500);
 
 $green: #48b237;
@@ -175,6 +182,7 @@ ul {
 	li {
 		width: 225px;
 		margin-top: 25px;
+<<<<<<< HEAD
 		margin-left: auto;
 		margin-right: auto;
 		a {
@@ -185,6 +193,10 @@ ul {
 			color: $green;
 		}
 	}
+=======
+		margin-left:0px;
+		margin-right: auto;}
+>>>>>>> 3ec4d890f30b1e8012d390a4b95b2b8b83cb48b9
 }
 
 li.center {

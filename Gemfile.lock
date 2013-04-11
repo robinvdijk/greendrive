@@ -1,3 +1,14 @@
+GIT
+  remote: git://github.com/jnicklas/capybara.git
+  revision: 077832a388d9bfb5b93bb1bb1cd873b22292cee2
+  specs:
+    capybara (2.1.0.rc1)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (>= 2.0.0.beta1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -28,7 +39,12 @@ GEM
     activesupport (3.2.12)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    addressable (2.3.3)
+    akami (1.2.0)
+      gyoku (>= 0.4.0)
+      nokogiri (>= 1.4.0)
     arel (3.0.2)
+    awesome_print (1.1.0)
     bcrypt-ruby (3.0.1)
     bcrypt-ruby (3.0.1-x86-mingw32)
     builder (3.0.4)
@@ -36,7 +52,15 @@ GEM
     carrierwave (0.8.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
+<<<<<<< HEAD
     chunky_png (1.2.8)
+=======
+    childprocess (0.3.9)
+      ffi (~> 1.0, >= 1.0.11)
+    code_analyzer (0.3.1)
+      sexp_processor
+    coderay (1.0.9)
+>>>>>>> 3ec4d890f30b1e8012d390a4b95b2b8b83cb48b9
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -44,28 +68,75 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.1)
+<<<<<<< HEAD
     compass (0.12.2)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
+=======
+    colored (1.2)
+    commands (0.2.1)
+      rails (>= 3.2.0)
+>>>>>>> 3ec4d890f30b1e8012d390a4b95b2b8b83cb48b9
     daemons (1.0.10)
+    database_cleaner (0.9.1)
+    diff-lcs (1.2.2)
+    em-websocket (0.5.0)
+      eventmachine (>= 0.12.9)
+      http_parser.rb (~> 0.5.3)
     erubis (2.7.0)
     eventmachine (1.0.3)
     eventmachine (1.0.3-x86-mingw32)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    factory_girl (4.2.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.2.1)
+      factory_girl (~> 4.2.0)
+      railties (>= 3.0.0)
     faraday (0.8.6)
       multipart-post (~> 1.1)
+<<<<<<< HEAD
     fssm (0.2.10)
+=======
+    ffi (1.6.0)
+    ffi (1.6.0-x86-mingw32)
+    formatador (0.2.4)
+>>>>>>> 3ec4d890f30b1e8012d390a4b95b2b8b83cb48b9
     gem_plugin (0.2.3)
+    guard (1.7.0)
+      formatador (>= 0.2.4)
+      listen (>= 0.6.0)
+      lumberjack (>= 1.0.2)
+      pry (>= 0.9.10)
+      thor (>= 0.14.6)
+    guard-bundler (1.0.0)
+      bundler (~> 1.0)
+      guard (~> 1.1)
+    guard-livereload (1.1.3)
+      em-websocket (>= 0.2.0)
+      guard (>= 1.5.0)
+      multi_json (~> 1.0)
+    guard-rspec (2.5.2)
+      guard (>= 1.1)
+      rspec (~> 2.11)
+    gyoku (1.0.0)
+      builder (>= 2.1.2)
     hashie (1.2.0)
     hike (1.2.1)
+<<<<<<< HEAD
+=======
+    http_parser.rb (0.5.3)
+    http_parser.rb (0.5.3-x86-mingw32)
+>>>>>>> 3ec4d890f30b1e8012d390a4b95b2b8b83cb48b9
     httparty (0.10.2)
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
     httpauth (0.2.0)
+    httpi (2.0.2)
+      rack
     i18n (0.6.4)
     journey (1.0.4)
     jquery-rails (2.2.1)
@@ -74,16 +145,23 @@ GEM
     json (1.7.7)
     jwt (0.1.8)
       multi_json (>= 1.5)
+    launchy (2.2.0)
+      addressable (~> 2.3)
+    listen (0.7.3)
+    lumberjack (1.0.3)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    metaclass (0.0.1)
+    method_source (0.8.1)
     mime-types (1.21)
     mini_magick (3.5.0)
       subexec (~> 0.2.1)
+<<<<<<< HEAD
     mocha (0.13.3)
       metaclass (~> 0.0.1)
+=======
+>>>>>>> 3ec4d890f30b1e8012d390a4b95b2b8b83cb48b9
     mongrel (1.2.0.pre2)
       daemons (~> 1.0.10)
       gem_plugin (~> 0.2.3)
@@ -93,6 +171,9 @@ GEM
     multi_xml (0.5.3)
     multipart-post (1.2.0)
     nifty-generators (0.4.6)
+    nokogiri (1.5.9)
+    nokogiri (1.5.9-x86-mingw32)
+    nori (2.0.4)
     oauth2 (0.8.1)
       faraday (~> 0.8)
       httpauth (~> 0.1)
@@ -110,6 +191,15 @@ GEM
     pg (0.14.1)
     pg (0.14.1-x86-mingw32)
     polyglot (0.3.3)
+    pry (0.9.12)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
+    pry (0.9.12-x86-mingw32)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
+      win32console (~> 1.3)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -125,6 +215,14 @@ GEM
       activesupport (= 3.2.12)
       bundler (~> 1.0)
       railties (= 3.2.12)
+    rails_best_practices (1.13.4)
+      activesupport
+      awesome_print
+      code_analyzer
+      colored
+      erubis
+      i18n
+      ruby-progressbar
     railties (3.2.12)
       actionpack (= 3.2.12)
       activesupport (= 3.2.12)
@@ -133,13 +231,46 @@ GEM
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
     rake (10.0.3)
+    rb-fsevent (0.9.3)
     rdoc (3.12.2)
       json (~> 1.4)
+    rspec (2.13.0)
+      rspec-core (~> 2.13.0)
+      rspec-expectations (~> 2.13.0)
+      rspec-mocks (~> 2.13.0)
+    rspec-core (2.13.1)
+    rspec-expectations (2.13.0)
+      diff-lcs (>= 1.1.3, < 2.0)
+    rspec-mocks (2.13.1)
+    rspec-rails (2.13.0)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 2.13.0)
+      rspec-expectations (~> 2.13.0)
+      rspec-mocks (~> 2.13.0)
+    ruby-progressbar (1.0.2)
+    rubyzip (0.9.9)
     sass (3.2.7)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    savon (2.1.0)
+      akami (~> 1.2.0)
+      builder (>= 2.1.2)
+      gyoku (~> 1.0.0)
+      httpi (~> 2.0.2)
+      nokogiri (>= 1.4.0)
+      nori (~> 2.0.3)
+      wasabi (~> 3.0.0)
+    selenium-webdriver (2.31.0)
+      childprocess (>= 0.2.5)
+      multi_json (~> 1.0)
+      rubyzip
+      websocket (~> 1.0.4)
+    sexp_processor (4.2.0)
+    slop (3.4.4)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -164,6 +295,13 @@ GEM
     uglifier (1.3.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    wasabi (3.0.0)
+      httpi (~> 2.0)
+      nokogiri (>= 1.4.0)
+    websocket (1.0.7)
+    win32console (1.3.2-x86-mingw32)
+    xpath (2.0.0.beta1)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
@@ -172,23 +310,40 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby
   cancan
+  capybara!
   carrierwave
   coffee-rails
+<<<<<<< HEAD
   compass (>= 0.12.2)
   compass-rails (>= 1.0.3)
   httparty
   jquery-rails
   json
+=======
+  commands
+  database_cleaner
+  factory_girl_rails
+  guard-bundler
+  guard-livereload
+  guard-rspec
+  httparty
+  jquery-rails
+  launchy
+>>>>>>> 3ec4d890f30b1e8012d390a4b95b2b8b83cb48b9
   mail (= 2.4.4)
   mini_magick
-  mocha
   mongrel (= 1.2.0.pre2)
   nifty-generators
   omniauth (~> 1.1.1)
   omniauth-facebook (~> 1.4.0)
   pg
   rails
+  rails_best_practices
+  rb-fsevent
+  rspec-rails
   sass-rails
+  savon
+  selenium-webdriver
   sqlite3
   susy
   thin

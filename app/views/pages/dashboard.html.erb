@@ -9,7 +9,9 @@
 	
 		<p><%= link_to "Alle gebruikers", users_path %></p>
 	<p><%= link_to "Mijn profiel", user_path(current_user) %></p>
-	<p><%= link_to "Uitloggen", logout_path, :method => :delete %></p>
+	<p><%= link_to "Uitloggen", logout_path, :method => :delete
+ %></p>
+ 	<p><%= link_to "Traces", traces_path %>
 
 	<% else %>
 		<p><%= link_to "Login", new_session_path %> of <%= link_to "registeer", new_user_path %>.</p>

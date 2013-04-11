@@ -36,6 +36,7 @@
 						    <%= f.label :password_confirmation, 'Wachtwoord verificatie *' %></strong><br />
 						    <%= f.password_field :password_confirmation, :class => 'field' %>
 						</li>
+<<<<<<< HEAD
 						<li>
 						<small><%= check_box :terms_of_service, 'true' %>
 						Ik ga akkoord met de voorwaarden *</small>
@@ -58,5 +59,41 @@
 			   
 			
 		</article>
+=======
+					</ul>
+				</div>
+			</div>
+		</article>
+			
+		<article class="col">	
+			<div class="align-center">
+				<div class="avatar_pre"></div>	
+					<ul>
+						<li><%= f.file_field :avatar%></li>
+						<li><%= check_box :terms_of_service, 'true' %> Ik ga akkoord met de voorwaarden *</li>
+						<li><%= check_box :terms_of_privacy, 'true' %> Ik ga akkoord met de privacyverklaring *</li>						
+					    <li>
+					      <%= f.label :birthday, 'Geboortedatum' %><br />
+					      <%= f.date_select("birthday", :start_year => Date.current.year - 18, 
+					                                    :end_year => Date.current.year - 90,
+					                                    :order => [:day, :month, :year],
+					                                    :prompt => {:day => 'Dag', :month => 'Maand', :year => 'Jaar'},
+					                                    :use_month_names => ['Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Jlii', 'Augustus',
+					                                    'September', 'Oktober', 'November', 'December']) %>
+					    </li>
+				
+					  <% if @current_user %>
+					    <li><%= f.submit "Opslaan" %></li>
+					  <% else %>
+					    <li><%= f.submit "Account aanmaken", :class => 'button' %></li>
+					  <% end %>
+				  	</ul>
+			</div>
+		</article>	 
+		<% end %>
+>>>>>>> 3ec4d890f30b1e8012d390a4b95b2b8b83cb48b9
 	</div>
+	<%= link_to 'Terug', root_path %>
 </div>
+
+
