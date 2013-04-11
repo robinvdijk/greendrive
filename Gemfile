@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'rails'
 gem 'thin'
 gem 'cancan'
-<<<<<<< HEAD
 gem 'susy'
 gem 'compass', '>= 0.12.2'
 gem 'compass-rails', '>= 1.0.3'
@@ -12,16 +11,11 @@ gem 'json'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-=======
 gem 'savon'
 gem 'rails_best_practices'
 gem 'httparty'
 gem 'commands', group: [:development, :test] 
-<<<<<<< HEAD
 gem 'json'
-=======
->>>>>>> 3ec4d890f30b1e8012d390a4b95b2b8b83cb48b9
->>>>>>> 9920840a82747f616eb88c1afe416d836e93ca7a
 
 # used for avatar uploading
 gem 'carrierwave'

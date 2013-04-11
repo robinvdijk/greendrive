@@ -52,15 +52,12 @@ GEM
     carrierwave (0.8.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
-<<<<<<< HEAD
-    chunky_png (1.2.8)
-=======
     childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
+    chunky_png (1.2.8)
     code_analyzer (0.3.1)
       sexp_processor
     coderay (1.0.9)
->>>>>>> 3ec4d890f30b1e8012d390a4b95b2b8b83cb48b9
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -68,18 +65,15 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.1)
-<<<<<<< HEAD
+    colored (1.2)
+    commands (0.2.1)
+      rails (>= 3.2.0)
     compass (0.12.2)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
-=======
-    colored (1.2)
-    commands (0.2.1)
-      rails (>= 3.2.0)
->>>>>>> 3ec4d890f30b1e8012d390a4b95b2b8b83cb48b9
     daemons (1.0.10)
     database_cleaner (0.9.1)
     diff-lcs (1.2.2)
@@ -98,13 +92,10 @@ GEM
       railties (>= 3.0.0)
     faraday (0.8.6)
       multipart-post (~> 1.1)
-<<<<<<< HEAD
-    fssm (0.2.10)
-=======
     ffi (1.6.0)
     ffi (1.6.0-x86-mingw32)
     formatador (0.2.4)
->>>>>>> 3ec4d890f30b1e8012d390a4b95b2b8b83cb48b9
+    fssm (0.2.10)
     gem_plugin (0.2.3)
     guard (1.7.0)
       formatador (>= 0.2.4)
@@ -126,11 +117,8 @@ GEM
       builder (>= 2.1.2)
     hashie (1.2.0)
     hike (1.2.1)
-<<<<<<< HEAD
-=======
     http_parser.rb (0.5.3)
     http_parser.rb (0.5.3-x86-mingw32)
->>>>>>> 3ec4d890f30b1e8012d390a4b95b2b8b83cb48b9
     httparty (0.10.2)
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
@@ -157,11 +145,6 @@ GEM
     mime-types (1.21)
     mini_magick (3.5.0)
       subexec (~> 0.2.1)
-<<<<<<< HEAD
-    mocha (0.13.3)
-      metaclass (~> 0.0.1)
-=======
->>>>>>> 3ec4d890f30b1e8012d390a4b95b2b8b83cb48b9
     mongrel (1.2.0.pre2)
       daemons (~> 1.0.10)
       gem_plugin (~> 0.2.3)
@@ -313,14 +296,9 @@ DEPENDENCIES
   capybara!
   carrierwave
   coffee-rails
-<<<<<<< HEAD
+  commands
   compass (>= 0.12.2)
   compass-rails (>= 1.0.3)
-  httparty
-  jquery-rails
-  json
-=======
-  commands
   database_cleaner
   factory_girl_rails
   guard-bundler
@@ -330,7 +308,6 @@ DEPENDENCIES
   jquery-rails
   json
   launchy
->>>>>>> 3ec4d890f30b1e8012d390a4b95b2b8b83cb48b9
   mail (= 2.4.4)
   mini_magick
   mongrel (= 1.2.0.pre2)
