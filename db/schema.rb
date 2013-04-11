@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130320142206) do
+ActiveRecord::Schema.define(:version => 20130411122015) do
+
+  create_table "segments", :force => true do |t|
+    t.string   "auth_token"
+    t.integer  "company_id"
+    t.integer  "mileage"
+    t.integer  "drive_electric_ratio"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email"

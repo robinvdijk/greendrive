@@ -3,6 +3,11 @@ source 'https://rubygems.org'
 gem 'rails'
 gem 'thin'
 gem 'cancan'
+gem 'susy'
+gem 'compass', '>= 0.12.2'
+gem 'compass-rails', '>= 1.0.3'
+gem 'httparty'
+gem 'json'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

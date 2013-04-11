@@ -1,13 +1,20 @@
 
-
 	<div class="header">
-		
-		<%= link_to image_tag("home.png"), root_path %>
 	
-		<%= link_to image_tag("search.png") %>
+				<% unless controller_name == "sessions" %>
+		
+					<%= link_to image_tag("home.png"), root_path, :class => "icon-left" %>
+	
+					<%= link_to image_tag("search.png"), root_path, :class => "icon-right" %>
 			
-		<%= link_to image_tag("menu.png") %>
-			
-		<!-- <%= link_to "Gebruikers", users_path %> -->
-	</div>
+					<%= link_to image_tag("menu.png"), root_path, :class => "icon-right icon-menu" %>
+				<% end %>
+			<!-- <%= link_to "Gebruikers", users_path %> -->
 
+	</div>
+	
+	
+	
+	
+
+	

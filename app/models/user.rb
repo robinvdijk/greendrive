@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  attr_accessible :role, :email, :first_name, :last_name, :license_plate, :password_confirmation, :clean_data, :password, :user_name, :avatar, :birthday
+  attr_accessible :uid, :role, :email, :first_name, :last_name, :license_plate, :password_confirmation, :clean_data, :password, :user_name, :avatar, :birthday
 
   has_secure_password 
   has_many :authentications

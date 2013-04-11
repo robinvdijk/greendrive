@@ -5,7 +5,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 #pagewrap {
 	width: 980px;
-	max-width: 96%;
+	max-width: 100%;
 	margin: 0 auto;
 }	
 .wrapper {
@@ -20,7 +20,6 @@ COLUMN
 	float: left;
 	margin-left: 3.2%;
 	margin-bottom: 30px;
-	
 }
 
 .fullwidth .col {
@@ -113,7 +112,15 @@ MEDIA QUERIES
 	}
 	
 	#vertical-line {
-		display: none;
+		border: none;
+	}
+	
+	#vertical-line-right {
+		visibility: hidden;
+	}
+	
+	.icon_menu {
+		visibility: visible !important;
 	}
 	
 	ul {

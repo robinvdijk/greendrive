@@ -1,11 +1,13 @@
 <div id="pagewrap">	
 	<div class="wrapper grid3">				
+		
 		<article class="col">
 			<div class="align-center">
 				<%= form_for(@user) do |f| %>
-				<div class="vertical-line">
-					<h2>Registreren</h2>					
 					<ul>
+						<li>
+							<h2>Registreren</h2>
+						</li>
 						<li>
 						    <%= f.label :first_name, 'Voornaam *' %></strong><br>
 						    <%= f.text_field :first_name, :class => 'field' %>
@@ -34,44 +36,27 @@
 						    <%= f.label :password_confirmation, 'Wachtwoord verificatie *' %></strong><br />
 						    <%= f.password_field :password_confirmation, :class => 'field' %>
 						</li>
-					</ul>
-				</div>
-			</div>
-					</article>
-			
-					<article class="col">	
-						<div class="align-center">
-							<div class="avatar_pre"></div>		
-							<br />
-							<%= f.file_field :avatar%>
-							<br />
-							<br />
-							<small><%= check_box :terms_of_service, 'true' %>
-							Ik ga akkoord met de voorwaarden *</small>
-							<br />
-							<small><%= check_box :terms_of_privacy, 'true' %>
-							Ik ga akkoord met de privacyverklaring *</small>
-							<br />	
-							<br />	
-				
+						<li>
+						<small><%= check_box :terms_of_service, 'true' %>
+						Ik ga akkoord met de voorwaarden *</small>
+						<br />
+						<small><%= check_box :terms_of_privacy, 'true' %>
+						Ik ga akkoord met de privacyverklaring *</small>
+						<br />	
+						</li>
+						<li>
 						    <% if @current_user %>
 						      <div><%= f.submit "Opslaan" %></div>
 						    <% else %>
 						      <div><%= f.submit "Account aanmaken", :class => 'button' %></div>
 						    <% end %>
-						<% end %>
-						</div>
-						
-					</article>
-					
-					</div>
+						</li>
+					</ul>
+					<% end %>
+			</div>
 			
-		
-
+			   
 			
-
-			<%= link_to 'Terug', root_path %>
-		</div>
-		
+		</article>
 	</div>
 </div>

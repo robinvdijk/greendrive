@@ -1,10 +1,10 @@
-<div id="pagewrap">	
+<div id="pagewrap">
 	<div class="wrapper grid3">				
 		
 		<article class="col">
-			<div class="align-center">
+			
 				<%= form_tag sessions_path do %>
-				<ul class="align-center">
+				<ul>
 					<li>
 						<h2>Inloggen</h2>	
 					</li>
@@ -19,14 +19,14 @@
 						<%= label :password, 'Wachtwoord'%><br />
 						<%= password_field_tag :password, '', :class => 'field', :placeholder => "Wachtwoord" %>
 					</li>
-					<li>
+					<li class="center">
 						<%= link_to "Wachtwoord vergeten?", new_password_reset_path %></p>
 					</li>
-					<li>
-						  <%= check_box_tag :remember_me, 1, params[:remember_me] %>
-						  <%= label_tag :remember_me, 'Onthoud mij' %>
+					<li class="center">
+						<%= check_box_tag :remember_me, 1, params[:remember_me] %>
+						<%= label_tag :remember_me, 'Onthoud mij' %>
 					</li>
-					<li>
+					<li class="center">
 						<%= submit_tag 'Inloggen!', :class => "button" %>
 					</li>
 				</ul>
@@ -39,7 +39,7 @@
 						</li>
 					</ul>
 				</div>			
-			</div>			
+					
 		</article>
 				
 				
@@ -101,7 +101,7 @@
 						<br />
 						<br />
 						<small><%= check_box :terms_of_service, 'true' %>
-						Ik ga akkoord met de voorwaarden *</small>
+						Ik ga akkoord met de <a>voorwaarden</a> *</small>
 						<br />
 						<small><%= check_box :terms_of_privacy, 'true' %>
 						Ik ga akkoord met de privacyverklaring *</small>
@@ -119,3 +119,4 @@
 		</article>		
 	</div>
 </div>
+
