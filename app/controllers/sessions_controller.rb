@@ -1,13 +1,15 @@
 class SessionsController < ApplicationController
+  skip_authorization_check
+
+  def index
+    redirect_to root_path
+  end
+
   def new
     @user = User.new
   end
 
   def create
-<<<<<<< HEAD
- 
-=======
->>>>>>> 27512afb272ff66a1d15da13c3e644f6f467ba91
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       if params[:remember_me]
@@ -15,15 +17,16 @@ class SessionsController < ApplicationController
       else
         cookies[:auth_token] = user.auth_token
       end
-      redirect_to root_url, :notice => "Ingelogd!"
+        redirect_to root_url
+        flash[:success] = "U bent succesvol ingelogd."
     else
-      flash.now.alert = "Invalid email or password"
-      render "new"
+      flash[:notice] = "E-mailadres en wachtwoord komen niet overeen."
+      redirect_to new_session_path
     end
   end
 
   def destroy
     cookies.delete(:auth_token)
-    redirect_to root_url, :notice => "Uitgelogd"
+    redirect_to root_url
   end
 end

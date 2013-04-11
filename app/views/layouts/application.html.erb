@@ -17,15 +17,22 @@
 		  
 		   var miles = $('#chart_div').data('miles');
 
+var rowArray = [];
+
+		   		$('input[name=device_name]').each(function(i){
+        var name = $(this).val();
+        var amount = ($(this).next().val() * 1);
+        rowArray.push([name, amount]);
+});
+
+
 	               // Create the data table.
 	               var data = new google.visualization.DataTable();
 	               data.addColumn('string', 'Ratio');    
 	               data.addColumn('number', 'Slices');
-	               data.addRows([
-	                 ['Electic', 450],
-	                 ['Fossile', 210]
+	               data.addRows(rowArray)
 	                 
-	               ]);
+	              ;
 				   
 	               var data2 = new google.visualization.arrayToDataTable([
 	                 ['Ratio','Electic', 'Fossile'],
@@ -43,12 +50,10 @@
 					 ['Week 4', 40],
 	          
 	               ]);
+	
 
-<<<<<<< HEAD
 
-</head>
-<body>
-=======
+
 	               // Set chart options
 	               var options = {'title':'Ratio of Fuel',
 	                              'width':400,
@@ -73,83 +78,45 @@
 
 	             }
   </script>
->>>>>>> 27512afb272ff66a1d15da13c3e644f6f467ba91
-  
+
   <meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 
 </head>
 <body>
-	<div id="fb-root"></div>
-<script>
-  // Additional JS functions here
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '147143375453147', // App ID
-      channelUrl : '//127.0.0.1:3000/channel.html', // Channel File
-      status     : true, // check login status
-      cookie     : true, // enable cookies to allow the server to access the session
-      xfbml      : true  // parse XFBML
-    });
 
-    // Additional init code here
-    FB.getLoginStatus(function(response) {
-	  if (response.status === 'connected') {
-	    // connected
-	  } else if (response.status === 'not_authorized') {
-	    // not_authorized
-	  } else {
-	    // not_logged_in
-	  }
-	 });
-  };
-
-	function login() {
-	    FB.login(function(response) {
-	        if (response.authResponse) {
-	            // connected
-	        } else {
-	            // cancelled
-	        }
-	    });
-	}
-
-
-
-  // Load the SDK Asynchronously
-  (function(d){
-     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement('script'); js.id = id; js.async = true;
-     js.src = "//connect.facebook.net/en_US/all.js";
-     ref.parentNode.insertBefore(js, ref);
-   }(document));
-</script>
 
 	<div id="pagewrap">
 
-  
-</head>
-<body>
-<<<<<<< HEAD
-
-
-=======
-	<% if flash[:notice] %>
-	     <p class="notice"><%= flash[:notice] %></p>
-	 <% end %>
->>>>>>> 27512afb272ff66a1d15da13c3e644f6f467ba91
 	<% if controller_name == "sessions"%>
 		<% if flash[:notice] %>
-	    <p class="notice"><%= flash[:notice] %></p>
-	<% end %>	 
+	    	<p class="notice"><%= flash[:notice] %></p>
+	    <% end %>	 
+
+	    <% if flash[:alert] %>
+	   		<p class="notice"><%= flash[:alert] %></p>
+	    <% end %>	 
+
+	    <% if flash[:success] %>
+	    	<p class="notice"><%= flash[:success] %></p>
+		<% end %>	
+
 		<%= render "layouts/header-login" %>
+
 	<% else %>
 		<% if flash[:notice] %>
-	    <p class="notice"><%= flash[:notice] %></p>
+	    	<p class="notice"><%= flash[:notice] %></p>
+	    <% end %>	 
+
+	    <% if flash[:alert] %>
+	   		<p class="notice"><%= flash[:alert] %></p>
+	    <% end %>	 
+
+	    <% if flash[:success] %>
+	    	<p class="notice"><%= flash[:success] %></p>
+		<% end %>	
 	<% end %>
 		<%= render "layouts/header" %>
-	<% end %>
 		
 		<%= yield %>
 

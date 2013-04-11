@@ -1,5 +1,5 @@
 class AuthenticationsController < ApplicationController
-
+skip_authorization_check
 
 
 def create
@@ -20,7 +20,8 @@ def create
       sign_in_and_redirect(:user, user)
     else
       session[:omniauth] = omniauth.except('extra')
-      redirect_to new_user_registration_url
+      flash[:notice] ="Facebook Signin Failed"
+      redirect_to new_session_path
     end
   end
 end

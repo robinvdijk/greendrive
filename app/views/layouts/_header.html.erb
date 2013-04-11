@@ -1,7 +1,9 @@
 <% if current_user %>
 <div id="progressbar"></div>
-	<td><p>Ingelogd als <%= current_user.user_name %> (<%= current_user.role %>).
+	<td><p>Ingelogd als <%= current_user.user_name %><% if current_user.role == 'admin'%> (<%= current_user.role %>)<% end %>.
 	<%= link_to 'Alle gebruikers', users_path %>
+	<%= link_to "Mijn profiel", user_path(current_user) %>
+	<%= link_to "Uitloggen", logout_path, :method => :delete %></p>
 
 	<div class="header">
 		

@@ -7,13 +7,12 @@
 <% if @users.any? %>
 
   <table>
-
-
   <% @users.each do |user| %>
 
   <tr>
     <td><%= link_to user.user_name, user %> |</td>
-    <% if can? :update, User %>
+
+        <% if can? :update, User %>
         <td><%= link_to 'Bewerk', edit_user_path(user) %></td>
     <% end %>
     <% if can? :destroy, User %>

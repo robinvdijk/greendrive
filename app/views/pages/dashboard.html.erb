@@ -1,27 +1,18 @@
-
-<h1>Inloggen</h1>
-
 <% provide(:title, "Dashboard")  %>
-
-<h1>Dashboard</h1>
 
 
 <% if current_user %>
-	<h2>Hallo, <%= current_user.user_name %> de <%= current_user.role %>.</h2>
+	<h2>Welkom, <%= current_user.user_name %>
+	<% if current_user.role == 'admin'%> 
+		(<%= current_user.role %>)<% end %>.</h2>
 
+	<% if current_user.role == 'admin' %>
 		<p><%= link_to "Alle gebruikers", users_path %></p>
+	<% end %>
 	<p><%= link_to "Mijn profiel", user_path(current_user) %></p>
-	<p><%= link_to "Uitloggen", logout_path, :method => :delete
- %></p>
+	<p><%= link_to "Uitloggen", logout_path, :method => :delete %></p>
  	<p><%= link_to "Traces", traces_path %>
 
 	<% else %>
-		<p><%= link_to "Login", new_session_path %> of <%= link_to "registeer", new_user_path %>.</p>
-
-		<%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-		
-
-		<%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %><br />
-		<%= link_to "Sign in with Facebook/Callback", "/auth/facebook/callback", id: "sign_in" %>
-
+		redirect_to new_session_path
 <% end %>

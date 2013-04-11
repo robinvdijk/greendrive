@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130403131703) do
+ActiveRecord::Schema.define(:version => 20130411100528) do
+
+  create_table "authentications", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "uid"
+    t.string   "provider"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "traces", :force => true do |t|
     t.string   "title"
@@ -38,6 +46,9 @@ ActiveRecord::Schema.define(:version => 20130403131703) do
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
     t.string   "role"
+    t.string   "permalink"
   end
+
+  add_index "users", ["permalink"], :name => "index_users_on_permalink"
 
 end

@@ -60,6 +60,7 @@ GEM
       multipart-post (~> 1.1)
     flot-rails (0.0.2)
       jquery-rails
+    friendly_id (4.0.9)
     gem_plugin (0.2.3)
     gon (4.0.2)
       actionpack (>= 2.3.0)
@@ -201,6 +202,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails
   flot-rails
+  friendly_id
   gon
   googlecharts
   jquery-rails

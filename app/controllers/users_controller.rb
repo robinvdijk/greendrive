@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_filter :user_required, :except => [:new, :create]
+
+  load_and_authorize_resource
   
   def index
    @users = User.all
@@ -21,6 +23,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
+    @user.role = 'user' #Hoort eigenlijk in model te staan.
     if @user.save
       flash[:notice] = "Welcome"
       redirect_to root_url
@@ -29,15 +32,21 @@ class UsersController < ApplicationController
     end
   end
 
+
+
+
+
   def destroy
     @user = User.find(params[:id])
     # Used to remove connected files (avatar photos) from users
-    @user.remove_file
-    FileUtils.remove_dir("#{Rails.root}/public/uploads/user/avatar/#{@user.id}", :force => true)  
+    # @user.remove_file
+    # FileUtils.remove_dir("#{Rails.root}/public/uploads/user/avatar/#{@user.id}", :force => true)  
       
+    # @user = User.find(params[:id])  
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url }
+      cookies.delete(:auth_token)
     end
   end
   

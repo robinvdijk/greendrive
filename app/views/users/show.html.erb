@@ -26,8 +26,10 @@
 	
 	  	<h1 id="username"><%= @user.user_name %></h1>
 
-		<%= link_to 'Bewerken', edit_user_path(@user), class: "button" %>
-		
+	  	<% if can? :update, User, :id => @user.id %>
+			<%= link_to 'Bewerken', edit_user_path(@user), class: "button" %>
+		<% end %>
+
 	  	<ul>Kenteken:</ul>
 	    <%= @user.license_plate %>
 		
@@ -36,11 +38,7 @@
 		  <li>Kenteken:			<%= @trace.licence_plate %></li>
 		  <li>GPS Longitude:	<%= @trace.gps_longitude %></li>
 		  <li>GPS Latitude:		<%= @trace.gps_latitude %></li>
-<<<<<<< HEAD
 		  <li>Batterij status	<%= number_to_percentage(@trace.battery_value, :precision => 2) %></li> 
-
-=======
->>>>>>> 27512afb272ff66a1d15da13c3e644f6f467ba91
 		</ul>
 	
 		<%= link_to "Badges", class: "button" %>	
@@ -52,37 +50,27 @@
 	<div class="col">
 		<div class="vertical-line">
 			<ul id="profile_info">
-			<img src="//chart.googleapis.com/chart?chbh=a,2&chs=120x220&cht=bvs&chco=67738B,8CE451&chd=t:80|20&chdl=Totale+verbruik|Elektrisch&chdlp=b&chma=5,5,5,25&chtt=Verhouding" width="120" height="220" alt="Verhouding tussen elektrische en totale kilometers" />
+			<!-- <img src="//chart.googleapis.com/chart?chbh=a,2&chs=120x220&cht=bvs&chco=67738B,8CE451&chd=t:80|20&chdl=Totale+verbruik|Elektrisch&chdlp=b&chma=5,5,5,25&chtt=Verhouding" width="120" height="220" alt="Verhouding tussen elektrische en totale kilometers" />
 				 
 
-
+ -->
 			 	<li>Email:
 			  	<%= mail_to @user.email, @user.email %><br /></li>
 	 
-			  	<li>Voornaam:
-			   	<%= @user.first_name %><br /></li>
-   
-			  	<li>Achternaam:
-			    <%= @user.last_name %><br /> </li>
-<<<<<<< HEAD
+			  	<li>Naam:
+			   	<%= @user.first_name.capitalize %> <%= @user.last_name.split(" ").each{|word| word.capitalize!}.join(" ")	 %><br /></li>
 			    
 			    <% if @user.birthday %>
 				    <li>Geboortedatum:
 				    <%= @user.birthday %>	<br /></li>
 			    <% end %>
-=======
-
-			    <li>Geboortedatum:
-			    <%= @user.birthday %>	<br /></li>
-				
-				<li>Batterij status <%= number_to_percentage(@trace.battery_value, :precision => 2) %></li>
-					
->>>>>>> 27512afb272ff66a1d15da13c3e644f6f467ba91
+			      <li>Batterij status	<%= number_to_percentage(@trace.battery_value, :precision => 2) %></li> 
+		
 			</ul>
 		</div>
 	</div>
 	
-	<div id="chart_div" data-miles="<%= @miles.to_json %>" style="width:500px; height:250px"></div>
+<!-- 	<div id="chart_div" data-miles="<%= @miles.to_json %>" style="width:500px; height:250px"></div> -->
 	<div id="chart_div2" style="width:500px; height:250px"></div>
 	<div id="chart_div3" style="width:500px; height:250px"></div>
 </div>

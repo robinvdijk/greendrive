@@ -1,3 +1,50 @@
+	<div id="fb-root"></div>
+	 <script src="//connect.facebook.net/en_US/all.js"></script> <!--#channelurl-->
+<script>
+
+  // Additional JS functions here
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '147143375453147', // App ID
+      channelUrl : '//127.0.0.1:3000/channel.html', // Channel File
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+    });
+
+	function login() {
+	    FB.login(function(response) {
+	        if (response.authResponse) {
+	            // connected
+	        } else {
+	            // cancelled
+	        }
+	    });
+	}
+
+    // Additional init code here
+    FB.getLoginStatus(function(response) {
+	  if (response.status === 'connected') {
+	    // connected
+	  } else if (response.status === 'not_authorized') {
+	    // not_authorized
+	  } else {
+	    // not_logged_in
+	  }
+	 });
+  };
+
+  // Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+</script>
+
+
 <div id="pagewrap">	
 	<div class="wrapper grid3">				
 		
@@ -29,6 +76,8 @@
 					<li>
 						<%= submit_tag 'Inloggen!', :class => "button" %>
 					</li>
+					<li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+					</li>
 				</ul>
 					
 				<% end %>
@@ -40,10 +89,7 @@
 					</ul>
 				</div>			
 			</div>			
-		</article>
-				
-				
-				
+		</article>		
 								
 		<article class="col">
 			<div id="register">
@@ -66,11 +112,7 @@
 						<%= f.file_field :avatar%>
 						<br />
 						<br />
-						<small><%= check_box :terms_of_service, 'true' %>
-						Ik ga akkoord met de voorwaarden *</small>
-						<br />
-						<small><%= check_box :terms_of_privacy, 'true' %>
-						Ik ga akkoord met de privacyverklaring *</small>
+						
 						<br />	
 						<br />	
 	

@@ -11,15 +11,22 @@
     </div>
   <% end %>
 
-
 <div class="col">
-	  <ul>
+	<ul>
+	  	<!-- Met deze code hieronder kunnen users zichzelf admin maken, voor het geval er iets verkeerd gaat
+	  	met de huidige admin in 't systeem
 	  	<% if @user.new_record? %>
 	  	<% else %>
 	    <li>
 	      <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
 	    </li>
+	    <% end %>-->
+
+
+		<% if @user.role == "admin" %>
+	  	  <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
 	    <% end %>
+
 
 
 	    <li>
@@ -50,16 +57,16 @@
 
 	    <% if @user.new_record? %>
 		  	<li>
-		      <%= f.label :password, 'Wachtwoord *' %><br />
-		      <p>Het wachtwoord bestaat uit minimaal 6 karakters waarvan minimaal 1 hoofdletter, 1 kleine letter en 1 cijfer</p>
+		    	<%= f.label :password, 'Wachtwoord *' %><br />
+		    	<p>Het wachtwoord bestaat uit minimaal 6 karakters waarvan minimaal 1 hoofdletter, 1 kleine letter en 1 cijfer</p>
 		    	<%= f.password_field :password, class: 'field'  %>
-			  </li>
+			</li>
 	  
 		  	<li>
-		      <%= f.label :password_confirmation, 'Wachtwoord verificatie *' %><br />
+		    	<%= f.label :password_confirmation, 'Wachtwoord verificatie *' %><br />
 		    	<%= f.password_field :password_confirmation, class: 'field'  %>
-			  </li>
-		  <% end %>
+			</li>
+		<% end %>
 
 	    <li>
 	      <%= f.label :birthday, 'Geboortedatum' %><br />
@@ -73,14 +80,25 @@
 	        <br/>
 
 
-		<li><%= f.label :avatar %><br />
-		<%= f.file_field :avatar %></li>
+	     <li>
+	     	<%= f.check_box :terms_of_service %>
+			Ik ga akkoord met de voorwaarden *
+		</li>
+		<li>
+			<%= f.check_box :terms_of_privacy %>
+			Ik ga akkoord met de privacyverklaring *
+		</li>
+
+		<li>
+			<%= f.label :avatar %><br />
+			<%= f.file_field :avatar %>
+		</li>
 
 	    <% if current_user %>
 	      <li><%= f.submit "Opslaan" %></li>
 	    <% else %>
 	      <li><%= f.submit "Registreer" %></li>
 	    <% end %>
-	  </ul>
+	</ul>
 	<% end %>
 </div>
