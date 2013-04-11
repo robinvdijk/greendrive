@@ -1,19 +1,38 @@
+<<<<<<< HEAD
 <% if current_user %>
 <div id="progressbar"></div>
 	<td><p>Ingelogd als <%= current_user.user_name %><% if current_user.role == 'admin'%> (<%= current_user.role %>)<% end %>.
 	<%= link_to 'Alle gebruikers', users_path %>
 	<%= link_to "Mijn profiel", user_path(current_user) %>
 	<%= link_to "Uitloggen", logout_path, :method => :delete %></p>
+=======
+>>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc
 
 	<div class="header">
-		
-		<%= link_to image_tag("home.png"), root_path %>
+<<<<<<< HEAD
 	
-		<%= link_to image_tag("search.png") %>
-			
-		<%= link_to image_tag("menu.png") %>
-			
-		<!-- <%= link_to "Gebruikers", users_path %> -->
-	</div>
+				<% unless controller_name == "sessions" %>
+		
+					<%= link_to image_tag("home.png"), root_path, :class => "icon-left" %>
+=======
 
+		<%= link_to image_tag("home.png"), root_path %>
+>>>>>>> 3ec4d890f30b1e8012d390a4b95b2b8b83cb48b9
+	
+					<%= link_to image_tag("search.png"), root_path, :class => "icon-right" %>
+			
+					<%= link_to image_tag("menu.png"), root_path, :class => "icon-right icon-menu" %>
+				<% end %>
+			<!-- <%= link_to "Gebruikers", users_path %> -->
+
+	</div>
+	
+	
+	
+	
+
+<<<<<<< HEAD
 <% end %>
+=======
+	
+>>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc

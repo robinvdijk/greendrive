@@ -4,9 +4,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 #pagewrap {
+<<<<<<< HEAD
 width: 980px;
 max-width: 96%;
 margin: 0 auto;
+=======
+	width: 980px;
+	max-width: 100%;
+	margin: 0 auto;
+>>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc
 }	
 .wrapper {
 overflow: hidden;
@@ -16,11 +22,18 @@ overflow: hidden;
 COLUMN
 *************************************************************************************/
 .col {
+<<<<<<< HEAD
 
 float: left;
 margin-left: 3.2%;
 margin-bottom: 30px;
 
+=======
+	
+	float: left;
+	margin-left: 3.2%;
+	margin-bottom: 30px;
+>>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc
 }
 
 .fullwidth .col {
@@ -97,6 +110,7 @@ clear: left;
 
 /* reset cols to fullwidth */
 @media screen and (max-width: 400px) {
+<<<<<<< HEAD
 /* grid4 */
 .col {
 width: auto !important;
@@ -120,5 +134,39 @@ ul {
 li {
 width: 80% !important;
 }
+=======
+	/* grid4 */
+	.col {
+		width: auto !important;
+		margin-left: 0 !important;
+		clear: none !important;
+	}
+	
+	#register {
+		display: none;
+	}
+	
+	#link-register {
+		visibility: visible !important;
+	}
+	
+	#vertical-line {
+		border: none;
+	}
+	
+	#vertical-line-right {
+		visibility: hidden;
+	}
+	
+	.icon_menu {
+		visibility: visible !important;
+	}
+	
+	ul {
+		li {
+			width: 80% !important;
+		}
+	}
+>>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc
 }
 }

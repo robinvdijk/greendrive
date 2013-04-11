@@ -6,8 +6,8 @@ end
 ActionMailer::Base.smtp_settings = {  
   :address              => "smtp.gmail.com",  
   :port                 => 587,  
-  :domain               => "greendrive.com", 
-  :password             => ENV['SMTP_PASSWORD'],  
+  :domain               => "www.example.com", 
+  :password             => 'secret',  
   :authentication       => "plain",  
   :enable_starttls_auto => true  
 }  

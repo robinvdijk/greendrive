@@ -1,10 +1,20 @@
 class User < ActiveRecord::Base
+<<<<<<< HEAD
 
   attr_accessible :provider, :terms_of_service, :terms_of_privacy, :uid, :user_id, :role, :admin, :user, :email, :first_name, :last_name, :license_plate, :password_confirmation, :clean_data, :password, :user_name, :avatar, :birthday
+=======
+<<<<<<< HEAD
+  attr_accessible :role, :email, :first_name, :last_name, :license_plate, :password_confirmation, :clean_data, :password, :user_name, :avatar, :birthday
+=======
+
+  attr_accessible :uid, :role, :email, :first_name, :last_name, :license_plate, :password_confirmation, :clean_data, :password, :user_name, :avatar, :birthday
+>>>>>>> 9920840a82747f616eb88c1afe416d836e93ca7a
+>>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc
 
   has_secure_password 
 
   has_many :authentications
+  has_many :traces
 
   validates_presence_of :password, :on => :create
   validates_presence_of :password_confirmation, :on => :create
@@ -24,6 +34,7 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
 
 
+<<<<<<< HEAD
 
   before_validation :clean_data
 
@@ -32,17 +43,25 @@ class User < ActiveRecord::Base
   # friendly_id :user_name
 
 #### REMOVES WHITESPACE AND DASHES FROM LICENSE PLATE INPUT ####
+=======
+  before_create { generate_token(:auth_token) }
+  
+  before_validation :clean_data #Filters out whitespaces and special characters
+
+>>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc
   def clean_data
     self.license_plate = self.license_plate.gsub(/[ \-]/, '') unless self.license_plate.nil?
   end
 ####################
 
 
-  def send_password_reset
+  # ------------------------------------
+  # Forgot Password
+  # ------------------------------------
+  def generate_password_reset
     generate_token(:password_reset_token)
     self.password_reset_sent_at = Time.zone.now
     save!
-    UserMailer.password_reset(self).deliver
   end
 
   def generate_token(column)
@@ -50,7 +69,7 @@ class User < ActiveRecord::Base
       self[column] = SecureRandom.urlsafe_base64
     end while User.exists?(column => self[column])
   end
-
+  # ------------------------------------
 
   #used to add avatar to user profile
   

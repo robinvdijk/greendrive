@@ -11,6 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130411100528) do
 
   create_table "authentications", :force => true do |t|
@@ -19,6 +20,17 @@ ActiveRecord::Schema.define(:version => 20130411100528) do
     t.string   "provider"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+=======
+ActiveRecord::Schema.define(:version => 20130411122015) do
+
+  create_table "segments", :force => true do |t|
+    t.string   "auth_token"
+    t.integer  "company_id"
+    t.integer  "mileage"
+    t.integer  "drive_electric_ratio"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+>>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc
   end
 
   create_table "traces", :force => true do |t|
@@ -29,6 +41,8 @@ ActiveRecord::Schema.define(:version => 20130411100528) do
     t.float    "battery_value"
     t.float    "ambient_temp"
     t.datetime "created_at"
+    t.float    "electric"
+    t.float    "fossile"
   end
 
   create_table "users", :force => true do |t|

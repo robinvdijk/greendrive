@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 	<div id="fb-root"></div>
 	 <script src="//connect.facebook.net/en_US/all.js"></script> <!--#channelurl-->
 <script>
@@ -46,12 +47,15 @@
 
 
 <div id="pagewrap">	
+=======
+<div id="pagewrap">
+>>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc
 	<div class="wrapper grid3">				
 		
 		<article class="col">
-			<div class="align-center">
+			
 				<%= form_tag sessions_path do %>
-				<ul class="align-center">
+				<ul>
 					<li>
 						<h2>Inloggen</h2>	
 					</li>
@@ -66,14 +70,14 @@
 						<%= label :password, 'Wachtwoord'%><br />
 						<%= password_field_tag :password, '', :class => 'field', :placeholder => "Wachtwoord" %>
 					</li>
-					<li>
+					<li class="center">
 						<%= link_to "Wachtwoord vergeten?", new_password_reset_path %></p>
 					</li>
-					<li>
-						  <%= check_box_tag :remember_me, 1, params[:remember_me] %>
-						  <%= label_tag :remember_me, 'Onthoud mij' %>
+					<li class="center">
+						<%= check_box_tag :remember_me, 1, params[:remember_me] %>
+						<%= label_tag :remember_me, 'Onthoud mij' %>
 					</li>
-					<li>
+					<li class="center">
 						<%= submit_tag 'Inloggen!', :class => "button" %>
 					</li>
 					<li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
@@ -88,9 +92,15 @@
 						</li>
 					</ul>
 				</div>			
+<<<<<<< HEAD
 			</div>			
 		</article>		
 								
+=======
+					
+		</article>
+				
+>>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc
 		<article class="col">
 			<div id="register">
 				<div class="align-center">
@@ -112,7 +122,15 @@
 						<%= f.file_field :avatar%>
 						<br />
 						<br />
+<<<<<<< HEAD
 						
+=======
+						<small><%= check_box :terms_of_service, 'true' %>
+						Ik ga akkoord met de <a>voorwaarden</a> *</small>
+						<br />
+						<small><%= check_box :terms_of_privacy, 'true' %>
+						Ik ga akkoord met de privacyverklaring *</small>
+>>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc
 						<br />	
 						<br />	
 	
@@ -127,3 +145,4 @@
 		</article>		
 	</div>
 </div>
+

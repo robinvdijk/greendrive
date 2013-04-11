@@ -17,12 +17,27 @@ Greendrive::Application.routes.draw do
 
   resources :sessions
 
+<<<<<<< HEAD
   resources :users
 
   resources :traces 
   
   resources :pages
 
+=======
+  resources :users do
+    resources :traces 
+  end
+  
+  resources :pages
+
+  root :to => "pages#dashboard"
+  
+  controller :sessions do
+    get "login" => "sessions#new"
+    post "login" => "sessions#create"
+    delete "logout" => "sessions#destroy"
+>>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc
 
 
 
