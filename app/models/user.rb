@@ -1,10 +1,8 @@
 class User < ActiveRecord::Base
 
-<<<<<<< HEAD
+
   attr_accessible :provider, :terms_of_service, :terms_of_privacy, :uid, :user_id, :role, :admin, :user, :email, :first_name, :last_name, :license_plate, :password_confirmation, :clean_data, :password, :user_name, :avatar, :birthday
-=======
-  attr_accessible :uid, :role, :email, :first_name, :last_name, :license_plate, :password_confirmation, :clean_data, :password, :user_name, :avatar, :birthday
->>>>>>> 0fad285b498c2e254c0fd1d3c24938dcea202b50
+
 
   has_secure_password 
 
