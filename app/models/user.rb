@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-
   attr_accessible :role, :email, :first_name, :last_name, :license_plate, :password_confirmation, :clean_data, :password, :user_name, :avatar, :birthday
 
   has_secure_password 
@@ -29,11 +28,13 @@ class User < ActiveRecord::Base
     self.license_plate = self.license_plate.gsub(/[ \-]/, '') unless self.license_plate.nil?
   end
 
-  def send_password_reset
+  # ------------------------------------
+  # Forgot Password
+  # ------------------------------------
+  def generate_password_reset
     generate_token(:password_reset_token)
     self.password_reset_sent_at = Time.zone.now
     save!
-    UserMailer.password_reset(self).deliver
   end
 
   def generate_token(column)
@@ -41,7 +42,7 @@ class User < ActiveRecord::Base
       self[column] = SecureRandom.urlsafe_base64
     end while User.exists?(column => self[column])
   end
-
+  # ------------------------------------
 
   before_validation :clean_data #Filters out whitespaces and special characters
 

@@ -293,6 +293,7 @@ DEPENDENCIES
   guard-rspec
   httparty
   jquery-rails
+  json
   launchy
   mail (= 2.4.4)
   mini_magick

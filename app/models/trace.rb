@@ -1,9 +1,23 @@
 class Trace < ActiveRecord::Base
   belongs_to :user 
+  require 'httparty'
+  require 'json'
 
-  def init
-    response = HTTParty.get('http://360-ev.com/Services/Authentication.svc/json/Authenticate?username=[greenflux2012]&password=[green2012]')
-    puts response.body
+  def henk
+    response = HTTParty.get("http://360-ev.com/Services/Authentication.svc/json/Authenticate?username=greenflux2012&password=green2012")
+    
+    data = JSON.parse(response.body)
+    self.licence_plate = data['AuthToken']
+    self.title = data['CompanyId']
+    puts data
+    self.save
+
+    response2 = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/GetNewSegments?token=#{licence_plate}&companyId=13722&page=8")
+    data2 = JSON.parse(response2.body)
+    self.gps_longitude = data2['MaxID']
+    self.electric = data2['Segments']['mileage']
+    puts data2
+    self.save
   end
   
   def init_2

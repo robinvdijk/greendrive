@@ -1,9 +1,45 @@
 
-	
+/************************************************************************************
+SUPER LELIJKE CSS
+*************************************************************************************/
 	#chart_div {
-		rect {
-			background: none;}
+		right:115%;
 	}
+	
+	#chart_div2 {
+		right:60%;
+		top:-250px;
+		rect {
+			stroke-width:0;
+		}
+	}
+	
+	#chart_div3 {
+		top:-500px;
+	}
+	
+	#chart_div, #chart_div2, #chart_div3 {
+		div g path{
+		stroke-width:0;
+	  }
+	}
+	
+	
+/*************************************************************************************/
+
+	#chart_div:after {
+		background-image:url('subtlenet2.png');
+		    border-radius: 50%;
+		    -moz-border-radius: 50%;
+		    content: '';
+		    display: block;
+		    left: 142px; 
+		    padding: 60px;
+		    position: absolute;
+		    top: 92px;
+		    z-index: 2; 
+	}
+
 
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500);
 
@@ -12,6 +48,9 @@ $white: #fff;
 $grey: #313131;
 $darkgreen: #339933;
 $lightgrey: #eeeeee;
+
+#006837 fossile
+#39b54a electric 
 
 
 /************************************************************************************

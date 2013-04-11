@@ -7,6 +7,7 @@ gem 'savon'
 gem 'rails_best_practices'
 gem 'httparty'
 gem 'commands', group: [:development, :test] 
+gem 'json'
 
 # used for avatar uploading
 gem 'carrierwave'

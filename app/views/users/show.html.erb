@@ -41,6 +41,9 @@
 		
 							<!-- <%= link_to 'Terug', :root %> -->
 		</div>
+		
+
+
 	</div>
 	
 	<div class="col">
@@ -57,21 +60,16 @@
 
 			    <li>Geboortedatum:
 			    <%= @user.birthday %><br /></li>
-				
-				<li>Electric:
-				<%= @trace.electric %><br /></li>
-					
-				<li>Fossile: 
-				<%= @trace.fossile %><br /></li>
 							
-				<li>Batterij status <%= number_to_percentage(@trace.battery_value, :precision => 2) %></li>					
+				<li>Batterij status <%= number_to_percentage(@trace.battery_value, :precision => 2) %></li>				
 			</ul>
 		</div>
+				<div id="chart_div" data-miles="<%= @miles.to_json %>" style="width:500px; height:250px"></div>
+		<div id="chart_div2" style="width:500px; height:250px"></div>
+		<div id="chart_div3" data-battery="<%= @battery.to_json %>" style="width:500px; height:250px"></div>
 	</div>
 	
-	<div id="chart_div" data-miles="<%= @miles.to_json %>" style="width:500px; height:250px"></div>
-	<div id="chart_div2" style="width:500px; height:250px"></div>
-	<div id="chart_div3" data-battery="<%= @battery.to_json %>" style="width:500px; height:250px"></div>
+
 </div>
 
 
