@@ -12,13 +12,13 @@ Greendrive::Application.routes.draw do
 
   resources :sessions
 
-  resources :users do
-    resources :traces 
-  end
+  resources :users
+
+  resources :traces
   
   resources :pages
 
-  root :to => "pages#dashboard"
+  root :to => "sessions#new"
   
   controller :sessions do
     get "login" => "sessions#new"
