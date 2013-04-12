@@ -25,6 +25,7 @@ gem 'json'
 gem 'carrierwave'
 gem 'mini_magick'
 
+gem 'rails-i18n'
 
 gem 'mail', '2.4.4'
 

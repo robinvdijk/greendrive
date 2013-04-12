@@ -205,6 +205,8 @@ GEM
       activesupport (= 3.2.12)
       bundler (~> 1.0)
       railties (= 3.2.12)
+    rails-i18n (0.7.2)
+      i18n (~> 0.5)
     rails_best_practices (1.13.4)
       activesupport
       awesome_print
@@ -327,6 +329,7 @@ DEPENDENCIES
   omniauth-facebook (~> 1.4.0)
   pg
   rails
+  rails-i18n
   rails_best_practices
   rb-fsevent
   rspec-rails
