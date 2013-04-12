@@ -5,100 +5,11 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-<<<<<<< HEAD
-  
-  <script type="text/javascript">
-
-    // Load the Visualization API library and the piechart library.
-    google.load('visualization', '1.0', {'packages':['corechart']});
-    google.setOnLoadCallback(drawChart);
-       // ... draw the chart...
-	 
-	   function drawChart() {
-		  
-		   var miles = $('#chart_div').data('miles');
-
-var rowArray = [];
-
-		   		$('input[name=device_name]').each(function(i){
-        var name = $(this).val();
-        var amount = ($(this).next().val() * 1);
-        rowArray.push([name, amount]);
-});
-
-
-	               // Create the data table.
-	               var data = new google.visualization.DataTable();
-	               data.addColumn('string', 'Ratio');    
-	               data.addColumn('number', 'Slices');
-	               data.addRows(rowArray)
-	                 
-	              ;
-				   
-	               var data2 = new google.visualization.arrayToDataTable([
-	                 ['Ratio','Electic', 'Fossile'],
-	                 ['', 450, 210]      
-	               ]);
-	               // Create the data table.
-
-	               var data3 = new google.visualization.DataTable();
-	               data3.addColumn('string', 'Week');
-	               data3.addColumn('number', 'Battery Value');
-	               data3.addRows([
-	                 ['Week 1', 80],
-					 ['Week 2', 20],
-					 ['Week 3', 70],
-					 ['Week 4', 40],
-	          
-	               ]);
-	
-
-
-
-	               // Set chart options
-	               var options = {'title':'Ratio of Fuel',
-	                              'width':400,
-	                              'height':300};
-	               // Set chart options
-	               var options2 = {'title':'Ratio of Fuel',
-	                              width:400,
-	                              height:300,
-							  	  isStacked: true};
-	               // Set chart options
-	               var options3 = {'title':'Battery',
-	                              'width':400,
-	                              'height':300};
-
-	               // Instantiate and draw our chart, passing in some options.
-	               var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-	               chart.draw(data, options);
-	               var chart2 = new google.visualization.BarChart(document.getElementById('chart_div2'));
-	               chart2.draw(data2, options2);
-	               var chart3 = new google.visualization.LineChart(document.getElementById('chart_div3'));
-	               chart3.draw(data3, options3);
-
-	             }
-  </script>
-
-=======
 
 <meta name="viewport" content="width=device-width; initial-scale=1.0">
   
 </head>
 <body>
-<<<<<<< HEAD
-=======
->>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc
-=======
-	
->>>>>>> 0fad285b498c2e254c0fd1d3c24938dcea202b50
-  <meta name="viewport" content="width=device-width; initial-scale=1.0">
-
-
-</head>
-<body>
-
-
 	<div id="pagewrap">
 
 	<% if controller_name == "sessions"%>
@@ -117,7 +28,7 @@ var rowArray = [];
 		<%= render "layouts/header-login" %>
 
 	<% else %>
-<<<<<<< HEAD
+
 		<% if flash[:notice] %>
 	    	<p class="notice"><%= flash[:notice] %></p>
 	    <% end %>	 
@@ -130,23 +41,11 @@ var rowArray = [];
 	    	<p class="notice"><%= flash[:success] %></p>
 		<% end %>	
 	<% end %>
-<<<<<<< HEAD
+
 		<%= render "layouts/header" %>
 		
 		<%= yield %>
-
-=======
->>>>>>> 3ec4d890f30b1e8012d390a4b95b2b8b83cb48b9
-		
-			<%= render "layouts/header" %>
-=======
-		<%= render "layouts/header" %>
-	<% end %>  
->>>>>>> 0fad285b498c2e254c0fd1d3c24938dcea202b50
-		
-			<%= yield %>
-		
->>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc
+		</div>
 </body>
 </html>
 

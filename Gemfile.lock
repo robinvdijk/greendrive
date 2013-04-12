@@ -92,21 +92,18 @@ GEM
       railties (>= 3.0.0)
     faraday (0.8.6)
       multipart-post (~> 1.1)
-<<<<<<< HEAD
+    ffi (1.6.0)
+    ffi (1.6.0-x86-mingw32)
     flot-rails (0.0.2)
       jquery-rails
+    formatador (0.2.4)
     friendly_id (4.0.9)
+    fssm (0.2.10)
     gem_plugin (0.2.3)
     gon (4.0.2)
       actionpack (>= 2.3.0)
       json
     googlecharts (1.6.8)
-=======
-    ffi (1.6.0)
-    ffi (1.6.0-x86-mingw32)
-    formatador (0.2.4)
-    fssm (0.2.10)
-    gem_plugin (0.2.3)
     guard (1.7.0)
       formatador (>= 0.2.4)
       listen (>= 0.6.0)
@@ -123,7 +120,6 @@ GEM
     guard-rspec (2.5.2)
       guard (>= 1.1)
       rspec (~> 2.11)
->>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc
     gyoku (1.0.0)
       builder (>= 2.1.2)
     hashie (1.2.0)
@@ -307,22 +303,19 @@ DEPENDENCIES
   capybara!
   carrierwave
   coffee-rails
-<<<<<<< HEAD
-  flot-rails
-  friendly_id
-  gon
-  googlecharts
-=======
   commands
   compass (>= 0.12.2)
   compass-rails (>= 1.0.3)
   database_cleaner
   factory_girl_rails
+  flot-rails
+  friendly_id
+  gon
+  googlecharts
   guard-bundler
   guard-livereload
   guard-rspec
   httparty
->>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc
   jquery-rails
   json
   launchy

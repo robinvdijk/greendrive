@@ -11,8 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20130411100528) do
+ActiveRecord::Schema.define(:version => 20130412091437) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -20,8 +19,7 @@ ActiveRecord::Schema.define(:version => 20130411100528) do
     t.string   "provider"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-=======
-ActiveRecord::Schema.define(:version => 20130411122015) do
+  end
 
   create_table "segments", :force => true do |t|
     t.string   "auth_token"
@@ -30,7 +28,6 @@ ActiveRecord::Schema.define(:version => 20130411122015) do
     t.integer  "drive_electric_ratio"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
->>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc
   end
 
   create_table "traces", :force => true do |t|
@@ -60,9 +57,8 @@ ActiveRecord::Schema.define(:version => 20130411122015) do
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
     t.string   "role"
-    t.string   "permalink"
+    t.boolean  "terms_of_service"
+    t.boolean  "terms_of_privacy"
   end
-
-  add_index "users", ["permalink"], :name => "index_users_on_permalink"
 
 end

@@ -3,19 +3,15 @@ source 'http://rubygems.org'
 gem 'rails'
 gem 'thin'
 gem 'cancan'
-<<<<<<< HEAD
 gem 'savon'
 gem 'rails_best_practices'
 gem "flot-rails"
 gem 'friendly_id'
-
-=======
 gem 'susy'
 gem 'compass', '>= 0.12.2'
 gem 'compass-rails', '>= 1.0.3'
 gem 'httparty'
 gem 'json'
->>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

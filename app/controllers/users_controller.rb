@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new    
+    @user = User.new
   end
     
   def edit
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Welcome"
       redirect_to root_url
     else
-      render "new"
+      render 'new'
     end
   end
 
@@ -48,7 +48,6 @@ class UsersController < ApplicationController
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url }
-      cookies.delete(:auth_token)
     end
   end
   

@@ -13,7 +13,7 @@ class Segment < ActiveRecord::Base
    
    end
  
-   def getnewsegment 
+   def get_new_segment 
    
    response2 = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/GetNewSegments?token=#{auth_token}&companyId=#{company_id}&page=7")
    data = JSON.parse(response2.body)

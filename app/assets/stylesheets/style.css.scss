@@ -53,7 +53,6 @@ $lightgrey: #eeeeee;
 #39b54a electric 
 
 
-<<<<<<< HEAD
 /************************************************************************************
 RESET
 *************************************************************************************/
@@ -64,29 +63,16 @@ strong, sub, sup, tt, var, legend, fieldset {
 margin: 0;
 padding: 0;
 }
-=======
->>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc
-
 
 /* General CSS */
 
 body {
-<<<<<<< HEAD
 background: url('/images/subtlenet2.png') repeat;	
 z-index: -3;
-margin-top: 10px;
+margin-top: -10px;
 right: 0;
 overflow-x: hidden;
-
-=======
-	background: url('/images/subtlenet2.png') repeat;	
-	z-index: -3;
-	margin-top: -10px;
-	right: 0;
-	overflow-x: hidden;
-	font-family: Ubuntu;
-	
->>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc
+font-family: Ubuntu;
 }
 
 .align-center {
@@ -95,14 +81,9 @@ margin-left: auto !important;
 margin-right: auto !important;
 }
 
-<<<<<<< HEAD
-p, strong {
-color: $grey;
-=======
 a, p, strong, small, h3 {
 	color: $grey;
 	text-decoration: none;
->>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc
 }
 
 small {
@@ -112,22 +93,7 @@ small {
 		color: $green;}
 }
 
-
-
-
-
 .button {
-<<<<<<< HEAD
-width: 220px;
-height: 25px;
-background: $green;
-border-radius: 3px;
-color: $white;
-border: 1px solid $darkgreen;
-    -moz-box-shadow: inset 1px 2px 2px rgba(255,255,255,0.4);
-    -webkit-box-shadow: inset 1px 2px 2px rgba(255,255,255,0.4);
-    box-shadow: inset 1px 2px 2px rgba(255,255,255,0.4);
-=======
 	width: 220px !important;
 	height: 25px;
 	padding: 4px 75px;
@@ -138,27 +104,25 @@ border: 1px solid $darkgreen;
     -moz-box-shadow:    inset 1px 2px 2px rgba(255,255,255,0.4);
     -webkit-box-shadow: inset 1px 2px 2px rgba(255,255,255,0.4);
     box-shadow:         inset 1px 2px 2px rgba(255,255,255,0.4);
-	
->>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc
 }
 
 /* Header */
 .header {
-background: url('/images/groen_patroon.png') repeat;
-margin: 0 -10px !important;
-padding: 5px !important;
-height: 40px;
-    -moz-box-shadow: inset 0 10px 10px rgba(255,255,255,0.4);
-    -webkit-box-shadow: inset 0 10px 10px rgba(255,255,255,0.4);
-    box-shadow: inset 0 10px 10px rgba(255,255,255,0.4);
-box-shadow: 0 1px 5px $grey;
-h2 {
-color: $white;
-text-align: center;
-}
-a {
-background: none;
-}
+	background: url('/images/groen_patroon.png') repeat;
+	margin: 0 -10px !important;
+	padding: 5px !important;
+	height: 40px;
+	    -moz-box-shadow: inset 0 10px 10px rgba(255,255,255,0.4);
+	    -webkit-box-shadow: inset 0 10px 10px rgba(255,255,255,0.4);
+	    box-shadow: inset 0 10px 10px rgba(255,255,255,0.4);
+	box-shadow: 0 1px 5px $grey;
+	h2 {
+	color: $white;
+	text-align: center;
+	}
+	a {
+	background: none;
+	}
 }
 
 /************************************************************************************
@@ -188,6 +152,10 @@ padding: 20px 0;
 	margin-top: 50px;
 	background: $grey;
 	border-radius: 7px;
+}
+
+#register_form {
+	overflow:hidden;
 }
 
 /************************************************************************************
@@ -239,30 +207,13 @@ ICONS
 HEADER
 *************************************************************************************/
 
-
-
-
-
 .field {
-<<<<<<< HEAD
 width: 220px;
 height: 20px;
 border-radius: 3px;
 border: 1px solid $darkgreen;
 left: auto;
 margin: auto;
-}
-
-
-ul {
-list-style: none;
-margin: 0;
-padding: 0;
-li {
-width: 220px;
-margin-top: 25px;
-margin-left: auto;
-margin-right: auto;}
 }
 
 .avatar_pre {
@@ -276,7 +227,6 @@ border-radius: 7px;
 #vertical-line {
 border-left: 1px solid green;
 padding-left: 55px;
-=======
 	width: 215px;
 	height: 20px;
 	border-radius: 3px;
@@ -295,7 +245,9 @@ ul {
 		margin-top: 25px;
 		margin-left: auto;
 		margin-right: auto;
+			font-size:13px;
 		a {
+		
 			text-decoration: none;
 			color: $grey;
 		}
@@ -312,11 +264,9 @@ li.center {
 
 li.indent {
 	text-indent: 15px;
->>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc
+
 }
 
-
-<<<<<<< HEAD
 #profile_info li {
 margin-bottom:50px;
 }
@@ -332,12 +282,6 @@ text-decoration:none;
 font-size:11px;
 font-family:"Ubuntu";
 }	
-=======
-
-#vertical-line {
-	border-left: 1px solid $grey;
-	padding-left: 70px;
-}
 
 #vertical-line-right {
 	border-right: 1px solid $grey;
@@ -345,7 +289,3 @@ font-family:"Ubuntu";
 }
 
 
-
-
-
->>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc

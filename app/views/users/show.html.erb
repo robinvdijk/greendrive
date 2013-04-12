@@ -15,48 +15,21 @@
 		  <% end %>
 		<% end %>
 
-<<<<<<< HEAD
-=======
-<p id="notice"><%= notice %></p>
-	
-<!--Used to show avatar  -->
 
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-<% end %>
-
-<div class="grid2">	
+<!-- <div class="grid2">	
 	<div class="col">	
 		<div class="align-center">
 			
 		<%= image_tag @user.avatar_url(:thumb) if @user.avatar? %>
 	
 	  	<h1 id="username"><%= @user.user_name %></h1>
-<<<<<<< HEAD
->>>>>>> 3ec4d890f30b1e8012d390a4b95b2b8b83cb48b9
 
-<<<<<<< HEAD
 	  	<% if can? :update, User, :id => @user.id %>
 			<%= link_to 'Bewerken', edit_user_path(@user), class: "button" %>
 		<% end %>
 
 	  	<ul>Kenteken:</ul>
-	    <%= @user.license_plate %>
-=======
->>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc
-		
-<<<<<<< HEAD
-=======
->>>>>>> 0fad285b498c2e254c0fd1d3c24938dcea202b50
+	    <%= @user.license_plate %> -->
 
 	<div class="wrapper grid2">	
 		<div class="col">
@@ -86,13 +59,7 @@
 				</ul>
 			</div>
 
-		<ul>
-		  <li>Model:			<%= @trace.title %></li>
-		  <li>Kenteken:			<%= @trace.licence_plate %></li>
-		  <li>GPS Longitude:	<%= @trace.gps_longitude %></li>
-		  <li>GPS Latitude:		<%= @trace.gps_latitude %></li>
-		  <li>Batterij status	<%= number_to_percentage(@trace.battery_value, :precision => 2) %></li> 
-		</ul>
+
 	
 		<%= link_to "Badges", class: "button" %>	
 		
@@ -104,15 +71,11 @@
 
 
 	</div>
-	
-<<<<<<< HEAD
+
 	<div class="col">
 		<div class="vertical-line">
 			<ul id="profile_info">
-			<!-- <img src="//chart.googleapis.com/chart?chbh=a,2&chs=120x220&cht=bvs&chco=67738B,8CE451&chd=t:80|20&chdl=Totale+verbruik|Elektrisch&chdlp=b&chma=5,5,5,25&chtt=Verhouding" width="120" height="220" alt="Verhouding tussen elektrische en totale kilometers" />
-				 
 
- -->
 			 	<li>Email:
 			  	<%= mail_to @user.email, @user.email %><br /></li>
 	 
@@ -123,50 +86,22 @@
 				    <li>Geboortedatum:
 				    <%= @user.birthday %>	<br /></li>
 			    <% end %>
-			      <li>Batterij status	<%= number_to_percentage(@trace.battery_value, :precision => 2) %></li> 
-		
-=======
-	
-		<div class="col">
-			<div id="profile_info">
-				
-				 	<h3><small class="profile">Voornaam</small><br />
-						<%= @user.first_name %></h3>
-
-			  	
-				    <h3><small class="profile">Achternaam</small><br />
-						<%= @user.last_name %></h3>
-				
-					<h3><small class="profile">E-mail</small><br />
-						<%= mail_to @user.email, @user.email %></h3>
-
-				  	<h3><small class="profile">Geboortedatum</small><br />
-				    	<%= @user.birthday %></h3>
-				
+			    
+				  
+				  	<%= link_to 'Bewerken', edit_user_path(@user), :class => "button float-bottom" %>
 					
-					<%= link_to 'Bewerken', edit_user_path(@user), :class => "button float-bottom" %>
-				</div>
-				 
-			    <li>Geboortedatum:
-			    <%= @user.birthday %><br /></li>
-							
-				<li>Batterij status <%= number_to_percentage(@trace.battery_value, :precision => 2) %></li>				
->>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc
-			</ul>
-
-		</div>
+					<ul>
+					  <li>GPS Longitude:	<%= @trace.gps_longitude %></li>
+					  <li>GPS Latitude:		<%= @trace.gps_latitude %></li>
+					  <li>Batterij status	<%= number_to_percentage(@trace.battery_value, :precision => 2) %></li> 
+					</ul>
+	
+		
 				<div id="chart_div" data-miles="<%= @miles.to_json %>" style="width:500px; height:250px"></div>
 		<div id="chart_div2" style="width:500px; height:250px"></div>
 		<div id="chart_div3" data-battery="<%= @battery.to_json %>" style="width:500px; height:250px"></div>
 	</div>
-	
-<<<<<<< HEAD
-<!-- 	<div id="chart_div" data-miles="<%= @miles.to_json %>" style="width:500px; height:250px"></div> -->
-	<div id="chart_div2" style="width:500px; height:250px"></div>
-	<div id="chart_div3" style="width:500px; height:250px"></div>
-=======
 
->>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc
 </div>
 
 

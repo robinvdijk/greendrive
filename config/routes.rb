@@ -1,55 +1,31 @@
 Greendrive::Application.routes.draw do  
 
-  root :to => "pages#dashboard"
-
-
-  controller :sessions do
-    get "login" => "sessions#new"
-    post "login" => "sessions#create"
-    delete "logout" => "sessions#destroy"
-
-
+  resources :authentications
 
   resources :password_resets
+
     match '/auth/:provider/callback' => 'authentications#create'
+
+    
     match "/auth/failure" => redirect("/")
     match 'signout', to: 'sessions#destroy', as: 'signout'
 
   resources :sessions
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  resources :users
-
-  resources :traces 
-  
-  resources :pages
-
-=======
-  resources :users do
-    resources :traces 
-  end
-=======
   resources :users
 
   resources :traces
->>>>>>> 0fad285b498c2e254c0fd1d3c24938dcea202b50
   
   resources :pages
 
-  root :to => "sessions#new"
+  root :to => "pages#dashboard"
   
   controller :sessions do
     get "login" => "sessions#new"
     post "login" => "sessions#create"
     delete "logout" => "sessions#destroy"
->>>>>>> 2a515d684687578d80a1e0f6304315596a37c0cc
 
-
-
-  # The next line handles 404 error. This line must always be the last route!! 
-  match '*a', :to => 'errors#routing'
-  
+    
 end
   # The priority is based upon order of creation:
   # first created -> highest priority.
