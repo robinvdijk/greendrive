@@ -10,9 +10,11 @@
   
 </head>
 <body>
-	<div id="pagewrap">
-
+	
 	<% if controller_name == "sessions"%>
+		
+		<%= render "layouts/header-login" %>
+	
 		<% if flash[:notice] %>
 	    	<p class="notice"><%= flash[:notice] %></p>
 	    <% end %>	 
@@ -24,11 +26,11 @@
 	    <% if flash[:success] %>
 	    	<p class="notice"><%= flash[:success] %></p>
 		<% end %>	
-
-		<%= render "layouts/header-login" %>
 
 	<% else %>
 
+		<%= render "layouts/header" %>
+	
 		<% if flash[:notice] %>
 	    	<p class="notice"><%= flash[:notice] %></p>
 	    <% end %>	 
@@ -39,12 +41,14 @@
 
 	    <% if flash[:success] %>
 	    	<p class="notice"><%= flash[:success] %></p>
-		<% end %>	
+		<% end %>
+				
 	<% end %>
 
-		<%= render "layouts/header" %>
+		<div id="pagewrap">
 		
-		<%= yield %>
+			<%= yield %>
+
 		</div>
 </body>
 </html>

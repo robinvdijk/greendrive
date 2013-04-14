@@ -24,7 +24,7 @@ class Segment < ActiveRecord::Base
    self.save
    
   end
-  
+
 end
 
 

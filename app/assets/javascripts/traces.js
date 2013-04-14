@@ -14,8 +14,8 @@
                data.addColumn('string', 'Ratio');    
                data.addColumn('number', 'Slices');
                data.addRows([
-                 ['Electic', miles.electric],
-                 ['Fossile', miles.fossile],
+                 ['Electic', 200],
+                 ['Fossile', 120],
 								 ['Empty', 0]
 	                 
                ]);

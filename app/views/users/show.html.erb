@@ -15,93 +15,38 @@
 		  <% end %>
 		<% end %>
 
-
-<!-- <div class="grid2">	
-	<div class="col">	
-		<div class="align-center">
-			
-		<%= image_tag @user.avatar_url(:thumb) if @user.avatar? %>
-	
-	  	<h1 id="username"><%= @user.user_name %></h1>
-
-	  	<% if can? :update, User, :id => @user.id %>
-			<%= link_to 'Bewerken', edit_user_path(@user), class: "button" %>
-		<% end %>
-
-	  	<ul>Kenteken:</ul>
-	    <%= @user.license_plate %> -->
-
 	<div class="wrapper grid2">	
 		<div class="col">
 			<div id="vertical-line-right">
 				<ul>
-					<li>
-						<h2>Profiel</h2>
-					</li>
-					<li>
-						<%= image_tag @user.avatar_url(:thumb), :class => "avatar" if @user.avatar? %>
-					</li>
-					<li class="center">
-						<h3><small class="profile">Gebruikersnaam</small><br />
-							<%= @user.user_name %></h3>
-					</li>
-					<li class="center">
-						<h3><small class="profile">Model</small><br />
-					    Opel Ampera</h3>
-					</li>
-					<li class="center">
-						<h3><small class="profile">Kenteken</small><br />
-					    <%= @user.license_plate %></h3>
-					</li>
-					<li class="center">
-						<h3><%= link_to 'Badges', :class => "button" %></h3>
-					</li>
+					<li><h2>Profiel</h2></li>
+					<li><%= image_tag @user.avatar_url(:thumb), :class => "avatar" if @user.avatar? %></li>
+					<li><h3><small>Gebruikersnaam</small>	<br /><%= @user.user_name %></h3></li>
+					<li><h3><small>Model</small>			<br />Opel Ampera</h3></li>
+					<li><h3><small>Kenteken</small>			<br /><%= @user.license_plate %></h3></li>
+					<li><h3><%= link_to 'Badges', :class => "button" %></h3></li>	
+					<% if current_user.role == 'admin' || (current_user == @user) %>	
+					<li><h3><%= link_to 'Bewerken', edit_user_path(@user), :class => "button" %></h3></li>
+					<% end %>
 				</ul>
 			</div>
 
-
-	
-		<%= link_to "Badges", class: "button" %>	
-		
-							<!-- <%= link_to 'Terug', :root %> -->
-
 		</div>
 
-		
-
-
-	</div>
-
-	<div class="col">
-		<div class="vertical-line">
+		<div class="col">
 			<ul id="profile_info">
-
-			 	<li>Email:
-			  	<%= mail_to @user.email, @user.email %><br /></li>
-	 
-			  	<li>Naam:
-			   	<%= @user.first_name.capitalize %> <%= @user.last_name.split(" ").each{|word| word.capitalize!}.join(" ")	 %><br /></li>
-			    
-			    <% if @user.birthday %>
-				    <li>Geboortedatum:
-				    <%= @user.birthday %>	<br /></li>
-			    <% end %>
-			    
-				  
-				  	<%= link_to 'Bewerken', edit_user_path(@user), :class => "button float-bottom" %>
-					
-					<ul>
-					  <li>GPS Longitude:	<%= @trace.gps_longitude %></li>
-					  <li>GPS Latitude:		<%= @trace.gps_latitude %></li>
-					  <li>Batterij status	<%= number_to_percentage(@trace.battery_value, :precision => 2) %></li> 
-					</ul>
+				<li>Naam:			<%= @user.first_name.capitalize %> <%= @user.last_name.split(" ").each{|word| word.capitalize!}.join(" ")	 %><br /></li>					
+				<li>Email:			<%= mail_to @user.email, @user.email %><br /></li>
+				<li>Geboortedatum:	<%= @user.birthday %></li>
+				<li>GPS Longitude:	<%= @trace.gps_longitude %></li>
+				<li>GPS Latitude:	<%= @trace.gps_latitude %></li>
+				<li>Batterij status	<%= number_to_percentage(@trace.battery_value, :precision => 2) %></li> 
+			</ul>
 	
-		
-				<div id="chart_div" data-miles="<%= @miles.to_json %>" style="width:500px; height:250px"></div>
-		<div id="chart_div2" style="width:500px; height:250px"></div>
-		<div id="chart_div3" data-battery="<%= @battery.to_json %>" style="width:500px; height:250px"></div>
-	</div>
-
+			<div id="chart_div" data-miles="<%= @miles.to_json %>" style="width:500px; height:250px"></div>
+			<div id="chart_div2" style="width:500px; height:250px"></div>
+			<div id="chart_div3" data-battery="<%= @battery.to_json %>" style="width:500px; height:250px"></div>
+		</div>
 </div>
 
 
