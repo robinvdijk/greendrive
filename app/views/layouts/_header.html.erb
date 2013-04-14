@@ -9,17 +9,17 @@
 	
 					<%= link_to image_tag("search.png"), root_path, :class => "icon-right" %>
 			
-					
-					
-			
 					<%= link_to image_tag("menu.png"), root_path, :class => "icon-right icon-menu" %>
 				<% end %>
 			<!-- <%= link_to "Gebruikers", users_path %> -->
 
 	</div>
 	
-	Ingelogd als <%= current_user.user_name %><% if current_user.role == 'admin'%> (<%= current_user.role %>)<% end %>.
-	<%= link_to 'Alle gebruikers', users_path %>
+	Ingelogd als <%= current_user.user_name %>
+	<% if current_user.role == 'admin'%> (<%= current_user.role %>).
+		<%= link_to 'Alle gebruikers', users_path %>
+	<% end %> 
+	
 	<%= link_to "Mijn profiel", user_path(current_user) %>
 	<%= link_to "Uitloggen", logout_path, :method => :delete %>
 	
