@@ -76,16 +76,17 @@
 			<% end %>
   				<div class="align-center">
   					<div class="avatar_pre"></div>
-					<ul>		
+					<ul>
   						<li>
   						<%= f.file_field :avatar%>
 
   					    <% if current_user %>
+						<% else %>
 						</li>
-						<li><%= check_box :terms_of_service, 'true', class: 'checkbox' %>
+						<li><%= f.check_box :terms_of_service, class: 'checkbox' %>
 						Ik ga akkoord met de voorwaarden *</li>
   			
-						<li><%= check_box :terms_of_privacy, 'true', class: 'checkbox' %>
+						<li><%= f.check_box :terms_of_privacy, class: 'checkbox' %>
 						Ik ga akkoord met de privacyverklaring *</li>
 					
   					     <div><%= f.submit "Account aanmaken", :class => 'button' %></div>

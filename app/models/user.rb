@@ -19,8 +19,8 @@ class User < ActiveRecord::Base
   validates :user_name, :presence => true, :uniqueness => true, :length => {:minimum => 4,:maximum => 20}
   validates :license_plate, :presence => true, :uniqueness => true, :length => {:minimum => 6, :maximum => 6}
   validates :email, :presence => true, :uniqueness => true, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i}
-  validates_acceptance_of :terms_of_service
-  validates_acceptance_of :terms_of_privacy
+  validates :terms_of_service, :acceptance => {:accept => true}
+  validates :terms_of_privacy, :acceptance => {:accept => true}
   
   before_create { generate_token(:auth_token) }
   mount_uploader :avatar, AvatarUploader
