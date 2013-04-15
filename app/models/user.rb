@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   validates_presence_of :password_confirmation, :on => :create
   validates_format_of :password, :with => /(?=^.{6,20}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/, on: :create
   #Password: Length between 6-20 characters, which consists of [at least] 1 lowercase, 1 uppercase and 1 special character OR digit
-
+  
   validates :password, :presence => {:on => :create}
   validates :first_name, :presence => true
   validates :last_name, :presence => true
@@ -65,16 +65,20 @@ class User < ActiveRecord::Base
   
 
 
-  # def self.from_omniauth(auth)
-  #   where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
-  #     user.provider = auth.provider
-  #     user.uid = auth.uid
-  #     user.name = auth.info.name
-  #     user.oauth_token = auth.credentials.token
-  #     user.oauth_expires_at = Time.at(auth.credentials.expires_at)
-  #     user.save!
-  #   end
-  # end
+  def self.from_omniauth(auth)
+    where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.first_name = auth.info.first_name
+      user.last_name = auth.info.last_name
+      user.user_name = auth.info.name
+      user.avatar = auth.info.image
+      user.email = auth.extra.raw_info.email
+      user.created_at = Time.now
+      user.oauth_token = auth.credentials.token
+      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+    end
+  end
 
 
 #### FACEBOOK OMNIAUTH ####

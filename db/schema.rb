@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130412091437) do
+ActiveRecord::Schema.define(:version => 20130414213545) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -59,6 +59,11 @@ ActiveRecord::Schema.define(:version => 20130412091437) do
     t.string   "role"
     t.boolean  "terms_of_service"
     t.boolean  "terms_of_privacy"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
   end
 
 end

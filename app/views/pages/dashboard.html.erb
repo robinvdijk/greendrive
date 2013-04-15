@@ -4,9 +4,7 @@
 <% if current_user %>
 	<h2>Welkom, <%= current_user.user_name %>
 	<% if current_user.role == 'admin'%> 
-		(<%= current_user.role %>)<% end %>.</h2>
-
-	<% if current_user.role == 'admin' %>
+		(<%= current_user.role %>).</h2>
 		<p><%= link_to "Alle gebruikers", users_path %></p>
 	<% end %>
 	<p><%= link_to "Mijn profiel", user_path(current_user) %></p>
