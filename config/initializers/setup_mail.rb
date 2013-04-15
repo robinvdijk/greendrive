@@ -4,12 +4,13 @@ if Rails.env != 'test'
 end
 
 ActionMailer::Base.smtp_settings = {  
-  :address              => "smtp.gmail.com",  
-  :port                 => 587,  
-  :domain               => "www.example.com", 
-  :password             => 'secret',  
-  :authentication       => "plain",  
-  :enable_starttls_auto => true  
-}  
+    :address => "smtp.gmail.com",
+    :port => "587",
+    :domain => "www.yourdomain.com",
+    :authentication => :login,
+    :user_name => "noreply.greendrive@gmail.com",
+    :password => "green2012"
+  }
+
 
 ActionMailer::Base.default_url_options[:host] = "localhost:3000"  

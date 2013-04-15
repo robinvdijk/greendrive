@@ -41,10 +41,15 @@ Greendrive::Application.configure do
   # Precompile additional assets
   config.assets.precompile += %w( .svg .eot .woff .ttf )
   
+  config.action_mailer.default_url_options = {:host => 'localhost:3000'}
   config.action_mailer.delivery_method = :smtp
-  ActionMailer::Base.smtp_settings = {
-    :address => "localhost",
-    :port => 1025,
+  
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => "587",
     :domain => "www.yourdomain.com",
+    :authentication => :login,
+    :user_name => "noreply.greendrive@gmail.com",
+    :password => "green2012"
   }
 end
