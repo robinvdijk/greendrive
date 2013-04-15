@@ -66,18 +66,24 @@ class User < ActiveRecord::Base
 
 
   def self.from_omniauth(auth)
-    where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.first_name = auth.info.first_name
-      user.last_name = auth.info.last_name
-      user.user_name = auth.info.name
-      user.avatar = auth.info.image
-      user.email = auth.extra.raw_info.email
-      user.created_at = Time.now
-      user.oauth_token = auth.credentials.token
-      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
-    end
+      where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+          if user.created_at.nil?
+            user.created_at = Time.now
+          end
+          if user.oauth_token.nil?
+            user.oauth_token = auth.credentials.token
+          end
+          if user.oauth_expires_at.nil?
+            user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+          end       
+        user.provider = auth.provider
+        user.uid = auth.uid
+        user.first_name = auth.info.first_name
+        user.last_name = auth.info.last_name
+        user.user_name = auth.info.name
+        user.avatar = auth.info.image
+        user.email = auth.extra.raw_info.email
+      end
   end
 
 
