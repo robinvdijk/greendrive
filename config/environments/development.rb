@@ -46,9 +46,6 @@ Greendrive::Application.configure do
   
   config.action_mailer.smtp_settings = {
     :address => "smtp.gmail.com",
-    :port => "587",
-    :domain => "www.yourdomain.com",
-    :authentication => :login,
     :user_name => "noreply.greendrive@gmail.com",
     :password => "green2012"
   }

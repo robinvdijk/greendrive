@@ -27,13 +27,13 @@ gem 'mini_magick'
 
 gem 'rails-i18n'
 
-gem 'mail', '2.4.4'
-
 gem "jquery-rails"
 
 gem 'googlecharts', :require => 'gchart'
 
 gem 'gon'
+
+gem 'merit'
 
 group :development do 
   gem 'sqlite3'
