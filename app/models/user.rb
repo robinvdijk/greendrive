@@ -8,7 +8,10 @@ class User < ActiveRecord::Base
   has_many :authentications
   has_many :traces
   has_many :segments
-  has_one  :achievement
+  
+  has_many :achievements
+  has_many :badges, through: :achievements
+
 
   validates_presence_of :password, :on => :create
   validates_presence_of :password_confirmation, :on => :create

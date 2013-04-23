@@ -1,5 +1,6 @@
 class Achievement < ActiveRecord::Base
   # attr_accessible :title, :body
   
-  has_many :badges
+  belongs_to :badge
+  belongs_to :user
 end
