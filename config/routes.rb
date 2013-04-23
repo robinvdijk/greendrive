@@ -15,6 +15,10 @@ Greendrive::Application.routes.draw do
   resources :users do
     resources :segments
   end
+  
+  resources :badges do 
+    resources :users
+  end
 
   resources :traces
   

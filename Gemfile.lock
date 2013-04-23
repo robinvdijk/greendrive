@@ -43,7 +43,6 @@ GEM
     akami (1.2.0)
       gyoku (>= 0.4.0)
       nokogiri (>= 1.4.0)
-    ambry (0.3.1)
     arel (3.0.2)
     awesome_print (1.1.0)
     bcrypt-ruby (3.0.1)
@@ -149,8 +148,6 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    merit (1.5.0)
-      ambry (~> 0.3.0)
     method_source (0.8.1)
     mime-types (1.21)
     mini_magick (3.5.0)
@@ -324,7 +321,6 @@ DEPENDENCIES
   jquery-rails
   json
   launchy
-  merit
   mini_magick
   mongrel (= 1.2.0.pre2)
   nifty-generators

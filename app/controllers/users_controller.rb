@@ -12,8 +12,9 @@ class UsersController < ApplicationController
    @trace = Trace.find(params[:id])
    @miles = { electric: @trace.electric, fossile: @trace.fossile }
    @battery = { battery_value: @trace.battery_value, created_at: @trace.created_at }
-   @points = { points: current_user.points}
    @segment = Segment.find(params[:id])
+   
+   @badges = Badge.where('value <= ?', @segment.mileage_electric).limit(1).order('value desc')
   end
   
   def new

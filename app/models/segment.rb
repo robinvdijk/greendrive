@@ -56,6 +56,8 @@ class Segment < ActiveRecord::Base
                end
              end
              
+
+             
            
            end
              

@@ -42,15 +42,6 @@
 				<li>GPS Latitude:	<%= @trace.gps_latitude %></li>
 				<li>Batterij status	<%= number_to_percentage(@trace.battery_value, :precision => 2) %></li> 
 				
-	
-					<%= current_user.points %>
-					<% if current_user.points < 1000 %>
-						<% current_user.add_points(40) %>
-					<% else %>
-						<% current_user.substract_points(300) %>
-					<% end %>
-
-					
 			</ul>
 	
 			<div id="chart_div" data-miles="<%= @miles.to_json %>" style="width:500px; height:250px"></div>
@@ -58,16 +49,12 @@
 			<div id="chart_div3" data-battery="<%= @battery.to_json %>" style="width:500px; height:250px"></div>
 			<div id="chart_div4" data-points="<%= @points.to_json %>" style="width:500px; height:250px"></div>
 			
-			
-			<% if @segment.mileage > 5000 %>
-			<div class="badge">
-				
-			</div>
-			<% else %>
-			<div class="badge2">
-				
-			</div>
+			<% @badges.each do |badge| %>
+				<%= badge.value %>
+				<%= image_tag badge.avatar_url(:thumb), class: 'avatar' %>
 			<% end %>
+			
+			<p>Electric Mileage <%= @segment.mileage_electric %></p>
 			
 		</div>
 </div>
