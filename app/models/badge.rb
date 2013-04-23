@@ -1,5 +1,5 @@
 class Badge < ActiveRecord::Base
-  attr_accessible :tier, :value, :avatar
+  attr_accessible :tier, :value, :avatar, :points
   
   mount_uploader :avatar, AvatarUploader
   

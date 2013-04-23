@@ -44,11 +44,6 @@
 	          
                ]);
 							 
-							 var data4 = new google.visualization.arrayToDataTable([
-								 ['Points', 'Earned', 'Total'],
-								 ['',points.points,1000-points.points]
-								 ])
-								 
                // Set chart options
              var options = {
 							 title:'Ratio of Fuel',
@@ -94,23 +89,23 @@
 							 };
 							 
                var options4 = {	 
-								title:'Points',
+       								title:'Points',
                 width:600,
                 height:80,
-								series: {
-									0: {color:'#39b54a'},
-									1: {color: '#808080'}},
-								bar: {
-									groupWidth: 15
-								},
-						  	isStacked: true,
- 							 legend: {
- 							 		position: 'none'
- 							 },
- 							 backgroundColor:	{
- 								  fill: 'none'
- 							 }
-							 };
+       								series: {
+       									0: {color:'#39b54a'},
+       									1: {color: '#808080'}},
+       								bar: {
+       									groupWidth: 15
+       								},
+       						  	isStacked: true,
+        							 legend: {
+        							 		position: 'none'
+        							 },
+        							 backgroundColor:	{
+        								  fill: 'none'
+        							 }
+       							 };
 
                // Instantiate and draw our chart, passing in some options.
                var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
