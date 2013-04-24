@@ -10,11 +10,13 @@ class UsersController < ApplicationController
   def show
    @user = User.find(params[:id])
    @trace = Trace.find(params[:id])
-   @miles = { electric: @trace.electric, fossile: @trace.fossile }
-   @battery = { battery_value: @trace.battery_value, created_at: @trace.created_at }
    @segment = Segment.find(params[:id])
+   @miles = { electric: @segment.mileage_electric, fossile: @segment.mileage_fossile }
+   @battery = { battery_value: @trace.battery_value, created_at: @trace.created_at }
+
    
-   @badges = Badge.where('value <= ?', @segment.mileage_electric).limit(10).order('value desc')
+   @badges_electric = Badge.where(title: 'Mileage Electric').where('value <= ?', @segment.mileage_electric).limit(1).order('value desc')
+   @badges_fossile = Badge.where(title: 'Mileage Fossile').where('value <= ?', @segment.mileage_fossile).limit(1).order('value desc')
   end
   
   def new

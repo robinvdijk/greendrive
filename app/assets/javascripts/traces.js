@@ -16,17 +16,17 @@
                data.addColumn('string', 'Ratio');    
                data.addColumn('number', 'Slices');
                data.addRows([
-                 ['Electic', 7654321],
-                 ['Fossile', 1234567],
+                 ['Electric', miles.electric],
+                 ['Fossile', miles.fossile],
 								 ['Empty', 0]
 	                 
                ]);
 				   
                var data2 = new google.visualization.arrayToDataTable([
-                 ['Ratio','Electic', 'Fossile', 'Empty'],
-                 ['', 450, 210, 0],
-								 ['', 450, 0, 210],
-								 ['', 0, 210, 450]  
+                 ['Ratio','Electric', 'Fossile', 'Empty'],
+                 ['', miles.electric, miles.fossile, 	0],
+								 ['', miles.electric, 0, 							(miles.electric + miles.fossile) - miles.electric],
+								 ['', 0, 							miles.fossile,	(miles.electric + miles.fossile) - miles.fossile]  
 								     
                ]);
                // Create the data table.

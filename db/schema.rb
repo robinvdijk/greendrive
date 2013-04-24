@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130423161801) do
+ActiveRecord::Schema.define(:version => 20130423170817) do
 
   create_table "achievements", :force => true do |t|
     t.integer  "badge_id"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20130423161801) do
     t.datetime "updated_at", :null => false
     t.string   "avatar"
     t.integer  "points"
+    t.string   "title"
   end
 
   create_table "segments", :force => true do |t|

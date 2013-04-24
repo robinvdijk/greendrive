@@ -4,19 +4,19 @@ SUPER LELIJKE CSS
 *************************************************************************************/
 	#chart_div {
 		right:115%;
-		top:150px;
+		top:350px;
 	}
 	
 	#chart_div2 {
 		right:60%;
-		top:-100px;
+		top:100px;
 		rect {
 			stroke-width:0;
 		}
 	}
 	
 	#chart_div3 {
-		top:-350px;
+		top:-150px;
 		left:15%;
 	}
 	
@@ -31,19 +31,18 @@ SUPER LELIJKE CSS
 	  }
 	}
 	
-	.badge {
-		width:600px;
-		height:600px;
-		background-image:url('grey.png');
-		background-repeat: no-repeat;
+	#badges {
+		top:-300px;
+		left:-90%;
+		position:relative;
+		width:940px;
 	}
 	
-	.badge2 {
-		width:600px;
-		height:600px;
-		background-image:url('green.png');
-		background-repeat: no-repeat;
+	.badge {
+		float:left;
+		margin-right:10px;
 	}
+
 	
 /*************************************************************************************/
 

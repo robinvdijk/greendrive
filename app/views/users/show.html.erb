@@ -49,13 +49,27 @@
 			<div id="chart_div3" data-battery="<%= @battery.to_json %>" style="width:500px; height:250px"></div>
 			<div id="chart_div4" data-points="<%= @points.to_json %>" style="width:500px; height:250px"></div>
 			
-			<% @badges.each do |badge| %>
-				<%= badge.value %>
-				<%= image_tag badge.avatar_url(:thumb), class: 'avatar' %>
-			<% end %>
-			
-			<p>Electric Mileage <%= @segment.mileage_electric %></p>
-			
+			<div id="badges">
+				
+				<div class="badge">
+					<% @badges_electric.each do |badge| %>
+						<%= image_tag badge.avatar_url(:thumb), class: 'avatar' %>
+						<p><%= badge.value %> elektrische kilometer badge </p>
+						<p>Punten: <%= badge.points %></p>
+						<p>Totaal Elektrisch: <%= @segment.mileage_electric %> km</p>
+					<% end %>
+				</div>
+				
+				<div class="badge">
+					<% @badges_fossile.each do |badge| %>
+						<%= image_tag badge.avatar_url(:thumb), class: 'avatar' %>
+						<p><%= badge.value %> fossiele kilometer badge </p>
+						<p>Punten: <%= badge.points %></p>
+						<p>Totaal Fossiel: <%= @segment.mileage_fossile %> km</p>
+					<% end %>
+				</div>
+			</div>
+	
 		</div>
 </div>
 
