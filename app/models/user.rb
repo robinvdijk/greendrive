@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_secure_password 
   has_many :authentications
   has_many :traces
+   # has_one :car
 
   validates_presence_of :password, :on => :create
   validates_presence_of :password_confirmation, :on => :create  

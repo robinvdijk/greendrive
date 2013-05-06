@@ -1,22 +1,41 @@
 
 	<div class="header">
-<<<<<<< HEAD
 	
-				<% unless controller_name == "sessions" %>
+		<% unless controller_name == "sessions" %>
 		
-					<%= link_to image_tag("home.png"), root_path, :class => "icon-left" %>
-=======
-
-		<%= link_to image_tag("home.png"), root_path %>
->>>>>>> 3ec4d890f30b1e8012d390a4b95b2b8b83cb48b9
-	
-					<%= link_to image_tag("search.png"), root_path, :class => "icon-right" %>
+		<div id="pagewrap">
 			
-					<%= link_to image_tag("menu.png"), root_path, :class => "icon-right icon-menu" %>
-				<% end %>
-			<!-- <%= link_to "Gebruikers", users_path %> -->
+			<ul id="nav">
+				<li class="home">
+					<%= link_to image_tag("home.png"), root_path %>
+				</li>
+				<li>
+					<%= link_to image_tag("menu.png"), root_path %>
+				        <ul>
+							<% if current_user %>
+				            <li><%= link_to "Mijn profiel", user_path(current_user) %></li>
+
+				            <li><%= link_to "Uitloggen", logout_path, :method => :delete %></li>
+							<% end %>
+				        </ul>
+				</li>
+				
+				<li>
+					<input type=search results=5 autosave=some_unique_value autofocus name=s>
+				</li>
+				
+			</ul>
+
+		
+		</div>
+		
+		<% end %>
+	<!-- <%= link_to "Gebruikers", users_path %> -->
 
 	</div>
+	
+	
+	
 	
 	
 	

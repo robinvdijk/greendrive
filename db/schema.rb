@@ -11,18 +11,32 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20130411122015) do
+ActiveRecord::Schema.define(:version => 20130425101205) do
+
+  create_table "cars", :force => true do |t|
+    t.string   "license_plate"
+    t.integer  "company_id"
+    t.integer  "user_id"
+    t.integer  "segment_id"
+    t.integer  "mileage"
+    t.integer  "mileage_electric"
+    t.integer  "mileage_fossile"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "segments", :force => true do |t|
     t.string   "auth_token"
     t.integer  "company_id"
     t.integer  "mileage"
     t.integer  "drive_electric_ratio"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
-=======
-ActiveRecord::Schema.define(:version => 20130404113027) do
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+    t.integer  "remote_id"
+    t.integer  "mileage_electric",     :default => 0
+    t.integer  "mileage_fossile",      :default => 0
+    t.string   "license_plate"
+  end
 
   create_table "traces", :force => true do |t|
     t.string   "title"
@@ -34,7 +48,6 @@ ActiveRecord::Schema.define(:version => 20130404113027) do
     t.datetime "created_at"
     t.float    "electric"
     t.float    "fossile"
->>>>>>> 3ec4d890f30b1e8012d390a4b95b2b8b83cb48b9
   end
 
   create_table "users", :force => true do |t|

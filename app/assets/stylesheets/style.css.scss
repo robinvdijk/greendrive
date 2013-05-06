@@ -46,6 +46,10 @@ small {
 		color: $green;}
 }
 
+small.green {
+	color: $green;
+}
+
 
 
 
@@ -62,6 +66,18 @@ small {
     -webkit-box-shadow: inset 1px 2px 2px rgba(255,255,255,0.4);
     box-shadow:         inset 1px 2px 2px rgba(255,255,255,0.4);
 	
+}
+
+.button_small {
+	height: 25px;
+	padding: 4px 20px;
+	background-color: $green;
+	border-radius: 3px;
+	color: $white !important;
+	border: 1px solid $darkgreen;
+    -moz-box-shadow:    inset 1px 2px 2px rgba(255,255,255,0.4);
+    -webkit-box-shadow: inset 1px 2px 2px rgba(255,255,255,0.4);
+    box-shadow:         inset 1px 2px 2px rgba(255,255,255,0.4);
 }
 
 /* Header */
@@ -82,6 +98,74 @@ small {
 		background: none;
 	}
 }
+
+#nav{
+	list-style:none;
+	float: left;
+	width:100%;
+	height: 45px;
+	position:relative;
+	z-index:5;
+	
+}
+#nav li{
+	float:right;
+	position:relative;
+	margin: 0;
+	width: auto;
+	padding: 13px;
+}
+#nav a{
+	color: $grey;
+	text-decoration:none;
+}
+#nav a:hover{
+	color:#fff;
+}
+
+/*--- DROPDOWN ---*/
+#nav ul{
+	background: $white; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
+	background:rgba(255,255,255,0.8); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
+	list-style:none;
+	margin-top: 10px;
+	position:absolute;
+	left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
+}
+#nav ul li{
+	padding-top:10px; /* Introducing a padding between the li and the a give the illusion spaced items */
+	float:none;
+}
+#nav ul a{
+	white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
+}
+#nav li:hover ul{ /* Display the dropdown on hover */
+	left:-95px; /* Bring back on-screen when needed */
+}
+#nav li:hover a{ /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
+	
+	text-decoration:underline;
+}
+#nav li:hover ul a{ /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
+	text-decoration:none;
+}
+#nav li:hover ul li a:hover{ /* Here we define the most explicit hover states--what happens when you hover each individual link. */
+	color: $green;
+}
+
+input[type=search] { 
+	color: $grey; 
+	font-size: 16px; 
+	text-align: right;
+	cursor: pointer;
+	display: block; 
+	word-spacing: 20px;               
+}
+
+li.home {
+	float: left !important;
+}
+
 
 /************************************************************************************
 REGISTREREN & INLOGGEN
@@ -182,7 +266,6 @@ ul {
 	li {
 		width: 225px;
 		margin-top: 25px;
-<<<<<<< HEAD
 		margin-left: auto;
 		margin-right: auto;
 		a {
@@ -193,10 +276,13 @@ ul {
 			color: $green;
 		}
 	}
-=======
-		margin-left:0px;
-		margin-right: auto;}
->>>>>>> 3ec4d890f30b1e8012d390a4b95b2b8b83cb48b9
+	li.left {
+		margin-left: 0 !important;
+	}
+	li.right {
+		margin-right: 0 !important;
+	}
+	
 }
 
 li.center {
