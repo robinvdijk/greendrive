@@ -8,13 +8,13 @@ Greendrive::Application.configure do
 
   # # Log error messages when you accidentally call methods on nil.
   # config.whiny_nils = true
-
+  
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -35,11 +35,18 @@ Greendrive::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
   
-  
-  
   # Add the fonts path
   config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 
   # Precompile additional assets
   config.assets.precompile += %w( .svg .eot .woff .ttf )
+  
+  config.action_mailer.default_url_options = {:host => 'localhost:3000'}
+  config.action_mailer.delivery_method = :smtp
+  
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :user_name => "noreply.greendrive@gmail.com",
+    :password => "green2012"
+  }
 end

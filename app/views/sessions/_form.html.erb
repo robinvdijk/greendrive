@@ -1,15 +1,43 @@
-<%= form_tag sessions_path do %>
-
-<%= text_field_tag :email, params[:email], :placeholder => "E-mailadres" %>
-<%= password_field_tag :password, '', :placeholder => "Wachtwoord" %>
-
-<p><%= link_to "forgotten password?", new_password_reset_path %></p>
-<div class="field">
-  <%= check_box_tag :remember_me, 1, params[:remember_me] %>
-  <%= label_tag :remember_me %>
-</div>
-
-<%= submit_tag 'Inloggen!' %>
-
-<p>Nog geen account? Registreer <%= link_to 'hier', new_user_path %>.</p>
-<% end %>
+<article class="col">
+	<div class="align-center">
+		<%= form_tag sessions_path do %>
+		<ul class="align-center">
+			<li>
+				<h2>Inloggen</h2>	
+			</li>
+			<li>
+				<div class="logo align-center"></div>
+			</li>
+			<li>
+				<%= label :email, 'E-mail'%><br />
+				<%= text_field_tag :email, params[:email], :class => 'field align-center', :placeholder => "E-mailadres" %><br />
+			</li>
+			<li>	
+				<%= label :password, 'Wachtwoord'%><br />
+				<%= password_field_tag :password, '', :class => 'field', :placeholder => "Wachtwoord" %>
+			</li>
+			<li class="center">
+				<%= link_to "Wachtwoord vergeten?", new_password_reset_path %></p>
+			</li>
+			<li class="center">
+				<%= check_box_tag :remember_me, 1, params[:remember_me] %>
+				<%= label_tag :remember_me, 'Onthoud mij' %>
+			</li>
+			<li class="center">
+				<%= submit_tag 'Inloggen!', :class => "button" %>
+			</li>
+			<li>
+				<%= link_to 'Connect with Facebook', '/auth/facebook', id: 'sign_up' %>
+			</li>
+			
+		</ul>	
+		<% end %>
+		<div id="link-register">
+			<ul>
+				<li>
+					<%= link_to 'Nog geen account?', new_user_path %>
+				</li>
+			</ul>
+		</div>			
+	</div>
+</article>	

@@ -1,35 +1,19 @@
-# class Ability
-#   include CanCan::Ability
-
-#   def initialize(user)
-#   	if user.is_admin?
-#   		can :manage, :all
-#   	else
-#   		can :read, :all
-#   		can :update, User do |user|
-#   			user.try(:user) == user
-#   		end
-#   	end
-#   end
-# end
-
-
+#### DEFINES RESTRICTIONS AND PERMISSIONS FOR ROLEs ####
 
 class Ability  
   include CanCan::Ability  
-
   def initialize(user)
-    user ||= User.new
-    # Guest User 
-    unless user 
-      can :read, :all
+    can :create, User
+    unless user
     else
-      # All registered users
       can :read, :all
-      # Admins 
-      if user.role = :admin
+      can :update, User, :id => user.id
+      can :destroy, User, :id => user.id
+      cannot :index, User
+      case user.role
+      when 'admin'
         can :manage, :all
       end
-    end 
+    end
   end  
 end

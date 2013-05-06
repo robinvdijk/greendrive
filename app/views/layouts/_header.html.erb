@@ -1,9 +1,17 @@
-
+<% if current_user %>
+<div id="progressbar"></div>
+ 
 	<div class="header">
 	
 		<% unless controller_name == "sessions" %>
 		
+<<<<<<< HEAD
 		<div id="pagewrap">
+=======
+					<%= link_to image_tag("home.png"), root_path, :class => "icon-left" %>
+	
+					<%= link_to image_tag("search.png"), root_path, :class => "icon-right" %>
+>>>>>>> da952d9f57e3b78b233a795a68f2a0ae88a41571
 			
 			<ul id="nav">
 				<li class="home">
@@ -34,11 +42,21 @@
 
 	</div>
 	
+	Ingelogd als <%= current_user.user_name %>
+	<% if current_user.role == 'admin'%> (<%= current_user.role %>).
+		<%= link_to 'Alle gebruikers', users_path %>
+	<% end %> 
+	
+	<%= link_to "Mijn profiel", user_path(current_user) %>
+	<%= link_to "Uitloggen", logout_path, :method => :delete %>
+	
+<<<<<<< HEAD
 	
 	
 	
 	
-	
-	
+=======
+<% end %>
 
-	
+>>>>>>> da952d9f57e3b78b233a795a68f2a0ae88a41571
+

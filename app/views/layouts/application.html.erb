@@ -10,6 +10,7 @@
   
 </head>
 <body>
+<<<<<<< HEAD
 
   
 </head>
@@ -17,9 +18,15 @@
 	
 	<% if controller_name == "sessions"%>
 	 	<%= render "layouts/header" %>
+=======
+	
+	<% if controller_name == "sessions" || controller_name == "password_resets"%>		
+		<%= render "layouts/header-login" %>
+>>>>>>> da952d9f57e3b78b233a795a68f2a0ae88a41571
 	<% else %>
-		<%= render "layouts/header" %>
+		<%= render "layouts/header" %>				
 	<% end %>
+<<<<<<< HEAD
 	
 	<div id="pagewrap">
 	
@@ -31,7 +38,26 @@
 		
 		
 			<%= yield %>
+=======
+
+	<div id="pagewrap">
+	
+		<% if flash[:notice] %>
+	    	<p class="notice"><%= flash[:notice] %></p>
+	    <% end %>	 
+
+	    <% if flash[:alert] %>
+	   		<p class="notice"><%= flash[:alert] %></p>
+	    <% end %>	 
+
+	    <% if flash[:success] %>
+	    	<p class="notice"><%= flash[:success] %></p>
+		<% end %>	
+>>>>>>> da952d9f57e3b78b233a795a68f2a0ae88a41571
 		
+		<%= yield %>
+
+	</div>
 </body>
 </html>
 

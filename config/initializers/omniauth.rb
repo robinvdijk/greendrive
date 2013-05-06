@@ -1,19 +1,8 @@
-
+OmniAuth.config.logger = Rails.logger
 
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :facebook, '147143375453147', '34466616f66ecb6c220a3156dbde674b',{:scope => 'email, publish_stream', :client_options => { :ssl => { :ca_file => "#{Rails.root}/config/ca-bundle.crt" } } }
+  provider :facebook, '162459833909745', '1ec648c13a19a2cde4da084c7c8d8776', {:client_options => {:ssl => {:verify => false}}}
 end
-
-# OmniAuth.config.on_failure = Proc.new do |env|
-#   UsersController.action(:omniauth_failure).call(env)
-# end
-
-OmniAuth.config.on_failure = Proc.new { |env|
-  OmniAuth::FailureEndpoint.new(env).redirect_to_failure
-}
-# Rails.application.config.middleware.use OmniAuth::Builder do
-#   provider :facebook, '	147143375453147', '34466616f66ecb6c220a3156dbde674b'
-# end
 
 
 # Rails.application.config.middleware.use OmniAuth::Builder do
@@ -24,10 +13,4 @@ OmniAuth.config.on_failure = Proc.new { |env|
 # end
 
 
-
-# OmniAuth.config.logger = Rails.logger
-
-# Rails.application.config.middleware.use OmniAuth::Builder do
-#   provider :facebook, ENV['147143375453147'], ENV['34466616f66ecb6c220a3156dbde674b']
-# end
 

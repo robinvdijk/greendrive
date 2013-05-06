@@ -1,20 +1,10 @@
 class Trace < ActiveRecord::Base
   belongs_to :user 
-
-  def init
-    response = HTTParty.get('http://360-ev.com/Services/Authentication.svc/json/Authenticate?username=[greenflux2012]&password=[green2012]')
-    puts response.body
-  end
-  
-  def init_2
-    auth = {username: "greenflux2012", password: "green2012"}
-    response = HTTParty.get('http://360-ev.com/Services/Authentication.svc/json/Authenticate?', basic_auth: auth)
-    
-  end
-  
+   
   def fetch
     client = Savon.client(wsdl: "http://www.mysycada.com/mbox/services/Tracing.asmx?WSDL")
     response = client.call(:get_last_trace_of_device_with_licence_plate, xml: '<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://sycada.com/ws/Tracing/1.0" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://sycada.com/entities/authentication/user/1.0" xmlns:ins1="http://sycada.com/entities/common/simpledatetimerange/1.0" xmlns:ins2="http://sycada.com/entities/common/simpledatetime/1.0" xmlns:ins3="http://sycada.com/entities/common/pager/1.0"><env:Body><tns:GetLastTraceOfDeviceWithLicencePlate><ins0:User><ins0:ID>6749</ins0:ID><ins0:CompanyDataID>13722</ins0:CompanyDataID></ins0:User><tns:LicencePlate>81-TRR-8</tns:LicencePlate></tns:GetLastTraceOfDeviceWithLicencePlate></env:Body></env:Envelope>')
+
     if response.success?
       data = response.to_hash[:get_last_trace_of_device_with_licence_plate_response][:get_last_trace_of_device_with_licence_plate_result][:last_trace]
       if data 
@@ -42,11 +32,6 @@ class Trace < ActiveRecord::Base
       end
   end
     
-  def fetch_time
-    client = Savon.client(wsdl: "http://www.mysycada.com/mbox/services/Tracing.asmx?WSDL")
-    response = client.call(:get_last_trace_of_device_with_licence_plate, xml: '<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://sycada.com/ws/Tracing/1.0" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ins0="http://sycada.com/entities/authentication/user/1.0" xmlns:ins1="http://sycada.com/entities/common/simpledatetimerange/1.0" xmlns:ins2="http://sycada.com/entities/common/simpledatetime/1.0" xmlns:ins3="http://sycada.com/entities/common/pager/1.0"><env:Body><tns:GetLastTraceOfDeviceWithLicencePlate><ins0:User><ins0:ID>6749</ins0:ID><ins0:CompanyDataID>13722</ins0:CompanyDataID></ins0:User><tns:LicencePlate>81-TRR-8</tns:LicencePlate></tns:GetLastTraceOfDeviceWithLicencePlate></env:Body></env:Envelope>')
-
-  end
   
   def authenticate
     response = @client.call(:authenticate, message: {username: 'greenflux2012', password: 'green2012'})

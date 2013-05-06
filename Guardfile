@@ -6,6 +6,7 @@ guard 'livereload' do
   watch(%r{app/helpers/.+\.rb})
   watch(%r{public/.+\.(css|js|html)})
   watch(%r{config/locales/.+\.yml})
+  watch(%r{app/assets/stylesheets/.+\.(css|scss)})
   # Rails Assets Pipeline
   watch(%r{(app|vendor)(/assets/\w+/(.+\.(css|js|html))).*}) { |m| "/assets/#{m[3]}" }
 end
@@ -16,7 +17,7 @@ guard 'bundler' do
   # watch(/^.+\.gemspec/)
 end
 
-guard 'rspec', :all_after_pass => false do
+guard 'rspec', :all_after_pass => false, :all_on_start => false do
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')  { "spec" }

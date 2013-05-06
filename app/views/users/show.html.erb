@@ -16,12 +16,16 @@
 		  <% end %>
 		<% end %>
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> da952d9f57e3b78b233a795a68f2a0ae88a41571
 	<div class="wrapper grid2">	
 		<div class="col">
 			<div id="vertical-line-right">
 				<ul>
+<<<<<<< HEAD
 					<li>
 						<h2>Profiel</h2>
 					</li>
@@ -88,10 +92,60 @@
 			</ul>
 		</div>
 	</div>
+=======
+					<li><h2>Profiel</h2></li>
+					<li><%= image_tag @user.avatar_url(:thumb), :class => "avatar" if @user.avatar? %></li>
+					<li><h3><small>Gebruikersnaam</small>	<br /><%= @user.user_name %></h3></li>
+					<li><h3><small>Model</small>			<br />Opel Ampera</h3></li>
+					<li><h3><small>Kenteken</small>			<br /><%= @user.license_plate %></h3></li>
+					<li><h3><%= link_to 'Badges', :class => "button" %></h3></li>	
+					<% if current_user.role == 'admin' || (current_user == @user) %>	
+					<li><h3><%= link_to 'Bewerken', edit_user_path(@user), :class => "button" %></h3></li>
+					<% end %>
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="col">
+			<ul id="profile_info">
+				<li>Naam:			<%= @user.first_name.capitalize %> <%= @user.last_name.split(" ").each{|word| word.capitalize!}.join(" ")	 %><br /></li>					
+				<li>Email:			<%= mail_to @user.email, @user.email %><br /></li>
+				<li>Geboortedatum:	<%= @user.birthday %></li>
+				<li>GPS Longitude:	<%= @trace.gps_longitude %></li>
+				<li>GPS Latitude:	<%= @trace.gps_latitude %></li>
+				<li>Batterij status	<%= number_to_percentage(@trace.battery_value, :precision => 2) %></li> 
+				
+			</ul>
 	
-	<div id="chart_div" data-miles="<%= @miles.to_json %>" style="width:500px; height:250px"></div>
-	<div id="chart_div2" style="width:500px; height:250px"></div>
-	<div id="chart_div3" data-battery="<%= @battery.to_json %>" style="width:500px; height:250px"></div>
+			<div id="chart_div" data-miles="<%= @miles.to_json %>" style="width:500px; height:250px"></div>
+			<div id="chart_div2" style="width:500px; height:250px"></div>
+			<div id="chart_div3" data-battery="<%= @battery.to_json %>" style="width:500px; height:250px"></div>
+			<div id="chart_div4" data-points="<%= @points.to_json %>" style="width:500px; height:250px"></div>
+			
+			<div id="badges">
+				
+				<div class="badge">
+					<% @badges_electric.each do |badge| %>
+						<%= image_tag badge.avatar_url(:thumb), class: 'avatar' %>
+						<p><%= badge.value %> elektrische kilometer badge </p>
+						<p>Punten: <%= badge.points %></p>
+						<p>Totaal Elektrisch: <%= @segment.mileage_electric %> km</p>
+					<% end %>
+				</div>
+				
+				<div class="badge">
+					<% @badges_fossile.each do |badge| %>
+						<%= image_tag badge.avatar_url(:thumb), class: 'avatar' %>
+						<p><%= badge.value %> fossiele kilometer badge </p>
+						<p>Punten: <%= badge.points %></p>
+						<p>Totaal Fossiel: <%= @segment.mileage_fossile %> km</p>
+					<% end %>
+				</div>
+			</div>
+>>>>>>> da952d9f57e3b78b233a795a68f2a0ae88a41571
+	
+		</div>
 </div>
 
 

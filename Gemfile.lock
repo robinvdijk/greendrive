@@ -10,7 +10,7 @@ GIT
       xpath (>= 2.0.0.beta1)
 
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     actionmailer (3.2.12)
       actionpack (= 3.2.12)
@@ -55,9 +55,12 @@ GEM
     childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
     chunky_png (1.2.8)
+<<<<<<< HEAD
     clock (0.2.5)
       clock
       rails (>= 3.0.0)
+=======
+>>>>>>> da952d9f57e3b78b233a795a68f2a0ae88a41571
     code_analyzer (0.3.1)
       sexp_processor
     coderay (1.0.9)
@@ -97,9 +100,19 @@ GEM
       multipart-post (~> 1.1)
     ffi (1.6.0)
     ffi (1.6.0-x86-mingw32)
+    flot-rails (0.0.2)
+      jquery-rails
     formatador (0.2.4)
+<<<<<<< HEAD
+=======
+    friendly_id (4.0.9)
+>>>>>>> da952d9f57e3b78b233a795a68f2a0ae88a41571
     fssm (0.2.10)
     gem_plugin (0.2.3)
+    gon (4.0.2)
+      actionpack (>= 2.3.0)
+      json
+    googlecharts (1.6.8)
     guard (1.7.0)
       formatador (>= 0.2.4)
       listen (>= 0.6.0)
@@ -201,6 +214,8 @@ GEM
       activesupport (= 3.2.12)
       bundler (~> 1.0)
       railties (= 3.2.12)
+    rails-i18n (0.7.2)
+      i18n (~> 0.5)
     rails_best_practices (1.13.4)
       activesupport
       awesome_print
@@ -305,6 +320,10 @@ DEPENDENCIES
   compass-rails (>= 1.0.3)
   database_cleaner
   factory_girl_rails
+  flot-rails
+  friendly_id
+  gon
+  googlecharts
   guard-bundler
   guard-livereload
   guard-rspec
@@ -312,7 +331,10 @@ DEPENDENCIES
   jquery-rails
   json
   launchy
+<<<<<<< HEAD
   mail (= 2.4.4)
+=======
+>>>>>>> da952d9f57e3b78b233a795a68f2a0ae88a41571
   mini_magick
   mongrel (= 1.2.0.pre2)
   nifty-generators
@@ -320,6 +342,7 @@ DEPENDENCIES
   omniauth-facebook (~> 1.4.0)
   pg
   rails
+  rails-i18n
   rails_best_practices
   rb-fsevent
   rspec-rails
