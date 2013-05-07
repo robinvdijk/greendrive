@@ -1,5 +1,7 @@
 Greendrive::Application.routes.draw do  
 
+  get "cars/new"
+
   resources :authentications
 
   resources :password_resets
