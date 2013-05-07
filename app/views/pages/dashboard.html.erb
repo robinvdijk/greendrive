@@ -1,42 +1,26 @@
-<<<<<<< HEAD
+
 <% provide(:title, "Dashboard")  %>
 
 <div id="pagewrap">
 	<div class="wrapper grid3">
 		<% if current_user %>
-			<h2>Hallo, <%= current_user.user_name %> de <%= current_user.role %>.</h2>
+			<h2>Welkom, <%= current_user.user_name %>
 	
-				<p><%= link_to "Alle gebruikers", users_path %></p>
-			<p><%= link_to "Mijn profiel", user_path(current_user) %></p>
-			<p><%= link_to "Uitloggen", logout_path, :method => :delete
-		 %></p>
-
-			<% else %>
-				<p><%= link_to "Login", new_session_path %> of <%= link_to "registeer", new_user_path %>.</p>
-=======
-
-<% provide(:title, "Dashboard")  %>
-
-<% if current_user %>
-	<h2>Welkom, <%= current_user.user_name %>
-	<% if current_user.role == 'admin'%> 
-		(<%= current_user.role %>).</h2>
-		<p><%= link_to "Alle gebruikers", users_path %></p>
-	<% end %>
-	<p><%= link_to "Mijn profiel", user_path(current_user) %></p>
-	<p><%= link_to "Uitloggen", logout_path, :method => :delete %></p>
- 	<p><%= link_to "Traces", traces_path %>
-
-	<% else %>
+			<% if current_user.role == 'admin'%> 
+				(<%= current_user.role %>).</h2>
+					<p><%= link_to "Alle gebruikers", users_path %></p>
+			<% end %>
+	
+		<% else %>
 
 		redirect_to new_session_path
 
 		<p><%= link_to "Login", new_session_path %> of <%= link_to "registeer", new_user_path %>.</p>
->>>>>>> da952d9f57e3b78b233a795a68f2a0ae88a41571
+
 
 				<%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
 		
-<<<<<<< HEAD
+
 
 
 				<%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %><br />
@@ -46,6 +30,5 @@
 		<% end %>
 	</div>
 </div>
-=======
-<% end %>
->>>>>>> da952d9f57e3b78b233a795a68f2a0ae88a41571
+
+

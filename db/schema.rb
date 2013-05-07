@@ -11,21 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20130425101205) do
-
-  create_table "cars", :force => true do |t|
-    t.string   "license_plate"
-    t.integer  "company_id"
-    t.integer  "user_id"
-    t.integer  "segment_id"
-    t.integer  "mileage"
-    t.integer  "mileage_electric"
-    t.integer  "mileage_fossile"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-=======
-ActiveRecord::Schema.define(:version => 20130423170817) do
+ActiveRecord::Schema.define(:version => 20130507120104) do
 
   create_table "achievements", :force => true do |t|
     t.integer  "badge_id"
@@ -50,30 +36,34 @@ ActiveRecord::Schema.define(:version => 20130423170817) do
     t.string   "avatar"
     t.integer  "points"
     t.string   "title"
->>>>>>> da952d9f57e3b78b233a795a68f2a0ae88a41571
+  end
+
+  create_table "cars", :force => true do |t|
+    t.string   "license_plate"
+    t.integer  "company_id"
+    t.integer  "user_id"
+    t.integer  "segment_id"
+    t.integer  "mileage"
+    t.integer  "mileage_electric"
+    t.integer  "mileage_fossile"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "segments", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "title"
     t.string   "auth_token"
     t.integer  "company_id"
     t.integer  "mileage"
     t.integer  "drive_electric_ratio"
-<<<<<<< HEAD
     t.datetime "created_at",                          :null => false
     t.datetime "updated_at",                          :null => false
+    t.string   "title"
+    t.integer  "user_id"
+    t.integer  "max_segment_id"
     t.integer  "remote_id"
+    t.string   "license_plate"
     t.integer  "mileage_electric",     :default => 0
     t.integer  "mileage_fossile",      :default => 0
-=======
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
-    t.integer  "mileage_electric"
-    t.integer  "mileage_fossile"
-    t.integer  "max_segment_id"
->>>>>>> da952d9f57e3b78b233a795a68f2a0ae88a41571
-    t.string   "license_plate"
   end
 
   create_table "traces", :force => true do |t|
@@ -95,8 +85,8 @@ ActiveRecord::Schema.define(:version => 20130423170817) do
     t.string   "last_name"
     t.string   "user_name"
     t.string   "license_plate"
-    t.datetime "created_at",                            :null => false
-    t.datetime "updated_at",                            :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
     t.string   "avatar"
     t.date     "birthday"
     t.string   "auth_token"
@@ -110,8 +100,6 @@ ActiveRecord::Schema.define(:version => 20130423170817) do
     t.string   "name"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
-    t.integer  "sash_id"
-    t.integer  "level",                  :default => 0
   end
 
 end

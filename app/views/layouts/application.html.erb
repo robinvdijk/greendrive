@@ -1,44 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= full_title(yield(:title)) %></title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+  
 
 <meta name="viewport" content="width=device-width; initial-scale=1.0">
-  
-</head>
-<body>
-<<<<<<< HEAD
 
-  
+	<%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag 'application', :media => "all" %>
+	<script type='text/javascript'>
+	$(function(){
+		$('.tooltip [title]').tipsy({trigger: 'focus', gravity: 'w'});
+	});
+	</script>
+
 </head>
 <body>
+
 	
-	<% if controller_name == "sessions"%>
-	 	<%= render "layouts/header" %>
-=======
-	
-	<% if controller_name == "sessions" || controller_name == "password_resets"%>		
-		<%= render "layouts/header-login" %>
->>>>>>> da952d9f57e3b78b233a795a68f2a0ae88a41571
-	<% else %>
-		<%= render "layouts/header" %>				
-	<% end %>
-<<<<<<< HEAD
-	
-	<div id="pagewrap">
-	
-	<% if flash[:notice] %>
-	     <p class="notice"><%= flash[:notice] %></p>
-	 <% end %>
-	 
- 	</div>
-		
-		
-			<%= yield %>
-=======
+		<%= render "layouts/header" %>
 
 	<div id="pagewrap">
 	
@@ -53,11 +32,12 @@
 	    <% if flash[:success] %>
 	    	<p class="notice"><%= flash[:success] %></p>
 		<% end %>	
->>>>>>> da952d9f57e3b78b233a795a68f2a0ae88a41571
+
+	</div>
 		
 		<%= yield %>
 
-	</div>
+	
 </body>
 </html>
 

@@ -3,14 +3,14 @@ source 'http://rubygems.org'
 gem 'rails'
 gem 'thin'
 gem 'cancan'
-<<<<<<< HEAD
 
-=======
+
+
 gem 'savon'
 gem 'rails_best_practices'
 gem "flot-rails"
 gem 'friendly_id'
->>>>>>> da952d9f57e3b78b233a795a68f2a0ae88a41571
+
 gem 'susy'
 gem 'compass', '>= 0.12.2'
 gem 'compass-rails', '>= 1.0.3'
@@ -20,19 +20,19 @@ gem 'clock'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-<<<<<<< HEAD
 
-=======
->>>>>>> da952d9f57e3b78b233a795a68f2a0ae88a41571
+
+
+
 gem 'savon'
 gem 'rails_best_practices'
 gem 'httparty'
 gem 'commands', group: [:development, :test] 
-<<<<<<< HEAD
 
-=======
+
+
 gem 'json'
->>>>>>> da952d9f57e3b78b233a795a68f2a0ae88a41571
+
 
 # used for avatar uploading
 gem 'carrierwave'

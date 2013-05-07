@@ -1,5 +1,6 @@
+<div id="pagewrap">		
 <%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
+	<% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> zorgen ervoor dat deze gebruiker niet opgeslagen kan worden:</h2>
 
@@ -9,90 +10,76 @@
       <% end %>
  	  </ul>
     </div>
-  <% end %>
-
- 	 	<article class="col">
-			<% if current_user %>
-			<div class="edit">
-			<% else %>
-  			<div class="register">
-			<% end %>
-  				<div class="align-center">
-  						<ul>
-  							<li>
-								<% if current_user %>
-  								<h2>Bewerken</h2>
-								<% else %>
-								<h2>Registreren</h2>
-								<% end %>
-  							</li>
-  							<li>
-  							    <%= f.label :first_name, t('labels.first_name') %></strong><br>
-  							    <%= f.text_field :first_name, :class => 'field' %>
-  							</li>
-  							<li>
-  				  			    <%= f.label :last_name, t('labels.last_name') %></strong><br>
-  				  			    <%= f.text_field :last_name, :class => 'field' %>
-  							</li>
-  							<li>
-  				  			    <%= f.label :email, t('labels.email')
-  				  			     %></strong><br />
-  				  			    <%= f.text_field :email, :autofocus => true, :class => 'field' %>
-  								</li>
-  							<li>
-  				  			    <%= f.label :user_name, t('labels.user_name') %></strong><br />
-  				  			    <%= f.text_field :user_name, :class => 'field' %>
-  							</li>
-  							<li>
-  							    <%= f.label :license_plate, t('labels.licence_plate')
-  							     %></strong><br />
-  							    <%= f.text_field :license_plate, :placeholder => '81TRR8', :class => 'field' %>
-  							</li>
-  							<li>
-  							    <%= f.label :password, t('labels.password')
-  							     %></strong><br />
-  							    <%= f.password_field :password, :class => 'field' %>
-  							</li>
-  							<li>
-  							    <%= f.label :password_confirmation, t('labels.password_confirmation')%></strong><br />
-  							    <%= f.password_field :password_confirmation, :class => 'field' %>
-								
-							</li>
-							
-							<% if current_user %>
-							<li><%= f.submit "Opslaan", class: 'button' %></li>
-							<% end %>
-  						
-  						</ul>
-  					</div>
-  				</div>
-  		</article>
-
-  		<article class="col">
-			<% if current_user %>
-			<div class="edit">
-			<% else %>
-  			<div class="register">
-			<% end %>
-  				<div class="align-center">
-  					<div class="avatar_pre"></div>
-					<ul>
-  						<li>
-  						<%= f.file_field :avatar%>
-
-  					    <% if current_user %>
-						<% else %>
-						</li>
-						<li><%= f.check_box :terms_of_service, class: 'checkbox' %>
-						Ik ga akkoord met de voorwaarden *</li>
-  			
-						<li><%= f.check_box :terms_of_privacy, class: 'checkbox' %>
-						Ik ga akkoord met de privacyverklaring *</li>
-					
-  					     <div><%= f.submit "Account aanmaken", :class => 'button' %></div>
-  					    <% end %>
-						</ul>
-  				</div>
-  			</div>
-  		</article>
 <% end %>
+
+
+		
+		<div class="wrapper grid2">	
+			<article class="col">
+				<div id="vertical-line-right">
+					<ul>
+
+						<li>
+							<h2>Bewerken</h2>
+						</li>
+						<li>
+							<%= image_tag @user.avatar_url(:thumb), :class => "avatar" if @user.avatar? %>
+						</li>
+						<li>
+						<%= f.file_field :avatar%>
+						</li>
+						<li>
+			  			    <%= f.label :user_name, t('labels.user_name') %></strong><br />
+			  			    <%= f.text_field :user_name, :class => 'field' %>
+						</li>
+						
+						<li class="center">
+							<%= link_to 'Badges', :class => "button" %>
+						</li>
+					
+					</ul>
+				</div>
+			</article>
+
+		
+	
+		
+								<!-- <%= link_to 'Terug', :root %> -->
+
+	
+	
+			<article class="col">
+				<ul>
+					<li class="left top">
+					    <%= f.label :first_name, t('labels.first_name') %></strong><br>
+					    <%= f.text_field :first_name, :class => 'field' %>
+					</li>
+					<li class="left">
+		  			    <%= f.label :last_name, t('labels.last_name') %></strong><br>
+		  			    <%= f.text_field :last_name, :class => 'field' %>
+					</li>
+					<li class="left">
+		  			    <%= f.label :email, t('labels.email')
+		  			     %></strong><br />
+		  			    <%= f.text_field :email, :autofocus => true, :class => 'field' %>
+					</li>
+					<li class="left">
+					    <%= f.label :password, t('labels.password')
+					     %></strong><br />
+					    <div class="toolip"><%= f.password_field :password, :title => "De gebruikersnaam moet minimaal 4 en maximaal 20 tekens bevatten.", :class => 'field' %></div>
+					</li>
+					<li class="left">
+					    <%= f.label :password_confirmation, t('labels.password_confirmation')%></strong><br />
+					    <div class="tooltip"><%= f.password_field :password_confirmation, :title => "De gebruikersnaam moet minimaal 4 en maximaal 20 tekens bevatten.", :class => 'field' %></div>
+					
+					</li>
+					
+					<li class="left">
+						<%= f.submit "Opslaan", :class => "button" %>
+					</li>
+				</ul>
+			</article>
+			
+		</div>
+	<% end%>
+</div>

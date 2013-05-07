@@ -9,6 +9,7 @@ Greendrive::Application.routes.draw do
     match 'auth/failure', to: redirect('/')
       
     match 'signout', to: 'sessions#destroy', as: 'signout'
+    match 'logout', to: 'sessions#destroy', as: 'logout'
 
   resources :sessions
 

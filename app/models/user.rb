@@ -6,15 +6,15 @@ class User < ActiveRecord::Base
 
   has_many :authentications
   has_many :traces
-<<<<<<< HEAD
+
    # has_one :car
-=======
+
   has_many :segments
   
   has_many :achievements
   has_many :badges, through: :achievements
 
->>>>>>> da952d9f57e3b78b233a795a68f2a0ae88a41571
+
 
   validates_presence_of :password, :on => :create
   validates_presence_of :password_confirmation, :on => :create
