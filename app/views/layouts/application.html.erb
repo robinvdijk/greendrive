@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+
+<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+	<%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag 'application', :media => "all" %>
+	<script type='text/javascript'>
+	$(function(){
+		$('.tooltip [title]').tipsy({trigger: 'focus', gravity: 'w'});
+	});
+	</script>
+
+</head>
+<body>
+
+	
+		<%= render "layouts/header" %>
+
+	<div id="pagewrap">
+	
+		<% if flash[:notice] %>
+	    	<p class="notice"><%= flash[:notice] %></p>
+	    <% end %>	 
+
+	    <% if flash[:alert] %>
+	   		<p class="notice"><%= flash[:alert] %></p>
+	    <% end %>	 
+
+	    <% if flash[:success] %>
+	    	<p class="notice"><%= flash[:success] %></p>
+		<% end %>	
+
+	</div>
+		
+		<%= yield %>
+
+	
+</body>
+</html>
+
+

@@ -1,0 +1,85 @@
+<div id="pagewrap">		
+<%= form_for(@user) do |f| %>
+	<% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> zorgen ervoor dat deze gebruiker niet opgeslagen kan worden:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+ 	  </ul>
+    </div>
+<% end %>
+
+
+		
+		<div class="wrapper grid2">	
+			<article class="col">
+				<div id="vertical-line-right">
+					<ul>
+
+						<li>
+							<h2>Bewerken</h2>
+						</li>
+						<li>
+							<%= image_tag @user.avatar_url(:thumb), :class => "avatar" if @user.avatar? %>
+						</li>
+						<li>
+						<%= f.file_field :avatar%>
+						</li>
+						<li>
+			  			    <%= f.label :user_name, t('labels.user_name') %></strong><br />
+			  			    <%= f.text_field :user_name, :class => 'field' %>
+						</li>
+						
+						<li class="center">
+							<%= link_to 'Badges', :class => "button" %>
+						</li>
+					
+					</ul>
+				</div>
+			</article>
+
+		
+	
+		
+								<!-- <%= link_to 'Terug', :root %> -->
+
+	
+	
+			<article class="col">
+				<ul>
+					<li class="left top">
+					    <%= f.label :first_name, t('labels.first_name') %></strong><br>
+					    <%= f.text_field :first_name, :class => 'field' %>
+					</li>
+					<li class="left">
+		  			    <%= f.label :last_name, t('labels.last_name') %></strong><br>
+		  			    <%= f.text_field :last_name, :class => 'field' %>
+					</li>
+					<li class="left">
+		  			    <%= f.label :email, t('labels.email')
+		  			     %></strong><br />
+		  			    <%= f.text_field :email, :autofocus => true, :class => 'field' %>
+					</li>
+					<li class="left">
+					    <%= f.label :password, t('labels.password')
+					     %></strong><br />
+					    <div class="toolip"><%= f.password_field :password, :title => "De gebruikersnaam moet minimaal 4 en maximaal 20 tekens bevatten.", :class => 'field' %></div>
+					</li>
+					<li class="left">
+					    <%= f.label :password_confirmation, t('labels.password_confirmation')%></strong><br />
+					    <div class="tooltip"><%= f.password_field :password_confirmation, :title => "De gebruikersnaam moet minimaal 4 en maximaal 20 tekens bevatten.", :class => 'field' %></div>
+					
+					</li>
+					
+					<li class="left">
+						<%= f.submit "Opslaan", :class => "button" %>
+					</li>
+				</ul>
+			</article>
+			
+		</div>
+	<% end%>
+</div>

@@ -1,0 +1,15 @@
+<h1>Wachtwoord Vergeten</h1>
+<p>
+	Vul hier uw emailadres in waarmee uw account is geregistreerd.
+</p>
+<p>
+	<%= form_tag password_resets_path, :method => :post do %>
+	<ul>
+	  <li style="margin-left:0;">
+	    <%= label_tag :email %><br />
+	    <%= text_field_tag :email, params[:email], class: 'field' %>
+	  </li>
+	  <li class="actions" style="margin-left:0;"><%= submit_tag "Reset Password", class: "button" %></li>
+	  </ul>
+	<% end %>
+</p>
