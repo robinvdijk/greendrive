@@ -8,14 +8,16 @@
 	   var miles = $('#chart_div').data('miles');
 		 
 		 var battery = $('#chart_div3').data('battery');
+		 
+		 var points = $('#chart_div4').data('points');
 
                // Create the data table.
                var data = new google.visualization.DataTable();
                data.addColumn('string', 'Ratio');    
                data.addColumn('number', 'Slices');
                data.addRows([
-                 ['Electic', 200],
-                 ['Fossile', 120],
+                 ['Electic', 7654321],
+                 ['Fossile', 1234567],
 								 ['Empty', 0]
 	                 
                ]);
@@ -41,7 +43,12 @@
 
 	          
                ]);
-
+							 
+							 var data4 = new google.visualization.arrayToDataTable([
+								 ['Points', 'Earned', 'Total'],
+								 ['',points.points,1000-points.points]
+								 ])
+								 
                // Set chart options
              var options = {
 							 title:'Ratio of Fuel',
@@ -85,6 +92,25 @@
                  width:400,
                  height:300
 							 };
+							 
+               var options4 = {	 
+								title:'Points',
+                width:600,
+                height:80,
+								series: {
+									0: {color:'#39b54a'},
+									1: {color: '#808080'}},
+								bar: {
+									groupWidth: 15
+								},
+						  	isStacked: true,
+ 							 legend: {
+ 							 		position: 'none'
+ 							 },
+ 							 backgroundColor:	{
+ 								  fill: 'none'
+ 							 }
+							 };
 
                // Instantiate and draw our chart, passing in some options.
                var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
@@ -93,5 +119,6 @@
                chart2.draw(data2, options2);
                var chart3 = new google.visualization.ColumnChart(document.getElementById('chart_div3'));
                chart3.draw(data2, options2);
-
+               var chart4 = new google.visualization.BarChart(document.getElementById('chart_div4'));
+               chart4.draw(data4, options4);
              }

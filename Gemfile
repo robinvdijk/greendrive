@@ -35,6 +35,8 @@ gem 'googlecharts', :require => 'gchart'
 
 gem 'gon'
 
+gem 'merit'
+
 group :development do 
   gem 'sqlite3'
 end

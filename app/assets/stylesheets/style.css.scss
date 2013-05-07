@@ -20,12 +20,30 @@ SUPER LELIJKE CSS
 		left:15%;
 	}
 	
+	#chart_div4 {
+		top:-300px;
+		left:-60%;
+	}
+	
 	#chart_div, #chart_div2, #chart_div3 {
 		div g path{
 		stroke-width:0;
 	  }
 	}
 	
+	.badge {
+		width:600px;
+		height:600px;
+		background-image:url('grey.png');
+		background-repeat: no-repeat;
+	}
+	
+	.badge2 {
+		width:600px;
+		height:600px;
+		background-image:url('green.png');
+		background-repeat: no-repeat;
+	}
 	
 /*************************************************************************************/
 

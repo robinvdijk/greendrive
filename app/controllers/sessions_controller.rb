@@ -29,6 +29,10 @@ class SessionsController < ApplicationController
     @user = User.new
   end
   
+  def form_facebook
+    redirect_to 'users#form_facebook'
+  end
+  
   def create_facebook
     user = User.from_omniauth(env["omniauth.auth"])
     

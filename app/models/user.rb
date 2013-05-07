@@ -1,12 +1,12 @@
 class User < ActiveRecord::Base
-
-  attr_accessible :provider, :terms_of_service, :terms_of_privacy, :uid, :user_id, :role, :admin, :user, :email, :first_name, :last_name, :license_plate, :password_confirmation, :clean_data, :password, :user_name, :avatar, :birthday
-
+  
+  attr_accessible :provider, :terms_of_service, :terms_of_privacy, :uid, :role, :admin, :user, :email, :first_name, :last_name, :license_plate, :password_confirmation, :clean_data, :password, :user_name, :avatar, :birthday
 
   has_secure_password 
 
   has_many :authentications
   has_many :traces
+  has_many :segments
 
   validates_presence_of :password, :on => :create
   validates_presence_of :password_confirmation, :on => :create
