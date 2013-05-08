@@ -57,13 +57,13 @@ ActiveRecord::Schema.define(:version => 20130508081924) do
     t.integer  "drive_electric_ratio"
     t.datetime "created_at",                          :null => false
     t.datetime "updated_at",                          :null => false
-    t.integer  "mileage_electric",     :default => 0
-    t.integer  "mileage_fossile",      :default => 0
     t.string   "title"
     t.integer  "user_id"
     t.integer  "max_segment_id"
     t.integer  "remote_id"
     t.string   "license_plate"
+    t.integer  "mileage_electric",     :default => 0
+    t.integer  "mileage_fossile",      :default => 0
   end
 
   create_table "traces", :force => true do |t|
