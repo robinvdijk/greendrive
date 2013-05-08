@@ -7,11 +7,18 @@
 					<h2>Auto koppelen</h2>
 				</li>
 				<li>
-					<%= f.label :username, 'Username Sycada' %><br />
+					<p class="justify">
+						Hieronder moet je inloggen met de gegevens van 360-ev.com.
+						Dit is slechts eenmalig. Deze gegevens zijn nodig om de data van de auto
+						op te kunnen halen.
+					</p>
+				</li>
+				<li>
+					<%= f.label :username, 'Gebruikersnaam (360-ev.com)' %><br />
 					<%= f.text_field :username, :class => "field" %>
 				</li>
 				<li>	
-					<%= f.label :password, 'Wachtwoord Sycada' %><br />
+					<%= f.label :password, 'Wachtwoord (360-ev.com)' %><br />
 					<%= f.password_field :password, :class => "field" %>
 				</li>
 				<li>
@@ -19,7 +26,7 @@
 					<%= f.text_field :license_plate, :class => "field" %>
 				</li>
 				<li>
-					<%= f.label :model, 'Model' %><br />
+					<%= f.label :model, 'Model auto' %><br />
 					<%= f.text_field :model, :class => "field" %>
 				</li>
 				<li>

@@ -90,6 +90,11 @@ a, p, strong, small, h3 {
 	text-decoration: none;
 }
 
+p.justify {
+	@extend p;
+	text-align: justify;
+}
+
 small {
 	color: $grey;
 	font-size: small;
