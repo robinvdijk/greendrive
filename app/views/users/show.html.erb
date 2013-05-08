@@ -49,13 +49,10 @@
 				<li class="right">
 					<%= link_to 'Bewerken', edit_user_path(@user), :class => "button_small" %>
 				</li>
+			
 				<li class="left">
-				 	<h3><small class="green">Voornaam</small><br />
-						<%= @user.first_name %></h3>
-				</li>
-				<li class="left">
-				    <h3><small class="green">Achternaam</small><br />
-						<%= @user.last_name %></h3>
+					<h3><small class="green">Naam</small><br />
+						<%= @user.first_name %> <%= @user.middle_name%> <%= @user.last_name %></h3>
 				</li>
 				<li class="left">
 					<h3><small class="green">E-mail</small><br />

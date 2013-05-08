@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130507120104) do
+ActiveRecord::Schema.define(:version => 20130508081924) do
 
   create_table "achievements", :force => true do |t|
     t.integer  "badge_id"
@@ -57,13 +57,13 @@ ActiveRecord::Schema.define(:version => 20130507120104) do
     t.integer  "drive_electric_ratio"
     t.datetime "created_at",                          :null => false
     t.datetime "updated_at",                          :null => false
+    t.integer  "mileage_electric",     :default => 0
+    t.integer  "mileage_fossile",      :default => 0
     t.string   "title"
     t.integer  "user_id"
     t.integer  "max_segment_id"
     t.integer  "remote_id"
     t.string   "license_plate"
-    t.integer  "mileage_electric",     :default => 0
-    t.integer  "mileage_fossile",      :default => 0
   end
 
   create_table "traces", :force => true do |t|
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(:version => 20130507120104) do
     t.string   "name"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
+    t.string   "middle_name"
   end
 
 end
