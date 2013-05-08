@@ -56,7 +56,7 @@
 	   				</li>
 
 					<li class="left">
-		  			    <%= f.label :last_name, t('labels.last_name') %></strong><br>
+		  			    <%= f.label :last_name, 'Achternaam' %></strong><br>
 		  			    <%= f.text_field :last_name, :class => 'field' %>
 					</li>
 					
@@ -66,11 +66,11 @@
 	                                    :end_year => Date.current.year - 90,
 	                                    :order => [:day, :month, :year],
 	                                    :prompt => {:day => 'Dag', :month => 'Maand', :year => 'Jaar'},
-	                                    :use_month_names => ['Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Jlii', 'Augustus',
+	                                    :use_month_names => ['Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus',
 	                                    'September', 'Oktober', 'November', 'December']) %>
 	    </li>
 					<li class="left">
-		  			    <%= f.label :email, t('labels.email')
+		  			    <%= f.label :email, 'E-mail'
 		  			     %></strong><br />
 		  			    <%= f.text_field :email, :autofocus => true, :class => 'field' %>
 					</li>

@@ -54,7 +54,11 @@
 				</li>
 				<li class="left">
 				  	<h3><small class="green">Geboortedatum</small><br />
-				    	<%= @user.birthday %></h3>
+				  		<% if @user.birthday.nil? %>
+				  			<p>Er is geen geboortedatum ingevuld.</p>
+				  		<% else %>
+				    		<%= @user.birthday.strftime("%e-%-m-%Y") %></h3>
+				    	<% end %>
 				</li>
 				<li class="left">
 				  	<h3><small class="green">Elektrische km</small><br />
