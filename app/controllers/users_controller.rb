@@ -26,12 +26,13 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     @user.role = 'user' #Hoort eigenlijk in model te staan.
-    if @user.save
-      flash[:notice] = "Welcome"
-      redirect_to root_url
-    else
-      render 'new'
-    end
+      if @user.save
+        cookies[:auth_token] = @user.auth_token
+        flash[:succes] = "Welkom " + @user.user_name + "U ben succesvol ingelogd."
+        redirect_to new_car_path
+      else
+        render 'new'
+      end
   end
   
   def edit

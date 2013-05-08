@@ -1,29 +1,33 @@
 <div id="pagewrap">
 	<div class="wrapper fullwidth">
+		<%= form_for(@car) do |f| %>
+		
 			<ul>
 				<li>
 					<h2>Auto koppelen</h2>
 				</li>
 				<li>
-					<%= label :username, 'User name bedrijf'%>
-					<%= text_field_tag :username %>
+					<%= f.label :username, 'Username Sycada' %><br />
+					<%= f.text_field :username, :class => "field" %>
 				</li>
 				<li>	
-					<%= label :password, 'Wachtwoord'%>
-					<%= password_field_tag :password %>
+					<%= f.label :password, 'Wachtwoord Sycada' %><br />
+					<%= f.password_field :password, :class => "field" %>
 				</li>
 				<li>
-					<%= label :license_plate, 'Nummerplaat'%>
-					<%= text_field_tag :license_plate %>
-				</li>
-				<li class="center">
-					<%= label :model, 'Model'%>
-					<%= text_field_tag :model %>
+					<%= f.label :license_plate, 'Kenteken' %><br />
+					<%= f.text_field :license_plate, :class => "field" %>
 				</li>
 				<li>
-					<%= submit_tag 'Koppelen', :class => "button" %>
+					<%= f.label :model, 'Model' %><br />
+					<%= f.text_field :model, :class => "field" %>
+				</li>
+				<li>
+					<%= f.submit 'Koppelen', :class => "button" %>
 				</li>
 			</ul>
+			
+		<% end %>
 					
 		
 	</div>

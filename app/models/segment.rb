@@ -87,8 +87,12 @@ class Segment < ActiveRecord::Base
               self.mileage = segment['mileage']
               self.drive_electric_ratio = segment['driveElectricRatio']
               
-               
               
+
+              
+              
+                  
+           
                 if self.mileage > 0
                   if self.drive_electric_ratio > 0
                      henk = self.mileage * self.drive_electric_ratio
@@ -113,6 +117,11 @@ class Segment < ActiveRecord::Base
                   self.save
                 end
               end
+              
+            end
+            
+              
+              
        
           
             

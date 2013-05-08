@@ -72,6 +72,11 @@ small.green {
 	
 }
 
+.button_long {
+	@extend .button;
+	width: 275px !important;
+}
+
 #button_align {
 	width: 220px !important;
 	height: 30px;
@@ -255,9 +260,6 @@ HEADER
 *************************************************************************************/
 
 
-
-
-
 .field {
 	width: 215px;
 	height: 20px;
@@ -266,6 +268,12 @@ HEADER
 	left: auto;
 	margin: auto;
 }
+
+.field_long {
+	@extend .field;
+	width: 270px !important;
+}
+
 
 
 ul { 
@@ -309,6 +317,10 @@ li.left {
 
 li.top {
 	margin-top: 70px;
+}
+
+li.fullwidth {
+	width: 300px !important;
 }
 
 

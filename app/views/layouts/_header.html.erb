@@ -3,7 +3,17 @@
  
 	<div class="header">
 		
-		<% unless controller_name == "sessions" %>
+		<% if controller_name == "sessions"  || controller_name == "password_resets" %>
+			<div id="pagewrap">
+				<ul id="nav">
+					<li class="home">
+						<%= link_to image_tag("header_logo_white.png"), root_path %>
+					</li>
+				</ul>
+			</div>
+			
+		<% else %>
+		
 		
 
 		<div id="pagewrap">
@@ -33,18 +43,9 @@
 
 		
 		</div>
-		<% end%>
-		
-		<% if controller_name == "sessions" %>
-			<div id="pagewrap">
-				<ul id="nav">
-					<li class="home">
-						<%= link_to image_tag("header_logo_white.png"), root_path %>
-					</li>
-				</ul>
-			</div>
-			
 		<% end %>
+		
+		
 		
 	
 	<!-- <%= link_to "Gebruikers", users_path %> -->

@@ -66,19 +66,15 @@
 								</li>
 							<li>
 				  			    <%= f.label :user_name, 'Gebruikersnaam *' %></strong><br />
-				  			    <%= f.text_field :user_name, :class => 'field' %>
-							</li>
-							<li>
-							    <%= f.label :license_plate, 'Kenteken *' %></strong><br />
-							    <%= f.text_field :license_plate, :placeholder => '81TRR8', :class => 'field' %>
+				  			    <div class="tooltip"><%= f.text_field :user_name, :title => "minimaal 4 karakters", :class => 'field' %></div>
 							</li>
 							<li>
 							    <%= f.label :password, 'Wachtwoord *' %></strong><br />
-							    <%= f.password_field :password, :class => 'field' %>
+							    <div class="tooltip"><%= f.password_field :password, :title => "Minimaal 6 karakaters, 1 hoofdletter en 1 cijfer/teken", :class => 'field' %></div>
 							</li>
 							<li>
 							    <%= f.label :password_confirmation, 'Wachtwoord verificatie *' %></strong><br />
-							   <div class="tooltip"> <%= f.password_field :password_confirmation, :title => "Test", :class => 'field' %></div>
+							    <%= f.password_field :password_confirmation, :class => 'field' %>
 							</li>
 						</ul>
 					</div>

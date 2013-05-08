@@ -14,6 +14,7 @@ Greendrive::Application.routes.draw do
     match 'logout', to: 'sessions#destroy', as: 'logout'
 
   resources :sessions
+  resources :cars
 
   resources :users do
     resources :segments

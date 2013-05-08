@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   
-  attr_accessible :provider, :terms_of_service, :terms_of_privacy, :uid, :role, :admin, :user, :email, :first_name, :last_name, :license_plate, :password_confirmation, :clean_data, :password, :user_name, :avatar, :birthday
+  attr_accessible :provider, :terms_of_service, :terms_of_privacy, :uid, :role, :admin, :user, :email, :first_name, :last_name, :password_confirmation, :password, :user_name, :avatar, :birthday
 
   has_secure_password 
 
@@ -25,7 +25,6 @@ class User < ActiveRecord::Base
   validates :first_name, :presence => true
   validates :last_name, :presence => true
   validates :user_name, :presence => true, :uniqueness => true, :length => {:minimum => 4,:maximum => 20}
-  validates :license_plate, :presence => true, :uniqueness => true, :length => {:minimum => 6, :maximum => 6}
   validates :email, :presence => true, :uniqueness => true, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i}
   validates :terms_of_service, :acceptance => {:accept => true}
   validates :terms_of_privacy, :acceptance => {:accept => true}
@@ -34,7 +33,7 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
 
 
-  before_validation :clean_data
+  
 
   ##### /users/id wordt /users/username ####
   # extend FriendlyId
@@ -44,12 +43,9 @@ class User < ActiveRecord::Base
 
   before_create { generate_token(:auth_token) }
   
-  before_validation :clean_data #Filters out whitespaces and special characters
 
 
-  def clean_data
-    self.license_plate = self.license_plate.gsub(/[ \-]/, '') unless self.license_plate.nil?
-  end
+  
 ####################
 
 
