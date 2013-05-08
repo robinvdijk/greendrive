@@ -9,14 +9,17 @@ class UsersController < ApplicationController
   
   def show
    @user = User.find(params[:id])
-   # @segment = Segment.find(params[:id])
- #   @miles = { electric: @segment.mileage_electric, fossile: @segment.mileage_fossile }
- #   @battery = { battery_value: @trace.battery_value, created_at: @trace.created_at }
- # 
- #   
- #   
- #   @badges_electric = Badge.where(title: 'Mileage Electric').where('value <= ?', @segment.mileage_electric).limit(1).order('value desc')
- #   @badges_fossile = Badge.where(title: 'Mileage Fossile').where('value <= ?', @segment.mileage_fossile).limit(1).order('value desc')
+     # @segment = Segment.find(params[:id])
+     @car = Car.find(params[:id])
+     @car_miles = { electric: @car.mileage_electric, fossile: @car.mileage_fossile }
+ 
+   # @battery = { battery_value: @trace.battery_value, created_at: @trace.created_at }
+   #  
+
+   @badges_electric = Badge.where(title: 'Mileage Electric').where('value <= ?', @car.mileage_electric).limit(1).order('value desc')
+   # @badges_fossile = Badge.where(title: 'Mileage Fossile').where('value <= ?', @segment.mileage_fossile).limit(1).order('value desc')
+   @badges_fossile = Badge.where('title = ? and value <= ?', 'Mileage Fossile', @car.mileage_fossile).limit(1).order('value desc')
+ #  
   end
   
   def new
@@ -27,8 +30,9 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     @user.role = 'user' #Hoort eigenlijk in model te staan.
     if @user.save
-      flash[:notice] = "Welcome"
-      redirect_to root_url
+      cookies[:auth_token] = @user.auth_token
+      flash[:succes] = "Welkom " + @user.user_name + "U ben succesvol ingelogd."
+      redirect_to @user
     else
       render 'new'
     end

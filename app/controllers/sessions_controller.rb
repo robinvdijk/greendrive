@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
       else
         cookies[:auth_token] = user.auth_token
       end
-        redirect_to root_url
+        redirect_to user
         flash[:success] = "U bent succesvol ingelogd."
     else
       flash[:notice] = "E-mailadres en wachtwoord komen niet overeen."

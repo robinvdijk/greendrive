@@ -23,6 +23,10 @@ Greendrive::Application.routes.draw do
     resources :users
   end
 
+  resources :users do
+    resources :cars
+  end
+  
   resources :traces
   
   resources :pages

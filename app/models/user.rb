@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :authentications
   has_many :traces
 
-   # has_one :car
+  has_one :car
 
   has_many :segments
   

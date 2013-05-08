@@ -82,12 +82,11 @@ class Segment < ActiveRecord::Base
             for segment in data['Segments']
               
               car = Car.where('license_plate = ?', segment['licence_plate']).first
-              
+                  
               self.remote_id = segment['ID'] # 239493 
               self.mileage = segment['mileage']
               self.drive_electric_ratio = segment['driveElectricRatio']
               
-               
               
                 if self.mileage > 0
                   if self.drive_electric_ratio > 0
@@ -114,7 +113,7 @@ class Segment < ActiveRecord::Base
                 end
               end
        
-          
+            
             
             if data.blank?
               break

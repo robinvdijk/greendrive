@@ -98,7 +98,14 @@
 						</li>
 						<li>
 						<small><%= check_box :terms_of_service, 'true' %>
-						Ik ga akkoord met de &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a>voorwaarden</a> en de <br />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a>privacy verklaring</a> *</small>
+							
+						Ik ga akkoord met de <!-- &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp -->	<a href="#" onclick="popup('terms_info')">voorwaarden</a> *
+						
+							<div id="blanket"></div> <!-- the black opacity screen around the popup -->
+						
+							<div id="terms_info">
+								<a href="#" onclick="popup('terms_info')">Close</a>
+							</div>	
 						</li>
 						<li class="center">	
 					      	<%= f.submit "Account aanmaken", :class => 'button' %>

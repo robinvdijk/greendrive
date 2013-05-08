@@ -1,9 +1,63 @@
 
-	
-	#chart_div {
-		rect {
-			background: none;}
+/************************************************************************************
+LELIJKE CSS VOOR DE PROFIELPAGINA (wel laten staan aub)
+*************************************************************************************/
+/*	#chart_div {
+		right:115%;
+		top:350px;
 	}
+	
+	#chart_div2 {
+		right:60%;
+		top:100px;
+		rect {
+			stroke-width:0;
+		}
+	}
+	
+	#chart_div3 {
+		top:-150px;
+		left:15%;
+	}
+	
+	#chart_div4 {
+		top:-300px;
+		left:-60%;
+	}
+	
+	#chart_div, #chart_div2, #chart_div3 {
+		div g path{
+		stroke-width:0;
+	  }
+	}*/
+	
+	#badges {
+		top:-300px;
+		left:-90%;
+		position:relative;
+		width:940px;
+	}
+	
+	.badge {
+		float:left;
+		margin-right:10px;
+	}
+
+	
+	#chart_div:after {
+		background-image:url('subtlenet2.png');
+		    border-radius: 50%;
+		    -moz-border-radius: 50%;
+		    content: '';
+		    display: block;
+		    left: 142px; 
+		    padding: 60px;
+		    position: absolute;
+		    top: 92px;
+		    z-index: 2; 
+	}
+
+/*************************************************************************************/
 
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500);
 
@@ -12,9 +66,6 @@ $white: #fff;
 $grey: #313131;
 $darkgreen: #339933;
 $lightgrey: #eeeeee;
-
-
-
 
 /* General CSS */
 
@@ -205,6 +256,24 @@ REGISTREREN & INLOGGEN
 	border-radius: 7px;
 }
 
+#terms_info { 
+	position:absolute;
+	background-color:#eeeeee;
+	width:300px;
+	height:300px;
+	z-index: 9002;
+	display:none;
+}
+
+#blanket {
+	background-color:black;
+	opacity:0.65;
+	position:absolute;
+	top: 0px;
+	left: 0px;
+	width:100%;
+}
+
 /************************************************************************************
 PROFIELEN
 *************************************************************************************/
@@ -253,10 +322,6 @@ ICONS
 /************************************************************************************
 HEADER
 *************************************************************************************/
-
-
-
-
 
 .field {
 	width: 215px;
