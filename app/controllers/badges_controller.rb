@@ -8,7 +8,7 @@ class BadgesController < ApplicationController
   def create
     @badge = Badge.new(params[:badge])
     if @badge.save
-      redirect_to root_url
+      redirect_to new_badge_path
     else
       render 'new'
     end

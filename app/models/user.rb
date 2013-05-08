@@ -1,13 +1,12 @@
 class User < ActiveRecord::Base
   
-  attr_accessible :provider, :terms_of_service, :terms_of_privacy, :uid, :role, :admin, :user, :email, :first_name, :last_name, :password_confirmation, :password, :user_name, :avatar, :birthday
-
+  attr_accessible :provider, :terms_of_service, :terms_of_privacy, :uid, :role, :admin, :user, :email, :first_name, :middle_name, :last_name, :password_confirmation, :password, :user_name, :avatar, :birthday
   has_secure_password 
 
   has_many :authentications
   has_many :traces
 
-   # has_one :car
+  has_one :car
 
   has_many :segments
   

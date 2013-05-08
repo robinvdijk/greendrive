@@ -4,6 +4,7 @@ class CarsController < ApplicationController
   def new
     @car = Car.new
   end
+
   
   def create
     @car = Car.new(params[:car])
@@ -18,3 +19,4 @@ class CarsController < ApplicationController
   end
   
 end
+
