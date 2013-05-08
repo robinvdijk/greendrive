@@ -4,6 +4,10 @@ class Car < ActiveRecord::Base
   belongs_to :user
   # belongs_to :segment
   
+  # validates :license_plate, :presence => true, :uniqueness => true
+#   validates :username, :presence => true
+#   validates :password, :presence => true
+  
   
   
 end

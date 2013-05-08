@@ -12,7 +12,7 @@
 # It's strongly recommended to check this file into your version control system.
 
 ActiveRecord::Schema.define(:version => 20130508081924) do
-
+  x
   create_table "achievements", :force => true do |t|
     t.integer  "badge_id"
     t.integer  "user_id"

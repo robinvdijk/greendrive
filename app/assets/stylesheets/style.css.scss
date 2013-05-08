@@ -69,6 +69,11 @@ $lightgrey: #eeeeee;
 
 /* General CSS */
 
+#mockup {
+	background-image: url('mockup.png');
+	height: 790px;
+}
+
 body {
 	background: url('/images/subtlenet2.png') repeat;	
 	z-index: -3;
@@ -88,6 +93,11 @@ body {
 a, p, strong, small, h3 {
 	color: $grey;
 	text-decoration: none;
+}
+
+p.justify {
+	@extend p;
+	text-align: justify;
 }
 
 small {
