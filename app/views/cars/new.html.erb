@@ -1,0 +1,30 @@
+<div id="pagewrap">
+	<div class="wrapper fullwidth">
+			<ul>
+				<li>
+					<h2>Auto koppelen</h2>
+				</li>
+				<li>
+					<%= label :username, 'User name bedrijf'%>
+					<%= text_field_tag :username %>
+				</li>
+				<li>	
+					<%= label :password, 'Wachtwoord'%>
+					<%= password_field_tag :password %>
+				</li>
+				<li>
+					<%= label :license_plate, 'Nummerplaat'%>
+					<%= text_field_tag :license_plate %>
+				</li>
+				<li class="center">
+					<%= label :model, 'Model'%>
+					<%= text_field_tag :model %>
+				</li>
+				<li>
+					<%= submit_tag 'Koppelen', :class => "button" %>
+				</li>
+			</ul>
+					
+		
+	</div>
+</div>
