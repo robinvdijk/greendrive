@@ -10,8 +10,8 @@ class CarsController < ApplicationController
     @car = Car.new(params[:car])
     
     if @car.save
-      flash[:notice] = "Auto is succesvol gekoppeld"
-      redirect_to root_url
+      flash[:notice] = "Auto is succesvol gekoppeld en u bent succesvol ingelogd"
+      redirect_to root_path
     else
       render 'new'
     end
