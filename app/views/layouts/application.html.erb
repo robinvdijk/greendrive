@@ -12,10 +12,6 @@
 		$('.tooltip [title]').tipsy({trigger: 'focus', gravity: 'n'});
 	});
 	</script>
-	
-	
-	
-
 </head>
 <body>
 
@@ -28,12 +24,12 @@
 	    	<p class="notice"><%= flash[:notice] %></p>
 	    <% end %>	 
 
-	    <% if flash[:alert] %>
-	   		<p class="notice"><%= flash[:alert] %></p>
+	    <% if flash[:error] %>
+	   		<p class="error"><%= flash[:error] %></p>
 	    <% end %>	 
 
 	    <% if flash[:success] %>
-	    	<p class="notice"><%= flash[:success] %></p>
+	    	<p class="succes"><%= flash[:success] %></p>
 		<% end %>	
 
 	</div>
