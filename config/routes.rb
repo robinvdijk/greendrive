@@ -2,6 +2,8 @@ Greendrive::Application.routes.draw do
 
   get "cars/new"
 
+  resources :pictures, :only => [:index, :create, :destroy]
+
   resources :authentications
 
   resources :password_resets

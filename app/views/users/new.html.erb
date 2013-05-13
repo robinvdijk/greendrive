@@ -39,71 +39,7 @@
 					
 		</article>
 				
-		<article class="col">
-			<div id="register">
-				<div class="aligncenter">
-				
-				<%= form_for(@user) do |f| %>
-				
-					<div id="vertical-line">
-						
-			
-						<ul>
-							<li>
-								<h2>Registreren</h2>
-							</li>
-							<li>
-							    <%= f.label :first_name, 'Voornaam *' %></strong><br>
-							    <%= f.text_field :first_name, :class => 'field' %>
-							</li>
-							<li>
-				  			    <%= f.label :last_name, 'Achternaam *' %></strong><br>
-				  			    <%= f.text_field :last_name, :class => 'field' %>
-							</li>
-							<li>
-				  			    <%= f.label :email, 'Email *' %></strong><br />
-				  			    <%= f.text_field :email, :autofocus => true, :class => 'field' %>
-								</li>
-							<li>
-				  			    <%= f.label :user_name, 'Gebruikersnaam *' %></strong><br />
-				  			    <%= f.text_field :user_name, :class => 'field' %>
-							</li>
-							<li>
-							    <%= f.label :password, 'Wachtwoord *' %></strong><br />
-							    <%= f.password_field :password, :class => 'field' %>
-							</li>
-							<li>
-							    <%= f.label :password_confirmation, 'Wachtwoord verificatie *' %></strong><br />
-							    <%= f.password_field :password_confirmation, :class => 'field' %>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</article>
-			
-		<article class="col">
-			<div id="register">	
-				<div class="aligncenter">
-					<ul>
-						<li>
-							<%= image_tag("avatar.png", :alt => "default-avatar", :class => "avatar_pre") %>
-						</li>
-						<li>
-						<%= f.file_field :avatar%>
-						</li>
-						<li>
-						<small><%= check_box :terms_of_service, 'true' %>
-						Ik ga akkoord met de &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a>voorwaarden</a> en de <br />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a>privacy verklaring</a> *</small>
-						</li>
-						<li class="center">	
-					      	<%= f.submit "Account aanmaken", :class => 'button' %>
-						</li>
-					<% end %>
-				</div>
-				
-			</div>
-		</article>	
+		<%= render 'sessions/registration' %>
 		
 </div>
 </div>	

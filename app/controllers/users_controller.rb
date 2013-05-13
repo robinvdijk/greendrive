@@ -34,7 +34,7 @@ class UsersController < ApplicationController
         flash[:succes] = "Welkom " + @user.user_name + "U ben succesvol ingelogd."
         redirect_to new_car_path
       else
-        render 'new'
+        render 'sessions/new'
       end
   end
   
@@ -50,7 +50,6 @@ class UsersController < ApplicationController
         format.html  { redirect_to(@user, :notice => 'Uw profiel is succesvol aangepast.') }
       else
         format.html  { render :action => "edit", :notice => 'Er is iets misgegaan. Mogelijk zijn niet alle velden correct ingevuld.' }
-
       end       
     end
   end 

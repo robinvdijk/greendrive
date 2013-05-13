@@ -4,7 +4,7 @@ gem 'rails'
 gem 'thin'
 gem 'cancan'
 
-
+gem "jquery-fileupload-rails"
 
 gem 'savon'
 gem 'rails_best_practices'
