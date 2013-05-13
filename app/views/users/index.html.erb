@@ -1,26 +1,11 @@
-<% provide(:title, "Alle gebruikers")%>
-<h1>Alle gebruikers</h1>
+<% provide(:title, "Dashboard")%>
 
-<% if @users.any? %>
 
-  <table>
-  <% @users.each do |user| %>
+<%= @user.user_name %><br />
+<%= @user.first_name %> <%= @user.middle_name %> <%= @user.last_name %><br />
 
-  <tr>
-    <td><%= link_to user.user_name, user %> |</td>
+Punten
 
-        <% if can? :update, User %>
-        <td><%= link_to 'Bewerk', edit_user_path(user) %></td>
-    <% end %>
-    <% if can? :destroy, User %>
-        <td><%= link_to 'Verwijder', user, method: :delete, data: { confirm: 'Weet u het zeker?' } %></td>
-    <% end %>
-    <td><%= user.role %></td>
-  </tr>
-  <% end %>
-  </table>
-<% else %>
-  <p>No users.</p>
-<% end %>
-<br />
+
+
 
