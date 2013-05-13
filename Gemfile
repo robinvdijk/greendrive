@@ -4,8 +4,6 @@ gem 'rails'
 gem 'thin'
 gem 'cancan'
 
-
-
 gem 'savon'
 gem 'rails_best_practices'
 gem "flot-rails"
@@ -17,22 +15,6 @@ gem 'compass-rails', '>= 1.0.3'
 gem 'httparty'
 gem 'json'
 gem 'clock'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-
-
-
-gem 'savon'
-gem 'rails_best_practices'
-gem 'httparty'
-gem 'commands', group: [:development, :test] 
-
-
-
-gem 'json'
-
 
 # used for avatar uploading
 gem 'carrierwave'

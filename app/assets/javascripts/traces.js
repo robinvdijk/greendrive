@@ -21,6 +21,7 @@
 								 ['Empty', 0]
 	                 
                ]);
+
 				   
 							 //                var data2 = new google.visualization.arrayToDataTable([
 							 //                  ['Ratio','Electric', 'Fossile', 'Empty'],
@@ -58,28 +59,28 @@
 							 									1: {color: '#006837'}, 
 							 									2: {color: '#808080'}
 							 								},
-							 backgroundColor:	{
+							 							 	backgroundColor:	{
 							 								  fill: 'none'
 							 }
 							 						 	};
 							 // 															
-							 //                // Set chart options
-							 //                var options2 = {	 
-							 // 								title:'Ratio of Fuel',
-							 //                 width:400,
-							 //                 height:300,
-							 // 								series: {
-							 // 									0: {color:'#39b54a'},
-							 // 									1: {color: '#006837'}, 
-							 // 									2: {color: '#808080'}},
-							 // 								bar: {
-							 // 									groupWidth: 40
-							 // 								},
-							 // 						  	isStacked: true,
-							 //  							 backgroundColor:	{
-							 //  								  fill: 'none'
-							 //  							 }
-							 // };
+							                // Set chart options
+							                var options2 = {	 
+							 								title:'Ratio of Fuel',
+							                 width:400,
+							                 height:300,
+							 								series: {
+							 									0: {color:'#39b54a'},
+							 									1: {color: '#006837'}, 
+							 									2: {color: '#808080'}},
+							 								bar: {
+							 									groupWidth: 40
+							 								},
+							 						  	isStacked: true,
+							  							 backgroundColor:	{
+							  								  fill: 'none'
+							  							 }
+							 };
 							 // 
 							 //                // Set chart options
 							 //                var options3 = {
@@ -110,7 +111,6 @@
                // Instantiate and draw our chart, passing in some options.
                var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
                chart.draw(data, options);
-							 
                var chart2 = new google.visualization.BarChart(document.getElementById('chart_div2'));
                chart2.draw(data2, options2);
                var chart3 = new google.visualization.ColumnChart(document.getElementById('chart_div3'));
