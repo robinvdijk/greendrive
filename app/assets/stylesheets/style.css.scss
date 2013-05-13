@@ -122,9 +122,9 @@ small.green {
 	color: $green;
 }
 
+.link{color: $green;}
 
-
-
+a:hover {text-decoration: underline;}
 
 .button {
 	width: 220px !important;

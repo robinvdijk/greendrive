@@ -25,34 +25,34 @@ class SessionsController < ApplicationController
     end
   end
   
-  def new_facebook
-    @user = User.new
-  end
+  # def new_facebook
+  #   @user = User.new
+  # end
   
-  def form_facebook
-    redirect_to 'users#form_facebook'
-  end
+  # def form_facebook
+  #   redirect_to 'users#form_facebook'
+  # end
   
-  def create_facebook
-    user = User.from_omniauth(env["omniauth.auth"])
+  # def create_facebook
+  #   user = User.from_omniauth(env["omniauth.auth"])
     
-    if user.password_digest.nil?
-      user.password = SecureRandom.base64(8)
-      user.password_confirmation = user.password
+  #   if user.password_digest.nil?
+  #     user.password = SecureRandom.base64(8)
+  #     user.password_confirmation = user.password
     
-      if user.license_plate.nil?
-        user.license_plate = SecureRandom.hex(3)
+  #     if user.license_plate.nil?
+  #       user.license_plate = SecureRandom.hex(3)
       
-      flash[:success] = "U account is succesvol aangemaakt met facebook. 
-                        Uw tijdelijke wachtwoord en kenteken is #{user.password} en #{user.license_plate}, 
-                        u wordt aangeraden direct deze gegevens naar believen aan te passen. Klik op Mijn Profiel en Vervolgens op bewerken om dez wijzegingen uit te voren."
-        end
-    end
+  #     flash[:success] = "U account is succesvol aangemaakt met facebook. 
+  #                       Uw tijdelijke wachtwoord en kenteken is #{user.password} en #{user.license_plate}, 
+  #                       u wordt aangeraden direct deze gegevens naar believen aan te passen. Klik op Mijn Profiel en Vervolgens op bewerken om dez wijzegingen uit te voren."
+  #       end
+  #   end
     
-    user.save!
-    cookies[:auth_token] = user.auth_token
-    redirect_to root_path
-  end
+  #   user.save!
+  #   cookies[:auth_token] = user.auth_token
+  #   redirect_to root_path
+  # end
   
   # def create_facebook_session
   #   user = User.from_omniauth(env["omniauth.auth"])

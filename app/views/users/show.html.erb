@@ -25,15 +25,14 @@
 					    <%= @car.license_plate %></h3>
 					</li>
 					<!-- <li class="center">
->>>>>>> 6026b4786e0100df5c735a9b85578453de8e3867
 						<h3><%= link_to 'Badges', :class => "button" %></h3>
 					</li> -->
 					
 				</ul>
 			</div>
-
+						<div id="chart_div" data-car_miles="<%= @car_miles.to_json %>" style="width:500px; height:250px"></div>
 		
-							<!-- <%= link_to 'Terug', :root %> -->
+							<%= link_to 'Terug', :root %>
 		</div>
 	
 	
@@ -54,7 +53,7 @@
 				</li>
 				<li class="left">
 				  	<h3><small class="green">Geboortedatum</small><br />
-				  		<% if @user.birthday.nil? %>
+				  		<% if @user.birthday.blank? %>
 				  			<p>Er is geen geboortedatum ingevuld.</p>
 				  		<% else %>
 				    		<%= @user.birthday.strftime("%e-%-m-%Y") %></h3>
@@ -75,11 +74,11 @@
 <!--/**************************************************************
 			GRAFIEKEN		 *************************************************************/ -->
 			
-			<div id="chart_div" data-car_miles="<%= @car_miles.to_json %>" style="width:500px; height:250px"></div>
-			<!-- <div id="chart_div2" style="width:500px; height:250px"></div>
-			<div id="chart_div3" style="width:500px; height:250px"></div> -->
-			<!-- <div id="chart_div4" data-points="<%= @points.to_json %>" style="width:500px; height:250px"></div> -->
-			
+
+			<!-- <div id="chart_div2" style="width:500px; height:250px"></div> -->
+			<!-- <div id="chart_div3" style="width:500px; height:250px"></div> -->
+			<!-- <div id="chart_div4" data-points="<%= @points.to_json %>" style="width:500px; height:250px"></div>
+		 -->	
 			 
 <!--/**************************************************************
 			 BADGES		 *************************************************************/ -->

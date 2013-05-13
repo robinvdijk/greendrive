@@ -9,15 +9,14 @@ class UsersController < ApplicationController
   
   def show
    @user = User.find(params[:id])
-     # @segment = Segment.find(params[:id])
-     @car = Car.find(params[:id])
-     @car_miles = { electric: @car.mileage_electric, fossile: @car.mileage_fossile }
+    # @segment = Segment.find(params[:id])
+    @car = Car.find(params[:id])
+    @car_miles = { electric: @car.mileage_electric, fossile: @car.mileage_fossile }
  
    # @battery = { battery_value: @trace.battery_value, created_at: @trace.created_at }
    #  
 
-   @badges_electric = Badge.where(title: 'Mileage Electric').where('value <= ?', @car.mileage_electric).limit(1).order('value desc')
-   # @badges_fossile = Badge.where(title: 'Mileage Fossile').where('value <= ?', @segment.mileage_fossile).limit(1).order('value desc')
+   @badges_electric = Badge.where('title = ? and value <= ?', 'Mileage Electric', @car.mileage_electric).limit(1).order('value desc')
    @badges_fossile = Badge.where('title = ? and value <= ?', 'Mileage Fossile', @car.mileage_fossile).limit(1).order('value desc')
  #  
   end
@@ -34,7 +33,7 @@ class UsersController < ApplicationController
         flash[:succes] = "Welkom " + @user.user_name + "U ben succesvol ingelogd."
         redirect_to new_car_path
       else
-        render 'new'
+        render 'sessions/new'
       end
   end
   
@@ -50,7 +49,6 @@ class UsersController < ApplicationController
         format.html  { redirect_to(@user, :notice => 'Uw profiel is succesvol aangepast.') }
       else
         format.html  { render :action => "edit", :notice => 'Er is iets misgegaan. Mogelijk zijn niet alle velden correct ingevuld.' }
-
       end       
     end
   end 
