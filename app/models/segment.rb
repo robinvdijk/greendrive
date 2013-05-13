@@ -89,7 +89,7 @@ class Segment < ActiveRecord::Base
               
               
 
-              
+              if car
               
                   
            
@@ -119,27 +119,23 @@ class Segment < ActiveRecord::Base
               end
               
             end
+              
+              
+              
+              if data.blank?
+                break
+              end
+              
+            end
             
               
               
        
             
             
-            if data.blank?
-              break
-            end
-          end
           
-      # response2 = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/GetNewSegments?token=#{auth_token}&companyId=#{company_id}&page=7")
-      # data = JSON.parse(response2.body)
-      # self.remote_id = data['Segments'][499]['ID'] # 239493 
-      # self.mileage = data['Segments'][499]['mileage']
-      # self.drive_electric_ratio = data['Segments'][499]['driveElectricRatio']
-      # puts data
-      # 
-      # self.save
-    
-    # HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/MarkAsReceived?token=#{auth_token}&companyId=#{company_id}&max_segment_id=#{self.remote_id}")
-      
+        end
       end
-    end
+      
+
+   

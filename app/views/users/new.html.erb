@@ -57,24 +57,38 @@
 							    <%= f.text_field :first_name, :class => 'field' %>
 							</li>
 							<li>
+	    						<%= f.label :middle_name, 'Tussenvoegsel' %><br />
+	    						<%= f.text_field :middle_name, class: 'field' %>
+	    					</li>
+							<li>
 				  			    <%= f.label :last_name, 'Achternaam *' %></strong><br>
 				  			    <%= f.text_field :last_name, :class => 'field' %>
 							</li>
 							<li>
-				  			    <%= f.label :email, 'Email *' %></strong><br />
+				  			    <%= f.label :email, 'E-mail *' %></strong><br />
 				  			    <%= f.text_field :email, :autofocus => true, :class => 'field' %>
 								</li>
 							<li>
 				  			    <%= f.label :user_name, 'Gebruikersnaam *' %></strong><br />
-				  			    <%= f.text_field :user_name, :class => 'field' %>
+										<div class="tooltip"><%= f.text_field :user_name, :title => "De gebruikersnaam moet minimaal 4 en maximaal 20 tekens bevatten.", :class => 'field' %></div>
 							</li>
 							<li>
+						      <%= f.label :birthday, 'Geboortedatum' %><br />
+						      <%= f.date_select("birthday", :start_year => Date.current.year - 18, 
+						                                    :end_year => Date.current.year - 90,
+						                                    :order => [:day, :month, :year],
+						                                    :prompt => {:day => 'Dag', :month => 'Maand', :year => 'Jaar'},
+						                                    :use_month_names => ['Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Jlii', 'Augustus',
+						                                    'September', 'Oktober', 'November', 'December']) %>
+					    </li>
+							<li>
 							    <%= f.label :password, 'Wachtwoord *' %></strong><br />
-							    <%= f.password_field :password, :class => 'field' %>
+							    <div class="tooltip"><%= f.password_field :password, :title => "Het wachtwoord moet minimaal 6 karakters bevatten, waarvan 1 hoofdletter, 1 kleine letter en 1 getal.", :class => 'field' %></div>
 							</li>
 							<li>
 							    <%= f.label :password_confirmation, 'Wachtwoord verificatie *' %></strong><br />
-							    <%= f.password_field :password_confirmation, :class => 'field' %>
+							   <div class="tooltip"> <%= f.password_field :password_confirmation, :title => "Het wachtwoord moet minimaal 6 karakters bevatten, waarvan 1 hoofdletter, 1 kleine letter en 1 getal.", :class => 'field' %></div>
+
 							</li>
 						</ul>
 					</div>
@@ -94,7 +108,14 @@
 						</li>
 						<li>
 						<small><%= check_box :terms_of_service, 'true' %>
-						Ik ga akkoord met de &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a>voorwaarden</a> en de <br />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a>privacy verklaring</a> *</small>
+							
+						Ik ga akkoord met de <!-- &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp -->	<a href="#" onclick="popup('terms_info')">voorwaarden</a> *
+						
+							<div id="blanket"></div> <!-- the black opacity screen around the popup -->
+						
+							<div id="terms_info">
+								<a href="#" onclick="popup('terms_info')">Close</a>
+							</div>	
 						</li>
 						<li class="center">	
 					      	<%= f.submit "Account aanmaken", :class => 'button' %>
@@ -112,51 +133,3 @@
 	 
 	 
 	 
-	 <script src="//connect.facebook.net/en_US/all.js"></script> <!#channelurl>
-<script>
-
-  // Additional JS functions here
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '147143375453147', // App ID
-      channelUrl : '//127.0.0.1:3000/channel.html', // Channel File
-      status     : true, // check login status
-      cookie     : true, // enable cookies to allow the server to access the session
-      xfbml      : true  // parse XFBML
-    });
-
-	function login() {
-	    FB.login(function(response) {
-	        if (response.authResponse) {
-	            // connected
-	        } else {
-	            // cancelled
-	        }
-	    });
-	}
-
-    // Additional init code here
-    FB.getLoginStatus(function(response) {
-	  if (response.status === 'connected') {
-	    // connected
-	  } else if (response.status === 'not_authorized') {
-	    // not_authorized
-	  } else {
-	    // not_logged_in
-	  }
-	 });
-  };
-
-  // Load the SDK Asynchronously
-  (function(d){
-     var js, id = 'facebookjssdk', ref = d.getElementsByTagName('script')[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement('script'); js.id = id; js.async = true;
-     js.src = "//connect.facebook.net/en_US/all.js";
-     ref.parentNode.insertBefore(js, ref);
-   }(document));
-</script>
-
-	
-
-s

@@ -167,7 +167,7 @@
         
         if (options.trigger != 'manual') {
             var binder   = options.live ? 'live' : 'bind',
-                eventIn  = options.trigger == 'hover' ? 'mouseenter' : 'focus',
+                eventIn  = options.trigger == 'hover' ? 'mouseenter' : '',
                 eventOut = options.trigger == 'hover' ? 'mouseleave' : 'blur';
             this[binder](eventIn, enter)[binder](eventOut, leave);
         }

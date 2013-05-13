@@ -69,6 +69,17 @@ $lightgrey: #eeeeee;
 
 /* General CSS */
 
+.tip {
+    background-color:#000;
+    border:1px solid #fff;
+    padding:10px 15px;
+    width:200px;
+    display:none;
+    color:#fff;
+    text-align:left;
+    font-size:12px;
+}
+
 #mockup {
 	background-image: url('mockup.png');
 	height: 790px;
@@ -264,10 +275,11 @@ REGISTREREN & INLOGGEN
 }
 
 .avatar_pre {
-	width: 150px;
-	height: 150px;
+	width: 220px;
+	height: 220px;
 	margin-top: 50px;
 	border: 1px solid $green;
+	background: $white;
 	border-radius: 7px;
 }
 

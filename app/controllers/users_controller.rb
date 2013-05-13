@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     
   def create
     @user = User.new(params[:user])
-    @user.role = 'user' #Hoort eigenlijk in model te staan.
+    @user.role = 'user' #Hoort eigenlijk in model te staan. (hoort bij rollen)
       if @user.save
         cookies[:auth_token] = @user.auth_token
         flash[:succes] = "Welkom " + @user.user_name + "U ben succesvol ingelogd."
