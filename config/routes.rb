@@ -1,7 +1,5 @@
 Greendrive::Application.routes.draw do  
 
-  get "cars/new"
-
   resources :pictures, :only => [:index, :create, :destroy]
 
   resources :authentications
@@ -17,7 +15,6 @@ Greendrive::Application.routes.draw do
 
   resources :sessions
   resources :cars
-
 
   resources :users do
     resources :segments
@@ -43,7 +40,8 @@ Greendrive::Application.routes.draw do
   
   resources :pages
 
-  root :to => "pages#dashboard"
+
+  root :to => "dashboards#index", :user_id => '2' # <------ die 2 moet nog ff anders
   
   controller :sessions do
     get "login" => "sessions#new"

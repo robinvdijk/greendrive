@@ -1,0 +1,80 @@
+<% provide(:title, "Dashboard")%>
+
+
+<!-- COL1 -->
+
+
+<div id='chart'>
+	<div id="chart_div" data-car_miles="<%= @car_miles.to_json %>" style="width:500px; height:250px"></div>
+	Totaal <%= @car.mileage / 1000 %>
+	Elektrisch <%= @car.mileage_electric / 1000 %> km 
+	Fossiel	<%= @car.mileage_fossile / 1000 %> km
+</div>
+
+
+	<div id="badges">
+				
+		<div class="badge">
+			<% @badges_electric.each do |badge| %>
+				<%= image_tag badge.avatar_url(:thumb), class: 'avatar' %>		
+				<!-- <% if badge.value == 0 %>
+				<% else %>
+				<p><%= badge.value %> elektrische kilometer badge </p>	  
+				<p>Punten: <%= badge.points %></p>
+				<% end %> -->
+			<% end %>
+		</div>
+				
+		<div class="badge">
+			<% @badges_fossile.each do |badge| %>
+				<%= image_tag badge.avatar_url(:thumb), class: 'avatar' %>		
+				<!-- <% if badge.value == 0 %>
+				<% else %>
+				<p><%= badge.value %> fossiele kilometer badge </p>				 
+				<p>Punten: <%= badge.points %></p>
+				<% end %> -->
+			<% end %>
+		</div>
+		
+		<div class="badge">
+			<% @badges_mileage.each do |badge| %>
+				<%= image_tag badge.avatar_url(:thumb), class: 'avatar' %>		
+				<!-- <% if badge.value == 0 %>
+				<% else %>
+				<p><%= badge.value %> totaal kilometer badge </p>				 
+				<p>Punten: <%= badge.points %></p>
+				<% end %> -->
+			<% end %>
+		</div>
+		
+	</div>
+	
+	<!-- COL2 -->
+	<ul>
+		<li>
+			<% if @user.avatar? %>
+			<%= image_tag @user.avatar_url(:thumb), :class => "avatar" %>
+			<% else %>
+			<%= image_tag("avatar.png", :alt => "default-avatar", :class => "avatar") %>
+			<% end %>
+		</li>
+	
+		<li><%= link_to @user.user_name, user_path(current_user) %></li>
+		
+		<li><%= @user.first_name %> <%= @user.middle_name %> <%= @user.last_name %></li>
+	
+		<li><%= @car.model %></li>
+	
+		<li>
+		  <% if @user.score %>
+		    <%= @user.score %> Punten
+		  <% end %>
+		</li>
+
+		<li>
+		  <% if @user.rank %>
+		    Rang: <%= @user.rank %>
+		  <% end %>
+		</li>
+	</ul>
+	
