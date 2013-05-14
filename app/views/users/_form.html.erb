@@ -32,7 +32,11 @@ reader.readAsDataURL(input.files[0]);
 							<h2>Bewerken</h2>
 						</li>
 						<li>
-							<%= image_tag @user.avatar_url(:thumb), :class => "avatar" if @user.avatar? %>
+							<% if @user.avatar? %>
+							<%= image_tag @user.avatar_url(:thumb), :class => "avatar" %>
+							<% else %>
+							<%= image_tag("avatar.png", :alt => "default-avatar", :class => "avatar") %>
+							<% end %>
 						</li>
 						<li>
 						<%= f.file_field :avatar, :onchange => "javascript: readURL(this);"%>
