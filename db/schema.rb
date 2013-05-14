@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130510134827) do
+ActiveRecord::Schema.define(:version => 20130514115414) do
 
   create_table "achievements", :force => true do |t|
     t.integer  "badge_id"
@@ -108,6 +108,8 @@ ActiveRecord::Schema.define(:version => 20130510134827) do
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
     t.string   "middle_name"
+    t.integer  "score"
+    t.string   "rank"
   end
 
 end

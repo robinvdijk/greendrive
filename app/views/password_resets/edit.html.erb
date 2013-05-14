@@ -1,15 +1,5 @@
 <%= form_for @user, :url => password_reset_path(params[:id]) do |f| %>
-	<% if @user.errors.any? %>
-		<div id="error_explanation">
-			<h2>Form is invalid</h2>
-			<ul>
-				<% for message in @user.errors.full_messages %>
-					<li><%= message %></li>
-				<% end %>
-			</ul>	
-		</div>
-
-	<% end %>
+	<%= render 'layouts/error_handling' %>
 
 	<h1>Nieuw Wachtwoord</h1>
 

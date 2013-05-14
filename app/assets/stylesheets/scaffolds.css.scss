@@ -14,9 +14,15 @@
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
+  background-color: transparent;
   display: table;
 }
+
+.field_with_errors .field {
+  border: 2px solid red;
+}
+
+
 
 #error_explanation {
   width: 300px;
@@ -27,7 +33,7 @@
 /*	Right top corner positioning */
 	position:absolute;
 	overflow:hidden;
-	left:1125px;
+	left:1265px;
 
   h2 {
     text-align: left;

@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   
   def index
    @user = current_user
-   @car = Car.find(params[:id])
+  
   end
   
   def show
