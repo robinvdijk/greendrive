@@ -1,3 +1,41 @@
+<<<<<<< HEAD
+=======
+<% provide(:title, "Dashboard")%>
 
+
+<div id="pagewrap">
+  <div class="wrapper grid2">
+<div id="dashboard-profile">
+
+<li>
+  <%= image_tag @user.avatar_url(:thumb), :class => "avatar" if @user.avatar? %>
+</li>
+
+<li>
+  <%= link_to @user.user_name, user_path(current_user) %>
+</li>
+>>>>>>> f3529ad31fdad8e2bc511c5daf5f271b4765e053
+
+<li>
+  <%= @user.first_name %> <%= @user.middle_name %> <%= @user.last_name %>
+</li>
+
+<li>
+  <% if @user.score %>
+    <%= @user.score %> Punten
+  <% end %>
+
+</li>
+
+<li>
+  <% if @user.rank %>
+    Rang: <%= @user.rank %>
+  <% end %>
+</li>
+
+<li>
+    Opel Ampera
+</li>
+</div></div></div></div>
 
 

@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   
-  attr_accessible :provider, :terms_of_service, :image_cache, :terms_of_privacy, :uid, :role, :admin, :user, :email, :first_name, :middle_name, :last_name, :password_confirmation, :password, :user_name, :avatar, :birthday
+  attr_accessible :provider, :rank, :terms_of_service, :image_cache, :terms_of_privacy, :uid, :role, :admin, :user, :email, :first_name, :middle_name, :last_name, :password_confirmation, :password, :user_name, :avatar, :birthday
   has_secure_password 
 
   has_many :authentications
@@ -32,6 +32,8 @@ class User < ActiveRecord::Base
   before_create { generate_token(:auth_token) }
   mount_uploader :avatar, AvatarUploader
 
+  after_validation { self.errors.messages.delete(:password_digest) } 
+  # ^ This way password_digest won't show up in the errorlog
 
   
 
