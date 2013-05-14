@@ -4,22 +4,16 @@ class UsersController < ApplicationController
   load_and_authorize_resource
   
   def index
-   @user = current_user
+  end
+   
+  def show
+   @user = User.find(params[:id])
+   # @segment = Segment.find(params[:id])
    @car = Car.find(params[:id])
   end
   
-  def show
-   @user = User.find(params[:id])
-    # @segment = Segment.find(params[:id])
-    @car = Car.find(params[:id])
-    @car_miles = { electric: @car.mileage_electric, fossile: @car.mileage_fossile }
- 
-   # @battery = { battery_value: @trace.battery_value, created_at: @trace.created_at }
-   #  
-
-   @badges_electric = Badge.where('title = ? and value <= ?', 'Mileage Electric', @car.mileage_electric).limit(1).order('value desc')
-   @badges_fossile = Badge.where('title = ? and value <= ?', 'Mileage Fossile', @car.mileage_fossile).limit(1).order('value desc')
- #  
+  def dashboard
+    @user = User.find(params[:id])
   end
   
   def new
@@ -31,7 +25,7 @@ class UsersController < ApplicationController
     @user.role = 'user' #Hoort eigenlijk in model te staan. (hoort bij rollen)
       if @user.save
         cookies[:auth_token] = @user.auth_token
-        flash[:succes] = "Welkom " + @user.user_name + "U bent succesvol ingelogd."
+        flash[:succes] = "Welkom " + @user.user_name + "U ben succesvol ingelogd."
         redirect_to new_car_path
       else
         render 'sessions/new'
@@ -47,7 +41,7 @@ class UsersController < ApplicationController
     
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html  { redirect_to(@user, :succes => 'Uw profiel is succesvol aangepast.') }
+        format.html  { redirect_to(@user, :notice => 'Uw profiel is succesvol aangepast.') }
       else
         format.html  { render :action => "edit", :notice => 'Er is iets misgegaan. Mogelijk zijn niet alle velden correct ingevuld.' }
       end       

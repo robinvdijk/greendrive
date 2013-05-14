@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :traces
 
   has_one :car
+  has_one :dashboard
 
   has_many :segments
   

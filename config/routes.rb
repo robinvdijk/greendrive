@@ -18,6 +18,7 @@ Greendrive::Application.routes.draw do
   resources :sessions
   resources :cars
 
+
   resources :users do
     resources :segments
   end
@@ -25,9 +26,17 @@ Greendrive::Application.routes.draw do
   resources :badges do 
     resources :users
   end
+  
+  resources :users do
+    resources :dashboards
+  end
 
   resources :users do
     resources :cars
+  end
+  
+  resources :cars do
+    resources :segments 
   end
   
   resources :traces
