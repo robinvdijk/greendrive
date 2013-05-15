@@ -24,7 +24,7 @@ class PasswordResetsController < ApplicationController
       redirect_to new_password_reset_path, :alert => "Het opnieuw instellen van uw wachtwoord is verlopen."
     elsif @user.update_attributes(params[:user])
       cookies[:auth_token] = @user.auth_token
-      redirect_to(@user, :notice => "Uw wachtwoord is gereset en u bent succesvol ingelogd.")
+      redirect_to(@user, :notice => "Uw wachtwoord is opnieuw ingesteld en u bent succesvol ingelogd.")
     else
       render :edit
     end

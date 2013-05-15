@@ -57,7 +57,7 @@ class User < ActiveRecord::Base
   def generate_password_reset
     generate_token(:password_reset_token)
     self.password_reset_sent_at = Time.zone.now
-    save!
+    save!(validate: false) #This way password validation wont conflict
   end
 
   def generate_token(column)
@@ -65,6 +65,8 @@ class User < ActiveRecord::Base
       self[column] = SecureRandom.urlsafe_base64
     end while User.exists?(column => self[column])
   end
+
+  
   # ------------------------------------
 
   #used to add avatar to user profile

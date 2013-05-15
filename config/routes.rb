@@ -38,8 +38,7 @@ Greendrive::Application.routes.draw do
   
   resources :traces
   
-  resources :pages
-
+  resources :pages  
 
   root :to => "dashboards#index", :user_id => '2' # <------ die 2 moet nog ff anders
   
