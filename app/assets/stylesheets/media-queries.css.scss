@@ -1,10 +1,3 @@
-$green: #48b237;
-$white: #fff;
-$grey: #313131; /*This is grey3 in styletiles*/
-$grey1: #f2f2f2;
-$grey2: #808080;
-$darkgreen: #339933;
-$lightgrey: #eeeeee;
 /* set html5 elements to block */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block;
@@ -38,7 +31,20 @@ margin-bottom: 30px;
 #col_dashboard_right {
 	float:left;
 	width:32.3%;
-	margin-top:3.2%;
+	margin-top:2.1%;
+}
+
+.col_badges_left{
+	float:left;
+	width: 72.6%;
+	margin-top: 3.2%;
+}
+
+.col_badges_right{
+	float:left;
+	width:24.2%;
+	margin-left: 2.2%;
+	margin-top: 3.2%;
 }
 
 .fullwidth .col {
@@ -208,17 +214,6 @@ width: 48.4%;
 .grid2 .col:nth-of-type(2n+1) {
 margin-left: 0;
 clear: left;
-}
-
-.col_badges_left{
-	float:left;
-	width: 72.6%;
-}
-
-.col_badges_right{
-	float:left;
-	width:24.2%;
-	margin-left: 2.2%;
 }
 
 /************************************************************************************
