@@ -36,7 +36,7 @@ LELIJKE CSS VOOR DE PROFIELPAGINA (wel laten staan aub)
 		stroke-width:0;
 	  }
 	}*/
-<<<<<<< HEAD
+
 
 
 	.fixed {
@@ -73,9 +73,7 @@ LELIJKE CSS VOOR DE PROFIELPAGINA (wel laten staan aub)
 	#badge_nav{
 		list-style-type: none;
 	}
-=======
->>>>>>> 17cce393dd4bcae3612897213a03ca57b7df18f9
-	
+
 	#chart_div:after {
 		background-image:url('subtlenet2.png');
 		    border-radius: 50%;
@@ -93,16 +91,6 @@ LELIJKE CSS VOOR DE PROFIELPAGINA (wel laten staan aub)
 
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500);
 
-<<<<<<< HEAD
-
-=======
-$green: #48b237;
-$white: #fff;
-$grey: #313131;
-$grey2: #808080;
-$darkgreen: #339933;
-$lightgrey: #eeeeee;
->>>>>>> 17cce393dd4bcae3612897213a03ca57b7df18f9
 
 /* General CSS */
 
@@ -314,7 +302,6 @@ SIDEBAR STICKY SCROLL
 	background:rgba(255,255,255,0.5);
 }
 
-<<<<<<< HEAD
 body {
   margin:0;
   padding:0;
@@ -340,7 +327,7 @@ body {
   clear:both;
   height: 1px;
   margin-top: 100px;
-=======
+}
 .vertical-line-dashboard {
 	border-right: $grey2 1px solid;
 	display:inline;
@@ -392,9 +379,7 @@ body {
 		}
 	a {
 			padding: 5% 30% 5% 30%;
-		}
->>>>>>> 17cce393dd4bcae3612897213a03ca57b7df18f9
-}
+		}}
 
 
 #wrapper {
