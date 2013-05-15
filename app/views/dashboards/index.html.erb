@@ -1,80 +1,90 @@
 <% provide(:title, "Dashboard")%>
-
-
-<!-- COL1 -->
-
-
-<div id='chart'>
-	<div id="chart_div" data-car_miles="<%= @car_miles.to_json %>" style="width:500px; height:250px"></div>
-	Totaal <%= @car.mileage / 1000 %>
-	Elektrisch <%= @car.mileage_electric / 1000 %> km 
-	Fossiel	<%= @car.mileage_fossile / 1000 %> km
-</div>
-
-
-	<div id="badges">
+<div id="pagewrap">
+	<div class='wrapper grid2'>
+		<div id="col_dashboard_left">
+			<div id='chart'>
+				<div id="chart_div" data-car_miles="<%= @car_miles.to_json %>" style="width:500px; height:250px"></div>
+				<ul>
+					<li class="vertical-line-dashboard">Totaal  <%= @car.mileage / 1000 %> km</li>
+					<li class="vertical-line-dashboard">Elektrisch  <%= @car.mileage_electric / 1000 %> km</li>
+					<li class="vertical-line-dashboard">Fossiel <%= @car.mileage_fossile / 1000 %> km</li>
+				</ul>
+			</div>
+			<div id="badges" class="center">	
+				<div class="badge">
+					<% @badges_electric.each do |badge| %>
+						<%= image_tag badge.avatar_url(:thumb), class: 'avatar' %>		
+						<!-- <% if badge.value == 0 %>
+						<% else %>
+						<p><%= badge.value %> elektrische kilometer badge </p>	  
+						<p>Punten: <%= badge.points %></p>
+						<% end %> -->
+					<% end %>
+				</div>
 				
-		<div class="badge">
-			<% @badges_electric.each do |badge| %>
-				<%= image_tag badge.avatar_url(:thumb), class: 'avatar' %>		
-				<!-- <% if badge.value == 0 %>
-				<% else %>
-				<p><%= badge.value %> elektrische kilometer badge </p>	  
-				<p>Punten: <%= badge.points %></p>
-				<% end %> -->
-			<% end %>
-		</div>
-				
-		<div class="badge">
-			<% @badges_fossile.each do |badge| %>
-				<%= image_tag badge.avatar_url(:thumb), class: 'avatar' %>		
-				<!-- <% if badge.value == 0 %>
-				<% else %>
-				<p><%= badge.value %> fossiele kilometer badge </p>				 
-				<p>Punten: <%= badge.points %></p>
-				<% end %> -->
-			<% end %>
-		</div>
+				<div class="badge">
+					<% @badges_fossile.each do |badge| %>
+						<%= image_tag badge.avatar_url(:thumb), class: 'avatar' %>		
+						<!-- <% if badge.value == 0 %>
+						<% else %>
+						<p><%= badge.value %> fossiele kilometer badge </p>				 
+						<p>Punten: <%= badge.points %></p>
+						<% end %> -->
+					<% end %>
+				</div>
 		
-		<div class="badge">
-			<% @badges_mileage.each do |badge| %>
-				<%= image_tag badge.avatar_url(:thumb), class: 'avatar' %>		
-				<!-- <% if badge.value == 0 %>
-				<% else %>
-				<p><%= badge.value %> totaal kilometer badge </p>				 
-				<p>Punten: <%= badge.points %></p>
-				<% end %> -->
-			<% end %>
-		</div>
+				<div class="badge">
+					<% @badges_mileage.each do |badge| %>
+						<%= image_tag badge.avatar_url(:thumb), class: 'avatar' %>		
+						<!-- <% if badge.value == 0 %>
+						<% else %>
+						<p><%= badge.value %> totaal kilometer badge </p>				 
+						<p>Punten: <%= badge.points %></p>
+						<% end %> -->
+					<% end %>
+				</div>
 		
+			</div>	
+		</div>
+		<div id="col_dashboard_right">
+			<div id="profile">
+				<ul>
+					<li class="center">
+						<% if @user.avatar? %>
+						<%= image_tag @user.avatar_url(:thumb), :class => "avatar" %>
+						<% else %>
+						<%= image_tag("avatar.png", :alt => "default-avatar", :class => "avatar") %>
+						<% end %>
+					</li>
+	
+					<li class="center"><%= link_to @user.user_name, user_path(current_user) %></li>
+		
+					<li class="center"><%= @user.first_name %> <%= @user.middle_name %> <%= @user.last_name %></li>
+	
+					<li class="center"><%= @car.model %></li>
+	
+					<li class="center">
+					  <% if @user.score %>
+					    <%= @user.score %> Punten
+					  <% end %>
+					</li>
+
+					<li>
+					  <% if @user.rank %>
+					    Rang: <%= @user.rank %>
+					  <% end %>
+					</li>
+				</ul>
+			</div>
+			<div class="nav_dashboard">
+				<ul>
+					<li class="center"><%= link_to 'Alle Badges', root_url%></li>
+					<li class="center"><%= link_to 'Algemeen', root_url%></li>
+					<li class="center"><%= link_to 'Groen', root_url%></li>
+					<li class="center"><%= link_to 'D(r)ivers', root_url%></li>
+					<li class="center" style="background:none"><%= link_to 'Uitzonderlijk', root_url%></li>					
+				</ul>	
+			</div>
+		</div>
 	</div>
-	
-	<!-- COL2 -->
-	<ul>
-		<li>
-			<% if @user.avatar? %>
-			<%= image_tag @user.avatar_url(:thumb), :class => "avatar" %>
-			<% else %>
-			<%= image_tag("avatar.png", :alt => "default-avatar", :class => "avatar") %>
-			<% end %>
-		</li>
-	
-		<li><%= link_to @user.user_name, user_path(current_user) %></li>
-		
-		<li><%= @user.first_name %> <%= @user.middle_name %> <%= @user.last_name %></li>
-	
-		<li><%= @car.model %></li>
-	
-		<li>
-		  <% if @user.score %>
-		    <%= @user.score %> Punten
-		  <% end %>
-		</li>
-
-		<li>
-		  <% if @user.rank %>
-		    Rang: <%= @user.rank %>
-		  <% end %>
-		</li>
-	</ul>
-	
+</div>

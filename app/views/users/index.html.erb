@@ -1,41 +1,34 @@
-<<<<<<< HEAD
-=======
-<% provide(:title, "Dashboard")%>
-
+<% provide(:title, "Dashboard")  %>
 
 <div id="pagewrap">
-  <div class="wrapper grid2">
-<div id="dashboard-profile">
+	<div class="wrapper grid3">
+		<div id="mockup">
+		<!-- <% if current_user %>
+			<h2>Welkom, <%= current_user.user_name %>
+	
+			<% if current_user.role == 'admin'%> 
+				(<%= current_user.role %>).</h2>
+					<p><%= link_to "Alle gebruikers", users_path %></p>
+			<% end %>
+	
+		<% else %>
 
-<li>
-  <%= image_tag @user.avatar_url(:thumb), :class => "avatar" if @user.avatar? %>
-</li>
+		redirect_to new_session_path
 
-<li>
-  <%= link_to @user.user_name, user_path(current_user) %>
-</li>
->>>>>>> f3529ad31fdad8e2bc511c5daf5f271b4765e053
+		<p><%= link_to "Login", new_session_path %> of <%= link_to "registeer", new_user_path %>.</p>
 
-<li>
-  <%= @user.first_name %> <%= @user.middle_name %> <%= @user.last_name %>
-</li>
 
-<li>
-  <% if @user.score %>
-    <%= @user.score %> Punten
-  <% end %>
+				<%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+		
 
-</li>
 
-<li>
-  <% if @user.rank %>
-    Rang: <%= @user.rank %>
-  <% end %>
-</li>
 
-<li>
-    Opel Ampera
-</li>
-</div></div></div></div>
+				<%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %><br />
+				<%= link_to "Sign in with Facebook/Callback", "/auth/facebook/callback", id: "sign_in" %>
 
+
+		<% end %> -->
+	</div>
+	</div>
+</div>
 
