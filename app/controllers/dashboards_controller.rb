@@ -1,7 +1,6 @@
 require 'segment'
 class DashboardsController < ApplicationController
     skip_authorization_check
-    require 'json'
     
   def index
     @user = User.find(params[:user_id])

@@ -30,8 +30,8 @@
 	     data.addColumn('string', 'Ratio');    
 	     data.addColumn('number', 'Slices');
 	     data.addRows([
-	       ['Electric', car_miles.electric],
-	       ['Fossile', car_miles.fossile],
+	       ['Electric', 100],
+	       ['Fossile', 160],
 				 ['Empty', 0]                 
      	 ]);
 
