@@ -36,6 +36,7 @@ LELIJKE CSS VOOR DE PROFIELPAGINA (wel laten staan aub)
 		stroke-width:0;
 	  }
 	}*/
+<<<<<<< HEAD
 
 
 	.fixed {
@@ -72,6 +73,8 @@ LELIJKE CSS VOOR DE PROFIELPAGINA (wel laten staan aub)
 	#badge_nav{
 		list-style-type: none;
 	}
+=======
+>>>>>>> 17cce393dd4bcae3612897213a03ca57b7df18f9
 	
 	#chart_div:after {
 		background-image:url('subtlenet2.png');
@@ -90,7 +93,16 @@ LELIJKE CSS VOOR DE PROFIELPAGINA (wel laten staan aub)
 
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500);
 
+<<<<<<< HEAD
 
+=======
+$green: #48b237;
+$white: #fff;
+$grey: #313131;
+$grey2: #808080;
+$darkgreen: #339933;
+$lightgrey: #eeeeee;
+>>>>>>> 17cce393dd4bcae3612897213a03ca57b7df18f9
 
 /* General CSS */
 
@@ -221,7 +233,7 @@ a:hover {text-decoration: underline;}
 	}
 }
 
-#nav{
+.nav{
 	list-style:none;
 	float: left;
 	width:100%;
@@ -230,23 +242,23 @@ a:hover {text-decoration: underline;}
 	z-index:5;
 	
 }
-#nav li{
+.nav li{
 	float:right;
 	position:relative;
 	margin: 0;
 	width: auto;
 	padding: 13px 0 13px 30px;
 }
-#nav a{
+.nav a{
 	color: $grey;
 	text-decoration:none;
 }
-#nav a:hover{
+.nav a:hover{
 	color:#fff;
 }
 
 /*--- DROPDOWN ---*/
-#nav ul{
+.nav ul{
 	background: $white; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
 	background:rgba(255,255,255,0.8); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
 	list-style:none;
@@ -254,26 +266,26 @@ a:hover {text-decoration: underline;}
 	position:absolute;
 	left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
 }
-#nav ul li{
+.nav ul li{
 	padding-top:10px; /* Introducing a padding between the li and the a give the illusion spaced items */
 	float:none;
 }
-#nav ul a{
+.nav ul a{
 	white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
 	padding: 13px 30px 13px 0px !important;
 
 }
-#nav li:hover ul{ /* Display the dropdown on hover */
+.nav li:hover ul{ /* Display the dropdown on hover */
 	left:-85px; /* Bring back on-screen when needed */
 }
-#nav li:hover a{ /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
+.nav li:hover a{ /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
 	
 	text-decoration:underline;
 }
-#nav li:hover ul a{ /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
+.nav li:hover ul a{ /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
 	text-decoration:none;
 }
-#nav li:hover ul li a:hover{ /* Here we define the most explicit hover states--what happens when you hover each individual link. */
+.nav li:hover ul li a:hover{ /* Here we define the most explicit hover states--what happens when you hover each individual link. */
 	color: $green;
 }
 
@@ -294,7 +306,15 @@ li.home {
 /************************************************************************************
 SIDEBAR STICKY SCROLL
 *************************************************************************************/
+#chart {
+	border:1px solid rgba(128, 128, 128, .3);
+	border-radius: 5px;
+	margin-bottom:4.5%;
+	background: $white;
+	background:rgba(255,255,255,0.5);
+}
 
+<<<<<<< HEAD
 body {
   margin:0;
   padding:0;
@@ -320,6 +340,60 @@ body {
   clear:both;
   height: 1px;
   margin-top: 100px;
+=======
+.vertical-line-dashboard {
+	border-right: $grey2 1px solid;
+	display:inline;
+	padding-right:5px;
+}
+
+#profile {
+	border:1px solid rgba(128, 128, 128, .3);
+	border-radius: 5px;
+	margin-bottom: 9%;
+	background: $white;
+	background:rgba(255,255,255,0.5);
+}
+
+#badges {
+	position:relative;
+	height:196px;
+	border:1px solid rgba(128, 128, 128, .3);
+	border-radius: 5px;
+	background: $white;
+	background:rgba(255,255,255,0.5);
+}
+	
+.badge {
+	float:left;
+	margin-left:5.5%;
+	width:26%;
+	img {
+		border:none;
+		width:100%;
+		height:90%;
+		margin: 5% 0 5% 0;
+	}
+}
+
+.nav_dashboard {
+	background: $white; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
+	background:rgba(255,255,255,0.5); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
+	list-style:none;
+	border:1px solid rgba(128, 128, 128, .3);
+	border-radius:5px;
+	li {
+			background: url('horizontal-line.png') repeat-x;
+			background-position-y: bottom;
+			padding: 5% 0 5% 0;
+			margin-top: 0;
+			margin-bottom: 0;
+			width: 300px;
+		}
+	a {
+			padding: 5% 30% 5% 30%;
+		}
+>>>>>>> 17cce393dd4bcae3612897213a03ca57b7df18f9
 }
 
 
@@ -481,8 +555,6 @@ li.top {
 li.fullwidth {
 	width: 300px !important;
 }
-
-
 
 #vertical-line {
 	border-left: 1px solid $grey;

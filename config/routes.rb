@@ -24,6 +24,8 @@ Greendrive::Application.routes.draw do
     resources :users
   end
   
+  resources :users
+  
   resources :users do
     resources :dashboards
   end
