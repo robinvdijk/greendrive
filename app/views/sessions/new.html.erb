@@ -125,7 +125,7 @@ reader.readAsDataURL(input.files[0]);
 								<%= image_tag("avatar.png", :alt => "default-avatar", :class => "avatar_pre") %>
 							</li>
 							<li>
-							<%= f.file_field :avatar, :onchange => "javascript: readURL(this);" %>
+								<%= f.file_field :avatar, :onchange => "javascript: readURL(this);" %>
 							</li>
 
 							<li>

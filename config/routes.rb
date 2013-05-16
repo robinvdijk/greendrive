@@ -34,7 +34,7 @@ Greendrive::Application.routes.draw do
   
   resources :pages
 
-  root :to => "pages#dashboard"
+  root :to => "pages#homepage"
   
   controller :sessions do
     get "login" => "sessions#new"

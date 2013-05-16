@@ -46,6 +46,19 @@ margin-left: 0;
 clear: left;
 }
 
+.col_home_side {
+	float: left;
+	width: 19.9%;
+	border: blue;
+	margin: 3.2% 0;
+}
+
+.col_home_mid {
+	float: left;
+	width: 53.8%;
+	border: red;
+	margin: 3.2%;
+}
 /************************************************************************************
 MEDIA QUERIES
 *************************************************************************************/
