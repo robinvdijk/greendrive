@@ -4,21 +4,12 @@ class UsersController < ApplicationController
   load_and_authorize_resource
   
   def index
-   @users = User.all
   end
-  
+   
   def show
    @user = User.find(params[:id])
-    # @segment = Segment.find(params[:id])
-    @car = Car.find(params[:id])
-    @car_miles = { electric: @car.mileage_electric, fossile: @car.mileage_fossile }
- 
-   # @battery = { battery_value: @trace.battery_value, created_at: @trace.created_at }
-   #  
-
-   @badges_electric = Badge.where('title = ? and value <= ?', 'Mileage Electric', @car.mileage_electric).limit(1).order('value desc')
-   @badges_fossile = Badge.where('title = ? and value <= ?', 'Mileage Fossile', @car.mileage_fossile).limit(1).order('value desc')
- #  
+   # @segment = Segment.find(params[:id])
+   @car = Car.find(params[:id])
   end
   
   def new

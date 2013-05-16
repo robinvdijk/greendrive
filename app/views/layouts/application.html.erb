@@ -7,33 +7,30 @@
 
 	<%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag 'application', :media => "all" %>
+  <%= javascript_include_tag 'stickyMojo', :media => "all" %>
 	<script type>
 	$(function(){
 		$('.tooltip [title]').tipsy({trigger: 'focus', gravity: 'n'});
 	});
 	</script>
-	
-	
-	
-
 </head>
 <body>
 
 	
 		<%= render "layouts/header" %>
 
-	<div id="pagewrap">
+	<div id="error_bar">
 	
 		<% if flash[:notice] %>
 	    	<p class="notice"><%= flash[:notice] %></p>
 	    <% end %>	 
 
-	    <% if flash[:alert] %>
-	   		<p class="notice"><%= flash[:alert] %></p>
+	    <% if flash[:error] %>
+	   		<p class="error"><%= flash[:error] %></p>
 	    <% end %>	 
 
 	    <% if flash[:success] %>
-	    	<p class="notice"><%= flash[:success] %></p>
+	    	<p class="succes"><%= flash[:success] %></p>
 		<% end %>	
 
 	</div>

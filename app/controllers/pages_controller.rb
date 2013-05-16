@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
  skip_authorization_check
+
   def dashboard
   	
   	if current_user
@@ -9,5 +10,5 @@ class PagesController < ApplicationController
 
   end
   
-  
+
 end

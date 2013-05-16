@@ -5,12 +5,15 @@
 		<div class="col">
 			<div id="vertical-line-right">
 				<ul>
-
 					<li>
 						<h2>Profiel</h2>
 					</li>
 					<li>
-						<%= image_tag @user.avatar_url(:thumb), :class => "avatar" if @user.avatar? %>
+						<% if @user.avatar? %>
+						<%= image_tag @user.avatar_url(:thumb), :class => "avatar" %>
+						<% else %>
+						<%= image_tag("avatar.png", :alt => "default-avatar", :class => "avatar") %>
+						<% end %>
 					</li>
 					<li class="center">
 						<h3><small class="green">Gebruikersnaam</small><br />
@@ -26,13 +29,12 @@
 					</li>
 					<!-- <li class="center">
 						<h3><%= link_to 'Badges', :class => "button" %></h3>
-					</li> -->
-					
+					</li> -->			
 				</ul>
 			</div>
-						<div id="chart_div" data-car_miles="<%= @car_miles.to_json %>" style="width:500px; height:250px"></div>
+						
 		
-							<%= link_to 'Terug', :root %>
+							<!-- <%= link_to 'Terug', :root %> -->
 		</div>
 	
 	
@@ -59,59 +61,26 @@
 				    		<%= @user.birthday.strftime("%e-%-m-%Y") %></h3>
 				    	<% end %>
 				</li>
-				<li class="left">
+<<<<<<< HEAD
+			
+			
+			
+			
+=======
+
+>>>>>>> 17cce393dd4bcae3612897213a03ca57b7df18f9
+
+				<!-- <li class="left">
 				  	<h3><small class="green">Elektrische km</small><br />
 				    	<%= @car.mileage_electric %></h3>
 				</li>
 				<li class="left">
 				  	<h3><small class="green">Fossiele km</small><br />
 				    	<%= @car.mileage_fossile %></h3>
-				</li>
+				</li> -->
 				
 							
 			</ul>
-			
-<!--/**************************************************************
-			GRAFIEKEN		 *************************************************************/ -->
-			
-
-			<!-- <div id="chart_div2" style="width:500px; height:250px"></div> -->
-			<!-- <div id="chart_div3" style="width:500px; height:250px"></div> -->
-			<!-- <div id="chart_div4" data-points="<%= @points.to_json %>" style="width:500px; height:250px"></div>
-		 -->	
-			 
-<!--/**************************************************************
-			 BADGES		 *************************************************************/ -->
-			 
-			<!-- <div id="badges">
-				
-				<div class="badge">
-					<% @badges_electric.each do |badge| %>
-						<%= image_tag badge.avatar_url(:thumb), class: 'avatar' %>		<% if badge.value == 0 %>
-						<% else %>
-						<p><%= badge.value %> elektrische kilometer badge </p>	  
-						<p>Punten: <%= badge.points %></p>
-						<p>Totaal Elektrisch: <%= @car.mileage_electric %> km</p>
-						<% end %>
-					<% end %>
-				</div>
-				
-				<div class="badge">
-					<% @badges_fossile.each do |badge| %>
-						<%= image_tag badge.avatar_url(:thumb), class: 'avatar' %>		
-						<% if badge.value == 0 %>
-						<% else %>
-						<p><%= badge.value %> fossiele kilometer badge </p>				 
-						<p>Punten: <%= badge.points %></p>
-						<p>Totaal Fossiel: <%= @car.mileage_fossile %> km</p>
-						<% end %>
-					<% end %>
-				</div>
-			</div>
-	
-		</div> -->
-		
-<!-- ****************************************************** -->	
 		
 	</div>
 

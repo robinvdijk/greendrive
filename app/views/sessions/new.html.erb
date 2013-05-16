@@ -1,4 +1,3 @@
-
 <head>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script>
@@ -17,12 +16,16 @@ reader.readAsDataURL(input.files[0]);
 }
 </script>
 
-</head>
 
+</head>
 <div id="pagewrap">
 	<div class="wrapper grid3">
 		<article class="col">
+
 			
+	
+
+
 				<%= form_tag sessions_path do %>
 				<ul>
 					<li>
@@ -65,7 +68,7 @@ reader.readAsDataURL(input.files[0]);
 					<div class="aligncenter">
 					
 					<%= form_for(@user) do |f| %>
-					
+					<%= render 'layouts/error_handling' %>
 						<div id="vertical-line">
 							
 				
@@ -74,7 +77,7 @@ reader.readAsDataURL(input.files[0]);
 									<h2>Registreren</h2>
 								</li>
 								<li>
-								    <%= f.label :first_name, 'Voornaam *' %></strong><br>
+								    <%= f.label :first_name, 'Voornaam *', :class => 'demo' %><br>
 								    <%= f.text_field :first_name, :class => 'field' %>
 								</li>
 								<li>
@@ -82,15 +85,15 @@ reader.readAsDataURL(input.files[0]);
 		    						<%= f.text_field :middle_name, class: 'field' %>
 		    					</li>
 								<li>
-					  			    <%= f.label :last_name, 'Achternaam *' %></strong><br>
+					  			    <%= f.label :last_name, 'Achternaam *' %><br>
 					  			    <%= f.text_field :last_name, :class => 'field' %>
 								</li>
 								<li>
-					  			    <%= f.label :email, 'E-mail *' %></strong><br />
+					  			    <%= f.label :email, 'E-mail *' %><br />
 					  			    <%= f.text_field :email, :autofocus => true, :class => 'field' %>
 									</li>
 								<li>
-					  			    <%= f.label :user_name, 'Gebruikersnaam *' %></strong><br />
+					  			    <%= f.label :user_name, 'Gebruikersnaam *' %><br />
 											<div class="tooltip"><%= f.text_field :user_name, :title => "De gebruikersnaam moet minimaal 4 en maximaal 20 tekens bevatten.", :class => 'field' %></div>
 								</li>
 								<li>
@@ -103,15 +106,16 @@ reader.readAsDataURL(input.files[0]);
 							                                    'September', 'Oktober', 'November', 'December']) %>
 						    </li>
 								<li>
-								    <%= f.label :password, 'Wachtwoord *' %></strong><br />
+								    <%= f.label :password, 'Wachtwoord *' %><br />
 								    <div class="tooltip"><%= f.password_field :password, :title => "Het wachtwoord moet minimaal 6 karakters bevatten, waarvan 1 hoofdletter, 1 kleine letter en 1 getal.", :class => 'field' %></div>
 								</li>
 								<li>
-								    <%= f.label :password_confirmation, 'Wachtwoord verificatie *' %></strong><br />
+								    <%= f.label :password_confirmation, 'Wachtwoord verificatie *' %><br />
 								   <div class="tooltip"> <%= f.password_field :password_confirmation, :title => "Het wachtwoord moet minimaal 6 karakters bevatten, waarvan 1 hoofdletter, 1 kleine letter en 1 getal.", :class => 'field' %></div>
 
 								</li>
 							</ul>
+							<p class="register_text">De met * gemarkeerde velden zijn verplicht.</p>
 						</div>
 					</div>
 				</div>
@@ -136,12 +140,13 @@ reader.readAsDataURL(input.files[0]);
 								<div id="blanket"></div> <!-- the black opacity screen around the popup -->
 							
 								<div id="terms_info">
-									<a href="#" onclick="popup('terms_info')">Close</a>
+									<a href="#" onclick="popup('terms_info')">Sluiten</a>
 								</div>	
 							</li>
 							<li class="center">	
 						      	<%= f.submit "Account aanmaken", :class => 'button' %>
 							</li>
+						</ul>
 						<% end %>
 					</div>
 					

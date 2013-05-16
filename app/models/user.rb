@@ -1,12 +1,13 @@
 class User < ActiveRecord::Base
   
-  attr_accessible :provider, :terms_of_service, :image_cache, :terms_of_privacy, :uid, :role, :admin, :user, :email, :first_name, :middle_name, :last_name, :password_confirmation, :password, :user_name, :avatar, :birthday
+  attr_accessible :provider, :rank, :terms_of_service, :image_cache, :terms_of_privacy, :uid, :role, :admin, :user, :email, :first_name, :middle_name, :last_name, :password_confirmation, :password, :user_name, :avatar, :birthday
   has_secure_password 
 
   has_many :authentications
   has_many :traces
 
   has_one :car
+  has_one :dashboard
 
   has_many :segments
   
@@ -31,6 +32,8 @@ class User < ActiveRecord::Base
   before_create { generate_token(:auth_token) }
   mount_uploader :avatar, AvatarUploader
 
+  after_validation { self.errors.messages.delete(:password_digest) } 
+  # ^ This way password_digest won't show up in the errorlog
 
   
 
@@ -54,7 +57,7 @@ class User < ActiveRecord::Base
   def generate_password_reset
     generate_token(:password_reset_token)
     self.password_reset_sent_at = Time.zone.now
-    save!
+    save!(validate: false) #This way password validation wont conflict
   end
 
   def generate_token(column)
@@ -62,6 +65,8 @@ class User < ActiveRecord::Base
       self[column] = SecureRandom.urlsafe_base64
     end while User.exists?(column => self[column])
   end
+
+  
   # ------------------------------------
 
   #used to add avatar to user profile

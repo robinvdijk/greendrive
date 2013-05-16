@@ -1,26 +1,37 @@
-<% provide(:title, "Alle gebruikers")%>
-<h1>Alle gebruikers</h1>
+<<<<<<< HEAD
+=======
+<% provide(:title, "Dashboard")  %>
 
-<% if @users.any? %>
+<div id="pagewrap">
+	<div class="wrapper grid3">
+		<div id="mockup">
+		<!-- <% if current_user %>
+			<h2>Welkom, <%= current_user.user_name %>
+	
+			<% if current_user.role == 'admin'%> 
+				(<%= current_user.role %>).</h2>
+					<p><%= link_to "Alle gebruikers", users_path %></p>
+			<% end %>
+	
+		<% else %>
 
-  <table>
-  <% @users.each do |user| %>
+		redirect_to new_session_path
 
-  <tr>
-    <td><%= link_to user.user_name, user %> |</td>
+		<p><%= link_to "Login", new_session_path %> of <%= link_to "registeer", new_user_path %>.</p>
 
-        <% if can? :update, User %>
-        <td><%= link_to 'Bewerk', edit_user_path(user) %></td>
-    <% end %>
-    <% if can? :destroy, User %>
-        <td><%= link_to 'Verwijder', user, method: :delete, data: { confirm: 'Weet u het zeker?' } %></td>
-    <% end %>
-    <td><%= user.role %></td>
-  </tr>
-  <% end %>
-  </table>
-<% else %>
-  <p>No users.</p>
-<% end %>
-<br />
 
+				<%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+		
+
+
+
+				<%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %><br />
+				<%= link_to "Sign in with Facebook/Callback", "/auth/facebook/callback", id: "sign_in" %>
+
+
+		<% end %> -->
+	</div>
+	</div>
+</div>
+
+>>>>>>> 17cce393dd4bcae3612897213a03ca57b7df18f9

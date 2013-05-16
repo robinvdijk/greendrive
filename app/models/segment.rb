@@ -7,9 +7,10 @@ class Segment < ActiveRecord::Base
   attr_accessible :id, :user_id, :title, :auth_token, :company_id, :mileage, :drive_electric_ratio, :created_at, :updated_at, :mileage_electric, :mileage_fossile, :license_plate
   
   belongs_to :user
+
   
   def init
-     response = HTTParty.get("http://360-ev.com/Services/Authentication.svc/json/Authenticate?username=greenflux2012&password=green2012") 
+     response = HTTParty.get("http://360-ev.com/Services/Authentication.svc/json/Authenticate?username=#{username}&password=#{password}") 
    
      auth = JSON.parse(response.body)
      self.auth_token = auth['AuthToken']
@@ -87,12 +88,7 @@ class Segment < ActiveRecord::Base
               self.mileage = segment['mileage']
               self.drive_electric_ratio = segment['driveElectricRatio']
               
-              
-
-              if car
-              
-                  
-           
+              if car     
                 if self.mileage > 0
                   if self.drive_electric_ratio > 0
                      henk = self.mileage * self.drive_electric_ratio
