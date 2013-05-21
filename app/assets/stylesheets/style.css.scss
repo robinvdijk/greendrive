@@ -286,7 +286,8 @@ HOMEPAGE
 	margin: auto;
 	width: 125px;
 	height: 125px;
-	border: 2px solid purple;
+	border: 2px solid $green;
+	border-radius: 5px;
 	margin-bottom: 20px;
 }
 
@@ -315,8 +316,13 @@ iframe {
 }
 
 #container_button {
-	width: 78%;
+	width: 85%;
 	margin: auto;
+}
+
+.button_homepage {
+	@extend .button;
+	margin: 3.1%;
 }
 
 	/************************************************************************************
