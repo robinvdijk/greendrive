@@ -40,6 +40,31 @@ width: 100%;
 	margin: 3.25% 6.25%;
 }
 
+#col_dashboard_left {
+	float:left;
+	width: 64.5%;
+	margin: 3.2% 3.2% 0 0;
+}
+
+#col_dashboard_right {
+	float:left;
+	width:32.3%;
+	margin-top:2.1%;
+}
+
+.col_badges_left{
+	float:left;
+	width: 72.6%;
+	margin-top: 3.2%;
+}
+
+.col_badges_right{
+	float:left;
+	width:24.2%;
+	margin-left: 2.2%;
+	margin-top: 3.2%;
+}
+
 /* grid4 col */
 .grid4 .col {
 width: 22.6%;
