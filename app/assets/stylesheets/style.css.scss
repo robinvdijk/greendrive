@@ -101,6 +101,10 @@ body {
 	
 }
 
+.logo {
+	width: 100%;
+}
+
 .align-center {
 	width: 96%;
 	margin-left: auto !important;
@@ -270,7 +274,7 @@ input[type=search] {
 
 li.home {
 	float: left !important;
-	padding: 10px 0px 13px 0px !important;
+	padding: 5px 0px 13px 0px !important;
 }
 
 /************************************************************************************
@@ -311,7 +315,7 @@ iframe {
 }
 
 #container_button {
-	width: 71%;
+	width: 78%;
 	margin: auto;
 }
 
