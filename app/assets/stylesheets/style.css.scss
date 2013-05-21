@@ -186,8 +186,7 @@ a:hover {text-decoration: underline;}
 .header {
 	background: url('/images/groen_patroon.png') repeat;
 	margin: 0 -10px !important;
-	padding: 5px !important;
-	height: 40px;
+	height: 45px;
     -moz-box-shadow:    inset 0 10px 10px rgba(255,255,255,0.4);
     -webkit-box-shadow: inset 0 10px 10px rgba(255,255,255,0.4);
     box-shadow:         inset 0 10px 10px rgba(255,255,255,1);
@@ -275,17 +274,35 @@ li.home {
 }
 
 /************************************************************************************
-<<<<<<< HEAD
+
 HOMEPAGE
 *************************************************************************************/
 
-#block {
+.block {
 	margin: auto;
 	width: 125px;
 	height: 125px;
-	background: purple;
+	border: 2px solid purple;
 	margin-bottom: 20px;
 }
+
+#block_1, #block_2, #block_3, #block_4, #block_5, #block_6, #block_7, #block_8 {
+	@extend .block;
+}
+
+#container_explains {
+	width: 100%;
+	height: 225px;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+
+
+#explain_1, #explain_2, #explain_3, #explain_4, #explain_5, #explain_6, #explain_7, #explain_8 {
+	display: none;
+}
+
+
 
 iframe {
 	width: 100%;
@@ -294,7 +311,7 @@ iframe {
 }
 
 #container_button {
-	width: 90%;
+	width: 71%;
 	margin: auto;
 }
 
