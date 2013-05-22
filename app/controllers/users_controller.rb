@@ -38,7 +38,8 @@ class UsersController < ApplicationController
     
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html  { redirect_to(@user, :success => 'Uw profiel is succesvol aangepast.') }
+       flash[:success] = 'Uw profiel is succesvol aangepast.'
+       format.html { redirect_to(@user) }
       else
         format.html  { render :action => "edit", :notice => 'Er is iets misgegaan. Mogelijk zijn niet alle velden correct ingevuld.' }
       end       
