@@ -20,8 +20,8 @@ Greendrive::Application.routes.draw do
     resources :segments
   end
   
-  resources :badges do 
-    resources :users
+  resources :users do 
+    resources :badges
   end
   
   resources :users
