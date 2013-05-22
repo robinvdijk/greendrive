@@ -15,7 +15,6 @@ class CarsController < ApplicationController
       username = @car.username 
       password = @car.password
       
-      segment.init
     else
       render 'new'
     end

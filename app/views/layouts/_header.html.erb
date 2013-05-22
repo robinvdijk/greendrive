@@ -1,13 +1,18 @@
 
 <div id="progressbar"></div>
 
+<% unless controller_name == "pages" %>
+	
+
+
+
 	<div class="header">
 		
 		<% if controller_name == "sessions"  || controller_name == "password_resets" %>
 			<div id="pagewrap">
 				<ul class="nav">
 					<li class="home">
-						<%= link_to image_tag("header_logo_white.png"), root_path %>
+						<%= link_to image_tag("header_logo_white.svg"), root_path %>
 					</li>
 				</ul>
 			</div>
@@ -47,6 +52,8 @@
 		
 		</div>
 		<% end %>
+		
+<% end %>
 		
 		
 		

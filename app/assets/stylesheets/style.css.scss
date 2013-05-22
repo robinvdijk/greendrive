@@ -92,6 +92,10 @@ body {
 	
 }
 
+.logo {
+	width: 100%;
+}
+
 .align-center {
 	width: 96%;
 	margin-left: auto !important;
@@ -177,8 +181,7 @@ a:hover {text-decoration: underline;}
 .header {
 	background: url('/images/groen_patroon.png') repeat;
 	margin: 0 -10px !important;
-	padding: 5px !important;
-	height: 40px;
+	height: 45px;
     -moz-box-shadow:    inset 0 10px 10px rgba(255,255,255,0.4);
     -webkit-box-shadow: inset 0 10px 10px rgba(255,255,255,0.4);
     box-shadow:         inset 0 10px 10px rgba(255,255,255,1);
@@ -262,7 +265,7 @@ input[type=search] {
 
 li.home {
 	float: left !important;
-	padding: 10px 0px 13px 0px !important;
+	padding: 5px 0px 13px 0px !important;
 }
 
 
@@ -314,16 +317,39 @@ color:white;
 
 
 /************************************************************************************
+<<<<<<< HEAD
+=======
+
+>>>>>>> 16861181e7d2ffe84decbd21f0d1ee53e66787b6
 HOMEPAGE
 *************************************************************************************/
 
-#block {
+.block {
 	margin: auto;
 	width: 125px;
 	height: 125px;
-	background: purple;
+	border: 2px solid $green;
+	border-radius: 5px;
 	margin-bottom: 20px;
 }
+
+#block_1, #block_2, #block_3, #block_4, #block_5, #block_6, #block_7, #block_8 {
+	@extend .block;
+}
+
+#container_explains {
+	width: 100%;
+	height: 225px;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+
+
+#explain_1, #explain_2, #explain_3, #explain_4, #explain_5, #explain_6, #explain_7, #explain_8 {
+	display: none;
+}
+
+
 
 iframe {
 	width: 100%;
@@ -332,13 +358,25 @@ iframe {
 }
 
 #container_button {
-	width: 90%;
+	width: 85%;
 	margin: auto;
 }
 
+<<<<<<< HEAD
 /************************************************************************************
 BADGES PAGE
 *************************************************************************************/
+=======
+.button_homepage {
+	@extend .button;
+	margin: 3.1%;
+}
+
+	/************************************************************************************
+	STICKY SCROLL
+	*************************************************************************************/
+
+>>>>>>> 16861181e7d2ffe84decbd21f0d1ee53e66787b6
 #chart {
 	border:1px solid rgba(128, 128, 128, .3);
 	border-radius: 5px;

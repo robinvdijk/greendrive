@@ -3,7 +3,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     display: block;
 }
 
-#pagewrap, #error_bar {
+#pagewrap {
 width: 980px;
 max-width: 96%;
 margin: 0 auto;
@@ -18,8 +18,26 @@ COLUMN
 *************************************************************************************/
 .col {
 float: left;
-margin-left: 3.2%;
+margin-left: 3.25%;
 margin-bottom: 30px;
+}
+
+.fullwidth .col {
+float: left;
+width: 100%;
+}
+
+.col_home_side {
+	float: left;
+	width: 13%;
+	margin-top: 3.25%;
+		
+}
+
+.col_home_mid {
+	float:left;
+	width: 61.5%;
+	margin: 3.25% 6.25%;
 }
 
 #col_dashboard_left {
@@ -47,10 +65,6 @@ margin-bottom: 30px;
 	margin-top: 3.2%;
 }
 
-.fullwidth .col {
-float: left;
-width: 100%;
-}
 /* grid4 col */
 .grid4 .col {
 width: 22.6%;
@@ -71,164 +85,7 @@ margin-left: 0;
 clear: left;
 }
 
-/************************************************************************************
-MEDIA QUERIES
-*************************************************************************************/
-/* reset cols to 3-column */
-@media screen and (max-width: 740px) {
-/* grid4 */
-.grid4 .col {
-width: 31.2%;
-}
-.grid4 .col:nth-of-type(4n+1) {
-margin-left: 3.2%;
-clear: none;
-}
-.grid4 .col:nth-of-type(3n+1) {
-margin-left: 0;
-clear: left;
-}
-}
 
-/* reset cols to 2-column */
-@media screen and (max-width: 600px) {
-/* grid4 */
-.grid4 .col {
-width: 48.4%;
-}
-.grid4 .col:nth-of-type(3n+1) {
-margin-left: 3.2%;
-clear: none;
-}
-.grid4 .col:nth-of-type(2n+1) {
-margin-left: 0;
-clear: left;
-}
-
-/* grid3 */
-.grid3 .col {
-width: 48.4%;
-}
-.grid3 .col:nth-of-type(3n+1) {
-margin-left: 3.2%;
-clear: none;
-}
-.grid3 .col:nth-of-type(2n+1) {
-margin-left: 0;
-clear: left;
-}
-}
-
-/* reset cols to fullwidth */
-@media screen and (max-width: 400px) {
-
-	/* grid4 */
-	.col {
-		width: auto !important;
-		margin-left: 0 !important;
-		clear: none !important;
-	}
-	
-	.register {
-		display: none;
-	}
-	
-	#link-register {
-		visibility: visible !important;
-	}
-	
-	#vertical-line {
-		border: none;
-	}
-	
-	#vertical-line-right {
-		visibility: hidden;
-	}
-	
-	.icon_menu {
-		visibility: visible !important;
-	}
-	
-	ul {
-		li {
-			width: 80% !important;
-		}
-	}
-}
-
-/* set html5 elements to block */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-    display: block;
-}
-
-#pagewrap, #error_bar {
-width: 980px;
-max-width: 96%;
-margin: 0 auto;
-}	
-
-.wrapper {
-overflow: hidden;
-}
-
-/************************************************************************************
-COLUMN
-*************************************************************************************/
-.col {
-float: left;
-margin-left: 3.2%;
-margin-bottom: 30px;
-}
-
-#col_dashboard_left {
-	float:left;
-	width: 64.5%;
-	margin: 3.2% 3.2% 0 0;
-}
-
-#col_dashboard_right {
-	float:left;
-	width:32.3%;
-	margin-top:3.2%;
-}
-
-.fullwidth .col {
-float: left;
-width: 100%;
-}
-/* grid4 col */
-.grid4 .col {
-width: 22.6%;
-}
-/* grid3 col */
-.grid3 .col {
-width: 31.2%;
-}
-/* grid2 col */
-.grid2 .col {
-width: 48.4%;
-}
-/* clear col */
-.grid4 .col:nth-of-type(4n+1),
-.grid3 .col:nth-of-type(3n+1),
-.grid2 .col:nth-of-type(2n+1) {
-margin-left: 0;
-clear: left;
-}
-
-.col_home_side {
-	float: left;
-	width: 19.9%;
-	border: blue;
-	margin: 3.2% 0;
-}
-
-.col_home_mid {
-	float: left;
-	width: 53.8%;
-	border: red;
-	margin: 3.2%;
-}
 /************************************************************************************
 MEDIA QUERIES
 *************************************************************************************/
