@@ -11,41 +11,40 @@
 				</ul>
 			</div>
 			<div id="blanket"></div>
-			<div id="badges" class="center">	
-				<div class="badge">
+			<ul id="badges" class="center">	
+				<li class="badge">
 					<% @badges_electric.each do |badge| %>
-						<%= image_tag badge.avatar_url(:thumb), class: 'avatar' %>		
+						<%= image_tag badge.avatar_url(), class: 'avatar' %>		
 						<!-- <% if badge.value == 0 %>
 						<% else %>
 						<p><%= badge.value %> elektrische kilometer badge </p>	  
 						<p>Punten: <%= badge.points %></p>
 						<% end %> -->
 					<% end %>
-				</div>
+				</li>
 				
-				<div class="badge">
+				<li class="badge">
 					<% @badges_fossile.each do |badge| %>
-						<%= image_tag badge.avatar_url(:thumb), class: 'avatar' %>		
+						<%= image_tag badge.avatar_url(), class: 'avatar' %>		
 						<!-- <% if badge.value == 0 %>
 						<% else %>
 						<p><%= badge.value %> fossiele kilometer badge </p>				 
 						<p>Punten: <%= badge.points %></p>
 						<% end %> -->
 					<% end %>
-				</div>
+				</li>
 		
-				<div class="badge">
+				<li class="badge">
 					<% @badges_mileage.each do |badge| %>
-						<%= image_tag badge.avatar_url(:thumb), class: 'avatar' %>		
+						<%= image_tag badge.avatar_url(), class: 'avatar' %>		
 						<!-- <% if badge.value == 0 %>
 						<% else %>
 						<p><%= badge.value %> totaal kilometer badge </p>				 
 						<p>Punten: <%= badge.points %></p>
 						<% end %> -->
 					<% end %>
-				</div>
-		
-			</div>	
+				</li>
+			</ul>	
 		</div>
 		<div id="col_dashboard_right">
 			<div id="profile">
