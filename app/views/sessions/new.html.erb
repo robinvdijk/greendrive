@@ -21,11 +21,6 @@ reader.readAsDataURL(input.files[0]);
 <div id="pagewrap">
 	<div class="wrapper grid3">
 		<article class="col">
-
-			
-	
-
-
 				<%= form_tag sessions_path do %>
 				<ul>
 					<li>
@@ -133,15 +128,15 @@ reader.readAsDataURL(input.files[0]);
 							</li>
 
 							<li>
-							<small><%= check_box :terms_of_service, 'true' %>
-								
-							Ik ga akkoord met de <!-- &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp -->	<a href="#" onclick="popup('terms_info')", class="link">voorwaarden</a> *
-							
-								<div id="blanket"></div> <!-- the black opacity screen around the popup -->
-							
-								<div id="terms_info">
-									<a href="#" onclick="popup('terms_info')">Sluiten</a>
-								</div>	
+								<small><%= check_box :terms_of_service, 'true' %>
+
+								Ik ga akkoord met de <!-- &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp -->	<a href="#" onclick="popup('terms_info')", class="link">voorwaarden</a> *
+
+									<div id="blanket"></div> <!-- the black opacity screen around the popup -->
+
+									<div id="terms_info">
+										<a href="#" onclick="popup('terms_info')">Sluiten</a>
+									</div>	
 							</li>
 							<li class="center">	
 						      	<%= f.submit "Account aanmaken", :class => 'button' %>

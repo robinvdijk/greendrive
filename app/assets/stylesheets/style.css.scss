@@ -64,8 +64,7 @@ LELIJKE CSS VOOR DE PROFIELPAGINA (wel laten staan aub)
 		    left: 142px; 
 		    padding: 60px;
 		    position: absolute;
-		    top: 92px;
-		    z-index: 2; 
+		    top: 92px; 
 	}
 
 /*************************************************************************************/
@@ -206,7 +205,6 @@ a:hover {text-decoration: underline;}
 	float: left;
 	width:100%;
 	height: 45px;
-	position:relative;
 	z-index:5;
 	
 }
@@ -357,6 +355,78 @@ body {
 /************************************************************************************
 DASHBOARD
 *************************************************************************************/
+.arrow_box_bottom {
+	background:rgba(255,255,255,0.5);
+	border:1px solid rgba(128, 128, 128, .3);
+}
+.arrow_box_bottom:after, .arrow_box_bottom:before {
+	top: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.arrow_box_bottom:before {
+	border-color:rgba(128, 128, 128, .3);
+	background:rgba(255,255,255,0.5);
+	border-width: 31px;
+	left: 50%;
+	margin-left: -31px;
+}
+
+
+.arrow_box_right {
+	border: 1px solid white;
+}
+.arrow_box_right:after, .arrow_box_right:before {
+	left: 55%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.arrow_box_right:before {
+	border-color: rgba(0, 0, 0, 0);
+	border-left-color: white;
+	border-width: 31px;
+	top: 50%;
+	margin-top: -31px;
+}
+
+
+#tutorial {
+	position:relative;
+	z-index:1;
+	bottom:690px;
+	h1, p{
+		text-align:center;
+		color:white;
+	}
+	p {
+		font-size:26px;
+	}
+	div {
+		display:none;
+		height:200px;
+	}
+}
+
+#tutorial_1 .button {
+	@extend .button;
+	margin-left:40%;
+}
+
+#tutorial_2 {
+	width:55%;
+}
+
+#tutorial_start:target {
+	display:block;
+}
 
 .vertical-line-dashboard {
 	border-right: $grey2 1px solid;
@@ -372,8 +442,11 @@ DASHBOARD
 	background:rgba(255,255,255,0.5);
 }
 
+#profile:target {
+		position:relative;
+	}
+
 #badges {
-	position:relative;
 	height:196px;
 	border:1px solid rgba(128, 128, 128, .3);
 	border-radius: 5px;
@@ -447,11 +520,13 @@ REGISTREREN & INLOGGEN
 
 #blanket {
 	background-color:black;
-	opacity:0.65;
+	opacity:0.60;
 	position:absolute;
 	top: 0px;
 	left: 0px;
 	width:100%;
+	height:100%;
+	display:none;
 }
 
 .register_text{
