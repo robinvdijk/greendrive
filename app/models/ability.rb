@@ -3,7 +3,7 @@
 class Ability  
   include CanCan::Ability  
   def initialize(user)
-    can :create, User
+    can :create, User 
     unless user
     else
       can :read, :all

@@ -21,7 +21,8 @@ class UsersController < ApplicationController
     @user.role = 'user' #Hoort eigenlijk in model te staan. (hoort bij rollen)
       if @user.save
         cookies[:auth_token] = @user.auth_token
-        flash[:succes] = "Welkom " + @user.user_name + "U ben succesvol ingelogd."
+        UserMailer.welcome_email(@user).deliver
+        flash[:succes] = "Welkom " + @user.user_name + ". U ben succesvol ingelogd. Er is tevens een welkomst e-mail verstuurd naar uw e-mailadres."
         redirect_to new_car_path
       else
         render 'sessions/new'

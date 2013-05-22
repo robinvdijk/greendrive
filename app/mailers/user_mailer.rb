@@ -11,4 +11,10 @@ class UserMailer < ActionMailer::Base
     @user = user
     mail(:to => user.email, :subject => "Password Reset")
   end
+
+  def welcome_email(user)
+    @user = user
+    @url = "http://localhost:3000/sessions/new"
+    mail(:to => user.email, :subject => "Welkom bij Greendrivers!")
+  end
 end
