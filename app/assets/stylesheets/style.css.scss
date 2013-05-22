@@ -268,14 +268,14 @@ input[type=search] {
 
 li.home {
 	float: left !important;
-	padding: 5px 0px 13px 0px !important;
+	padding: 13px 0px 13px 0px !important;
 }
 
 
 /************************************************************************************
 TOOLTIPS
 *************************************************************************************/
-.new_user li, .edit_user li {
+.new_user li, .edit_user li /*, .new_user .field_with_errors*/ {
 position: relative;
 }
 
