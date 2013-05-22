@@ -1,14 +1,3 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<%= javascript_include_tag 'stickyMojo', :media => "all" %>
-
-<script>
-  $(document).ready(function(){
-    $('#sidebar_profile').stickyMojo({footerID: '#footer', contentID: '#main'});
-  });
-</script>
-
-
-
 <div id="pagewrap">
 
 	<div class="col_badges_left">
@@ -17,23 +6,26 @@
 
 <div class="col_badges_right">
 	<div id="wrapper">
-		<div id="sidebar_profile">
-			<li>Alle badges</li>
-			<li>Algemeen</li>
-			<li>Groen</li>
-			<li>D(r)ivers</li>
-			<li>Uitzonderlijk</li>
+		<div class="sidebar_profile">
+			<ul>
+			<li class="center"><%= link_to 'Alle Badges', root_url%></li>
+			<li class="center"><%= link_to 'Algemeen', root_url%></li>
+			<li class="center"><%= link_to 'Groen', root_url%></li>
+			<li class="center"><%= link_to 'D(r)ivers', root_url%></li>
+			<li class="center" style="background:none"><%= link_to 'Uitzonderlijk', root_url%></li>	
+		</ul>
 		</div>
 
-	
-		  <div id="main">
-    
-  </div>
- 
- 
- 
+		<div class="sidebar_badge_info">
+			<ul>
+			<li class="center"><%= link_to 'Alle Badges', root_url%></li>
+			<li class="center"><%= link_to 'Algemeen', root_url%></li>
+			<li class="center"><%= link_to 'Groen', root_url%></li>
+			<li class="center"><%= link_to 'D(r)ivers', root_url%></li>
+			<li class="center" style="background:none"><%= link_to 'Uitzonderlijk', root_url%></li>	
+		</ul>
+		</div>
+	</div>
+
 </div>
-		
-</div></div> <div id="footer">
-    
-  </div>
+</div> 

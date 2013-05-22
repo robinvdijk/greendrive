@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
         redirect_to user
         flash[:success] = "U bent succesvol ingelogd."
     else
-      flash[:notice] = "E-mailadres en wachtwoord komen niet overeen."
+      flash[:alert] = "E-mailadres en wachtwoord komen niet overeen."
       redirect_to new_session_path
     end
   end

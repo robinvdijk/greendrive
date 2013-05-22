@@ -5,10 +5,10 @@
 <title><%= full_title(yield(:title)) %></title>
 <meta name="viewport" content="width=device-width; initial-scale=1.0">
 
-	<%= stylesheet_link_tag "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag 'application', :media => "all" %>
-  <%= javascript_include_tag 'stickyMojo', :media => "all" %>
-	<script type>
+
+	<script type="text/javascript">
 	$(function(){
 		$('.tooltip [title]').tipsy({trigger: 'focus', gravity: 'n'});
 	});
@@ -24,19 +24,17 @@
 		<%= render "layouts/header" %>
 
 	<div id="error_bar">
-	
 		<% if flash[:notice] %>
 	    	<p class="notice"><%= flash[:notice] %></p>
 	    <% end %>	 
 
-	    <% if flash[:error] %>
-	   		<p class="error"><%= flash[:error] %></p>
+	    <% if flash[:alert] %>
+	   		<p class="alert"><%= flash[:alert] %></p>
 	    <% end %>	 
 
 	    <% if flash[:success] %>
-	    	<p class="succes"><%= flash[:success] %></p>
+	    	<p class="success"><%= flash[:success] %></p>
 		<% end %>	
-
 	</div>
 		
 		<%= yield %>

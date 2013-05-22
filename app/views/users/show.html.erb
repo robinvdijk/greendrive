@@ -32,10 +32,10 @@
 					</li> -->			
 				</ul>
 			</div>
-						
-		
+					
 							<!-- <%= link_to 'Terug', :root %> -->
 		</div>
+
 		<div class="col">
 			<ul>
 				<li class="right">
@@ -57,10 +57,20 @@
 				  		<% else %>
 				    		<%= @user.birthday.strftime("%e-%-m-%Y") %></h3>
 				    	<% end %>
-				</li>				
-			</ul>
-		</div>
+				</li>
+
+				<!-- <li class="left">
+				  	<h3><small class="green">Elektrische km</small><br />
+				    	<%= @car.mileage_electric %></h3>
+				</li>
+				<li class="left">
+				  	<h3><small class="green">Fossiele km</small><br />
+				    	<%= @car.mileage_fossile %></h3>
+				</li> -->
+							
+			</ul>		
 	</div>
+
 </div>
 
 

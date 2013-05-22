@@ -41,18 +41,9 @@ LELIJKE CSS VOOR DE PROFIELPAGINA (wel laten staan aub)
 
 	.fixed {
     position:fixed;
-    top:0px;
+    top:0%;
     left:50%;
     margin-left:50px;
-}
-
-	.badge_collection{
-		width: 100%;
-		height: auto;
-		overflow: auto;
-		background-color:rgba(255,255,255,0.5);
-		border-radius: 5px;
-		border: $grey2 1px solid;
 	}
 
 	#chart_div:after {
@@ -277,8 +268,55 @@ li.home {
 	padding: 5px 0px 13px 0px !important;
 }
 
-/************************************************************************************
 
+/************************************************************************************
+TOOLTIPS
+*************************************************************************************/
+
+li {
+position: relative;
+}
+
+.help_text {
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+border: 1px solid #48b237;
+background: #48b237;
+padding: 10px;
+display: block;
+color:white;
+position: absolute;
+top: 20px;
+left: 100%;
+width: 310px;
+margin-left: 20px;
+display: none;
+z-index: 9000;
+}
+
+.help_text h2 {
+	font-size: 12px;
+	margin: 0;
+}
+
+.help_text p{
+	font-size:11px; color:white; padding:0; margin:0;
+}
+
+input:focus + .help_text {
+display: block;
+color:white;
+}
+
+/*Uncomment following code for a hover effect for tooltip*/
+/*li:hover .help_text {
+display: block;
+color:white;
+}*/
+
+
+/************************************************************************************
 HOMEPAGE
 *************************************************************************************/
 
@@ -320,14 +358,20 @@ iframe {
 	margin: auto;
 }
 
+
+/************************************************************************************
+BADGES PAGE
+*************************************************************************************/
+
 .button_homepage {
 	@extend .button;
 	margin: 3.1%;
 }
 
-	/************************************************************************************
-	STICKY SCROLL
-	*************************************************************************************/
+/************************************************************************************
+STICKY SCROLL
+*************************************************************************************/
+
 
 #chart {
 	border:1px solid rgba(128, 128, 128, .3);
@@ -337,32 +381,40 @@ iframe {
 	background:rgba(255,255,255,0.5);
 }
 
-body {
-  margin:0;
-  padding:0;
-}
-#main {
-  width:1px;
-  height: 750px; /*can be anything, just should make sure it is taller than the sidebar*/
-  float: left;
-}
-
-#sidebar_profile {
-  width: 120px;
-  background-color: #ccc;
-  min-height: 200px;
-  margin: 0 0 15px 0; /*controls the cutoff of the top and bottom limitations*/
-  padding: 15px 10px;
-  float: left; /* float right for a right aligned sidebar */
+.badge_collection{
+	width: 100%;
+	height: auto;
+	overflow: auto;
+	background-color:rgba(255,255,255,0.5);
+	border-radius: 5px;
+	border:1px solid rgba(128, 128, 128, .3);
 }
 
-
-#footer {
-  width: 940px;
-  clear:both;
-  height: 1px;
-  margin-top: 100px;
+.sidebar_profile, .sidebar_badge_info {
+  position: fixed;
+  width:16%;
+  background: $white; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
+  background:rgba(255,255,255,0.5); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
+  list-style:none;
+  border:1px solid rgba(128, 128, 128, .3);
+  border-radius:5px;
+  li {
+		background: url('horizontal-line.png') repeat-x;
+		background-position-y: bottom;
+		padding: 5% 0 5% 0;
+		margin-top: 0;
+		margin-bottom: 0;		
+		}
+	a {
+			padding: 5% 30% 5% 30%;
+	}
 }
+
+.sidebar_badge_info{
+	top:40%;
+	margin-top:1%;
+}
+
 
 /************************************************************************************
 DASHBOARD
@@ -420,13 +472,6 @@ DASHBOARD
 	a {
 			padding: 5% 30% 5% 30%;
 		}
-}
-
-
-#wrapper {
-  width: 940px; /* MUST HAVE WIDTH SET, should be the sidebar width + main width */
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /************************************************************************************
@@ -596,7 +641,7 @@ li.fullwidth {
 NOTICES/ALERTS/SUCCESSES
 *************************************************************************************/
 
-.notice {
+.success {
   padding: 8px 35px 8px 14px;
   margin-bottom: 20px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
@@ -608,8 +653,22 @@ NOTICES/ALERTS/SUCCESSES
   border-radius: 4px;
 	color: $grey;
 	font-family: Ubuntu;
-	
 }
+
+.alert {
+  padding: 8px 35px 8px 14px;
+  margin-bottom: 20px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  border: 2px solid red;
+	background: rgba(255, 255, 255, 0.5);
+/*  border: 1px solid;*/
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+	color: $grey;
+	font-family: Ubuntu;
+}
+
 
 
 
