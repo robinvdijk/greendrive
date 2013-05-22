@@ -144,6 +144,11 @@ a:hover {text-decoration: underline;}
 	
 }
 
+.button_register {
+	@extend .button;
+	-webkit-padding-start:20%;
+}
+
 .button_long {
 	@extend .button;
 	width: 275px !important;
