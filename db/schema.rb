@@ -53,6 +53,11 @@ ActiveRecord::Schema.define(:version => 20130514115414) do
     t.string   "model"
   end
 
+  create_table "pictures", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "segments", :force => true do |t|
     t.string   "auth_token"
     t.integer  "company_id"
@@ -60,13 +65,13 @@ ActiveRecord::Schema.define(:version => 20130514115414) do
     t.integer  "drive_electric_ratio"
     t.datetime "created_at",                          :null => false
     t.datetime "updated_at",                          :null => false
+    t.integer  "mileage_electric",     :default => 0
+    t.integer  "mileage_fossile",      :default => 0
     t.string   "title"
     t.integer  "user_id"
     t.integer  "max_segment_id"
     t.integer  "remote_id"
     t.string   "license_plate"
-    t.integer  "mileage_electric",     :default => 0
-    t.integer  "mileage_fossile",      :default => 0
   end
 
   create_table "traces", :force => true do |t|

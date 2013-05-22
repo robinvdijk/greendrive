@@ -9,6 +9,13 @@ class PagesController < ApplicationController
   	end
 
   end
+
+  def homepage
+  	if current_user
+  		redirect_to user_path(current_user)
+  	else
+  	end
+  end
   
 
 end

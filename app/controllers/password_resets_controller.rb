@@ -8,9 +8,9 @@ class PasswordResetsController < ApplicationController
     if user = User.find_by_email(params[:email])
       user.generate_password_reset
       UserMailer.password_reset(user).deliver
-      redirect_to({controller: :sessions, action: :new}, {:notice => "Er is een e-mail verstuurd met instructies om het wachtwoord opnieuw in te stellen."})
+      redirect_to({controller: :sessions, action: :new}, {:success => "Er is een e-mail verstuurd met instructies om het wachtwoord opnieuw in te stellen."})
     else
-      redirect_to({:action => :new}, {:notice => "De e-mail komt niet overeen met een gebruiker."})
+      redirect_to({:action => :new}, {:alert => "De e-mail komt niet overeen met een gebruiker."})
     end
   end
   
@@ -24,7 +24,7 @@ class PasswordResetsController < ApplicationController
       redirect_to new_password_reset_path, :alert => "Het opnieuw instellen van uw wachtwoord is verlopen."
     elsif @user.update_attributes(params[:user])
       cookies[:auth_token] = @user.auth_token
-      redirect_to(@user, :notice => "Uw wachtwoord is opnieuw ingesteld en u bent succesvol ingelogd.")
+      redirect_to(@user, :success => "Uw wachtwoord is opnieuw ingesteld en u bent succesvol ingelogd.")
     else
       render :edit
     end
