@@ -5,75 +5,17 @@
 <title><%= full_title(yield(:title)) %></title>
 <meta name="viewport" content="width=device-width; initial-scale=1.0">
 
-	<%= stylesheet_link_tag "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag 'application', :media => "all" %>
-  <%= javascript_include_tag 'stickyMojo', :media => "all" %>
-	<script type>
+
+	<script type="text/javascript">
 	$(function(){
 		$('.tooltip [title]').tipsy({trigger: 'focus', gravity: 'n'});
 	});
 	
 
 	// Voor blocken op homepage
-	
-	$(function() {
-	  $('#block_1').hover(function() {
-	    $('#explain_1').css('display', 'block');
-	  }, function() {
-	    // on mouseout, reset the background colour
-	    $('#explain_1').css('display', 'none');
-	  });
 		
-	  $('#block_2').hover(function() {
-	    $('#explain_2').css('display', 'block');
-	  }, function() {
-	    // on mouseout, reset the background colour
-	    $('#explain_2').css('display', 'none');
-	  });
-		
-	  $('#block_3').hover(function() {
-	    $('#explain_3').css('display', 'block');
-	  }, function() {
-	    // on mouseout, reset the background colour
-	    $('#explain_3').css('display', 'none');
-	  });
-		
-	  $('#block_4').hover(function() {
-	    $('#explain_4').css('display', 'block');
-	  }, function() {
-	    // on mouseout, reset the background colour
-	    $('#explain_4').css('display', 'none');
-	  });
-		
-	  $('#block_5').hover(function() {
-	    $('#explain_5').css('display', 'block');
-	  }, function() {
-	    // on mouseout, reset the background colour
-	    $('#explain_5').css('display', 'none');
-	  });
-		
-	  $('#block_6').hover(function() {
-	    $('#explain_6').css('display', 'block');
-	  }, function() {
-	    // on mouseout, reset the background colour
-	    $('#explain_6').css('display', 'none');
-	  });
-		
-	  $('#block_7').hover(function() {
-	    $('#explain_7').css('display', 'block');
-	  }, function() {
-	    // on mouseout, reset the background colour
-	    $('#explain_7').css('display', 'none');
-	  });
-		
-	  $('#block_8').hover(function() {
-	    $('#explain_8').css('display', 'block');
-	  }, function() {
-	    // on mouseout, reset the background colour
-	    $('#explain_8').css('display', 'none');
-	  });
-	});
-	
 </script>
 </head>
 <body>
@@ -82,19 +24,17 @@
 		<%= render "layouts/header" %>
 
 	<div id="error_bar">
-	
 		<% if flash[:notice] %>
 	    	<p class="notice"><%= flash[:notice] %></p>
 	    <% end %>	 
 
-	    <% if flash[:error] %>
-	   		<p class="error"><%= flash[:error] %></p>
+	    <% if flash[:alert] %>
+	   		<p class="alert"><%= flash[:alert] %></p>
 	    <% end %>	 
 
 	    <% if flash[:success] %>
-	    	<p class="succes"><%= flash[:success] %></p>
+	    	<p class="success"><%= flash[:success] %></p>
 		<% end %>	
-
 	</div>
 		
 		<%= yield %>
