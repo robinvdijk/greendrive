@@ -71,7 +71,8 @@
 								</li>
 							<li>
 				  			    <%= f.label :user_name, 'Gebruikersnaam *' %></strong><br />
-										<div class="tooltip"><%= f.text_field :user_name, :title => "De gebruikersnaam moet minimaal 4 en maximaal 20 tekens bevatten.", :class => 'field' %></div>
+										<div class="tooltip"><%= f.text_field :user_name, :title => "De gebruikersnaam moet minimaal 4 en maximaal 20 tekens bevatten.", :class => 'field' %>
+										</div>
 							</li>
 							<li>
 						      <%= f.label :birthday, 'Geboortedatum' %><br />
@@ -84,7 +85,14 @@
 					    </li>
 							<li>
 							    <%= f.label :password, 'Wachtwoord *' %></strong><br />
-							    <div class="tooltip"><%= f.password_field :password, :title => "Het wachtwoord moet minimaal 6 karakters bevatten, waarvan 1 hoofdletter, 1 kleine letter en 1 getal.", :class => 'field' %></div>
+							    <%= f.password_field :password, :title => "Het wachtwoord moet minimaal 6 karakters bevatten, waarvan 1 hoofdletter, 1 kleine letter en 1 getal.", :class => 'field' %>
+							    <div class='help_text' class='username_help_text'>
+										<h2>Wachtwoord</h2>
+                						<p>Uw wachtwoord bestaat uit:</p>
+              							<p>- Minimaal 6 tekens</p>
+                						<p>- Minimaal 1 hoofdletter en 1 kleine letter</p>
+                						<p>- Minimaal 1 getal</p>
+          							</div>
 							</li>
 							<li>
 							    <%= f.label :password_confirmation, 'Wachtwoord verificatie *' %></strong><br />

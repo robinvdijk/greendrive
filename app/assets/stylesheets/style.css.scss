@@ -1,6 +1,6 @@
 $green: #48b237;
 $white: #fff;
-$grey: #313131; /*This is grey3 in styletiles*/
+$grey: #313131;
 $grey1: #f2f2f2;
 $grey2: #808080;
 $darkgreen: #339933;
@@ -92,6 +92,8 @@ body {
 }
 
 .logo {
+	position: relative;
+	top: 15px;
 	width: 100%;
 }
 
@@ -142,6 +144,11 @@ a:hover {text-decoration: underline;}
 	p {
 		text-align: center !important;}
 	
+}
+
+.button_register {
+	@extend .button;
+	-webkit-padding-start:20%;
 }
 
 .button_long {
@@ -263,6 +270,7 @@ input[type=search] {
 
 li.home {
 	float: left !important;
+
 	padding: 12px 0px 13px 0px !important;
 }
 
@@ -270,10 +278,10 @@ li.home {
 /************************************************************************************
 TOOLTIPS
 *************************************************************************************/
-
-li {
+.new_user li, .edit_user li /*, .new_user .field_with_errors*/ {
 position: relative;
 }
+
 
 .help_text {
 -webkit-border-radius: 5px;
@@ -377,6 +385,7 @@ STICKY SCROLL
 	margin-bottom:4.5%;
 	background: $white;
 	background:rgba(255,255,255,0.5);
+	height:406px;
 }
 
 .badge_collection{
@@ -509,21 +518,21 @@ DASHBOARD
 	}
 
 #badges {
-	height:196px;
 	border:1px solid rgba(128, 128, 128, .3);
 	border-radius: 5px;
-	background: $white;
 	background:rgba(255,255,255,0.5);
+	padding-bottom:248px;
 }
 	
 .badge {
 	float:left;
 	margin-left:5.5%;
 	width:26%;
+	margin-top:0;
 	img {
 		border:none;
 		width:100%;
-		height:90%;
+		height:100%;
 		margin: 5% 0 5% 0;
 	}
 }

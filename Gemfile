@@ -15,6 +15,7 @@ gem 'compass-rails', '>= 1.0.3'
 gem 'httparty'
 gem 'json'
 gem 'clock'
+gem 'capistrano'
 
 # used for avatar uploading
 gem 'carrierwave'

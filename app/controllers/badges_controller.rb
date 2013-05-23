@@ -14,8 +14,8 @@ class BadgesController < ApplicationController
     end
   end
 
-  def show
-    @car = Car.find(params[:id])
+  def index
+    @car = Car.find(params[:user_id])
     
     @badges_electric = Badge.where('title = ? and value <= ?', 'Mileage Electric', @car.mileage_electric / 1000).limit(1).order('value desc')
     @badges_fossile = Badge.where('title = ? and value <= ?', 'Mileage Fossile', @car.mileage_fossile / 1000).limit(1).order('value desc')
