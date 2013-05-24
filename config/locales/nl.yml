@@ -5,6 +5,7 @@ nl:
         password: "Wachtwoord"
         password_confirmation: "Wachtwoord bevestiging"
         first_name: "Voornaam"
+        middle_name: "Tussenvoegsel"
         last_name: "Achternaam"
         user_name: "Gebruikersnaam"
         email: "E-mail"

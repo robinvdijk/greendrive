@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   
-  attr_accessible :provider, :rank, :terms_of_service, :image_cache, :terms_of_privacy, :uid, :role, :admin, :user, :email, :first_name, :last_name, :password_confirmation, :password, :user_name, :avatar, :birthday
+  attr_accessible :provider, :rank, :terms_of_service, :image_cache, :terms_of_privacy, :uid, :role, :admin, :user, :email, :first_name, :middle_name, :last_name, :password_confirmation, :password, :user_name, :avatar, :birthday
   has_secure_password 
 
   has_many :authentications

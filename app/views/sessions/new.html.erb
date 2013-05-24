@@ -74,7 +74,9 @@ reader.readAsDataURL(input.files[0]);
 								    <%= f.label :first_name, 'Voornaam *', :class => 'demo' %><br>
 								    <%= f.text_field :first_name, :class => 'field' %>
 								</li>
-							
+								<li>
+									<%= f.label :middle_name, 'Tussenvoegsel' %><br>
+									<%= f.text_field :middle_name, :class => 'field'%>
 								<li>
 					  			    <%= f.label :last_name, 'Achternaam *' %><br>
 					  			    <%= f.text_field :last_name, :class => 'field' %>

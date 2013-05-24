@@ -57,7 +57,10 @@
 							    <%= f.label :first_name, 'Voornaam *' %></strong><br>
 							    <%= f.text_field :first_name, :class => 'field' %>
 							</li>
-							
+							<li>
+	    						<%= f.label :middle_name, 'Tussenvoegsel' %><br />
+	    						<%= f.text_field :middle_name, class: 'field' %>
+	    					</li>
 							<li>
 				  			    <%= f.label :last_name, 'Achternaam *' %></strong><br>
 				  			    <%= f.text_field :last_name, :class => 'field' %>
