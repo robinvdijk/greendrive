@@ -4,10 +4,11 @@ $('#tutorial_1, #blanket').toggle();
 
 function profile() {
 	$('#tutorial_2, #tutorial_1').toggle();
-	$('#profile').css({position: 'relative'});
+	$('#profile').css({position: 'relative', background: 'white'});
 }
 
 function badges() {
 	$('#tutorial_2').toggle();
-	$('#profile, #badges').css({position: 'relative'});
+	$('#badges').css({position: 'relative', background: 'white'});
+	$('#profile').css({position: '', background: ''});
 }
