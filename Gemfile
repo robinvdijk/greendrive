@@ -17,6 +17,7 @@ gem 'httparty'
 gem 'json'
 gem 'clock'
 gem 'capistrano'
+gem 'whenever', :require => false
 
 # used for avatar uploading
 gem 'carrierwave'

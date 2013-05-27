@@ -7,10 +7,18 @@ class Segment < ActiveRecord::Base
   attr_accessible :id, :user_id, :title, :auth_token, :company_id, :mileage, :drive_electric_ratio, :created_at, :updated_at, :mileage_electric, :mileage_fossile, :license_plate
   
   belongs_to :user
+  
+  def self.cron
+    segment = Segment.new
+    segment.init
+    segment.henk
+    puts "cronjob finished"
+  end
+   
 
   
   def init
-     response = HTTParty.get("http://360-ev.com/Services/Authentication.svc/json/Authenticate?username=#{username}&password=#{password}") 
+     response = HTTParty.get("http://360-ev.com/Services/Authentication.svc/json/Authenticate?username=greenflux2012&password=green2012") 
    
      auth = JSON.parse(response.body)
      self.auth_token = auth['AuthToken']
