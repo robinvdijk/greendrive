@@ -1,6 +1,3 @@
-
-<div id="progressbar"></div>
-
 <% unless controller_name == "pages" %>
 	
 
@@ -25,12 +22,12 @@
 
 			<ul class="nav">
 				<li class="home">
-					<%= link_to image_tag("header_logo_white.png"), user_dashboards_path([@user, @dashboard])%>
+					<%= link_to image_tag("header_logo_white.svg"), user_dashboards_path([@user, @dashboard])%>
 				</li>
-				<li id='help'>
+				<li class="icons_header"'>
 					<a href="#"><%= image_tag("help.svg")%></a>
 				</li>				
-				<li>
+				<li class="icons_header">
 					<%= image_tag("menu.png", :alt => "menu") %>
 				       <% if current_user %>
 					    <ul>
@@ -46,7 +43,7 @@
 						<% end %>
 				</li>
 				
-				<li>
+				<li class="icons_header">
 					<input type=search results=5 autosave=some_unique_value autofocus name=s>
 				</li>
 				

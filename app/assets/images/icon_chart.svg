@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Laag_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="125px" height="125px" viewBox="0 0 125 125" enable-background="new 0 0 125 125" xml:space="preserve">
+<rect y="-31" fill-rule="evenodd" clip-rule="evenodd" fill="#009245" width="125" height="11"/>
+<rect x="-25" fill-rule="evenodd" clip-rule="evenodd" fill="#009245" width="5" height="125"/>
+<g>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#009245" d="M63.125,3.5C30.609,3.5,4.25,29.859,4.25,62.375
+		s26.359,58.875,58.875,58.875S122,94.891,122,62.375S95.641,3.5,63.125,3.5z M63.125,103.256
+		c-22.578,0-40.881-18.303-40.881-40.881c0-22.578,18.303-40.881,40.881-40.881c22.578,0,40.881,18.303,40.881,40.881
+		C104.006,84.953,85.703,103.256,63.125,103.256z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#39B54A" d="M63.125,3.5c-0.042,0-0.083,0.003-0.125,0.003v17.994
+		c0.042,0,0.083-0.003,0.125-0.003c22.117,0,40.119,17.566,40.846,39.506h17.994C121.232,29.122,95.18,3.5,63.125,3.5z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#8CC63F" d="M104.006,62.375c0,10.634-4.062,20.317-10.717,27.589
+		l15.035,10.128C116.858,89.876,122,76.728,122,62.375c0-0.461-0.024-0.917-0.035-1.375h-17.994
+		C103.986,61.458,104.006,61.914,104.006,62.375z"/>
+</g>
+</svg>

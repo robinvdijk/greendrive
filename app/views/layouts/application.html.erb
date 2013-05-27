@@ -13,7 +13,7 @@
 
 	
 		<%= render "layouts/header" %>
-
+<div id="pagewrap">
 	<div id="error_bar">
 		<% if flash[:notice] %>
 	    	<p class="notice"><%= flash[:notice] %></p>
@@ -27,6 +27,7 @@
 	    	<p class="success"><%= flash[:success] %></p>
 		<% end %>	
 	</div>
+</div>	
 		
 		<%= yield %>
 

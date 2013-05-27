@@ -98,27 +98,29 @@ class Segment < ActiveRecord::Base
               
               if car     
                 if self.mileage > 0
-                  if self.drive_electric_ratio > 0
-                     henk = self.mileage * self.drive_electric_ratio
+                  unless self.drive_electric_ratio == nil
+                    if self.drive_electric_ratio > 0 
+                       henk = self.mileage * self.drive_electric_ratio
                                      
-                     self.mileage_electric = (self.mileage_electric + henk).to_i
-                     car.mileage_electric += henk.to_i
+                       self.mileage_electric = (self.mileage_electric + henk).to_i
+                       car.mileage_electric += henk.to_i
                                                     
-                     henk2 = self.mileage * (1 - self.drive_electric_ratio)
-                     self.mileage_fossile = (self.mileage_fossile + henk2).to_i
-                     car.mileage_fossile += henk2.to_i
+                       henk2 = self.mileage * (1 - self.drive_electric_ratio)
+                       self.mileage_fossile = (self.mileage_fossile + henk2).to_i
+                       car.mileage_fossile += henk2.to_i
                      
     
-                  else
+                    else
                     
-                    self.mileage_fossile = self.mileage_fossile + self.mileage
+                      self.mileage_fossile = self.mileage_fossile + self.mileage
                     
-                    car.mileage_fossile += self.mileage
+                      car.mileage_fossile += self.mileage
+                    end
+                
+                    car.save
+                
+                    self.save
                   end
-                
-                  car.save
-                
-                  self.save
                 end
               end
               
