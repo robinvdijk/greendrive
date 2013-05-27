@@ -33,26 +33,12 @@ LELIJKE CSS VOOR DE PROFIELPAGINA (wel laten staan aub)
 		stroke-width:0;
 	  }
 	}*/
-
-
-
+	
 	.fixed {
     position:fixed;
     top:0%;
     left:50%;
     margin-left:50px;
-	}
-
-	#chart_div:after {
-		background-image:url('subtlenet2.png');
-		    border-radius: 50%;
-		    -moz-border-radius: 50%;
-		    content: '';
-		    display: block;
-		    left: 142px; 
-		    padding: 60px;
-		    position: absolute;
-		    top: 92px; 
 	}
 
 /*************************************************************************************/
@@ -480,12 +466,12 @@ DASHBOARD
 .highlight {
 	position:relative  !important;
 	background-color:white  !important;
+	transition: 0.8s;
 }
 
 #tutorial {
 	position:relative;
-	z-index:1;
-	bottom:690px;
+	top:3.2%;
 	h1, p{
 		text-align:center;
 		color:black;
@@ -497,6 +483,7 @@ DASHBOARD
 		display:none;
 		height:200px;
 		background-color:white;
+		border-radius:5px;
 	}
 }
 

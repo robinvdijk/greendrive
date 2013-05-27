@@ -1,1 +1,0 @@
-$(function(){$(".col_home_side div").each(function(){$(this).hover(function(o){var t=$(o.target),e="#"+t.data("explain_block");$(e).toggle()})})});

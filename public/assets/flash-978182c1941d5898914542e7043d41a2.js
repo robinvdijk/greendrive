@@ -1,1 +1,0 @@
-(function(){$(function(){return $(".notice, .success, .alert").on("click",function(n){return $(n.target).hide("normal")})})}).call(this);
