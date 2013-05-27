@@ -4,7 +4,6 @@ gem 'rails'
 gem 'thin'
 gem 'cancan'
 
-gem 'savon'
 gem 'rails_best_practices'
 gem "flot-rails"
 gem 'friendly_id'
@@ -15,7 +14,6 @@ gem 'compass', '>= 0.12.2'
 gem 'compass-rails', '>= 1.0.3'
 gem 'httparty'
 gem 'json'
-gem 'clock'
 gem 'capistrano'
 gem 'whenever', :require => false
 

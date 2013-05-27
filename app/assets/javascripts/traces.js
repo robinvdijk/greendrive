@@ -42,6 +42,7 @@
 			 legend: {
 			 		position: 'none'
 			 },
+			 pieHole: 0.7,
 			 pieSliceText: 'none',
 			 slices: {
 					0: {color: '#39b54a'}, 

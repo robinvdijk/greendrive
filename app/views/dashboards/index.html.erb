@@ -1,6 +1,7 @@
 <% provide(:title, "Dashboard")%>
 <div id="pagewrap">
 	<div class='wrapper grid2'>
+		<div id="blanket"></div>
 		<div id="col_dashboard_left">
 			<div id='chart'>
 				<div id="chart_div" data-car_miles='<%= @car_miles.to_json %>' style="width:500px; height:250px"></div>
@@ -10,7 +11,6 @@
 					<li class="vertical-line-dashboard">Totaal  <%= @car.mileage / 1000 %> km</li>
 				</ul>
 			</div>
-			<div id="blanket"></div>
 			<ul id="badges" class="center">	
 				<li class="badge">
 					<% @badges_electric.each do |badge| %>
@@ -84,7 +84,7 @@
 					<li class="center"><%= link_to 'D(r)ivers', root_url%></li>
 					<li class="center" style="background:none"><%= link_to 'Uitzonderlijk', root_url%></li>	
 				</ul>	
-			</div>	
+			</div>
 		</div>
 	</div>
 	<div id="tutorial">
@@ -95,6 +95,14 @@
 		</div>
 		<div id="tutorial_2" class="arrow_box_right">
 			<h1>Dit ben jij</h1>
+			<div id="buttons">
+				<a href="#" class="prev">Vorige</a>
+				<a href="#" class="next">Volgende</a>	
+			</div>
+		</div>
+		<div id="tutorial_3" class="arrow_bow_left">
+			<h1>Dit gaat over je auto</h1>
+			<p>De kilometers van de afgelopen tijd kun je hier terug vinden.</p>
 			<div id="buttons">
 				<a href="#" class="prev">Vorige</a>
 				<a href="#" class="next">Volgende</a>	

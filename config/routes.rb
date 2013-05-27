@@ -5,10 +5,12 @@ Greendrive::Application.routes.draw do
   resources :authentications
 
   resources :password_resets
+  
+  match "/search_results/" => "application#search_results", :via => :get, :as =>"search_results"
 
-    match '/auth/:provider/callback', to: 'sessions#create_facebook'
-    # match '/auth/facebook_session', to: 'sessions#create_facebook_session'
-    match 'auth/failure', to: redirect('/')
+    # match '/auth/:provider/callback', to: 'sessions#create_facebook'
+    # # match '/auth/facebook_session', to: 'sessions#create_facebook_session'
+    # match 'auth/failure', to: redirect('/')
       
     match 'signout', to: 'sessions#destroy', as: 'signout'
     match 'logout', to: 'sessions#destroy', as: 'logout'
