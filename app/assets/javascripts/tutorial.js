@@ -13,7 +13,7 @@ $(document).ready(function() {
 	$('#tutorial_1').on('click', '.next', function(){ 
 		$('#tutorial_1').toggle();
 		$('#tutorial_2').toggle();
-		$('#tutorial_2').animate({background-color: '#666'});
+		$('#tutorial_2').animate({'margin-left': '100px'});
 		$('#profile').fadeIn().toggleClass(hl); 
 	});
 	//--------------------Second--Page-------------------
