@@ -7,12 +7,13 @@ $(document).ready(function() {
 
 	//--------------------First--Page--Trigger-----------
 	$('#help').on('click', 'img', function(){ 
-		$('#blanket, #tutorial_1').fadeToggle(); 
+		$('#blanket, #tutorial_1').slideToggle(); 
 	});
 	//--------------------First--Page--------------------
 	$('#tutorial_1').on('click', '.next', function(){ 
 		$('#tutorial_1').toggle();
-		$('#tutorial_2').fadeToggle();
+		$('#tutorial_2').toggle();
+		$('#tutorial_2').animate({background-color: '#666'});
 		$('#profile').fadeIn().toggleClass(hl); 
 	});
 	//--------------------Second--Page-------------------
