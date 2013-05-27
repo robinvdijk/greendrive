@@ -125,7 +125,7 @@ small.green {
 
 a:hover {text-decoration: underline;}
 
-.button {
+.button, .next, .prev {
 	width: 220px !important;
 	height: 30px;
 	padding: 4px 75px;
@@ -426,7 +426,7 @@ DASHBOARD
 *************************************************************************************/
 .arrow_box_bottom {
 	background:rgba(255,255,255,0.5);
-	border-top:1px solid rgba(128, 128, 128, .3);
+	border:1px solid transparent !important;
 }
 .arrow_box_bottom:after, .arrow_box_bottom:before {
 	top: 100%;
@@ -436,6 +436,7 @@ DASHBOARD
 	width: 0;
 	position: absolute;
 	pointer-events: none;
+	background:none;
 }
 .arrow_box_bottom:before {
 	border-top-color:white;
@@ -465,6 +466,21 @@ DASHBOARD
 	margin-top: -31px;
 }
 
+#blanket {
+	background-color:black;
+	opacity:0.60;
+	position:absolute;
+	top: 0px;
+	left: 0px;
+	width:100%;
+	height:100%;
+	display:none;
+}
+
+.highlight {
+	position:relative  !important;
+	background-color:white  !important;
+}
 
 #tutorial {
 	position:relative;
@@ -493,7 +509,7 @@ DASHBOARD
 	}
 }
 
-#tutorial_1 .button {
+#tutorial_1 .next {
 	@extend .button;
 	margin-left:40%;
 }
@@ -582,17 +598,6 @@ REGISTREREN & INLOGGEN
 	width:300px;
 	height:300px;
 	z-index: 9002;
-	display:none;
-}
-
-#blanket {
-	background-color:black;
-	opacity:0.60;
-	position:absolute;
-	top: 0px;
-	left: 0px;
-	width:100%;
-	height:100%;
 	display:none;
 }
 
