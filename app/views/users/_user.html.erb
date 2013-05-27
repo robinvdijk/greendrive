@@ -1,0 +1,13 @@
+	  	<ul class="search_results">
+	  		<li class="search_results_left"><%= image_tag user.avatar_url(:thumb), :class => "avatar" %></li>
+	  		<li class="search_results_middle">
+	  			<p><strong><%= user.first_name %> <%= user.middle_name %> <%= user.last_name %></strong></p>
+	  			<p><%= user.user_name %></p>
+	  			<p>Kenteken: </p>
+	  			<p>Totaal gereden kilometers:  </p>
+	  		</li>
+	  		<li class="search_results_right">
+	  			<p><%= link_to 'Profiel bekijken', user_dashboards_path(user, @dashboard), :class => 'link' %></p>
+	  			<p>Toevoegen als vriend</p>
+	  		</li>
+	  	</ul>

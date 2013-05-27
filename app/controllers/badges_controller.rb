@@ -1,6 +1,10 @@
 class BadgesController < ApplicationController
     skip_authorization_check
     
+  def index
+    redirect_to root_path
+  end
+
   def new
     @badge = Badge.new
   end

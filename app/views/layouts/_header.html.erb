@@ -3,7 +3,7 @@
 
 <% unless controller_name == "pages" %>
 	
-
+	
 
 
 	<div class="header">
@@ -25,7 +25,7 @@
 
 			<ul class="nav">
 				<li class="home">
-					<%= link_to image_tag("header_logo_white.png"), user_dashboards_path([@user, @dashboard])%>
+					<%= link_to image_tag("header_logo_white.png"), user_dashboards_path([current_user, @dashboard])%>
 				</li>
 				<li id='help'>
 					<a href="#"><%= image_tag("help.svg")%></a>
@@ -47,7 +47,10 @@
 				</li>
 				
 				<li>
-					<input type=search results=5 autosave=some_unique_value autofocus name=s>
+					<%= form_tag ("/search_results"), :method => "get", :class=>"navbar-form" do %>
+        				<%= text_field_tag ("search"), params[:search], :class => 'search-input span2', :placeholder => 'Uw zoekopdracht...' %>
+       					<%= submit_tag "Zoeken", :class => "btn" %></li></ul>
+    				<% end %>
 				</li>
 				
 			</ul>
