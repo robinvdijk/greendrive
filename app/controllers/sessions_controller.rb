@@ -6,7 +6,11 @@ class SessionsController < ApplicationController
   end
 
   def new
-    @user = User.new
+    unless current_user
+     @user = User.new
+    else
+      redirect_to root_path
+    end
   end
 
   def create

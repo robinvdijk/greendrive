@@ -6,14 +6,14 @@
 				<h2>Wachtwoord vergeten</h2>
 			</li>
 			<li class="fullwidth">
-				<p>Vul hier uw emailadres in waarmee uw account is geregistreerd.</p>
+				<p>Vul hier uw e-mailadres in waarmee uw account is geregistreerd.</p>
 			</li>
 			<li class="fullwidth">
-		    <%= label_tag :email %><br />
+		    <%= label_tag :email, 'E-mail' %><br />
 		    <%= text_field_tag :email, params[:email], class: 'field_long' %>
 			</li>
 			<li class="fullwidth">
-				<%= submit_tag "Reset Password", class: "button_long" %>
+				<%= submit_tag "Wachtwoord opnieuw instellen", class: "button_long" %>
 			</li>
 			<% end %>
 		</ul>

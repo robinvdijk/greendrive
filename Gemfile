@@ -4,6 +4,8 @@ gem 'rails'
 gem 'thin'
 gem 'cancan'
 
+gem 'acts-as-taggable-on'
+
 gem 'savon'
 gem 'rails_best_practices'
 gem "flot-rails"

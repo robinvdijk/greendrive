@@ -270,7 +270,72 @@ li.home {
 	float: left !important;
 	padding: 13px 0px 13px 0px !important;
 }
+/************************************************************************************
+SEARCH RESULTS
+*************************************************************************************/
+.search_results_page{
+	list-style-type: none;
+	width:800px;
+	height:100%;
+	margin-bottom:252px; 
+	margin-left:20%;
 
+
+}
+
+.search_results{
+	margin-bottom:10px;
+}
+
+.search_results_left, .search_results_middle, .search_results_right {
+	height: 222px;
+	float:left;
+	background: $white; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
+ 	background:rgba(255,255,255,0.5); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
+  	
+  	list-style:none;
+	p{
+		margin-top: 5px;
+		padding:0;
+	}
+}
+.search_results_left {
+	width:29%;
+	height:222px;
+	float:left;
+	border-top:1px solid rgba(128, 128, 128, .3);
+	border-left:1px solid rgba(128, 128, 128, .3);
+	border-bottom:1px solid rgba(128, 128, 128, .3);
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	img {
+		width:200px;
+		height:200px;
+		display: block;
+    	margin-left: auto;
+    	margin-right: auto;
+    	margin-top: 10px;
+	}
+}
+
+.search_results_middle{
+	width: 35%;
+	border-top:1px solid rgba(128, 128, 128, .3);
+	border-bottom:1px solid rgba(128, 128, 128, .3);
+}
+
+.search_results_right{
+	width:33%;
+	border-top:1px solid rgba(128, 128, 128, .3);
+	border-right:1px solid rgba(128, 128, 128, .3);
+	border-bottom:1px solid rgba(128, 128, 128, .3);
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	p{
+		text-align: right;
+		margin-right:10px;
+	}
+}
 
 /************************************************************************************
 TOOLTIPS

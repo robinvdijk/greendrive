@@ -4,8 +4,9 @@ class UsersController < ApplicationController
   load_and_authorize_resource
   
   def index
+    @users = User.search(params[:search])
   end
-   
+
   def show
    @user = User.find(params[:id])
    # @segment = Segment.find(params[:id])
@@ -25,7 +26,8 @@ class UsersController < ApplicationController
         flash[:succes] = "Welkom " + @user.user_name + ". U ben succesvol ingelogd. Er is tevens een welkomst e-mail verstuurd naar uw e-mailadres."
         redirect_to new_car_path
       else
-        render 'sessions/new'
+        flash[:alert] = "Niet alle velden zijn correct ingevuld."
+        redirect_to new_session_path
       end
   end
   
@@ -35,7 +37,6 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html  { redirect_to(@user, :success => 'Uw profiel is succesvol aangepast.') }

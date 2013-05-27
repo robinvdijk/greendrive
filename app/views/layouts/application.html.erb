@@ -4,22 +4,11 @@
   
 <title><%= full_title(yield(:title)) %></title>
 <meta name="viewport" content="width=device-width; initial-scale=1.0">
-
+<link rel="shortcut icon" href="/images/favicon.png">
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag 'application', :media => "all" %>
-
-	<script type="text/javascript">
-	$(function(){
-		$('.tooltip [title]').tipsy({trigger: 'focus', gravity: 'n'});
-	});
-	
-
-	// Voor blocken op homepage
-		
-</script>
 </head>
 <body>
-
 	
 		<%= render "layouts/header" %>
 
