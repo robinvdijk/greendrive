@@ -20,12 +20,11 @@
 							<%= @user.user_name %></h3>
 					</li>
 					<li class="center">
-						<h3><small class="green">Model auto</small><br />
-					    <%= @car.model %></h3>
+						<h3><small class="green">Model auto</small><br /><%= @car.model %></h3>
 					</li>
 					<li class="center">
-						<h3><small class="green">Kenteken</small><br />
-					    <%= @car.license_plate %></h3>
+						<h3><small class="green">Kenteken</small><br /><%= @car.license_plate %>
+</h3>
 					</li>
 					<!-- <li class="center">
 						<h3><%= link_to 'Badges', :class => "button" %></h3>
@@ -58,15 +57,6 @@
 				    		<%= @user.birthday.strftime("%e-%-m-%Y") %></h3>
 				    	<% end %>
 				</li>
-
-				<!-- <li class="left">
-				  	<h3><small class="green">Elektrische km</small><br />
-				    	<%= @car.mileage_electric %></h3>
-				</li>
-				<li class="left">
-				  	<h3><small class="green">Fossiele km</small><br />
-				    	<%= @car.mileage_fossile %></h3>
-				</li> -->
 							
 			</ul>		
 	</div>

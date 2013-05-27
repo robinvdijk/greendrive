@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130526123312) do
+=======
+ActiveRecord::Schema.define(:version => 20130527091233) do
+>>>>>>> 89729e01baf88b4d6228ee01d307cc050421df49
 
   create_table "achievements", :force => true do |t|
     t.integer  "badge_id"
@@ -43,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20130526123312) do
     t.integer  "company_id"
     t.integer  "user_id"
     t.integer  "segment_id"
-    t.integer  "mileage"
+    t.integer  "mileage",          :default => 0
     t.integer  "mileage_electric", :default => 0
     t.integer  "mileage_fossile",  :default => 0
     t.datetime "created_at",                      :null => false
@@ -129,9 +133,9 @@ ActiveRecord::Schema.define(:version => 20130526123312) do
     t.string   "name"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
-    t.string   "middle_name"
     t.integer  "score"
     t.string   "rank"
+    t.string   "middle_name"
   end
 
 end

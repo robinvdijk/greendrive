@@ -11,12 +11,15 @@ gem 'rails_best_practices'
 gem "flot-rails"
 gem 'friendly_id'
 
+
 gem 'susy'
 gem 'compass', '>= 0.12.2'
 gem 'compass-rails', '>= 1.0.3'
 gem 'httparty'
 gem 'json'
 gem 'clock'
+gem 'capistrano'
+gem 'whenever', :require => false
 
 # used for avatar uploading
 gem 'carrierwave'

@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     @user.role = 'user' #Hoort eigenlijk in model te staan. (hoort bij rollen)
       if @user.save
         cookies[:auth_token] = @user.auth_token
-        UserMailer.welcome_email(@user).deliver
+        # UserMailer.welcome_email(@user).deliver (werkt nog niet op vps)
         flash[:succes] = "Welkom " + @user.user_name + ". U ben succesvol ingelogd. Er is tevens een welkomst e-mail verstuurd naar uw e-mailadres."
         redirect_to new_car_path
       else
@@ -39,7 +39,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html  { redirect_to(@user, :success => 'Uw profiel is succesvol aangepast.') }
+       flash[:success] = 'Uw profiel is succesvol aangepast.'
+       format.html { redirect_to(@user) }
       else
         format.html  { render :action => "edit", :notice => 'Er is iets misgegaan. Mogelijk zijn niet alle velden correct ingevuld.' }
       end       

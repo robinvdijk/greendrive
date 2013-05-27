@@ -1,13 +1,43 @@
-function tutorial() {
-$('#tutorial_1, #blanket').toggle();
-}
+$(document).ready(function() {
 
-function profile() {
-	$('#tutorial_2, #tutorial_1').toggle();
-	$('#profile').css({position: 'relative'});
-}
+	var hl = 'highlight';	
+	// var next = $(".button:contains(Volgende)");	
+	// var prev = $(".button:contains(Vorige)");
 
-function badges() {
-	$('#tutorial_2').toggle();
-	$('#profile, #badges').css({position: 'relative'});
-}
+
+	//--------------------First--Page--Trigger-----------
+	$('#help').on('click', 'img', function(){ 
+		$('#blanket, #tutorial_1').slideToggle(); 
+	});
+	//--------------------First--Page--------------------
+	$('#tutorial_1').on('click', '.next', function(){ 
+		$('#tutorial_1').toggle();
+		$('#tutorial_2').toggle();
+		$('#tutorial_2').animate({'margin-left': '100px'});
+		$('#profile').fadeIn().toggleClass(hl); 
+	});
+	//--------------------Second--Page-------------------
+	$('#tutorial_2').on('click', '.prev', function(){
+		$('#tutorial_2, #tutorial_1').fadeToggle();
+		$('#profile').toggleClass(hl);
+	});
+		
+	$('#tutorial_2 ').on('click', '.next', function(){ 
+		$('#tutorial_2').toggle();
+		$('#badges').toggleClass(hl);
+		$('#profile').toggleClass(hl);
+	});
+	//--------------------Third--Page-------------------
+	
+	
+});
+
+
+
+
+
+
+
+	
+
+
