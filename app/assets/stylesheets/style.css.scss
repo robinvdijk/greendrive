@@ -125,7 +125,7 @@ small.green {
 
 a:hover {text-decoration: underline;}
 
-.button {
+.button, .next, .prev {
 	width: 220px !important;
 	height: 30px;
 	padding: 4px 75px;
@@ -227,11 +227,12 @@ a:hover {text-decoration: underline;}
 /*--- DROPDOWN ---*/
 .nav ul{
 	background: $white; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
-	background:rgba(255,255,255,0.8); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
 	list-style:none;
-	margin-top: 10px;
+	margin-top: 4px;
 	position:absolute;
 	left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
 }
 .nav ul li{
 	padding-top:10px; /* Introducing a padding between the li and the a give the illusion spaced items */
@@ -425,7 +426,7 @@ DASHBOARD
 *************************************************************************************/
 .arrow_box_bottom {
 	background:rgba(255,255,255,0.5);
-	border:1px solid rgba(128, 128, 128, .3);
+	border:1px solid transparent !important;
 }
 .arrow_box_bottom:after, .arrow_box_bottom:before {
 	top: 100%;
@@ -435,10 +436,10 @@ DASHBOARD
 	width: 0;
 	position: absolute;
 	pointer-events: none;
+	background:none;
 }
 .arrow_box_bottom:before {
-	border-color:rgba(128, 128, 128, .3);
-	background:rgba(255,255,255,0.5);
+	border-top-color:white;
 	border-width: 31px;
 	left: 50%;
 	margin-left: -31px;
@@ -465,6 +466,21 @@ DASHBOARD
 	margin-top: -31px;
 }
 
+#blanket {
+	background-color:black;
+	opacity:0.60;
+	position:absolute;
+	top: 0px;
+	left: 0px;
+	width:100%;
+	height:100%;
+	display:none;
+}
+
+.highlight {
+	position:relative  !important;
+	background-color:white  !important;
+}
 
 #tutorial {
 	position:relative;
@@ -472,7 +488,7 @@ DASHBOARD
 	bottom:690px;
 	h1, p{
 		text-align:center;
-		color:white;
+		color:black;
 	}
 	p {
 		font-size:26px;
@@ -480,16 +496,22 @@ DASHBOARD
 	div {
 		display:none;
 		height:200px;
+		background-color:white;
 	}
-}
-
-#tutorial_1 .button {
-	@extend .button;
-	margin-left:40%;
 }
 
 #tutorial_2 {
 	width:55%;
+	div {
+	display:block;
+	background-color:transparent;
+	margin:15% 0 0 12%;
+	}
+}
+
+#tutorial_1 .next {
+	@extend .button;
+	margin-left:40%;
 }
 
 #tutorial_start:target {
@@ -576,17 +598,6 @@ REGISTREREN & INLOGGEN
 	width:300px;
 	height:300px;
 	z-index: 9002;
-	display:none;
-}
-
-#blanket {
-	background-color:black;
-	opacity:0.60;
-	position:absolute;
-	top: 0px;
-	left: 0px;
-	width:100%;
-	height:100%;
 	display:none;
 }
 

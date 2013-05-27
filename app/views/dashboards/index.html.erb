@@ -5,9 +5,9 @@
 			<div id='chart'>
 				<div id="chart_div" data-car_miles='<%= @car_miles.to_json %>' style="width:500px; height:250px"></div>
 				<ul>
-					<li class="vertical-line-dashboard">Totaal  <%= @car.mileage / 1000 %> km</li>
 					<li class="vertical-line-dashboard">Elektrisch  <%= @car.mileage_electric / 1000 %> km</li>
 					<li class="vertical-line-dashboard">Fossiel <%= @car.mileage_fossile / 1000 %> km</li>
+					<li class="vertical-line-dashboard">Totaal  <%= @car.mileage / 1000 %> km</li>
 				</ul>
 			</div>
 			<div id="blanket"></div>
@@ -84,19 +84,21 @@
 					<li class="center"><%= link_to 'D(r)ivers', root_url%></li>
 					<li class="center" style="background:none"><%= link_to 'Uitzonderlijk', root_url%></li>	
 				</ul>	
-			</div>
+			</div>	
 		</div>
 	</div>
 	<div id="tutorial">
 		<div id="tutorial_1" class="arrow_box_bottom">
 			<h1>Welkom bij Greendrivers</h1>
 			<p>Om snel van start te kunnen gaan volgt hier een kleine uitleg over de applicatie</p>
-			<a href="#" onclick="profile('')" class="button">Volgende</a>
+			<a href="#" class="next">Volgende</a>
 		</div>
 		<div id="tutorial_2" class="arrow_box_right">
 			<h1>Dit ben jij</h1>
-			<a href="#" onclick="tutorial('')" class="button">Vorige</a>
-			<a href="#" onclick="badges('')" class="button">Volgende</a>	
+			<div id="buttons">
+				<a href="#" class="prev">Vorige</a>
+				<a href="#" class="next">Volgende</a>	
+			</div>
 		</div>
 	</div>
 </div>

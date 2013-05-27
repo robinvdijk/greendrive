@@ -27,9 +27,8 @@
 				<li class="home">
 					<%= link_to image_tag("header_logo_white.png"), user_dashboards_path([@user, @dashboard])%>
 				</li>
-				<li>
-					<a href="#" onclick="tutorial()"><%= image_tag("help.svg")%></a>
-
+				<li id='help'>
+					<a href="#"><%= image_tag("help.svg")%></a>
 				</li>				
 				<li>
 					<%= image_tag("menu.png", :alt => "menu") %>
