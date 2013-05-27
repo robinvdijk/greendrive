@@ -11,11 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20130526123312) do
-=======
-ActiveRecord::Schema.define(:version => 20130527091233) do
->>>>>>> 89729e01baf88b4d6228ee01d307cc050421df49
+ActiveRecord::Schema.define(:version => 20130527183501) do
 
   create_table "achievements", :force => true do |t|
     t.integer  "badge_id"
@@ -62,11 +58,6 @@ ActiveRecord::Schema.define(:version => 20130527091233) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "pictures", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "segments", :force => true do |t|
     t.string   "auth_token"
     t.integer  "company_id"
@@ -74,13 +65,13 @@ ActiveRecord::Schema.define(:version => 20130527091233) do
     t.integer  "drive_electric_ratio"
     t.datetime "created_at",                          :null => false
     t.datetime "updated_at",                          :null => false
-    t.integer  "mileage_electric",     :default => 0
-    t.integer  "mileage_fossile",      :default => 0
     t.string   "title"
     t.integer  "user_id"
     t.integer  "max_segment_id"
     t.integer  "remote_id"
     t.string   "license_plate"
+    t.integer  "mileage_electric",     :default => 0
+    t.integer  "mileage_fossile",      :default => 0
   end
 
   create_table "taggings", :force => true do |t|

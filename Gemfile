@@ -4,12 +4,6 @@ gem 'rails'
 gem 'thin'
 gem 'cancan'
 
-<<<<<<< HEAD
-=======
-gem 'acts-as-taggable-on'
-
-gem 'savon'
->>>>>>> 0267de1102a5ad08618ee96b417f7be66e0ba2ed
 gem 'rails_best_practices'
 gem "flot-rails"
 gem 'friendly_id'
