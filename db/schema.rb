@@ -102,9 +102,9 @@ ActiveRecord::Schema.define(:version => 20130527091233) do
     t.string   "name"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
-    t.string   "middle_name"
     t.integer  "score"
     t.string   "rank"
+    t.string   "middle_name"
   end
 
 end

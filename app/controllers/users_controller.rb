@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def show
    @user = User.find(params[:id])
    # @segment = Segment.find(params[:id])
-   # @car = Car.find(params[:id])
+   @car = Car.find(params[:id])
   end
   
   def new
