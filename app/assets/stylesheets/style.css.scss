@@ -233,6 +233,7 @@ a:hover {text-decoration: underline;}
 	left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
+	z-index: 9999;
 }
 .nav ul li{
 	padding-top:10px; /* Introducing a padding between the li and the a give the illusion spaced items */
@@ -240,8 +241,6 @@ a:hover {text-decoration: underline;}
 }
 .nav ul a{
 	white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
-	padding: 13px 30px 13px 0px !important;
-
 }
 .nav li:hover ul{ /* Display the dropdown on hover */
 	left:-85px; /* Bring back on-screen when needed */
@@ -797,8 +796,14 @@ li.fullwidth {
 /************************************************************************************
 NOTICES/ALERTS/SUCCESSES
 *************************************************************************************/
-
+#error_bar{
+	margin-left: auto;
+	margin-right: auto;
+	width:58%;
+}
 .success {
+
+
   padding: 8px 35px 8px 14px;
   margin-bottom: 20px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);

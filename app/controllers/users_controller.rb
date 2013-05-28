@@ -8,11 +8,16 @@ class UsersController < ApplicationController
   end
 
   def show
-   @user = User.find(params[:id])
+    begin
+      @user = User.find(params[:id])
    # @segment = Segment.find(params[:id])
-   @car = Car.find(params[:id])
+      @car = Car.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      redirect_to root_path
+    end
   end
   
+
   def new
     @user = User.new
   end
@@ -27,6 +32,7 @@ class UsersController < ApplicationController
         redirect_to new_car_path
       else
         flash[:alert] = "Niet alle velden zijn correct ingevuld."
+        # render 'new'
         redirect_to new_session_path
       end
   end

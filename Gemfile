@@ -23,7 +23,7 @@ gem 'whenever', :require => false
 
 # used for avatar uploading
 gem 'carrierwave'
-gem 'mini_magick'
+gem 'mini_magick', '~> 3.5.0'
 
 gem 'rails-i18n'
 
