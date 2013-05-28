@@ -1,16 +1,22 @@
 <% provide(:title, "Dashboard")%>
 <div id="pagewrap">
 	<div class='wrapper grid2'>
+		<div id="blanket"></div>
 		<div id="col_dashboard_left">
 			<div id='chart'>
+				<ul class='chart_info'>
+					<li class='vertical-line-dashboard'><%= link_to 'Vandaag', '' %></li>
+					<li class='vertical-line-dashboard'><%= link_to 'Deze week', '' %></li>
+					<li class='vertical-line-dashboard'><%= link_to 'Deze maand', '' %></li>
+					<li class='vertical-line-dashboard'><%= link_to 'Alles', '' %></li>
+				</ul>
 				<div id="chart_div" data-car_miles='<%= @car_miles.to_json %>' style="width:500px; height:250px"></div>
-				<ul>
-					<li class="vertical-line-dashboard">Elektrisch  <%= @car.mileage_electric / 1000 %> km</li>
-					<li class="vertical-line-dashboard">Fossiel <%= @car.mileage_fossile / 1000 %> km</li>
-					<li class="vertical-line-dashboard">Totaal  <%= @car.mileage / 1000 %> km</li>
+				<ul class='chart_stats'>
+					<li class=col_chart><p>Elektrisch</p> <%= @car.mileage_electric / 1000 %> km</li>
+					<li class=col_chart><p>Fossiel</p> <%= @car.mileage_fossile / 1000 %> km</li>
+					<li class=col_chart style='border:none'><p>Totaal</p> <%= (@car.mileage_electric + @car.mileage_fossile) / 1000 %> km</li>
 				</ul>
 			</div>
-			<div id="blanket"></div>
 			<ul id="badges" class="center">	
 				<li class="badge">
 					<% @badges_electric.each do |badge| %>
@@ -79,25 +85,44 @@
 			<div class="nav_dashboard">
 				<ul>
 					<li class="center"><%= link_to 'Alle Badges', root_url%></li>
-					<li class="center"><%= link_to 'Algemeen', root_url%></li>
-					<li class="center"><%= link_to 'Groen', root_url%></li>
-					<li class="center"><%= link_to 'D(r)ivers', root_url%></li>
-					<li class="center" style="background:none"><%= link_to 'Uitzonderlijk', root_url%></li>	
+					<li class="center"><%= link_to 'Mijn Profiel', root_url%></li>
+					<li class="center" style="background:none"><%= link_to 'Uitloggen', root_url%></li>	
 				</ul>	
 			</div>
 		</div>
-	</div>
-	<div id="tutorial">
-		<div id="tutorial_1" class="arrow_box_bottom">
-			<h1>Welkom bij Greendrivers</h1>
-			<p>Om snel van start te kunnen gaan volgt hier een kleine uitleg over de applicatie</p>
-			<a href="#" class="next">Volgende</a>
-		</div>
-		<div id="tutorial_2" class="arrow_box_right">
-			<h1>Dit ben jij</h1>
-			<div id="buttons">
-				<a href="#" class="prev">Vorige</a>
-				<a href="#" class="next">Volgende</a>	
+		<div id="tutorial">
+			<div id="tutorial_1" class="arrow_box_bottom">
+				<h1>Welkom bij Greendrivers</h1>
+				<p>Om snel van start te kunnen gaan volgt hier een kleine uitleg over de applicatie</p>
+				<a href="#" class="next">Volgende</a>
+			</div>
+			<div id="tutorial_2" class="arrow_box_right">
+				<h1>Dit ben jij</h1>
+				<div id="buttons">
+					<a href="#" class="prev">Vorige</a>
+					<a href="#" class="next">Volgende</a>	
+				</div>
+			</div>
+			<div id="tutorial_3" class="arrow_box_left">
+				<h1>Dit gaat over je auto</h1>
+				<p>De kilometers van de afgelopen tijd kun je hier terug vinden.</p>
+				<div id="buttons">
+					<a href="#" class="prev">Vorige</a>
+					<a href="#" class="next">Volgende</a>	
+				</div>
+			</div>
+			<div id="tutorial_4" class="arrow_box_bottom">
+				<h1>Dit zijn badges</h1>
+				<p>Als beloning voor je rijgedrag verdien je badges, de laatste die je verdiend hebt vind je hier terug.</p>
+			</div>
+			<div id="tutorial_5" class="arrow_box_bottom">
+				<h1>Dit zijn snelkoppelingen</h1>
+				<p>Om snel dor de applicatie te kunnen surfen.</p>
+			</div>
+			<div id="tutorial_6">
+				<div class="arrow_box_top">Zoeken</div>
+				<div class="arrow_box_top">Menu</div>
+				<div class="arrow_box_top">Help</div>
 			</div>
 		</div>
 	</div>

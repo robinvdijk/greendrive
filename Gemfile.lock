@@ -39,12 +39,7 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
-    acts-as-taggable-on (2.3.3)
-      rails (~> 3.0)
     addressable (2.3.4)
-    akami (1.2.0)
-      gyoku (>= 0.4.0)
-      nokogiri (>= 1.4.0)
     arel (3.0.2)
     awesome_print (1.1.0)
     bcrypt-ruby (3.0.1)
@@ -64,9 +59,6 @@ GEM
       ffi (~> 1.0, >= 1.0.11)
     chronic (0.9.1)
     chunky_png (1.2.8)
-    clock (0.2.5)
-      clock
-      rails (>= 3.0.0)
     code_analyzer (0.3.1)
       sexp_processor
     coderay (1.0.9)
@@ -130,8 +122,6 @@ GEM
     guard-rspec (3.0.0)
       guard (>= 1.8)
       rspec (~> 2.13)
-    gyoku (1.0.0)
-      builder (>= 2.1.2)
     hashie (2.0.5)
     highline (1.6.19)
     hike (1.2.2)
@@ -141,8 +131,6 @@ GEM
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
     httpauth (0.2.0)
-    httpi (2.0.2)
-      rack
     i18n (0.6.1)
     journey (1.0.4)
     jquery-rails (2.2.1)
@@ -183,7 +171,6 @@ GEM
     nifty-generators (0.4.6)
     nokogiri (1.5.9)
     nokogiri (1.5.9-x86-mingw32)
-    nori (2.1.0)
     oauth2 (0.8.1)
       faraday (~> 0.8)
       httpauth (~> 0.1)
@@ -272,14 +259,6 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
-    savon (2.2.0)
-      akami (~> 1.2.0)
-      builder (>= 2.1.2)
-      gyoku (~> 1.0.0)
-      httpi (~> 2.0.2)
-      nokogiri (>= 1.4.0)
-      nori (~> 2.1.0)
-      wasabi (~> 3.1.0)
     selenium-webdriver (2.32.1)
       childprocess (>= 0.2.5)
       multi_json (~> 1.0)
@@ -311,9 +290,6 @@ GEM
     uglifier (2.1.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
-    wasabi (3.1.0)
-      httpi (~> 2.0)
-      nokogiri (>= 1.4.0)
     websocket (1.0.7)
     whenever (0.8.2)
       activesupport (>= 2.3.4)
@@ -328,13 +304,11 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  acts-as-taggable-on
   bcrypt-ruby
   cancan
   capistrano
   capybara!
   carrierwave
-  clock
   coffee-rails
   compass (>= 0.12.2)
   compass-rails (>= 1.0.3)
@@ -363,7 +337,6 @@ DEPENDENCIES
   rb-fsevent
   rspec-rails
   sass-rails
-  savon
   selenium-webdriver
   sqlite3
   susy

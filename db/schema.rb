@@ -11,11 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20130526123312) do
-=======
 ActiveRecord::Schema.define(:version => 20130527091233) do
->>>>>>> 89729e01baf88b4d6228ee01d307cc050421df49
 
   create_table "achievements", :force => true do |t|
     t.integer  "badge_id"
@@ -57,16 +53,6 @@ ActiveRecord::Schema.define(:version => 20130527091233) do
     t.string   "model"
   end
 
-  create_table "dashboards", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "pictures", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "segments", :force => true do |t|
     t.string   "auth_token"
     t.integer  "company_id"
@@ -74,30 +60,13 @@ ActiveRecord::Schema.define(:version => 20130527091233) do
     t.integer  "drive_electric_ratio"
     t.datetime "created_at",                          :null => false
     t.datetime "updated_at",                          :null => false
-    t.integer  "mileage_electric",     :default => 0
-    t.integer  "mileage_fossile",      :default => 0
     t.string   "title"
     t.integer  "user_id"
     t.integer  "max_segment_id"
     t.integer  "remote_id"
     t.string   "license_plate"
-  end
-
-  create_table "taggings", :force => true do |t|
-    t.integer  "tag_id"
-    t.integer  "taggable_id"
-    t.string   "taggable_type"
-    t.integer  "tagger_id"
-    t.string   "tagger_type"
-    t.string   "context",       :limit => 128
-    t.datetime "created_at"
-  end
-
-  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
-  add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
-
-  create_table "tags", :force => true do |t|
-    t.string "name"
+    t.integer  "mileage_electric",     :default => 0
+    t.integer  "mileage_fossile",      :default => 0
   end
 
   create_table "traces", :force => true do |t|
@@ -133,9 +102,9 @@ ActiveRecord::Schema.define(:version => 20130527091233) do
     t.string   "name"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
+    t.string   "middle_name"
     t.integer  "score"
     t.string   "rank"
-    t.string   "middle_name"
   end
 
 end

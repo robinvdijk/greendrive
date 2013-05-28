@@ -33,26 +33,12 @@ LELIJKE CSS VOOR DE PROFIELPAGINA (wel laten staan aub)
 		stroke-width:0;
 	  }
 	}*/
-
-
-
+	
 	.fixed {
     position:fixed;
     top:0%;
     left:50%;
     margin-left:50px;
-	}
-
-	#chart_div:after {
-		background-image:url('subtlenet2.png');
-		    border-radius: 50%;
-		    -moz-border-radius: 50%;
-		    content: '';
-		    display: block;
-		    left: 142px; 
-		    padding: 60px;
-		    position: absolute;
-		    top: 92px; 
 	}
 
 /*************************************************************************************/
@@ -100,9 +86,13 @@ body {
 	margin-right: auto !important;
 }
 
-a, p, strong, small, h3 {
+a, p, strong, small, h1, h3 {
 	color: #313131;
 	text-decoration: none;
+}
+
+strong.green {
+	color: $green;
 }
 
 p.justify {
@@ -117,6 +107,7 @@ small {
 		color: $green;}
 }
 
+
 small.green {
 	color: $green;
 }
@@ -126,6 +117,8 @@ small.green {
 a:hover {text-decoration: underline;}
 
 .button, .next, .prev {
+	transition: position 2s, background-color 2s, z-index 2s;
+	-webkit-transition: position 2s, background-color 2s, z-index 2s;
 	width: 220px !important;
 	height: 30px;
 	padding: 4px 75px;
@@ -139,8 +132,8 @@ a:hover {text-decoration: underline;}
     box-shadow:         inset 1px 2px 2px rgba(255,255,255,0.4);
 	
 	p {
-		text-align: center !important;}
-	
+		text-align: center !important;
+	}
 }
 
 .button_register {
@@ -184,7 +177,7 @@ a:hover {text-decoration: underline;}
 .header {
 	background: url('/images/groen_patroon.png') repeat;
 	margin: 0 -10px !important;
-	height: 45px;
+	height: 50px;
     -moz-box-shadow:    inset 0 10px 10px rgba(255,255,255,0.4);
     -webkit-box-shadow: inset 0 10px 10px rgba(255,255,255,0.4);
     box-shadow:         inset 0 10px 10px rgba(255,255,255,1);
@@ -267,8 +260,11 @@ input[type=search] {
 
 li.home {
 	float: left !important;
+	padding-left: 0;
+}
 
-	padding: 12px 0px 13px 0px !important;
+li.icons_header {
+	top: 4px;
 }
 /************************************************************************************
 SEARCH RESULTS
@@ -392,20 +388,48 @@ HOMEPAGE
 	margin: auto;
 	width: 125px;
 	height: 125px;
-	border: 2px solid $green;
-	border-radius: 5px;
 	margin-bottom: 20px;
 }
 
-#block_1, #block_2, #block_3, #block_4, #block_5, #block_6, #block_7, #block_8 {
+#block_2, #block_3, #block_4, #block_5, #block_6, #block_7, #block_8 {
 	@extend .block;
+}
+
+#block_1 {
+	background-image: url("icon_pas.svg");
+}
+#block_2 {
+	background-image: url("icon_car.svg");
+}
+#block_3 {
+	background-image: url("icon_tree.svg");
+}
+#block_4 {
+	background-image: url("icon_town.svg");
+}
+#block_5 {
+	background-image: url("icon_badge.svg");
+}
+#block_6 {
+	background-image: url("icon_highscore.svg");
+}
+#block_7 {
+	background-image: url("icon_chart.svg");
+}
+#block_8 {
+	background-image: url("icon_share.svg");
 }
 
 #container_explains {
 	width: 100%;
-	height: 225px;
+	height: 180px;
 	margin-bottom: 20px;
 	overflow: hidden;
+	text-align: center;
+	h1 {
+		vertical-align: middle;
+		padding-top: 25px;
+	}
 }
 
 
@@ -416,13 +440,22 @@ HOMEPAGE
 
 
 iframe {
-	width: 100%;
+	position: relative;
+	width: 93%;
 	height: 330px;
-	border: 1px solid $darkgreen;
+	padding: 3.5%;
+	background: black;
+	border-radius: 7px;
+}
+
+#ibackground {
+	width: 100%;
+	height: 360px;
+	background: black;
 }
 
 #container_button {
-	width: 85%;
+	width: 78%;
 	margin: auto;
 }
 
@@ -493,7 +526,7 @@ DASHBOARD
 	border:1px solid transparent !important;
 }
 .arrow_box_bottom:after, .arrow_box_bottom:before {
-	top: 100%;
+	top: 105%;
 	border: solid transparent;
 	content: " ";
 	height: 0;
@@ -509,25 +542,45 @@ DASHBOARD
 	margin-left: -31px;
 }
 
-
-.arrow_box_right {
-	border: 1px solid white;
-}
-.arrow_box_right:after, .arrow_box_right:before {
-	left: 55%;
+.arrow_box_right:before {
 	border: solid transparent;
 	content: " ";
-	height: 0;
-	width: 0;
 	position: absolute;
 	pointer-events: none;
-}
-.arrow_box_right:before {
-	border-color: rgba(0, 0, 0, 0);
 	border-left-color: white;
-	border-width: 31px;
-	top: 50%;
-	margin-top: -31px;
+}
+
+.arrow_box_right:before {
+	left: 102%;
+	border-width: 30px;
+	top: 32.4%;
+}
+
+.arrow_box_left:before {
+	border: solid transparent;
+	content: " ";
+	position: absolute;
+	pointer-events: none;
+	border-right-color: white;
+}
+
+.arrow_box_left:before {
+	right: 102%;
+	border-width: 30px;
+	top: 39%;
+}
+
+.arrow_box_top:before {
+	border: solid transparent;
+	content: " ";
+	position: absolute;
+	pointer-events: none;
+	border-bottom-color: white;
+}
+
+.arrow_box_top:before {
+	border-width: 10px;
+	top: -30px;
 }
 
 #blanket {
@@ -539,17 +592,20 @@ DASHBOARD
 	width:100%;
 	height:100%;
 	display:none;
+	z-index:1;
 }
 
 .highlight {
 	position:relative  !important;
 	background-color:white  !important;
+	opacity:0;
+	z-index:1;
 }
 
 #tutorial {
 	position:relative;
+	top:3.2%;
 	z-index:1;
-	bottom:690px;
 	h1, p{
 		text-align:center;
 		color:black;
@@ -561,25 +617,72 @@ DASHBOARD
 		display:none;
 		height:200px;
 		background-color:white;
+		border-radius:5px;
+		position:absolute;
+		margin-top:3.2%;
 	}
-}
-
-#tutorial_2 {
-	width:55%;
-	div {
-	display:block;
-	background-color:transparent;
-	margin:15% 0 0 12%;
-	}
-}
-
-#tutorial_1 .next {
-	@extend .button;
-	margin-left:40%;
 }
 
 #tutorial_start:target {
 	display:block;
+}
+
+#tutorial_1 {
+	width:100%;
+  .next {
+ 	@extend .button;
+ 	margin-left:40%;
+ 	}
+}
+
+#tutorial_2 {
+	width:55%;
+	right:105%;
+	div {
+	display:block;
+	background-color:transparent;
+	margin:12% 0 0 12%;
+	}
+}
+
+#tutorial_3 {
+	left:105%;
+	height:330px !important;
+	div {
+	display:block;
+	background-color:transparent;
+	margin:12% 0 0 4%;
+		a { 
+			@extend .button;
+			padding:6px 33px !important;
+		}
+	}	
+}
+
+#tutorial_4 {
+	right:100%;
+	top:170px;
+	height:200px !important;
+}
+
+#tutorial_5 {
+	height:200px !important;
+	left:100%;
+	top:170px;
+}
+
+#tutorial_6 {
+	left:100%;
+	height:100px !important;
+	background-color:transparent !important;
+	div {
+		display:block;
+		height:20px !important;
+		margin:0 0 0 10px;
+		padding:5px;
+		float:left;
+		position:relative;
+	}
 }
 
 .vertical-line-dashboard {
@@ -588,17 +691,21 @@ DASHBOARD
 	padding-right:5px;
 }
 
+#chart_div {
+	margin:-8% 0 12% 0;
+}
+
+.chart_info {
+	text-align:center;
+	margin-top:1%;
+}
+
 #profile {
 	border:1px solid rgba(128, 128, 128, .3);
 	border-radius: 5px;
 	margin-bottom: 9%;
-	background: $white;
 	background:rgba(255,255,255,0.5);
 }
-
-#profile:target {
-		position:relative;
-	}
 
 #badges {
 	border:1px solid rgba(128, 128, 128, .3);
