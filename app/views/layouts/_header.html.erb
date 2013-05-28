@@ -22,27 +22,27 @@
 
 			<ul class="nav">
 				<li class="home">
-
 					<%= link_to image_tag("header_logo_white.svg"), user_dashboards_path([current_user, @dashboard])%>
-
 				</li>
+				
 				<li class="icons_header">
 					<a href="#" id='help'><%= image_tag("help.svg")%></a>
-				</li>				
+				</li>		
+						
 				<li class="icons_header">
 					<%= image_tag("menu.png", :alt => "menu") %>
-				       <% if current_user %>
-					    <ul>
+				  <% if current_user %>
+						<ul>
 							<li><%= link_to "Dashboard", user_dashboards_path([current_user, @dashboard]) %></li>
 							
 							<li><%= link_to "Badges", user_badges_path([current_user, @badges]) %></li>
 							
-				            <li><%= link_to "Mijn profiel", user_path(current_user) %></li>
+				      <li><%= link_to "Mijn profiel", user_path(current_user) %></li>
 
-				            <li><%= link_to "Uitloggen", logout_path, :method => :delete %></li>
+				      <li><%= link_to "Uitloggen", logout_path, :method => :delete %></li>
 							
-				        </ul>
-						<% end %>
+				    </ul>
+					<% end %>
 				</li>
 				
 
@@ -50,9 +50,10 @@
 					<%= form_tag ("/search_results"), :method => "get", :class=>"navbar-form" do %>
         				<%= text_field_tag ("search"), params[:search], :class => 'search-input span2', :placeholder => 'Uw zoekopdracht...' %>
        					<%= submit_tag "Zoeken", :class => "btn" %>
+					<% end %>
 				</li>
 			</ul>
-    				<% end %>
+    				
 
 				
 			</ul>
