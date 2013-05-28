@@ -1,36 +1,54 @@
 $(document).ready(function() {
 
 	var hl = 'highlight';	
-	var hlc = 'highlightcenter';
+	
 	// var next = $(".button:contains(Volgende)");	
 	// var prev = $(".button:contains(Vorige)");
 
 
 	//--------------------First--Page--Trigger-----------
 	$('#help').on('click', 'img', function(){ 
-		$('#blanket, #tutorial_1').slideToggle(800); 
+		$('#blanket').toggle();		
+		$('#tutorial_1').slideToggle(800); 
 	});
 	//--------------------First--Page--------------------
 	$('#tutorial_1').on('click', '.next', function(){ 
 		$('#tutorial_1').toggle();
-		$('#tutorial_2').fadeIn(800);
-		// $('#tutorial_2').animate({'margin-left': '100px'});
-		$('#profile').toggleClass(hl); 
+		$('#profile').toggleClass(hl).animate({ opacity:1 }, 800);
+		$('#tutorial_2').show().animate({ right:'45%' }, 800);
 	});
+
 	//--------------------Second--Page-------------------
 	$('#tutorial_2').on('click', '.prev', function(){
 		$('#tutorial_1').slideToggle(800);
-		$('#tutorial_2').toggle();
-		$('#profile').toggleClass(hl);
+		$('#tutorial_2').hide();
+		$('#profile').toggleClass(hl)
 	});
-		
+	
 	$('#tutorial_2 ').on('click', '.next', function(){ 
 		$('#tutorial_2').toggle();
-		$('#chart').toggleClass(hl);
-		$('#profile').toggleClass(hl);
-		$('#chart_div:after').toggleClass(hlc);
+		$('#tutorial_3').toggle();
+		$('#tutorial_3').show().animate({ left:'72%' }, 800);
+		$('#chart').toggleClass(hl).animate({ opacity:1 }, 800);
+		$('#profile').toggleClass(hl)
 	});
-	//--------------------Third--Page-------------------
+	// //--------------------Third--Page-------------------
+	$('#tutorial_3').on('click', '.prev', function(){
+		$('#tutorial_2').toggle();
+		$('#tutorial_3').toggle();
+		$('#chart').toggleClass(hl)
+	});
+	
+	$('#tutorial_3 ').on('click', '.next', function(){ 
+		$('#tutorial_3').toggle();
+		$('#chart').toggleClass();
+		$('#tutorial_4').show().animate({ right:'35.6%' }, 800);
+		$('#tutorial_5').show().animate({ left:'67.7%' }, 800);
+		$('#tutorial_6').show().animate({ left:'80.8%' }, 800);
+		$('#badges').toggleClass(hl).animate({ opacity:1 }, 800);
+		$('.nav_dashboard').toggleClass(hl).animate({ opacity:1 }, 800);
+		
+	});
 	
 	
 });
