@@ -47,15 +47,13 @@
 				
 
 				<li class="icons_header">
-					<input type=search results=5 autosave=some_unique_value autofocus name=s>
-
-				<li>
 					<%= form_tag ("/search_results"), :method => "get", :class=>"navbar-form" do %>
         				<%= text_field_tag ("search"), params[:search], :class => 'search-input span2', :placeholder => 'Uw zoekopdracht...' %>
-       					<%= submit_tag "Zoeken", :class => "btn" %></li></ul>
+       					<%= submit_tag "Zoeken", :class => "btn" %>
+				</li>
+			</ul>
     				<% end %>
 
-				</li>
 				
 			</ul>
 
