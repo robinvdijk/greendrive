@@ -519,9 +519,34 @@ STICKY SCROLL
 }
 
 
-/************************************************************************************
-DASHBOARD
+/***********************************************************************************
+TUTORIAL
+************************************************************************************
+	Setup
+************************************************************************************/
+#blanket {
+	background-color:black;
+	opacity:0.60;
+	position:absolute;
+	top: 0px;
+	left: 0px;
+	width:100%;
+	height:100%;
+	display:none;
+	z-index:1;
+}
+
+.highlight {
+	position:relative  !important;
+	background-color:white  !important;
+	opacity:0;
+	z-index:1;
+}
+
+/*************************************************************************************
+	Arrows
 *************************************************************************************/
+
 .arrow_box_bottom {
 	background:rgba(255,255,255,0.5);
 	border:1px solid transparent !important;
@@ -585,24 +610,9 @@ DASHBOARD
 	left:31%;
 }
 
-#blanket {
-	background-color:black;
-	opacity:0.60;
-	position:absolute;
-	top: 0px;
-	left: 0px;
-	width:100%;
-	height:100%;
-	display:none;
-	z-index:1;
-}
-
-.highlight {
-	position:relative  !important;
-	background-color:white  !important;
-	opacity:0;
-	z-index:1;
-}
+/*************************************************************************************
+	Pages
+*************************************************************************************/
 
 #tutorial {
 	position:relative;
@@ -690,7 +700,11 @@ DASHBOARD
 		position:relative;
 	}
 }
-
+/*************************************************************************************
+DASHBOARD
+*************************************************************************************
+	Chart
+*************************************************************************************/
 .vertical-line-dashboard {
 	border-right: #313131 1px solid;
 	display:inline;
@@ -705,14 +719,18 @@ DASHBOARD
 	text-align:center;
 	margin-top:1%;
 }
-
+/*************************************************************************************
+	Profile
+*************************************************************************************/
 #profile {
 	border:1px solid rgba(128, 128, 128, .3);
 	border-radius: 5px;
 	margin-bottom: 9%;
 	background:rgba(255,255,255,0.5);
 }
-
+/*************************************************************************************
+	Badges
+*************************************************************************************/
 #badges {
 	border:1px solid rgba(128, 128, 128, .3);
 	border-radius: 5px;
@@ -732,7 +750,9 @@ DASHBOARD
 		margin: 5% 0 5% 0;
 	}
 }
-
+/*************************************************************************************
+	Navigation
+*************************************************************************************/
 .nav_dashboard {
 	background: $white; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
 	background:rgba(255,255,255,0.5); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
@@ -751,11 +771,9 @@ DASHBOARD
 			padding: 5% 30% 5% 30%;
 		}
 }
-
 /************************************************************************************
 REGISTREREN & INLOGGEN
 *************************************************************************************/
-
 .checkbox {
 	padding: 22px;
 }
