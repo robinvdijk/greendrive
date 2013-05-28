@@ -38,11 +38,11 @@
      // Set chart options
      var options = {
 	        width:400,
-	        height:300,
+	        height:400,
 			 legend: {
 			 		position: 'none'
 			 },
-			 pieHole: 0.7,
+			 pieHole: 0.65,
 			 pieSliceText: 'none',
 			 slices: {
 					0: {color: '#39b54a'}, 
