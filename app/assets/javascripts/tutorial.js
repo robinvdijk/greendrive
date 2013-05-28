@@ -37,6 +37,7 @@ $(document).ready(function() {
 		$('#tutorial_2').toggle();
 		$('#tutorial_3').toggle();
 		$('#chart').toggleClass(hl)
+		$('#profile').toggleClass(hl)
 	});
 	
 	$('#tutorial_3 ').on('click', '.next', function(){ 

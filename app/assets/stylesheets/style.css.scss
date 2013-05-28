@@ -582,6 +582,7 @@ DASHBOARD
 .arrow_box_top:before {
 	border-width: 10px;
 	top: -30px;
+	left:31%;
 }
 
 #blanket {
@@ -620,7 +621,7 @@ DASHBOARD
 		background-color:white;
 		border-radius:5px;
 		position:absolute;
-		margin-top:3.2%;
+		margin-top:33px;
 	}
 }
 
@@ -642,11 +643,12 @@ DASHBOARD
 	div {
 	display:block;
 	background-color:transparent;
-	margin:12% 0 0 12%;
+	margin:35px 0 0 12%;
 	}
 }
 
 #tutorial_3 {
+	width:28%;
 	left:105%;
 	height:330px !important;
 	div {
@@ -664,17 +666,20 @@ DASHBOARD
 	right:100%;
 	top:170px;
 	height:200px !important;
+	width:64%;
 }
 
 #tutorial_5 {
 	height:200px !important;
 	left:100%;
 	top:170px;
+	width:32%;
 }
 
 #tutorial_6 {
 	left:100%;
 	height:100px !important;
+	width:19.1%;
 	background-color:transparent !important;
 	div {
 		display:block;
