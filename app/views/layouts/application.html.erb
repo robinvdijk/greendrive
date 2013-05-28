@@ -3,16 +3,16 @@
 <head>
   
 <title><%= full_title(yield(:title)) %></title>
+
 <meta name="viewport" content="width=device-width; initial-scale=1.0">
 <link rel="shortcut icon" href="/images/favicon.png">
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag 'application', :media => "all" %>
-  
 </head>
 <body>
 	
 		<%= render "layouts/header" %>
-
+<div id="pagewrap">
 	<div id="error_bar">
 		<% if flash[:notice] %>
 	    	<p class="notice"><%= flash[:notice] %></p>
@@ -26,6 +26,7 @@
 	    	<p class="success"><%= flash[:success] %></p>
 		<% end %>	
 	</div>
+</div>	
 		
 		<%= yield %>
 
