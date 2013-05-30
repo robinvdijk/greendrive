@@ -1,5 +1,5 @@
 <% provide(:title, "Dashboard")%>
-<div id="pagewrap">
+<div class="pagewrap">
 	<div class='wrapper grid2'>
 		<div id="blanket"></div>
 		<div id="col_dashboard_left">
@@ -14,7 +14,7 @@
 				<ul class='chart_stats'>
 					<li class=col_chart><p>Elektrisch</p> <%= @car.mileage_electric / 1000 %> km</li>
 					<li class=col_chart><p>Fossiel</p> <%= @car.mileage_fossile / 1000 %> km</li>
-					<li class=col_chart style='border:none'><p>Totaal</p> <%= (@car.mileage_electric + @car.mileage_fossile) / 1000 %> km</li>
+					<li class=col_chart style='border:none'><p>Totaal</p> <%= @car.mileage / 1000 %> km</li>
 				</ul>
 			</div>
 			<ul id="badges" class="center">	
@@ -86,7 +86,7 @@
 				<ul>
 					<li class="center"><%= link_to 'Alle Badges', root_url%></li>
 					<li class="center"><%= link_to 'Mijn Profiel', root_url%></li>
-					<li class="center" style="background:none"><%= link_to 'Uitloggen', '/logout'%></li>	
+					<li class="center" style="background:none"><%= link_to 'Uitloggen', logout_path %></li>	
 				</ul>	
 			</div>
 		</div>
@@ -98,7 +98,7 @@
 			</div>
 			<div id="tutorial_2" class="arrow_box_right">
 				<h1>Dit ben jij</h1>
-				<div id="buttons">
+				<div class="buttons">
 					<a href="#" class="prev">Vorige</a>
 					<a href="#" class="next">Volgende</a>	
 				</div>
@@ -106,27 +106,27 @@
 			<div id="tutorial_3" class="arrow_box_left">
 				<h1>Dit gaat over je auto</h1>
 				<p>De kilometers van de afgelopen tijd kun je hier terug vinden.</p>
-				<div id="buttons">
+				<div class="buttons">
 					<a href="#" class="prev">Vorige</a>
 					<a href="#" class="next">Volgende</a>	
 				</div>
 			</div>
 			<div id="tutorial_4" class="arrow_box_bottom">
 				<h1>Dit zijn badges</h1>
-				<p>Als beloning voor je rijgedrag verdien je badges, de laatste die je verdiend hebt vind je hier terug.</p>
+				<p>Als beloning voor je rijgedrag verdien je badges, de laatste drie die je verdiend hebt vind je hier terug.</p>
 			</div>
 			<div id="tutorial_5" class="arrow_box_bottom">
 				<h1>Dit zijn snelkoppelingen</h1>
-				<p>Om snel dor de applicatie te kunnen surfen.</p>
+				<p>Om snel door de applicatie te surfen.</p>
 			</div>
 			<div id="tutorial_6">
 				<div class="arrow_box_top">Zoeken</div>
 				<div class="arrow_box_top">Menu</div>
 				<div class="arrow_box_top">Help</div>
-				<div id="buttons">
-					<a href="#" class="prev">Vorige</a>
-					<a href="#" class="next">Volgende</a>	
-				</div>
+			</div>
+			<div class="buttons">
+				<a href="#" class="prev">Vorige</a>
+				<a href="#" class="next">Afsluiten</a>	
 			</div>
 		</div>
 	</div>

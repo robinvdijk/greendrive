@@ -47,7 +47,8 @@ Greendrive::Application.routes.draw do
 
   root :to => "pages#homepage"
 
-
+  get 'contact' => 'pages#contact'
+  get 'faq' => 'pages#faq'
 
   
   controller :sessions do

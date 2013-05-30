@@ -7,7 +7,9 @@ $(document).ready(function() {
 
 
 	//--------------------First--Page--Trigger-----------
-	$('#help').on('click', 'img', function(){ 
+	
+	
+	$('#help').on('click', function(){ 
 		$('#blanket').toggle();		
 		$('#tutorial_1').slideToggle(800); 
 	});
@@ -47,7 +49,8 @@ $(document).ready(function() {
 		$('#tutorial_5').toggle().animate({ left:'67.7%' }, 800);
 		$('#tutorial_6').toggle().animate({ left:'80.8%' }, 800);
 		$('#badges').toggleClass(hl).animate({ opacity:1 }, 800);
-		$('.nav_dashboard').toggleClass(hl).animate({ opacity:1 }, 800);	
+		$('.nav_dashboard').toggleClass(hl).animate({ opacity:1 }, 800);
+		$('#buttons').toggleClass();	
 	});
 	// //--------------------Fourth--Page-------------------
 	$('#tutorial_6').on('click', '.prev', function(){

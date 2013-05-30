@@ -237,7 +237,7 @@ a:hover {text-decoration: underline;}
 
 }
 .nav li:hover ul{ /* Display the dropdown on hover */
-	left:-85px; /* Bring back on-screen when needed */
+	left:-88px; /* Bring back on-screen when needed */
 }
 .nav li:hover a{ /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
 	
@@ -267,6 +267,10 @@ li.home {
 li.icons_header {
 	top: 4px;
 }
+
+#help_header:hover ul {
+	left:-59px;
+}
 /************************************************************************************
 SEARCH RESULTS
 *************************************************************************************/
@@ -276,9 +280,35 @@ SEARCH RESULTS
 	height:100%;
 	margin-bottom:252px; 
 	margin-left:20%;
-
-
 }
+
+/************************************************************************************
+FAQ
+*************************************************************************************/
+#container_faq {
+	width:80%;
+	margin:auto;
+	border:2px solid rgba(128, 128, 128, 0.3);
+	border-radius:5px;
+	margin-top:10%;
+	padding:10px;
+	ul li {
+		width:100%;
+/*		border:2px solid rgba(128, 128, 128, 0.3);*/
+	}
+	ul li h4 {
+		cursor: pointer;
+
+	}
+	ul li p {
+		display:none;
+/*		border:2px solid rgba(128, 128, 128, 0.3) ;*/
+	}
+}		
+
+#contain
+	
+/*************************************************************************************/
 
 .search_results{
 	margin-bottom:10px;
@@ -633,6 +663,16 @@ TUTORIAL
 		position:absolute;
 		margin-top:33px;
 	}
+	> .buttons {
+		top:8px;
+		background-color: transparent !important;
+		margin:0;
+		padding:0 0 0 10px;
+		left:57.4%;
+		a {
+			padding:4px 60px !important;
+		}
+	}
 }
 
 #tutorial_start:target {
@@ -699,6 +739,9 @@ TUTORIAL
 		float:left;
 		position:relative;
 	}
+	a {
+		padding:4px 15px;
+	}
 }
 /*************************************************************************************
 DASHBOARD
@@ -750,6 +793,9 @@ DASHBOARD
 		margin: 5% 0 5% 0;
 	}
 }
+/*************************************************************************************
+	Buttons
+*************************************************************************************/
 /*************************************************************************************
 	Navigation
 *************************************************************************************/

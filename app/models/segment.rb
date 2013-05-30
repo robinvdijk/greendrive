@@ -93,11 +93,12 @@ class Segment < ActiveRecord::Base
               car = Car.where('license_plate = ?', segment['licence_plate']).first
                   
               self.remote_id = segment['ID'] # 239493 
-              self.mileage = segment['mileage']
+              self.mileage = segment['mileage'] / 1000
               self.drive_electric_ratio = segment['driveElectricRatio']
               
               if car     
                 if self.mileage > 0
+                  car.mileage += self.mileage
                   unless self.drive_electric_ratio == nil
                     if self.drive_electric_ratio > 0 
                        henk = self.mileage * self.drive_electric_ratio
