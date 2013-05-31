@@ -63,9 +63,9 @@
 						<% end %>
 					</li>
 	
-					<li class="center"><%= link_to @user.user_name, user_path(current_user) %></li>
+					<li class="center"><%= link_to @user.user_name, user_path(@user) %></li>
 		
-					<li class="center"><%= @user.first_name %> <%= @user.middle_name%><%= @user.last_name %></li>
+					<li class="center"><%= @user.first_name %> <%= @user.middle_name%> <%= @user.last_name %></li>
 	
 					<li class="center"><%= @car.model %></li>
 	
@@ -84,9 +84,11 @@
 			</div>
 			<div class="nav_dashboard">
 				<ul>
-					<li class="center"><%= link_to 'Alle Badges', root_url%></li>
-					<li class="center"><%= link_to 'Mijn Profiel', root_url%></li>
-					<li class="center" style="background:none"><%= link_to 'Uitloggen', root_url%></li>	
+					<li class="center"><%= link_to 'Bekijk badges', user_badges_path%></li>
+					<li class="center"><%= link_to 'Bekijk profiel', @user%></li>
+					<% if can? :destroy, @user %>
+						<li class="center" style="background:none"><%= link_to 'Uitloggen', root_url%></li>	
+					<% end %>
 				</ul>	
 			</div>
 		</div>

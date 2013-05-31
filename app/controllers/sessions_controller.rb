@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
-  skip_authorization_check
+   skip_authorization_check
+  # load_and_authorize_resource
+  # skip_authorize_resource :only => :new
 
   def index
     redirect_to root_path
@@ -21,7 +23,7 @@ class SessionsController < ApplicationController
       else
         cookies[:auth_token] = user.auth_token
       end
-        redirect_to user
+        redirect_to user_dashboards_path([current_user, @dashboard])
         flash[:success] = "U bent succesvol ingelogd."
     else
       flash[:alert] = "E-mailadres en wachtwoord komen niet overeen."

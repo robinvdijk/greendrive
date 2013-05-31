@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130527091233) do
+ActiveRecord::Schema.define(:version => 20130530101736) do
 
   create_table "achievements", :force => true do |t|
     t.integer  "badge_id"
@@ -51,6 +51,11 @@ ActiveRecord::Schema.define(:version => 20130527091233) do
     t.string   "username"
     t.string   "password"
     t.string   "model"
+  end
+
+  create_table "leaderboards", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "segments", :force => true do |t|

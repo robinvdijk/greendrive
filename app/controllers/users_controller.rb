@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :user_required, :except => [:new, :create]
+  # before_filter :user_required, :except => [:new, :create]
 
   load_and_authorize_resource
   
@@ -8,16 +8,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    begin
       @user = User.find(params[:id])
+
    # @segment = Segment.find(params[:id])
       @car = Car.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-      redirect_to root_path
-    end
+
   end
   
-
   def new
     @user = User.new
   end
@@ -65,6 +62,5 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url }
     end
   end
-   
 end
  

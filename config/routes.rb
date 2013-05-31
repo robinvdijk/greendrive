@@ -1,5 +1,6 @@
 Greendrive::Application.routes.draw do  
 
+
   resources :pictures, :only => [:index, :create, :destroy]
 
   resources :authentications
@@ -44,18 +45,15 @@ Greendrive::Application.routes.draw do
   
   resources :pages  
 
-
+  resources :leaderboards
   root :to => "pages#homepage"
 
+  match "*path" => redirect("/") #Wrongly typed URL returns to root_path
 
-
-  
   controller :sessions do
     get "login" => "sessions#new"
     post "login" => "sessions#create"
     delete "logout" => "sessions#destroy"
-
-    
 end
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -42,7 +42,6 @@ LELIJKE CSS VOOR DE PROFIELPAGINA (wel laten staan aub)
 	}
 
 /*************************************************************************************/
-
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500);
 
 
@@ -173,7 +172,9 @@ a:hover {text-decoration: underline;}
     box-shadow:         inset 1px 2px 2px rgba(255,255,255,0.4);
 }
 
-/* Header */
+/************************************************************************************
+HEADER
+*************************************************************************************/
 .header {
 	background: url('/images/groen_patroon.png') repeat;
 	margin: 0 -10px !important;
@@ -249,6 +250,7 @@ a:hover {text-decoration: underline;}
 	color: $green;
 }
 
+/*DOET DIT IETS?*/
 input[type=search] { 
 	color: #313131; 
 	font-size: 16px; 
@@ -256,6 +258,16 @@ input[type=search] {
 	cursor: pointer;
 	display: block; 
 	word-spacing: 20px;               
+}
+
+.search_input{
+	color:red;
+}
+
+.searchbtn{
+/*	background-image: url(/assets/search.png);
+	 background-position:  0px 0px;
+    background-repeat: no-repeat;*/
 }
 
 li.home {
@@ -266,6 +278,66 @@ li.home {
 li.icons_header {
 	top: 4px;
 }
+
+
+/************************************************************************************
+LEADERBOARDS
+*************************************************************************************/
+.period_select{
+	margin-left:500px;
+}
+
+.period_name{
+	display: inline;
+}
+
+#col_leaderboards{
+	background: $white; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
+ 	background:rgba(255,255,255,0.5);
+ 	border:1px solid rgba(128, 128, 128, .3);
+  	border-radius:5px;
+  	h1{
+  		margin:2% 0 0 2%;
+  		padding: 0;
+  	}
+}
+
+table.leaderboards{
+	border-collapse: collapse;
+	width:550px;
+	text-align: left;
+	margin:0 0 2% 2%;
+	padding:0;
+}
+
+.leaderboards th .current {
+  background-repeat: no-repeat;
+  background-position: 45px -5px;
+  height:auto;
+  display:block;
+}
+
+.leaderboards th .asc, .leaderboards th .desc {
+	padding:0;
+	/*padding-right: 40px;*/
+	background-size: 25px;
+}
+
+.leaderboards th .asc, {
+	background-image: url(/assets/sort_u.png);
+}
+.leaderboards th .desc {
+	background-image: url(/assets/sort_d.png);
+}
+
+tbody tr:nth-child(even) {
+   background-color: rgba(128, 128, 128, 0.3);
+}
+
+.sort_types{
+	border-bottom: 1px solid grey;
+}
+
 /************************************************************************************
 SEARCH RESULTS
 *************************************************************************************/

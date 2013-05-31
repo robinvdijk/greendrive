@@ -1,7 +1,5 @@
 <% unless controller_name == "pages" %>
 	
-	
-
 
 	<div class="header">
 		
@@ -39,6 +37,8 @@
 							
 				      <li><%= link_to "Mijn profiel", user_path(current_user) %></li>
 
+				      <li><%= link_to "Leaderboards", leaderboards_path %></li>
+
 				      <li><%= link_to "Uitloggen", logout_path, :method => :delete %></li>
 							
 				    </ul>
@@ -48,15 +48,9 @@
 
 				<li class="icons_header">
 					<%= form_tag ("/search_results"), :method => "get", :class=>"navbar-form" do %>
-<<<<<<< HEAD
         				<%= text_field_tag ("search"), params[:search], :class => 'search-input span2', :placeholder => 'Zoek naar gebruikers...' %>
-       					<%= submit_tag "Zoeken", :class => "btn" %></li></ul>
+       					<%= image_submit_tag("search.png") %></li></ul>
     				<% end %>
-=======
-        				<%= text_field_tag ("search"), params[:search], :class => 'search-input span2', :placeholder => 'Uw zoekopdracht...' %>
-       					<%= submit_tag "Zoeken", :class => "btn" %>
-					<% end %>
->>>>>>> 3a653982069e18038b75252469aa0dcbac4ae2a4
 				</li>
 			</ul>
     				
