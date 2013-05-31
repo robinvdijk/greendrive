@@ -44,6 +44,7 @@ Greendrive::Application.routes.draw do
   
   resources :pages  
 
+  resources :badges
 
   root :to => "pages#homepage"
 

@@ -305,8 +305,6 @@ FAQ
 /*		border:2px solid rgba(128, 128, 128, 0.3) ;*/
 	}
 }		
-
-#contain
 	
 /*************************************************************************************/
 
@@ -500,6 +498,18 @@ BADGES PAGE
 	margin: 3.1%;
 }
 
+.badge_description {
+	display:none;
+}
+
+.badge_block {
+	display:block;
+}
+
+.badge_full {
+	height:100% !important;
+	width:100% !important;
+}
 /************************************************************************************
 STICKY SCROLL
 *************************************************************************************/
@@ -524,7 +534,7 @@ STICKY SCROLL
 }
 
 .sidebar_profile, .sidebar_badge_info {
-  position: fixed;
+  position: absolute;
   width:16%;
   background: $white; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
   background:rgba(255,255,255,0.5); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
@@ -570,7 +580,7 @@ TUTORIAL
 	position:relative  !important;
 	background-color:white  !important;
 	opacity:0;
-	z-index:1;
+	z-index:2;
 }
 
 /*************************************************************************************
