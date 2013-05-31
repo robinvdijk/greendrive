@@ -7,7 +7,9 @@ $(document).ready(function() {
 
 
 	//--------------------First--Page--Trigger-----------
-	$('#help').on('click', 'img', function(){ 
+	
+	
+	$('#help').on('click', function(){ 
 		$('#blanket').toggle();		
 		$('#tutorial_1').slideToggle(800); 
 	});
@@ -37,19 +39,38 @@ $(document).ready(function() {
 		$('#tutorial_2').toggle();
 		$('#tutorial_3').toggle();
 		$('#chart').toggleClass(hl)
+		$('#profile').toggleClass(hl)
 	});
 	
 	$('#tutorial_3 ').on('click', '.next', function(){ 
 		$('#tutorial_3').toggle();
 		$('#chart').toggleClass();
-		$('#tutorial_4').show().animate({ right:'35.6%' }, 800);
-		$('#tutorial_5').show().animate({ left:'67.7%' }, 800);
-		$('#tutorial_6').show().animate({ left:'80.8%' }, 800);
+		$('#tutorial_4').toggle().animate({ right:'35.6%' }, 800);
+		$('#tutorial_5').toggle().animate({ left:'67.7%' }, 800);
+		$('#tutorial_6').toggle().animate({ left:'80.8%' }, 800);
 		$('#badges').toggleClass(hl).animate({ opacity:1 }, 800);
 		$('.nav_dashboard').toggleClass(hl).animate({ opacity:1 }, 800);
-		
+		$('#buttons').toggleClass();	
+	});
+	// //--------------------Fourth--Page-------------------
+	$('#tutorial_6').on('click', '.prev', function(){
+		$('#tutorial_3').toggle();
+		$('#chart').toggleClass();
+		$('#tutorial_4').toggle();
+		$('#tutorial_5').toggle();
+		$('#tutorial_6').toggle();
+		$('.nav_dashboard').toggleClass(hl);
+		$('#badges').toggleClass(hl);
 	});
 	
+	$('#tutorial_6').on('click', '.next', function(){
+		$('#tutorial_4').toggle();
+		$('#tutorial_5').toggle();
+		$('#tutorial_6').toggle();		
+		$('.nav_dashboard').toggleClass(hl);
+		$('#badges').toggleClass(hl);
+		$('#blanket').toggle();	
+	});
 	
 });
 

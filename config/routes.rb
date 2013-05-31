@@ -46,9 +46,15 @@ Greendrive::Application.routes.draw do
   resources :pages  
 
   resources :leaderboards
-  root :to => "pages#homepage"
 
   match "*path" => redirect("/") #Wrongly typed URL returns to root_path
+
+  resources :badges
+
+  root :to => "pages#homepage"
+
+  get 'contact' => 'pages#contact'
+  get 'faq' => 'pages#faq'
 
   controller :sessions do
     get "login" => "sessions#new"
