@@ -28,120 +28,76 @@ class Segment < ActiveRecord::Base
   end
    
 
-  
-  def getnewsegment 
-   
-    109.times do |i|
-          response2 = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/GetNewSegments?token=#{auth_token}&companyId=#{company_id}&page=#{i}")
-          data = JSON.parse(response2.body)
+  # response2 = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/GetNewSegments?token=#{auth_token}&companyId=#{company_id}&max_segment_id=#{self.remote_id}")
     
-          for segment in data['Segments']
-    
-            # car = Car.where('license_plate = ?', segment['licence_plate'])
-    
-            self.remote_id = segment['ID'] # 239493 
-            self.mileage = segment['mileage']
-            self.drive_electric_ratio = segment['driveElectricRatio']
-            self.license_plate = segment['licence_plate']
+
         
+  def henk
+
+    40.times do |i|
+      
+      response2 = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/GetNewSegments?token=#{auth_token}&companyId=#{company_id}&page#{i}")
+      data = JSON.parse(response2.body)
+
+      for segment in data['Segments']
+        
+        car = Car.where('license_plate = ?', segment['licence_plate']).first
             
-            if self.mileage > 0 
-              if self.drive_electric_ratio == 1
-                if self.mileage_electric == nil
-                  self.mileage_electric = self.mileage
-                  # car.mileage_electric += self.mileage
-                else
-                  self.mileage_electric = self.mileage_electric self.mileage
-                  # car.mileage_electric += self.mileage
-                end
+        self.remote_id = segment['ID'] # 239493 
+        self.mileage = segment['mileage'] / 1000
+        self.drive_electric_ratio = segment['driveElectricRatio']
+        
+        if car     
+          if self.mileage > 0
+            car.mileage += self.mileage
+            
+            unless self.drive_electric_ratio == nil
+              if self.drive_electric_ratio > 0 
+                 henk = self.mileage * self.drive_electric_ratio
+                               
+                 self.mileage_electric = (self.mileage_electric + henk).to_i
+                 car.mileage_electric += henk.to_i
+                                              
+                 henk2 = self.mileage * (1 - self.drive_electric_ratio)
+                 self.mileage_fossile = (self.mileage_fossile + henk2).to_i
+                 car.mileage_fossile += henk2.to_i
+                 
+                 car.last_week = car.mileage - car.last_week
+               
+
               else
-                self.mileage_fossile = self.mileage
-                # car.mileage_fossile += self.mileage
+              
+                self.mileage_fossile = self.mileage_fossile + self.mileage
+              
+                car.mileage_fossile += self.mileage
               end
+          
+              car.save
+          
+              self.save
             end
-    
-            # car.save
-    
-            self.save
           end
-    
-            # HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/MarkAsReceived?token=#{auth_token}&companyId=#{company_id}&max_segment_id=#{self.remote_id}")
-       end
-          
-          
-          
-    
-          # self.remote_id = data['Segments'][499]['ID'] # 239493 
-          # self.mileage = data['Segments'][499]['mileage']
-          # self.drive_electric_ratio = data['Segments'][499]['driveElectricRatio']
-          # puts data
-          #    
-          # self.save
-          # 
-          # HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/MarkAsReceived?token=#{auth_token}&companyId=#{company_id}&max_segment_id=#{self.remote_id}")
-    
-     end
-        
-        def henk
-    
-          40.times do |i|
-            response2 = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/GetNewSegments?token=#{auth_token}&companyId=#{company_id}&page=#{i}")
-            data = JSON.parse(response2.body)
-    
-            for segment in data['Segments']
-              
-              car = Car.where('license_plate = ?', segment['licence_plate']).first
-                  
-              self.remote_id = segment['ID'] # 239493 
-              self.mileage = segment['mileage']
-              self.drive_electric_ratio = segment['driveElectricRatio']
-              
-              if car     
-                if self.mileage > 0
-                  unless self.drive_electric_ratio == nil
-                    if self.drive_electric_ratio > 0 
-                       henk = self.mileage * self.drive_electric_ratio
-                                     
-                       self.mileage_electric = (self.mileage_electric + henk).to_i
-                       car.mileage_electric += henk.to_i
-                                                    
-                       henk2 = self.mileage * (1 - self.drive_electric_ratio)
-                       self.mileage_fossile = (self.mileage_fossile + henk2).to_i
-                       car.mileage_fossile += henk2.to_i
-                     
-    
-                    else
-                    
-                      self.mileage_fossile = self.mileage_fossile + self.mileage
-                    
-                      car.mileage_fossile += self.mileage
-                    end
-                
-                    car.save
-                
-                    self.save
-                  end
-                end
-              end
-              
-            end
-              
-              
-              
-              if data.blank?
-                break
-              end
-              
-            end
-            
-              
-              
-       
-            
-            
-          
         end
+        
       end
+        
+        
+        
+        if data.blank?
+          break
+        end
+        
+      end
+      
+        
+        
+ 
+      
+      
+    
+  end
+  
+end
       
 
    

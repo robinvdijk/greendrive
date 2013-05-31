@@ -1,5 +1,5 @@
 class Car < ActiveRecord::Base
-  attr_accessible :company_id, :license_plate, :segment_id, :user_id, :mileage_fossile, :mileage_electric, :username, :model, :password
+  attr_accessible :company_id, :license_plate, :segment_id, :user_id, :mileage_fossile, :mileage_electric, :username, :model, :password, :last_week, :last_month
   
   belongs_to :user
   # belongs_to :segment
@@ -7,7 +7,6 @@ class Car < ActiveRecord::Base
   # validates :license_plate, :presence => true, :uniqueness => true
 #   validates :username, :presence => true
 #   validates :password, :presence => true
-  
   
   
 end

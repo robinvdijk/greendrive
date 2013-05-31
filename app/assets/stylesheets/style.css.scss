@@ -45,6 +45,12 @@ LELIJKE CSS VOOR DE PROFIELPAGINA (wel laten staan aub)
 
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500);
 
+#logo_effect {
+  -moz-box-shadow:    inset 1px 2px 2px rgba(255,255,255,0.4);
+  -webkit-box-shadow: inset 1px 2px 2px rgba(255,255,255,0.4);
+  box-shadow:         inset 1px 2px 2px rgba(255,255,255,0.4);
+	
+}
 
 /* General CSS */
 
@@ -144,6 +150,11 @@ a:hover {text-decoration: underline;}
 .button_long {
 	@extend .button;
 	width: 275px !important;
+}
+
+.button_indent {
+	@extend .button;
+	margin-left: 287px;
 }
 
 #button_align {
@@ -267,6 +278,22 @@ li.home {
 li.icons_header {
 	top: 4px;
 }
+
+/************************************************************************************
+CONTACTS
+*************************************************************************************/
+
+#contact {
+	float: left;
+	width: 70%;
+	margin: 0 15%;
+}
+
+#form_contact {
+	float: left;
+}
+
+
 /************************************************************************************
 SEARCH RESULTS
 *************************************************************************************/
@@ -470,6 +497,11 @@ BADGES PAGE
 	margin: 3.1%;
 }
 
+#badge_list {
+	float: left;
+	width: 48.5%;
+}
+
 /************************************************************************************
 STICKY SCROLL
 *************************************************************************************/
@@ -493,7 +525,7 @@ STICKY SCROLL
 	border:1px solid rgba(128, 128, 128, .3);
 }
 
-.sidebar_profile, .sidebar_badge_info {
+.sidebar_badge_info {
   position: fixed;
   width:16%;
   background: $white; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
@@ -513,10 +545,6 @@ STICKY SCROLL
 	}
 }
 
-.sidebar_badge_info{
-	top:40%;
-	margin-top:1%;
-}
 
 
 /************************************************************************************
@@ -840,6 +868,12 @@ HEADER
 .field_long {
 	@extend .field;
 	width: 270px !important;
+}
+
+.field_text {
+	@extend .field;
+	width: 500px;
+	height: 275px;
 }
 
 

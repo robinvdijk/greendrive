@@ -1,12 +1,23 @@
 class BadgesController < ApplicationController
     skip_authorization_check
-    
+
+
   def index
-    redirect_to root_path
+    @car = Car.find(params[:user_id])
+  
+    @badges_electric = Badge.where('subject = ? and value <= ?', 'Mileage Electric', @car.mileage_electric).limit(1).order('value desc')
+    @badges_fossile = Badge.where('subject = ? and value <= ?', 'Mileage Fossile', @car.mileage_fossile).limit(1).order('value desc')
+    @badges_mileage = Badge.where('subject = ? and value <= ?', 'Mileage', @car.mileage).limit(1).order('value desc')
+    @badges_ratio = Badge.where('subject = ? and value <= ?', 'Mileage Ratio', @car.mileage_electric / @car.mileage).limit(1).order('value desc')
+    
+    
+    
   end
+
 
   def new
     @badge = Badge.new
+    @badges = Badge.all
   end
   
   def create
@@ -17,13 +28,7 @@ class BadgesController < ApplicationController
       render 'new'
     end
   end
-
-  def index
-    @car = Car.find(params[:user_id])
-    
-    @badges_electric = Badge.where('title = ? and value <= ?', 'Mileage Electric', @car.mileage_electric / 1000).limit(1).order('value desc')
-    @badges_fossile = Badge.where('title = ? and value <= ?', 'Mileage Fossile', @car.mileage_fossile / 1000).limit(1).order('value desc')
-    @badges_mileage = Badge.where('title = ? and value <= ?', 'Mileage', @car.mileage / 1000).limit(1).order('value desc')
-  end
   
+ 
+  # 
 end

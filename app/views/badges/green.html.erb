@@ -1,0 +1,9 @@
+<div class="badge">
+<% @badges_green.each do |badge| %>
+	<%= image_tag badge.avatar_url(), class: 'avatar' %>		
+	<!-- <% if badge.value == 0 %>
+	<% else %>
+	<p><%= badge.value %> elektrische kilometer badge </p>	  
+	<p>Punten: <%= badge.points %></p>
+	<% end %> -->
+<% end %>

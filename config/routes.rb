@@ -1,5 +1,11 @@
 Greendrive::Application.routes.draw do  
 
+  get "contact_form/new"
+
+  get "contact_form/create"
+  
+
+
   resources :pictures, :only => [:index, :create, :destroy]
 
   resources :authentications
@@ -42,13 +48,16 @@ Greendrive::Application.routes.draw do
   
   resources :traces
   
-  resources :pages  
+  resources :pages 
+  resources :badges
+  resources :contact_forms
 
 
   root :to => "pages#homepage"
 
 
-
+  match 'contact' => 'contact#new', :as => 'contact', :via => :get
+  match 'contact' => 'contact#create', :as => 'contact', :via => :post
   
   controller :sessions do
     get "login" => "sessions#new"

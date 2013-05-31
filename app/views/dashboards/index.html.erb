@@ -1,7 +1,6 @@
 <% provide(:title, "Dashboard")%>
 <div id="pagewrap">
-	<div class='wrapper grid2'>
-		<div id="blanket"></div>
+	<div id="blanket"></div>
 		<div id="col_dashboard_left">
 			<div id='chart'>
 				<ul class='chart_info'>
@@ -12,11 +11,12 @@
 				</ul>
 				<div id="chart_div" data-car_miles='<%= @car_miles.to_json %>' style="width:500px; height:250px"></div>
 				<ul class='chart_stats'>
-					<li class=col_chart><p>Elektrisch</p> <%= @car.mileage_electric / 1000 %> km</li>
-					<li class=col_chart><p>Fossiel</p> <%= @car.mileage_fossile / 1000 %> km</li>
-					<li class=col_chart style='border:none'><p>Totaal</p> <%= (@car.mileage_electric + @car.mileage_fossile) / 1000 %> km</li>
+					<li class=col_chart><p>Elektrisch</p> <%= @car.mileage_electric %> km</li>
+					<li class=col_chart><p>Fossiel</p> <%= @car.mileage_fossile %> km</li>
+					<li class=col_chart style='border:none'><p>Totaal</p> <%= @car.mileage %> km</li>
 				</ul>
 			</div>
+			
 			<ul id="badges" class="center">	
 				<li class="badge">
 					<% @badges_electric.each do |badge| %>
@@ -39,17 +39,19 @@
 						<% end %> -->
 					<% end %>
 				</li>
-		
+				
 				<li class="badge">
-					<% @badges_mileage.each do |badge| %>
+					<% @badges_ratio.each do |badge| %>
 						<%= image_tag badge.avatar_url(), class: 'avatar' %>		
 						<!-- <% if badge.value == 0 %>
 						<% else %>
-						<p><%= badge.value %> totaal kilometer badge </p>				 
+						<p><%= badge.value %> fossiele kilometer badge </p>				 
 						<p>Punten: <%= badge.points %></p>
 						<% end %> -->
 					<% end %>
 				</li>
+		
+				
 			</ul>	
 		</div>
 		<div id="col_dashboard_right">
@@ -57,7 +59,7 @@
 				<ul>
 					<li class="center">
 						<% if @user.avatar? %>
-						<%= image_tag @user.avatar_url(:thumb), :class => "avatar" %>
+						<%= image_tag @user.avatar_url(), :class => "avatar" %>
 						<% else %>
 						<%= image_tag("avatar.png", :alt => "default-avatar", :class => "avatar") %>
 						<% end %>
@@ -125,5 +127,5 @@
 				<div class="arrow_box_top">Help</div>
 			</div>
 		</div>
-	</div>
+
 </div>

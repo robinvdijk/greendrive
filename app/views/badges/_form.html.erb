@@ -1,46 +1,53 @@
 <%= form_for(@badge) do |f| %>
-  <% if @badge.errors.any? %>
+  
+	<% if @badge.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@badge.errors.count, "error") %> zorgen ervoor dat deze badge niet opgeslagen kan worden:</h2>
-
-      <ul>
-      <% @badge.errors.full_messages.each do |msg| %>
+			<ul>
+      	<% @badge.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
-      <% end %>
- 	  </ul>
+      	<% end %>
+ 	  	</ul>
     </div>
   <% end %>
 
- 	 	<article class="col">
-  				<div class="align-center">
-  						<ul>
-							<li>
-								<%= f.label :title, "Title" %><br />
-								<%= f.text_field :title, class: 'field' %>
-							</li>
-							
-							<li> 
-								<%= f.label :tier, "Tier" %><br />
-								<%= f.text_field :tier, class: 'field' %>
-							</li>
-							<li>
-								<%= f.label :value, "Value" %><br />
-								<%= f.text_field :value, class: 'field' %>
-							</li>
-							<li>
-									<%= f.file_field :avatar%>
-							</li>
-							<li>
-								<%= f.label :points, "Points" %><br />
-								<%= f.text_field :points, class: 'field' %>
-							</li>
-							
-							
+	<ul>
+		<li>
+			<h2>Badge toevoegen</h2>
+		</li>	
+		<li>
+			<%= f.label :subject, "Onderwerp" %><br />
+			<%= f.text_field :subject, class: 'field' %>
+			<div class='help_text' class='username_help_text'>
+				<h2>Onderwerp</h2>
+    		<p>Elke badge met met meerdere tiers moet hetzelfde onderwerp bevatten</p>
+			</div>
+		</li>
+		<li>
+			<%= f.label :theme, "Thema" %><br>
+			<%= f.text_field :theme, class: 'field'%>
+		</li>
+		<li> 
+			<%= f.label :tier, "Tier" %><br />
+			<%= f.text_field :tier, class: 'field' %>
+		</li>
+		<li>
+			<%= f.label :value, "Value" %><br />
+			<%= f.text_field :value, class: 'field' %>
+		</li>
+		<li>
+			<%= f.label :points, "Points" %><br />
+			<%= f.text_field :points, class: 'field' %>
+		</li>
+		<li>
+				<%= f.file_field :avatar%>
+		</li>
+		
+		
 
-							<li><%= f.submit "Opslaan", class: 'button' %></li>
-  						</ul>
-  					</div>
-  				</div>
-  		</article>
+		<li><%= f.submit "Opslaan", class: 'button' %></li>
+		
+	</ul>
+
 		
 <% end %>
