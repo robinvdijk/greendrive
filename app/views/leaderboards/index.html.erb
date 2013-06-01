@@ -1,0 +1,33 @@
+<% provide(:title, "Leaderboards") %>
+<div id="pagewrap">
+	<div class="wrapper grid">
+		<article id="col_leaderboards">
+		<h1>Leaderboards</h1>
+			<ul class="period_select">
+				<li class="period_name">Overall |</li>
+				<li class="period_name">Deze maand |</li>
+				<li class="period_name">Deze week</li>
+			</ul>
+			
+			<table class="leaderboards"%>
+				<tr class="sort_types">
+					<th><%= sortable "user_name", "Naam" %></th>
+					<th><%= sortable "score" %></th>
+					<th><%= sortable "ratio" %></th>
+				</tr>
+				<% @users.each do |user| %>
+					<tr>
+						<td><%= user.user_name%></td>
+						<% if user.score %>
+							<td><%= user.score %></td>
+						<% else %>
+							<td>0</td>
+						<% end %>
+						<td>Ratio data</td>
+					</tr>
+				<% end %>
+			</table>
+			
+		</article>
+	</div>
+</div>

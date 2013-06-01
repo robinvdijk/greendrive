@@ -1,7 +1,5 @@
 <% unless controller_name == "pages" %>
 	
-	
-
 
 	<div class="header">
 		
@@ -25,8 +23,15 @@
 					<%= link_to image_tag("header_logo_white.svg"), user_dashboards_path([current_user, @dashboard]), :class => "logo_effect"%>
 				</li>
 				
-				<li class="icons_header">
-					<a href="#" id='help'><%= image_tag("help.svg")%></a>
+				<li class="icons_header" id="help_header">
+					<%= image_tag("help.svg")%>
+					<ul>
+						<% if controller_name == 'dashboards' %>
+							<li><a href="#" id='help'>Tutorial</a></li>
+						<% end %>
+						<li><%= link_to 'FAQ', faq_path%></li>
+						<li><%= link_to 'Contact', new_contact_path %></li>
+					</ul>
 				</li>		
 						
 				<li class="icons_header">
@@ -37,20 +42,22 @@
 							
 							<li><%= link_to "Badges", user_badges_path([current_user, @badges]) %></li>
 							
-				      <li><%= link_to "Mijn profiel", user_path(current_user) %></li>
+				 		   	<li><%= link_to "Mijn profiel", user_path(current_user) %></li>
 
-				      <li><%= link_to "Uitloggen", logout_path, :method => :delete %></li>
-							
+				   		    <li><%= link_to "Leaderboards", leaderboards_path %></li>
+
+				    	    <li><%= link_to "Uitloggen", logout_path, :method => :delete %></li>			
 				    </ul>
+
 					<% end %>
 				</li>
 				
 
 				<li class="icons_header">
 					<%= form_tag ("/search_results"), :method => "get", :class=>"navbar-form" do %>
-        				<%= text_field_tag ("search"), params[:search], :class => 'search-input span2', :placeholder => 'Uw zoekopdracht...' %>
-       					<%= submit_tag "Zoeken", :class => "btn" %>
-					<% end %>
+        				<%= text_field_tag ("search"), params[:search], :class => 'search-input span2', :placeholder => 'Zoek naar gebruikers...' %>&nbsp
+       					<%= image_submit_tag("search.png") %></li></ul>
+    				<% end %>
 				</li>
 			</ul>
     				

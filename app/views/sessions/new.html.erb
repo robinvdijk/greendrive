@@ -71,7 +71,7 @@ reader.readAsDataURL(input.files[0]);
 									<h2>Registreren</h2>
 								</li>
 								<li>
-								    <%= f.label :first_name, 'Voornaam *', :class => 'demo' %><br>
+								    <%= f.label :first_name, 'Voornaam *' %><br>
 								    <%= f.text_field :first_name, :class => 'field' %>
 								</li>
 								<li>
@@ -99,7 +99,7 @@ reader.readAsDataURL(input.files[0]);
 							                                    :end_year => Date.current.year - 90,
 							                                    :order => [:day, :month, :year],
 							                                    :prompt => {:day => 'Dag', :month => 'Maand', :year => 'Jaar'},
-							                                    :use_month_names => ['Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Jlii', 'Augustus',
+							                                    :use_month_names => ['Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus',
 							                                    'September', 'Oktober', 'November', 'December']) %>
 						    </li>
 								<li>

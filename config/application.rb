@@ -41,6 +41,11 @@ module Greendrive
     # Enable escaping HTML in JSON.
     config.active_support.escape_html_entities_in_json = true
 
+    # #Manually call field_with_errors.
+    # config.action_view.field_error_proc = Proc.new do |html_tag, instance|
+    #   "<div class=\"field_with_errors\">#{html_tag}</div>".html_safe
+    # end
+
     # Use SQL instead of Active Record's schema dumper when creating the database.
     # This is necessary if your schema can't be completely dumped by the schema dumper,
     # like if you have constraints or database-specific column types

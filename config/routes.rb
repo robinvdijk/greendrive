@@ -1,10 +1,9 @@
 Greendrive::Application.routes.draw do  
 
+
   get "contact_form/new"
 
   get "contact_form/create"
-  
-
 
   resources :pictures, :only => [:index, :create, :destroy]
 
@@ -51,11 +50,19 @@ Greendrive::Application.routes.draw do
   resources :pages 
   resources :badges
   resources :contact_forms
+  resources :contact
 
+  resources :leaderboards
+
+  match "*path" => redirect("/") #Wrongly typed URL returns to root_path
+
+  resources :badges
 
   root :to => "pages#homepage"
 
-
+  get 'faq' => 'pages#faq'
+  get 'contact' => 'contact#new'
+  
   match 'contact' => 'contact#new', :as => 'contact', :via => :get
   match 'contact' => 'contact#create', :as => 'contact', :via => :post
   
@@ -63,8 +70,6 @@ Greendrive::Application.routes.draw do
     get "login" => "sessions#new"
     post "login" => "sessions#create"
     delete "logout" => "sessions#destroy"
-
-    
 end
   # The priority is based upon order of creation:
   # first created -> highest priority.

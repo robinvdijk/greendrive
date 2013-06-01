@@ -33,7 +33,7 @@ LELIJKE CSS VOOR DE PROFIELPAGINA (wel laten staan aub)
 		stroke-width:0;
 	  }
 	}*/
-	
+
 	.fixed {
     position:fixed;
     top:0%;
@@ -42,15 +42,8 @@ LELIJKE CSS VOOR DE PROFIELPAGINA (wel laten staan aub)
 	}
 
 /*************************************************************************************/
-
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500);
 
-#logo_effect {
-  -moz-box-shadow:    inset 1px 2px 2px rgba(255,255,255,0.4);
-  -webkit-box-shadow: inset 1px 2px 2px rgba(255,255,255,0.4);
-  box-shadow:         inset 1px 2px 2px rgba(255,255,255,0.4);
-	
-}
 
 /* General CSS */
 
@@ -77,7 +70,7 @@ body {
 	right: 0;
 	overflow-x: hidden;
 	font-family: Ubuntu;
-	
+
 }
 
 .logo {
@@ -136,7 +129,7 @@ a:hover {text-decoration: underline;}
     -moz-box-shadow:    inset 1px 2px 2px rgba(255,255,255,0.4);
     -webkit-box-shadow: inset 1px 2px 2px rgba(255,255,255,0.4);
     box-shadow:         inset 1px 2px 2px rgba(255,255,255,0.4);
-	
+
 	p {
 		text-align: center !important;
 	}
@@ -169,7 +162,7 @@ a:hover {text-decoration: underline;}
     -moz-box-shadow:    inset 1px 2px 2px rgba(255,255,255,0.4);
     -webkit-box-shadow: inset 1px 2px 2px rgba(255,255,255,0.4);
     box-shadow:         inset 1px 2px 2px rgba(255,255,255,0.4);
-	
+
 }
 
 .button_small {
@@ -184,7 +177,9 @@ a:hover {text-decoration: underline;}
     box-shadow:         inset 1px 2px 2px rgba(255,255,255,0.4);
 }
 
-/* Header */
+/************************************************************************************
+HEADER
+*************************************************************************************/
 .header {
 	background: url('/images/groen_patroon.png') repeat;
 	margin: 0 -10px !important;
@@ -209,7 +204,7 @@ a:hover {text-decoration: underline;}
 	width:100%;
 	height: 45px;
 	z-index:5;
-	
+
 }
 .nav li{
 	float:right;
@@ -226,7 +221,9 @@ a:hover {text-decoration: underline;}
 	color:#fff;
 }
 
-
+#help_header:hover ul {
+	left:-59px;
+}
 
 /*--- DROPDOWN ---*/
 .nav ul{
@@ -237,21 +234,23 @@ a:hover {text-decoration: underline;}
 	left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
+	z-index: 9999;
 }
 .nav ul li{
-	padding-top:10px; /* Introducing a padding between the li and the a give the illusion spaced items */
+	padding-right:30px; /* Introducing a padding between the li and the a give the illusion spaced items */
 	float:none;
 }
 .nav ul a{
 	white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
-	padding: 13px 30px 13px 0px !important;
-
 }
 .nav li:hover ul{ /* Display the dropdown on hover */
-	left:-85px; /* Bring back on-screen when needed */
+	margin-top: 10px;
+	left:-102px; /* Bring back on-screen when needed */
+	border-radius: 7px;
+	border: 1px solid $darkgreen;
 }
 .nav li:hover a{ /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
-	
+
 	text-decoration:underline;
 }
 .nav li:hover ul a{ /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
@@ -261,13 +260,18 @@ a:hover {text-decoration: underline;}
 	color: $green;
 }
 
-input[type=search] { 
-	color: #313131; 
-	font-size: 16px; 
-	text-align: right;
-	cursor: pointer;
-	display: block; 
-	word-spacing: 20px;               
+.search-input{
+	position: relative;
+	border-radius: 5px;
+	padding: 5px 5px;
+	width: 200px;
+	top: -7px;
+}
+	
+.searchbtn{
+/*	background-image: url(/assets/search.png);
+	 background-position:  0px 0px;
+    background-repeat: no-repeat;*/
 }
 
 li.home {
@@ -280,17 +284,61 @@ li.icons_header {
 }
 
 /************************************************************************************
-CONTACTS
+LEADERBOARDS
 *************************************************************************************/
-
-#contact {
-	float: left;
-	width: 70%;
-	margin: 0 15%;
+.period_select{
+	margin-left:500px;
 }
 
-#form_contact {
-	float: left;
+.period_name{
+	display: inline;
+}
+
+#col_leaderboards{
+	background: $white; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
+ 	background:rgba(255,255,255,0.5);
+ 	border:1px solid rgba(128, 128, 128, .3);
+  	border-radius:5px;
+  	h1{
+  		margin:2% 0 0 2%;
+  		padding: 0;
+  	}
+}
+
+table.leaderboards{
+	border-collapse: collapse;
+	width:550px;
+	text-align: left;
+	margin:0 0 2% 2%;
+	padding:0;
+}
+
+.leaderboards th .current {
+  background-repeat: no-repeat;
+  background-position: 45px -5px;
+  height:auto;
+  display:block;
+}
+
+.leaderboards th .asc, .leaderboards th .desc {
+	padding:0;
+	/*padding-right: 40px;*/
+	background-size: 25px;
+}
+
+.leaderboards th .asc, {
+	background-image: url(/assets/sort_u.png);
+}
+.leaderboards th .desc {
+	background-image: url(/assets/sort_d.png);
+}
+
+tbody tr:nth-child(even) {
+   background-color: rgba(128, 128, 128, 0.3);
+}
+
+.sort_types{
+	border-bottom: 1px solid grey;
 }
 
 
@@ -303,9 +351,40 @@ SEARCH RESULTS
 	height:100%;
 	margin-bottom:252px; 
 	margin-left:20%;
-
-
 }
+/************************************************************************************
+CONTACTS
+*************************************************************************************/
+
+#form_contact {
+	float: left;
+}
+
+/************************************************************************************
+FAQ
+*************************************************************************************/
+#container_faq {
+	width:80%;
+	margin:auto;
+	border:2px solid rgba(128, 128, 128, 0.3);
+	border-radius:5px;
+	margin-top:10%;
+	padding:10px;
+	ul li {
+		width:100%;
+/*		border:2px solid rgba(128, 128, 128, 0.3);*/
+	}
+	ul li h4 {
+		cursor: pointer;
+
+	}
+	ul li p {
+		display:none;
+/*		border:2px solid rgba(128, 128, 128, 0.3) ;*/
+	}
+}		
+
+/*************************************************************************************/
 
 .search_results{
 	margin-bottom:10px;
@@ -497,23 +576,34 @@ BADGES PAGE
 	margin: 3.1%;
 }
 
-#badge_list {
-	float: left;
-	width: 48.5%;
+.badge_description {
+	display:none;
 }
 
+.badge_block {
+	display:block;
+}
+
+.badge_full {
+	height:100% !important;
+	width:100% !important;
+}
 /************************************************************************************
 STICKY SCROLL
 *************************************************************************************/
-
+#chart_header {
+	@extend #chart;
+	height: 35px !important;
+	margin-bottom: 1% !important;
+	
+}
 
 #chart {
 	border:1px solid rgba(128, 128, 128, .3);
 	border-radius: 5px;
 	margin-bottom:4.5%;
-	background: $white;
 	background:rgba(255,255,255,0.5);
-	height:406px;
+	height:395px;
 }
 
 .badge_collection{
@@ -525,8 +615,8 @@ STICKY SCROLL
 	border:1px solid rgba(128, 128, 128, .3);
 }
 
-.sidebar_badge_info {
-  position: fixed;
+.sidebar_profile, .sidebar_badge_info {
+  position: absolute;
   width:16%;
   background: $white; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
   background:rgba(255,255,255,0.5); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
@@ -545,11 +635,40 @@ STICKY SCROLL
 	}
 }
 
+.sidebar_badge_info{
+	float: left;
+	margin-top: 14.5%;
+}
 
 
-/************************************************************************************
-DASHBOARD
+/***********************************************************************************
+TUTORIAL
+************************************************************************************
+	Setup
+************************************************************************************/
+#blanket {
+	background-color:black;
+	opacity:0.60;
+	position:absolute;
+	top: 0px;
+	left: 0px;
+	width:100%;
+	height:100%;
+	display:none;
+	z-index:1;
+}
+
+.highlight {
+	position:relative  !important;
+	background-color:white  !important;
+	opacity:0;
+	z-index:2;
+}
+
+/*************************************************************************************
+	Arrows
 *************************************************************************************/
+
 .arrow_box_bottom {
 	background:rgba(255,255,255,0.5);
 	border:1px solid transparent !important;
@@ -610,26 +729,12 @@ DASHBOARD
 .arrow_box_top:before {
 	border-width: 10px;
 	top: -30px;
+	left:31%;
 }
 
-#blanket {
-	background-color:black;
-	opacity:0.60;
-	position:absolute;
-	top: 0px;
-	left: 0px;
-	width:100%;
-	height:100%;
-	display:none;
-	z-index:1;
-}
-
-.highlight {
-	position:relative  !important;
-	background-color:white  !important;
-	opacity:0;
-	z-index:1;
-}
+/*************************************************************************************
+	Pages
+*************************************************************************************/
 
 #tutorial {
 	position:relative;
@@ -648,7 +753,17 @@ DASHBOARD
 		background-color:white;
 		border-radius:5px;
 		position:absolute;
-		margin-top:3.2%;
+		margin-top:33px;
+	}
+	> .buttons {
+		top:8px;
+		background-color: transparent !important;
+		margin:0;
+		padding:0 0 0 10px;
+		left:57.4%;
+		a {
+			padding:4px 60px !important;
+		}
 	}
 }
 
@@ -670,11 +785,12 @@ DASHBOARD
 	div {
 	display:block;
 	background-color:transparent;
-	margin:12% 0 0 12%;
+	margin:35px 0 0 12%;
 	}
 }
 
 #tutorial_3 {
+	width:28%;
 	left:105%;
 	height:330px !important;
 	div {
@@ -692,17 +808,20 @@ DASHBOARD
 	right:100%;
 	top:170px;
 	height:200px !important;
+	width:64%;
 }
 
 #tutorial_5 {
 	height:200px !important;
 	left:100%;
 	top:170px;
+	width:32%;
 }
 
 #tutorial_6 {
 	left:100%;
 	height:100px !important;
+	width:19.1%;
 	background-color:transparent !important;
 	div {
 		display:block;
@@ -712,15 +831,22 @@ DASHBOARD
 		float:left;
 		position:relative;
 	}
+	a {
+		padding:4px 15px;
+	}
 }
-
+/*************************************************************************************
+DASHBOARD
+*************************************************************************************
+	Chart
+*************************************************************************************/
 .vertical-line-dashboard {
 	border-right: #313131 1px solid;
 	display:inline;
 	padding-right:5px;
 }
 
-#chart_div {
+.chart_div {
 	margin:-8% 0 12% 0;
 }
 
@@ -729,20 +855,28 @@ DASHBOARD
 	margin-top:1%;
 }
 
+#week_date {
+	display: none;
+}
+/*************************************************************************************
+	Profile
+*************************************************************************************/
 #profile {
 	border:1px solid rgba(128, 128, 128, .3);
 	border-radius: 5px;
 	margin-bottom: 9%;
 	background:rgba(255,255,255,0.5);
 }
-
+/*************************************************************************************
+	Badges
+*************************************************************************************/
 #badges {
 	border:1px solid rgba(128, 128, 128, .3);
 	border-radius: 5px;
 	background:rgba(255,255,255,0.5);
 	padding-bottom:248px;
 }
-	
+
 .badge {
 	float:left;
 	margin-left:5.5%;
@@ -755,7 +889,12 @@ DASHBOARD
 		margin: 5% 0 5% 0;
 	}
 }
-
+/*************************************************************************************
+	Buttons
+*************************************************************************************/
+/*************************************************************************************
+	Navigation
+*************************************************************************************/
 .nav_dashboard {
 	background: $white; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
 	background:rgba(255,255,255,0.5); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
@@ -774,11 +913,9 @@ DASHBOARD
 			padding: 5% 30% 5% 30%;
 		}
 }
-
 /************************************************************************************
 REGISTREREN & INLOGGEN
 *************************************************************************************/
-
 .checkbox {
 	padding: 22px;
 }
@@ -844,7 +981,7 @@ ICONS
 .icon-right {
 	float: right !important;
 	margin-top: 12px
-	
+
 }
 
 .icon-menu {
@@ -878,6 +1015,7 @@ HEADER
 
 
 
+
 ul { 
 	list-style: none;
 	margin: 0;
@@ -901,7 +1039,7 @@ ul {
 	li.right {
 		margin-right: 0 !important;
 	}
-	
+
 }
 
 li.center {
@@ -938,8 +1076,14 @@ li.fullwidth {
 /************************************************************************************
 NOTICES/ALERTS/SUCCESSES
 *************************************************************************************/
-
+#error_bar{
+	margin-left: auto;
+	margin-right: auto;
+	width:58%;
+}
 .success {
+
+
   padding: 8px 35px 8px 14px;
   margin-bottom: 20px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
@@ -966,9 +1110,3 @@ NOTICES/ALERTS/SUCCESSES
 	color: #313131;
 	font-family: Ubuntu;
 }
-
-
-
-
-
-

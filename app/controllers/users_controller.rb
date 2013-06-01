@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :user_required, :except => [:new, :create]
+  # before_filter :user_required, :except => [:new, :create]
 
   load_and_authorize_resource
   
@@ -8,9 +8,11 @@ class UsersController < ApplicationController
   end
 
   def show
-   @user = User.find(params[:id])
+      @user = User.find(params[:id])
+
    # @segment = Segment.find(params[:id])
-   @car = Car.find(params[:id])
+      @car = Car.find(params[:id])
+
   end
   
   def new
@@ -27,6 +29,7 @@ class UsersController < ApplicationController
         redirect_to new_car_path
       else
         flash[:alert] = "Niet alle velden zijn correct ingevuld."
+        # render 'new'
         redirect_to new_session_path
       end
   end
@@ -59,6 +62,5 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url }
     end
   end
-   
 end
  

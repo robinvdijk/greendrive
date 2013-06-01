@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130530224603) do
+ActiveRecord::Schema.define(:version => 20130601153216) do
 
   create_table "achievements", :force => true do |t|
     t.integer  "badge_id"
@@ -31,12 +31,13 @@ ActiveRecord::Schema.define(:version => 20130530224603) do
   create_table "badges", :force => true do |t|
     t.integer  "tier"
     t.integer  "value"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.string   "avatar"
     t.integer  "points"
     t.string   "subject"
     t.string   "theme"
+    t.string   "description"
   end
 
   create_table "cars", :force => true do |t|
@@ -44,32 +45,46 @@ ActiveRecord::Schema.define(:version => 20130530224603) do
     t.integer  "company_id"
     t.integer  "user_id"
     t.integer  "segment_id"
-    t.integer  "mileage",          :default => 0
-    t.integer  "mileage_electric", :default => 0
-    t.integer  "mileage_fossile",  :default => 0
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
+    t.integer  "mileage",             :default => 0
+    t.integer  "mileage_electric",    :default => 0
+    t.integer  "mileage_fossile",     :default => 0
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
     t.string   "username"
     t.string   "password"
     t.string   "model"
-    t.float    "last_week",        :default => 0.0
-    t.float    "last_month",       :default => 0.0
+    t.float    "last_week",           :default => 0.0
+    t.float    "last_month",          :default => 0.0
+    t.float    "last_week_electric",  :default => 0.0
+    t.float    "last_month_electric", :default => 0.0
+    t.float    "last_year",           :default => 0.0
+    t.float    "last_year_electric",  :default => 0.0
+  end
+
+  create_table "intervals", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "leaderboards", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "segments", :force => true do |t|
     t.string   "auth_token"
     t.integer  "company_id"
-    t.integer  "mileage"
+    t.float    "mileage"
     t.integer  "drive_electric_ratio"
-    t.datetime "created_at",                          :null => false
-    t.datetime "updated_at",                          :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
     t.string   "title"
     t.integer  "user_id"
     t.integer  "max_segment_id"
     t.integer  "remote_id"
     t.string   "license_plate"
-    t.integer  "mileage_electric",     :default => 0
-    t.integer  "mileage_fossile",      :default => 0
+    t.float    "mileage_electric",     :default => 0.0
+    t.float    "mileage_fossile",      :default => 0.0
   end
 
   create_table "traces", :force => true do |t|

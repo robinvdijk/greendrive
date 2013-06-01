@@ -4,10 +4,15 @@
 http://www.dynamicdrive.com/dynamicindex4/thumbnail2.htm-->
  
 
+
 <div class="badge_collection">
 			<div class="badge" id="green">
 			<% @badges_electric.each do |badge| %>
 				<%= image_tag badge.avatar_url(), class: 'avatar' %>		
+				
+				<div class="badge_description">
+					<%= badge.description %>
+				</div>
 				<!-- <% if badge.value == 0 %>
 				<% else %>
 				<p><%= badge.value %> elektrische kilometer badge </p>	  
@@ -18,7 +23,11 @@ http://www.dynamicdrive.com/dynamicindex4/thumbnail2.htm-->
 	
 	<div class="badge" id="divers">
 		<% @badges_ratio.each do |badge| %>
-			<%= image_tag badge.avatar_url(), class: 'avatar' %>		
+			<%= image_tag badge.avatar_url(), class: 'avatar' %>	
+			
+			<div class="badge_description">
+				<%= badge.description %>
+			</div>	
 			<!-- <% if badge.value == 0 %>
 			<% else %>
 			<p><%= badge.value %> totaal kilometer badge </p>				 
@@ -30,6 +39,10 @@ http://www.dynamicdrive.com/dynamicindex4/thumbnail2.htm-->
 	<div class="badge" id="general">
 			<% @badges_fossile.each do |badge| %>
 				<%= image_tag badge.avatar_url(), class: 'avatar' %>		
+				
+				<div class="badge_description">
+					<%= badge.description %>
+				</div>
 				<!-- <% if badge.value == 0 %>
 				<% else %>
 				<p><%= badge.value %> fossiele kilometer badge </p>				 
@@ -40,7 +53,10 @@ http://www.dynamicdrive.com/dynamicindex4/thumbnail2.htm-->
 
 		<div class="badge" id="divers">
 			<% @badges_mileage.each do |badge| %>
-				<%= image_tag badge.avatar_url(), class: 'avatar' %>		
+				<%= image_tag badge.avatar_url(), class: 'avatar' %>			
+				<div class="badge_description">
+					<%= badge.description %>
+				</div>
 				<!-- <% if badge.value == 0 %>
 				<% else %>
 				<p><%= badge.value %> totaal kilometer badge </p>				 
@@ -48,7 +64,5 @@ http://www.dynamicdrive.com/dynamicindex4/thumbnail2.htm-->
 				<% end %> -->
 			<% end %>
 		</div>
-		
-		
-
 </div>
+

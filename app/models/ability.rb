@@ -1,4 +1,4 @@
-#### DEFINES RESTRICTIONS AND PERMISSIONS FOR ROLEs ####
+#### DEFINES RESTRICTIONS AND PERMISSIONS FOR ROLES ####
 
 class Ability  
   include CanCan::Ability  
