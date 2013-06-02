@@ -1,4 +1,4 @@
-<% unless controller_name == "pages" %>
+<% unless controller == "pages#homepage" %>
 	
 
 	<div class="header">
@@ -20,7 +20,7 @@
 
 			<ul class="nav">
 				<li class="home">
-					<%= link_to image_tag("header_logo_white.svg"), user_dashboards_path([current_user, @dashboard]), :class => "logo_effect"%>
+					<%= link_to image_tag("header_logo_white.svg"), user_name_dashboard_path(current_user.user_name), :class => "logo_effect"%>
 				</li>
 				
 				<li class="icons_header" id="help_header">
@@ -29,8 +29,8 @@
 						<% if controller_name == 'dashboards' %>
 							<li><a href="#" id='help'>Tutorial</a></li>
 						<% end %>
-						<li><%= link_to 'FAQ', faq_path%></li>
-						<li><%= link_to 'Contact', new_contact_path %></li>
+						<li><%= link_to 'FAQ', faq_path %></li>
+						<li><%= link_to 'Contact', contact_path %></li>
 					</ul>
 				</li>		
 						
@@ -38,13 +38,13 @@
 					<%= image_tag("menu.png", :alt => "menu") %>
 				  <% if current_user %>
 						<ul>
-							<li><%= link_to "Dashboard", user_dashboards_path([current_user, @dashboard]) %></li>
+							<li><%= link_to "Dashboard", user_name_dashboard_path(current_user.user_name) %></li>
 							
-							<li><%= link_to "Badges", user_badges_path([current_user, @badges]) %></li>
+							<li><%= link_to "Badges", user_name_badges_path(current_user.user_name) %></li>
 							
-				 		   	<li><%= link_to "Mijn profiel", user_path(current_user) %></li>
+				 		   	<li><%= link_to "Mijn profiel", user_name_path(current_user.user_name) %></li>
 
-				   		    <li><%= link_to "Leaderboards", leaderboards_path %></li>
+				   		    <li><%= link_to "Leaderboards", user_name_leaderboard_path(current_user.user_name) %></li>
 
 				    	    <li><%= link_to "Uitloggen", logout_path, :method => :delete %></li>			
 				    </ul>

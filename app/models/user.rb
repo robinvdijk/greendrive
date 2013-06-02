@@ -34,6 +34,10 @@ def self.search(search)
   end
 end
 
+# def to_param
+#   user_name
+# end
+
 
 
 # def self.search(search)

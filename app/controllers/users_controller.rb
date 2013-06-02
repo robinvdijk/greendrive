@@ -8,10 +8,10 @@ class UsersController < ApplicationController
   end
 
   def show
-      @user = User.find(params[:id])
+      @user = User.where(:user_name => params[:user_name]).first
 
    # @segment = Segment.find(params[:id])
-      @car = Car.find(params[:id])
+      @car = Car.where(:user_id => params[:id]).first
 
   end
   

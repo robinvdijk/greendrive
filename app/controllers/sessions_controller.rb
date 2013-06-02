@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
       else
         cookies[:auth_token] = user.auth_token
       end
-        redirect_to user_dashboards_path([current_user, @dashboard])
+        redirect_to user_name_dashboard_path(current_user.user_name)
         flash[:success] = "U bent succesvol ingelogd."
     else
       flash[:alert] = "E-mailadres en wachtwoord komen niet overeen."

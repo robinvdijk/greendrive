@@ -3,7 +3,11 @@ class BadgesController < ApplicationController
 
 
   def index
-    @car = Car.find(params[:user_id])
+    @user = User.where(:user_name => params[:user_name]).first
+
+ # @segment = Segment.find(params[:id])
+    @car = Car.where(:user_id => params[:id]).first
+
   
     @badges_electric = Badge.where('subject = ? and value <= ?', 'Mileage Electric', @car.mileage_electric).limit(1).order('value desc')
     @badges_fossile = Badge.where('subject = ? and value <= ?', 'Mileage Fossile', @car.mileage_fossile).limit(1).order('value desc')

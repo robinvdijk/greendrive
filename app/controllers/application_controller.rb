@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
  
   check_authorization
+  skip_authorization_check :only => [:root]
   # load_and_authorize_resource
 
   def search_results
@@ -26,6 +27,14 @@ class ApplicationController < ActionController::Base
   #   end
   # end
 
+	def root
+		if current_user
+      redirect_to user_name_path(current_user.user_name)
+		else	
+      redirect_to login_path
+		end
+	end
+  
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, :alert => exception.default_message = "U bent niet bevoegd deze pagina te bekijken."
   end

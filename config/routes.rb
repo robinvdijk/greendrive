@@ -1,9 +1,13 @@
 Greendrive::Application.routes.draw do  
-
-
-  get "contact_form/new"
-
-  get "contact_form/create"
+  
+  # root :to => 'dashboards#index', :user_name => 'test' # moet nog variable gemaakt worden. En zonder current_user werkt de root niet :/
+  
+  root :to => 'application#root'
+    
+  get 'users/:user_name/dashboard' => 'dashboards#index', :as => 'user_name_dashboard'
+  get 'users/:user_name/badges' => 'badges#index', :as => 'user_name_badges'
+  get 'users/:user_name/leaderboard' => 'leaderboards#index', :as => 'user_name_leaderboard'
+  get 'users/:user_name' => 'users#show', :as => 'user_name'
 
   resources :pictures, :only => [:index, :create, :destroy]
 
@@ -16,11 +20,7 @@ Greendrive::Application.routes.draw do
     # match '/auth/:provider/callback', to: 'sessions#create_facebook'
     # # match '/auth/facebook_session', to: 'sessions#create_facebook_session'
     # match 'auth/failure', to: redirect('/')
-      
-    match 'signout', to: 'sessions#destroy', as: 'signout'
-    match 'logout', to: 'sessions#destroy', as: 'logout'
 
-  resources :sessions
   resources :cars
 
   resources :users do
@@ -46,31 +46,25 @@ Greendrive::Application.routes.draw do
   end
   
   resources :traces
-  
-  resources :pages 
+  resources :pages
+
   resources :badges
-  resources :contact_forms
-  resources :contact
 
   resources :leaderboards
 
-  match "*path" => redirect("/") #Wrongly typed URL returns to root_path
-
-  resources :badges
-
-  root :to => "pages#homepage"
-
-  get 'faq' => 'pages#faq'
-  get 'contact' => 'contact#new'
+  match 'faq' => 'pages#faq', :as => 'faq', :via => :get
   
   match 'contact' => 'contact#new', :as => 'contact', :via => :get
-  match 'contact' => 'contact#create', :as => 'contact', :via => :post
   
+  resources :sessions
   controller :sessions do
-    get "login" => "sessions#new"
+    get "login" => "sessions#new" 
     post "login" => "sessions#create"
     delete "logout" => "sessions#destroy"
 end
+
+   match "*path" => redirect("/") #Wrongly typed URL returns to root_path, keep it at the bottom of all the routes.
+   
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
