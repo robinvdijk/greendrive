@@ -1,5 +1,7 @@
 class PasswordResetsController < ApplicationController
   skip_authorization_check
+  before_filter :find_user_by_password_reset_token, :only => [:edit, :update]
+  
   def new
   
   end
@@ -9,7 +11,7 @@ class PasswordResetsController < ApplicationController
   end
   
   def create     
-    if user = User.find_by_email(params[:email])
+    if user = find_user_by_email
       user.generate_password_reset
       UserMailer.password_reset(user).deliver
       redirect_to({controller: :sessions, action: :new}, :flash => {:success => "Er is een e-mail verstuurd met instructies om het wachtwoord opnieuw in te stellen."})
@@ -19,11 +21,9 @@ class PasswordResetsController < ApplicationController
   end
   
   def edit
-    find_user_by_password_reset_token
   end
 
   def update
-    find_user_by_password_reset_token
     if @user.password_reset_sent_at < 2.hours.ago
       redirect_to new_password_reset_path, :alert => "Het opnieuw instellen van uw wachtwoord is verlopen."
     elsif @user.update_attributes(params[:user])

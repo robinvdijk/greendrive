@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 
   def new
     unless current_user
-      new_user
+      @user = User.new
     else
       root
     end
@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
       else
         cookies[:auth_token] = user.auth_token
       end
-        root
+        redirect_to root_path
         flash[:success] = "U bent succesvol ingelogd."
     else
       flash[:alert] = "E-mailadres en wachtwoord komen niet overeen."
@@ -33,7 +33,7 @@ class SessionsController < ApplicationController
   
   def destroy
     cookies.delete(:auth_token)
-    root
+    redirect_to root_path
   end
   
   # def new_facebook

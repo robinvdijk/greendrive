@@ -8,15 +8,16 @@ class UsersController < ApplicationController
   end
 
   def show
-    get_user_and_car
+    get_user
+    get_car
   end
   
   def new
-    new_user
+    @user = User.new
   end
     
   def create
-    new_user(params[:user])
+    @user = User.new(params[:user])
     @user.role = 'user' #Hoort eigenlijk in model te staan. (hoort bij rollen)
       if @user.save
         cookies[:auth_token] = @user.auth_token
@@ -31,11 +32,11 @@ class UsersController < ApplicationController
   end
   
   def edit
-    find_user
+    get_user
   end
 
   def update
-    find_user
+    get_user
     respond_to do |format|
       if @user.update_attributes(params[:user])
        flash[:success] = 'Uw profiel is succesvol aangepast.'

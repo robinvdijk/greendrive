@@ -55,6 +55,7 @@ Greendrive::Application.routes.draw do
   match 'faq' => 'pages#faq', :as => 'faq', :via => :get
   
   match 'contact' => 'contact#new', :as => 'contact', :via => :get
+  match 'contact' => 'contact#create', :as => 'contact', :via => :post
   
   resources :sessions
   controller :sessions do

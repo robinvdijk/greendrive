@@ -5,7 +5,11 @@ class Badge < ActiveRecord::Base
   has_many :achievements
   has_many :users, through: :achievements
   
-  scope :one_and_highest, limit(1).order('value desc')
-
+  default_scope limit(1).order('value desc')
+  
+  
+  # scope :mileage_electric, where('subject = ? and value <= ?', 'Mileage Electric', @car.mileage_electric)
+  
+  
 end
   

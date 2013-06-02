@@ -1,9 +1,8 @@
 class BadgesController < ApplicationController
     skip_authorization_check
+    before_filter :get_badges
 
-  def index
-    get_user_and_car
-    get_badges    
+  def index   
   end
   
   def new_badge
