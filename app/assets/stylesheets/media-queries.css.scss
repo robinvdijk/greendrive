@@ -52,20 +52,6 @@ width: 100%;
 	margin-top:3.2%;
 }
 
-#col_badges_left {
-	float: left;
-	width: 32.3%;
-	margin-right: 3.2%;
-	background: red;
-}
-
-#col_badges_right {
-	float: left;
-	width: 64.5%;
-	margin-top: 3.2%;
-	background: blue;
-}
-
 .col_chart {
 	float:left;
 	width:30.6%;
@@ -77,16 +63,16 @@ width: 100%;
 	}	
 }
 
-.col_badges_left{
+#col_badges_left{
 	float:left;
 	width: 72.6%;
 	margin-top: 3.2%;
 }
 
-.col_badges_right{
+#col_badges_right{
 	float:left;
 	width:24.2%;
-	margin-left: 2.2%;
+	margin-left: 3.2%;
 	margin-top: 3.2%;
 }
 

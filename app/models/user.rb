@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
   before_create { generate_token(:auth_token) }
   mount_uploader :avatar, AvatarUploader
 
+
 def self.search(search)
   if search
     where('user_name LIKE ?', "%#{search}%")
@@ -33,11 +34,6 @@ def self.search(search)
     scoped
   end
 end
-
-# def to_param
-#   user_name
-# end
-
 
 
 # def self.search(search)

@@ -8,19 +8,15 @@ class UsersController < ApplicationController
   end
 
   def show
-      @user = User.where(:user_name => params[:user_name]).first
-
-   # @segment = Segment.find(params[:id])
-      @car = Car.where(:user_id => params[:id]).first
-
+    get_user_and_car
   end
   
   def new
-    @user = User.new
+    new_user
   end
     
   def create
-    @user = User.new(params[:user])
+    new_user(params[:user])
     @user.role = 'user' #Hoort eigenlijk in model te staan. (hoort bij rollen)
       if @user.save
         cookies[:auth_token] = @user.auth_token
@@ -35,11 +31,11 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @user = User.find(params[:id])
+    find_user
   end
 
   def update
-    @user = User.find(params[:id])
+    find_user
     respond_to do |format|
       if @user.update_attributes(params[:user])
        flash[:success] = 'Uw profiel is succesvol aangepast.'
@@ -51,7 +47,7 @@ class UsersController < ApplicationController
   end 
 
   def destroy
-    @user = User.find(params[:id])
+    find_user
     # Used to remove connected files (avatar photos) from users
     # @user.remove_file
     # FileUtils.remove_dir("#{Rails.root}/public/uploads/user/avatar/#{@user.id}", :force => true)  

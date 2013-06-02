@@ -20,7 +20,7 @@
 
 			<ul class="nav">
 				<li class="home">
-					<%= link_to image_tag("header_logo_white.svg"), user_name_dashboard_path(current_user.user_name), :class => "logo_effect"%>
+					<%= link_to image_tag("header_logo_white.svg"), root_path, :class => "logo_effect"%>
 				</li>
 				
 				<li class="icons_header" id="help_header">
@@ -38,7 +38,7 @@
 					<%= image_tag("menu.png", :alt => "menu") %>
 				  <% if current_user %>
 						<ul>
-							<li><%= link_to "Dashboard", user_name_dashboard_path(current_user.user_name) %></li>
+							<li><%= link_to "Dashboard", root_path %></li>
 							
 							<li><%= link_to "Badges", user_name_badges_path(current_user.user_name) %></li>
 							

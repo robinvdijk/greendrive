@@ -1,14 +1,19 @@
 class ContactController < ApplicationController
 skip_authorization_check
-  def new
+  
+  def new_message
     @message = Message.new
+  end
+  
+  def new
+    new_message
   end
 
   def create
-    @message = Message.new(params[:message])
+    new_message(params[:message])
     
     if @message.valid?
-      NotificationsMailer.new_message(@message).deliver
+      NotificationsMailer.send_message(@message).deliver
       redirect_to(root_path, :notice => "Bericht is succesvol verstuurd")
     else
       flash.now.alert = "Graag alle velden invullen"
