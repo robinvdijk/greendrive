@@ -55,7 +55,7 @@ class ApplicationController < ActionController::Base
 	  if current_user
       redirect_to user_name_dashboard_path(current_user.user_name)
     else
-      redirect_to login_path
+      redirect_to homepage_path
     end
 	end
   
