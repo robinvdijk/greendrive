@@ -16,10 +16,10 @@ class ApplicationController < ActionController::Base
   end
   
   def get_badges
-    @badges_electric = Badge.where('subject = ? and value <= ?', 'Mileage Electric', @car.mileage_electric)
-    @badges_fossile = Badge.where('subject = ? and value <= ?', 'Mileage Fossile', @car.mileage_fossile)
-    @badges_mileage = Badge.where('subject = ? and value <= ?', 'Mileage', @car.mileage)
-    @badges_ratio = Badge.where('subject = ? and value <= ?', 'Mileage Ratio', 100 * @car.mileage_electric / @car.mileage)
+    @badges_electric = Badge.where('subject = ? and value <= ?', 'Mileage Electric', @car.mileage_electric).limit(1).order('value desc')
+    @badges_fossile = Badge.where('subject = ? and value <= ?', 'Mileage Fossile', @car.mileage_fossile).limit(1).order('value desc')
+    @badges_mileage = Badge.where('subject = ? and value <= ?', 'Mileage', @car.mileage).limit(1).order('value desc')
+    @badges_ratio = Badge.where('subject = ? and value <= ?', 'Mileage Ratio', 100 * @car.mileage_electric / @car.mileage).limit(1).order('value desc')
   end
 
   def search_results
@@ -60,6 +60,6 @@ class ApplicationController < ActionController::Base
 	end
   
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to root_path, :alert => exception.default_message = "U bent niet bevoegd deze pagina te bekijken."
+    redirect_to root_url, :alert => exception.default_message = "U bent niet bevoegd deze pagina te bekijken."
   end
 end
