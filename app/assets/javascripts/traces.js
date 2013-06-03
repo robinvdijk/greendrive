@@ -24,6 +24,7 @@
    function drawChart() {
 		 
 	   var car_miles = $('#chart_div').data('car_miles');
+		 
 
      // Create the data table.
      var data = new google.visualization.DataTable();
