@@ -245,7 +245,7 @@ HEADER
 }
 .nav li:hover ul{ /* Display the dropdown on hover */
 	margin-top: 10px;
-	left:-102px; /* Bring back on-screen when needed */
+	left:-104px; /* Bring back on-screen when needed */
 	border-radius: 7px;
 	border: 1px solid $darkgreen;
 }
@@ -608,17 +608,15 @@ STICKY SCROLL
 }
 
 .badge_collection{
-	width: 100%;
-	height: auto;
 	overflow: auto;
 	background-color:rgba(255,255,255,0.5);
 	border-radius: 5px;
 	border:1px solid rgba(128, 128, 128, .3);
 }
 
-.sidebar_profile, .sidebar_badge_info {
-  position: absolute;
-  width:16%;
+#sidebar_profile, #sidebar_badge_info {
+  position: relative;
+  width:100%;
   background: $white; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
   background:rgba(255,255,255,0.5); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
   list-style:none;
@@ -636,9 +634,8 @@ STICKY SCROLL
 	}
 }
 
-.sidebar_badge_info{
-	float: left;
-	margin-top: 14.5%;
+#sidebar_badge_info{
+	margin-top: 14.4%;
 }
 
 
@@ -884,7 +881,6 @@ DASHBOARD
 	float:left;
 	margin-left:5.5%;
 	width:26%;
-	margin-top:0;
 	img {
 		border:none;
 		width:100%;

@@ -8,11 +8,8 @@ class UsersController < ApplicationController
   end
 
   def show
-      @user = User.find(params[:id])
-
-   # @segment = Segment.find(params[:id])
-      @car = Car.find(params[:id])
-
+    get_user
+    get_car
   end
   
   def new
@@ -35,11 +32,11 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @user = User.find(params[:id])
+    get_user
   end
 
   def update
-    @user = User.find(params[:id])
+    get_user
     respond_to do |format|
       if @user.update_attributes(params[:user])
        flash[:success] = 'Uw profiel is succesvol aangepast.'
@@ -51,7 +48,7 @@ class UsersController < ApplicationController
   end 
 
   def destroy
-    @user = User.find(params[:id])
+    find_user
     # Used to remove connected files (avatar photos) from users
     # @user.remove_file
     # FileUtils.remove_dir("#{Rails.root}/public/uploads/user/avatar/#{@user.id}", :force => true)  

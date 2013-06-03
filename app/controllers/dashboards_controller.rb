@@ -1,9 +1,10 @@
 class DashboardsController < ApplicationController
  load_and_authorize_resource
+ before_filter :get_badges
     
-
   def index
     begin
+
     @user = User.find(params[:user_id])
     @car = Car.find(params[:user_id])
     
@@ -17,12 +18,10 @@ class DashboardsController < ApplicationController
     @badges_mileage = Badge.where('subject = ? and value <= ?', 'Mileage', @car.mileage).limit(1).order('value desc')
     @badges_ratio = Badge.where('subject = ? and value <= ?', 'Mileage Ratio', 100 * @car.mileage_electric / @car.mileage).limit(1).order('value desc')
     
-    rescue ActiveRecord::RecordNotFound
-    	redirect_to root_path
-    end
-  
-  end
 
+    rescue ActiveRecord::RecordNotFound
+    	redirect_to root
+    end
+  end 
   # bundle exec whenever --update-crontab RAILS_ENV=production
-  
 end

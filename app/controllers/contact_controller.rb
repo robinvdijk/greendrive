@@ -8,8 +8,9 @@ skip_authorization_check
     @message = Message.new(params[:message])
     
     if @message.valid?
-      NotificationsMailer.new_message(@message).deliver
-      redirect_to(root_path, :notice => "Bericht is succesvol verstuurd")
+      NotificationsMailer.send_message(@message).deliver
+      redirect_to root_path
+      flash[:notice] = "Bericht is succesvol verstuurd"
     else
       flash.now.alert = "Graag alle velden invullen"
       render :new

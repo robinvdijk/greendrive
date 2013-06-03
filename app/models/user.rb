@@ -6,14 +6,14 @@ class User < ActiveRecord::Base
 
   has_many :authentications
   has_many :traces
-  has_one :car
+  has_one :car, :dependent => :destroy
   has_one :dashboard
   has_many :segments
   has_many :achievements
   has_many :badges, through: :achievements
 
-  validates_presence_of :password
-  validates_presence_of :password_confirmation
+  validates_presence_of :password, :except => [:edit, :update] #Werkt niet grrr
+  validates_presence_of :password_confirmation, :except => [:edit, :update] #Werkt niet grrr
   validates_format_of :password, :with => /(?=^.{6,20}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/
   #Password: Length between 6-20 characters, which consists of [at least] 1 lowercase, 1 uppercase and 1 special character OR digit
   validates :first_name, :presence => true
@@ -33,7 +33,6 @@ def self.search(search)
     scoped
   end
 end
-
 
 
 # def self.search(search)

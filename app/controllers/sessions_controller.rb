@@ -4,31 +4,36 @@ class SessionsController < ApplicationController
   # skip_authorize_resource :only => :new
 
   def index
-    redirect_to root_path
+    root
   end
 
   def new
     unless current_user
-     @user = User.new
+      @user = User.new
     else
-      redirect_to root_path
+      root
     end
   end
 
   def create
-    user = User.find_by_email(params[:email])
+    user = find_user_by_email
     if user && user.authenticate(params[:password])
       if params[:remember_me]
         cookies.permanent[:auth_token] = user.auth_token
       else
         cookies[:auth_token] = user.auth_token
       end
-        redirect_to user_dashboards_path([current_user, @dashboard])
+        redirect_to root_path
         flash[:success] = "U bent succesvol ingelogd."
     else
       flash[:alert] = "E-mailadres en wachtwoord komen niet overeen."
       redirect_to new_session_path
     end
+  end
+  
+  def destroy
+    cookies.delete(:auth_token)
+    redirect_to root_path
   end
   
   # def new_facebook
@@ -66,8 +71,4 @@ class SessionsController < ApplicationController
   #   flash[:success] = 'U bent succeslvol ingelogt met '
   # end
 
-  def destroy
-    cookies.delete(:auth_token)
-    redirect_to root_url
-  end
 end

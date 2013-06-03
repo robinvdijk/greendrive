@@ -1,34 +1,26 @@
 class BadgesController < ApplicationController
     skip_authorization_check
+    before_filter :get_badges
 
-
-  def index
-    @car = Car.find(params[:user_id])
-  
-    @badges_electric = Badge.where('subject = ? and value <= ?', 'Mileage Electric', @car.mileage_electric).limit(1).order('value desc')
-    @badges_fossile = Badge.where('subject = ? and value <= ?', 'Mileage Fossile', @car.mileage_fossile).limit(1).order('value desc')
-    @badges_mileage = Badge.where('subject = ? and value <= ?', 'Mileage', @car.mileage).limit(1).order('value desc')
-    @badges_ratio = Badge.where('subject = ? and value <= ?', 'Mileage Ratio', @car.mileage_electric / @car.mileage).limit(1).order('value desc')
-    
-    
-    
+  def index   
   end
-
-
+  
+  def new_badge
+    @badge = Badge.new   
+  end
+  
   def new
-    @badge = Badge.new
+    new_badge
     @badges = Badge.all
   end
   
   def create
-    @badge = Badge.new(params[:badge])
+    new_badge(params[:badge])
     if @badge.save
       redirect_to new_badge_path
     else
       render 'new'
     end
   end
-  
- 
-  # 
+
 end
