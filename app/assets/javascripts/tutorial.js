@@ -7,7 +7,11 @@ $(document).ready(function() {
 
 
 	//--------------------First--Page--Trigger-----------
-	
+	$('#new_car .button').on('click', function(){ 
+		$('#new_car').toggle();
+		$('#blanket').toggle();		
+		$('#tutorial_1').slideToggle(800); 
+	});
 	
 	$('#help').on('click', function(){ 
 		$('#blanket').toggle();		

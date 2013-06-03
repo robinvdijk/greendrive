@@ -90,7 +90,7 @@
 					<li class="center"><%= link_to 'Bekijk badges', user_name_badges_path(current_user.user_name) %></li>
 					<li class="center"><%= link_to 'Bekijk profiel', user_name_path(current_user.user_name)%></li>
 					<% if can? :destroy, @user %>
-						<li class="center" style="background:none"><%= link_to 'Uitloggen', root_url%></li>	
+						<li class="center" style="background:none"><%= link_to 'Uitloggen', logout_path%></li>	
 					<% end %>
 				</ul>	
 			</div>

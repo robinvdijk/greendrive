@@ -9,7 +9,6 @@ class CarsController < ApplicationController
     @car = Car.new(params[:car])
     if @car.save
       flash[:success] = "De auto is succesvol gekoppeld en u bent succesvol ingelogd."
-      redirect_to root_path
       username = @car.username 
       password = @car.password
     else
