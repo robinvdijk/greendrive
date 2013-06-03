@@ -1,5 +1,5 @@
-$(document).ready(function()
-      {  
+$(document).ready(function(){ 
+				
 				
          $("#all").click(function() {
 			   $("#all_date").show()
@@ -7,7 +7,7 @@ $(document).ready(function()
          }); 
 				
          $("#week").click(function() {
-				 $("#week_date, #chart_div1").show()
+				 $("#week_date, #chart_div2").show()
          $("#all_date").hide()
 			 	 });
 });

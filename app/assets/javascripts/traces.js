@@ -23,7 +23,8 @@
 	 
    function drawChart() {
 		 
-	   var car_miles = $('#chart_div').data('car_miles');
+	   var car_miles = $('#chart_div1').data('car_miles');
+		 var car_miles_week = $('#chart_div2').data('car_miles_week')
 
      // Create the data table.
      var data = new google.visualization.DataTable();
@@ -32,6 +33,15 @@
 	     data.addRows([
 	       ['Electric', car_miles.electric],
 	       ['Fossile', car_miles.fossile],
+				 ['Empty', 0]                 
+     	 ]);
+			 
+     var data2 = new google.visualization.DataTable();
+	     data2.addColumn('string', 'Ratio');    
+	     data2.addColumn('number', 'Slices');
+	     data2.addRows([
+	       ['Electric', car_miles_week.electric],
+	       ['Fossile', car_miles_week.fossile],
 				 ['Empty', 0]                 
      	 ]);
 
@@ -55,8 +65,9 @@
 		};
 					
      // Instantiate and draw our chart, passing in some options.
-     var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+     var chart = new google.visualization.PieChart(document.getElementById('chart_div1'));
      chart.draw(data, options);
-             
+     var chart = new google.visualization.PieChart(document.getElementById('chart_div2'));
+     chart.draw(data2, options);
    }
 
