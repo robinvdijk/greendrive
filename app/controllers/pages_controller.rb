@@ -1,3 +1,3 @@
 class PagesController < ApplicationController
-  skip_authorization_check :only => [:faq]
+  skip_authorization_check :only => [:faq, :homepage, :contact]
 end

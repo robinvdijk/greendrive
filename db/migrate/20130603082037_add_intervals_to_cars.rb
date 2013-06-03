@@ -7,11 +7,5 @@ class AddIntervalsToCars < ActiveRecord::Migration
     add_column :cars, :last_week_fossile, :integer, :default => 0
     add_column :cars, :last_month_fossile, :integer, :default => 0
     add_column :cars, :last_year_fossile, :integer, :default => 0
-    
-    
-    
-    
-
-    
   end
 end

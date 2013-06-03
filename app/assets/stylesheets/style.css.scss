@@ -58,10 +58,6 @@ LELIJKE CSS VOOR DE PROFIELPAGINA (wel laten staan aub)
     font-size:12px;
 }
 
-#mockup {
-	background-image: url('mockup.png');
-	height: 790px;
-}
 
 body {
 	background: url('/images/subtlenet2.png') repeat;	
@@ -262,7 +258,7 @@ HEADER
 
 .search-input{
 	position: relative;
-	border-radius: 5px;
+	border-radius: 15px;
 	padding: 5px 5px;
 	width: 200px;
 	top: -7px;
@@ -496,6 +492,8 @@ HOMEPAGE
 	width: 125px;
 	height: 125px;
 	margin-bottom: 20px;
+	border: 2px solid $darkgreen;
+	border-radius: 5px;
 }
 
 #block_2, #block_3, #block_4, #block_5, #block_6, #block_7, #block_8 {
@@ -503,7 +501,7 @@ HOMEPAGE
 }
 
 #block_1 {
-	background-image: url("icon_pas.svg");
+	background-image: url("icon_share.svg");
 }
 #block_2 {
 	background-image: url("icon_car.svg");
@@ -844,18 +842,21 @@ DASHBOARD
 	padding-right:5px;
 }
 
-#chart_div {
+#chart_div1, #chart_div2, #chart_div3 {
 	margin:-8% 0 12% 0;
 }
 
-#chart_div1 {
-	margin:-8% 0 12% 0;
-}
+
 
 .chart_info {
 	text-align:center;
 	margin-top:1%;
 }
+
+#week_date, #month_date {
+	display:none;
+}
+
 
 
 /*************************************************************************************
@@ -878,6 +879,7 @@ DASHBOARD
 }
 
 .badge {
+	margin-top: 0px !important;
 	float:left;
 	margin-left:5.5%;
 	width:26%;

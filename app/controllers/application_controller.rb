@@ -55,11 +55,11 @@ class ApplicationController < ActionController::Base
 	  if current_user
       redirect_to user_name_dashboard_path(current_user.user_name)
     else
-      redirect_to login_path
+      redirect_to homepage_path
     end
 	end
   
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to root_path, :alert => exception.default_message = "U bent niet bevoegd deze pagina te bekijken."
+    redirect_to root_url, :alert => exception.default_message = "U bent niet bevoegd deze pagina te bekijken."
   end
 end
