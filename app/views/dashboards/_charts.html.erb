@@ -1,5 +1,5 @@
 <div id="all_date">
-	<div class="chart_div" data-car_miles='<%= @car_miles.to_json %>' style="width:500px; height:250px"></div>
+	<div id="chart_div" data-car_miles='<%= @car_miles.to_json %>' style="width:500px; height:250px"></div>
 	<ul class='chart_stats'>
 
 		<li class=col_chart><p>Elektrisch</p>	<%= @car.mileage_electric %> </li>
@@ -10,11 +10,11 @@
 </div>
 
 <div id="week_date">
-	<div id="chart_div" data-car_miles='<%= @car_miles.to_json %>' style="width:500px; height:250px"></div>
+	<div id="chart_div1" data-car_miles='<%= @car_miles_week.to_json %>' style="width:500px; height:250px"></div>
 	<ul class='chart_stats'>
 
 		<li class=col_chart><p>Elektrisch</p> <%= @car.last_week_electric %> km </li>
-		<li class=col_chart><p>Fossiel</p> <%= @car.mileage_fossile %> km </li>
+		<li class=col_chart><p>Fossiel</p> <%= @car.last_week_fossile %> km </li>
 		<li class=col_chart style='border:none'><p>Totaal</p> <%= @car.last_week %> km </li>
 
 	</ul>

@@ -604,6 +604,7 @@ STICKY SCROLL
 	margin-bottom:4.5%;
 	background:rgba(255,255,255,0.5);
 	height:395px;
+	overflow: hidden;
 }
 
 .badge_collection{
@@ -846,7 +847,11 @@ DASHBOARD
 	padding-right:5px;
 }
 
-.chart_div {
+#chart_div {
+	margin:-8% 0 12% 0;
+}
+
+#chart_div1 {
 	margin:-8% 0 12% 0;
 }
 
@@ -855,9 +860,7 @@ DASHBOARD
 	margin-top:1%;
 }
 
-#week_date {
-	display: none;
-}
+
 /*************************************************************************************
 	Profile
 *************************************************************************************/

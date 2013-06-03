@@ -7,7 +7,7 @@ $(document).ready(function()
          }); 
 				
          $("#week").click(function() {
-				 $("#week_date").show()
+				 $("#week_date, #chart_div1").show()
          $("#all_date").hide()
 			 	 });
 });

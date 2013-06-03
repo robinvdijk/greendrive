@@ -55,10 +55,13 @@ ActiveRecord::Schema.define(:version => 20130601153216) do
     t.string   "model"
     t.float    "last_week",           :default => 0.0
     t.float    "last_month",          :default => 0.0
-    t.float    "last_week_electric",  :default => 0.0
-    t.float    "last_month_electric", :default => 0.0
-    t.float    "last_year",           :default => 0.0
-    t.float    "last_year_electric",  :default => 0.0
+    t.integer  "last_week_electric",  :default => 0
+    t.integer  "last_month_electric", :default => 0
+    t.integer  "last_year",           :default => 0
+    t.integer  "last_year_electric",  :default => 0
+    t.integer  "last_week_fossile",   :default => 0
+    t.integer  "last_month_fossile",  :default => 0
+    t.integer  "last_year_fossile",   :default => 0
   end
 
   create_table "intervals", :force => true do |t|
