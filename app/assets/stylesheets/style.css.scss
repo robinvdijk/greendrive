@@ -34,13 +34,6 @@ LELIJKE CSS VOOR DE PROFIELPAGINA (wel laten staan aub)
 	  }
 	}*/
 
-	.fixed {
-    position:fixed;
-    top:0%;
-    left:50%;
-    margin-left:50px;
-	}
-
 /*************************************************************************************/
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500);
 
@@ -73,6 +66,9 @@ body {
 	position: relative;
 	top: 15px;
 	width: 100%;
+	img {
+		width: 100%;
+	}
 }
 
 .align-center {
@@ -492,16 +488,16 @@ HOMEPAGE
 	width: 125px;
 	height: 125px;
 	margin-bottom: 20px;
-	border: 2px solid $darkgreen;
+	border: 1px solid grey;
 	border-radius: 5px;
 }
 
-#block_2, #block_3, #block_4, #block_5, #block_6, #block_7, #block_8 {
+#block_1, #block_2, #block_3, #block_4, #block_5, #block_6, #block_7, #block_8 {
 	@extend .block;
 }
 
 #block_1 {
-	background-image: url("icon_share.svg");
+	background-image: url("icon_pas.svg");
 }
 #block_2 {
 	background-image: url("icon_car.svg");
@@ -836,8 +832,7 @@ DASHBOARD
 *************************************************************************************
 	Chart
 *************************************************************************************/
-.vertical-line-dashboard {
-	border-right: #313131 1px solid;
+.nav_interval {
 	display:inline;
 	padding-right:5px;
 }
@@ -855,8 +850,36 @@ DASHBOARD
 
 #week_date, #month_date {
 	display:none;
+	overflow:hidden;
 }
 
+#all_date {
+	overflow: hidden;
+}
+
+#legenda {
+	position: absolute;
+	width: 200px;
+	height: 250px;
+	margin: 110px 0 0 425px;
+}
+
+#donker {
+	width: 25px;
+	height: 25px;
+	background-color: #006837;
+	border-radius: 5px;
+	text-indent: 35px;
+	padding: 1px 1px 0 0;
+
+}
+
+#licht {
+	@extend #donker;
+	background-color: $green;
+
+	
+}
 
 
 /*************************************************************************************
@@ -875,7 +898,7 @@ DASHBOARD
 	border:1px solid rgba(128, 128, 128, .3);
 	border-radius: 5px;
 	background:rgba(255,255,255,0.5);
-	padding-bottom:248px;
+	padding-bottom:265px;
 }
 
 .badge {
@@ -889,6 +912,10 @@ DASHBOARD
 		height:100%;
 		margin: 5% 0 5% 0;
 	}
+}
+
+.badge_dash {
+	@extend .badge;
 }
 /*************************************************************************************
 	Buttons

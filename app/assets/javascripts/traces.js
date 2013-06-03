@@ -68,7 +68,7 @@
 			 pieHole: 0.65,
 			 pieSliceText: 'none',
 			 slices: {
-					0: {color: '#39b54a'}, 
+					0: {color: '#48b237'}, 
 					1: {color: '#006837'}, 
 					2: {color: '#808080'}
 			 },
