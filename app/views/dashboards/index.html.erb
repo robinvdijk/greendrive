@@ -4,21 +4,22 @@
 	<div id="blanket"></div>	
 
 		<div id="col_dashboard_left">
-			<div id="chart_header">
-				<ul class='chart_info'>
-					<li class='vertical-line-dashboard'><%= link_to '', '' %></li>
-					<li class='vertical-line-dashboard'><a href="#" id="week">Vorige week</a></li>
-					<li class='vertical-line-dashboard'><a href="#" id="month">Vorige maand</a></li>
-					<li class='vertical-line-dashboard'><a href="#" id="all">Alles</a></li>
-				</ul>
-				
-			</div>
+			
 			<div id='chart'>
+				<ul class='chart_info'>
+					<li class='nav_interval'><a href="#" id="week">Vorige week</a></li> |
+					<li class='nav_interval'><a href="#" id="month">Vorige maand</a></li> |
+					<li class='nav_interval'><a href="#" id="all">Alles</a></li>
+				</ul>
+				<div id="legenda">
+					<div id="licht">Elektrisch</div><br>
+					<div id="donker">Fossiel</div> 
+				</div>
 				<%= render 'charts'%>
 			</div>
 						
 			<ul id="badges" class="center">	
-				<li class="badge">
+				<li class="badge_dash">
 					<% @badges_electric.each do |badge| %>
 						<%= image_tag badge.avatar_url(), class: 'avatar' %>		
 						<!-- <% if badge.value == 0 %>
@@ -29,7 +30,7 @@
 					<% end %>
 				</li>
 				
-				<li class="badge">
+				<li class="badge_dash">
 					<% @badges_fossile.each do |badge| %>
 						<%= image_tag badge.avatar_url(), class: 'avatar' %>		
 						<!-- <% if badge.value == 0 %>
@@ -40,7 +41,7 @@
 					<% end %>
 				</li>
 				
-				<li class="badge">
+				<li class="badge_dash">
 					<% @badges_ratio.each do |badge| %>
 						<%= image_tag badge.avatar_url(), class: 'avatar' %>		
 						<!-- <% if badge.value == 0 %>
@@ -89,7 +90,7 @@
 					<li class="center"><%= link_to 'Bekijk badges', user_name_badges_path(current_user.user_name) %></li>
 					<li class="center"><%= link_to 'Bekijk profiel', user_name_path(current_user.user_name)%></li>
 					<% if can? :destroy, @user %>
-						<li class="center" style="background:none"><%= link_to 'Uitloggen', logout_path, :method => :delete %></li>	
+						<li class="center" style="background:none"><%= link_to 'Uitloggen', root_url%></li>	
 					<% end %>
 				</ul>	
 			</div>
