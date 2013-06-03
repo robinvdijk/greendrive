@@ -7,7 +7,8 @@ $(document).ready(function() {
 
 
 	//--------------------First--Page--Trigger-----------
-	$('#new_car .button').on('click', function(){ 
+	$('#new_car .button').click(function(){ 
+		window.location = '/users';
 		$('#new_car').toggle();
 		$('#blanket').toggle();		
 		$('#tutorial_1').slideToggle(800); 

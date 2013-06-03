@@ -21,18 +21,17 @@ reader.readAsDataURL(input.files[0]);
 
 <div id="pagewrap">		
 <%= form_for(@user) do |f| %>
-	
+	<div class="profile_border">
 		<div class="wrapper grid2">	
 			<article class="col">
 				<div id="vertical-line-right">
 					<ul>
-
 						<li>
 							<h2>Bewerken</h2>
 						</li>
 						<li>
 							<% if @user.avatar? %>
-							<%= image_tag @user.avatar_url(:thumb), :class => "avatar" %>
+							<%= image_tag @user.avatar_url(), :class => "avatar" %>
 							<% else %>
 							<%= image_tag("avatar.png", :alt => "default-avatar", :class => "avatar") %>
 							<% end %>
@@ -110,7 +109,7 @@ reader.readAsDataURL(input.files[0]);
 					</li>
 				</ul>
 			</article>
-			
 		</div>
-	<% end %>
+	</div>
+<% end %>
 </div>
