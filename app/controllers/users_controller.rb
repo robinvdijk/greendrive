@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   # before_filter :user_required, :except => [:new, :create]
-
+  before_filter :get_user
+  
   load_and_authorize_resource
   
   def index
@@ -8,7 +9,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    get_user
     get_car
   end
   

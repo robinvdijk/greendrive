@@ -13,6 +13,7 @@
 						op te kunnen halen.
 					</p>
 				</li>
+					<%= f.hidden_field :user_id, value: current_user.id %>
 				<li>
 					<%= f.label :username, 'Username (360-ev.com) *' %><br />
 					<%= f.text_field :username, :class => "field" %>

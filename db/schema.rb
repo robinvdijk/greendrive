@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130603082037) do
+ActiveRecord::Schema.define(:version => 20130603222827) do
 
   create_table "achievements", :force => true do |t|
     t.integer  "badge_id"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(:version => 20130603082037) do
     t.integer  "company_id"
     t.integer  "user_id"
     t.integer  "segment_id"
-    t.integer  "mileage",             :default => 0
+    t.integer  "mileage",             :default => 1
     t.integer  "mileage_electric",    :default => 0
     t.integer  "mileage_fossile",     :default => 0
     t.datetime "created_at",                           :null => false
