@@ -32,8 +32,8 @@
 	     data.addColumn('string', 'Ratio');    
 	     data.addColumn('number', 'Slices');
 	     data.addRows([
-	       ['Electric', car_miles.electric],
-	       ['Fossile', car_miles.fossile],
+	       ['Elektrisch', car_miles.electric],
+	       ['Fossiel', car_miles.fossile],
 				 ['Empty', 0]                 
      	 ]);
 			 
@@ -41,8 +41,8 @@
 	     data2.addColumn('string', 'Ratio');    
 	     data2.addColumn('number', 'Slices');
 	     data2.addRows([
-	       ['Electric', car_miles_week.electric],
-	       ['Fossile', car_miles_week.fossile],
+	       ['Elektrisch', car_miles_week.electric],
+	       ['Fossiel', car_miles_week.fossile],
 				 ['Empty', 0]                 
      	 ]);
 			 
@@ -50,8 +50,8 @@
 	     data3.addColumn('string', 'Ratio');    
 	     data3.addColumn('number', 'Slices');
 	     data3.addRows([
-	       ['Electric', car_miles_month.electric],
-	       ['Fossile', car_miles_month.fossile],
+	       ['Elektrisch', car_miles_month.electric],
+	       ['Fossiel', car_miles_month.fossile],
 				 ['Empty', 0]                 
      	 ]);
 			 

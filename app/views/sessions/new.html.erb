@@ -29,7 +29,7 @@ reader.readAsDataURL(input.files[0]);
 					
 					<li>
 						<%= label :email, 'Email'%><br />
-						<%= text_field_tag :email, params[:email], :class => 'field aligncenter', :placeholder => "E-mailadres" %><br />
+						<%= email_field_tag :email, params[:email], :class => 'field aligncenter', :placeholder => "E-mailadres" %><br />
 					</li> 
 					<li>	
 						<%= label :password, 'Wachtwoord'%><br />
@@ -83,7 +83,7 @@ reader.readAsDataURL(input.files[0]);
 								</li>
 								<li>
 					  			    <%= f.label :email, 'E-mail *' %><br />
-					  			    <%= f.text_field :email, :autofocus => true, :class => 'field' %>
+					  			    <%= f.email_field :email, :autofocus => true, :class => 'field' %>
 									</li>
 								<li>
 					  			    <%= f.label :user_name, 'Gebruikersnaam *' %><br />

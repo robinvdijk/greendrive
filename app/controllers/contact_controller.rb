@@ -1,4 +1,5 @@
 class ContactController < ApplicationController
+  skip_authorization_check
 
   def new
     @message = Message.new

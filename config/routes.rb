@@ -8,6 +8,7 @@ Greendrive::Application.routes.draw do
   get 'users/:user_name/badges' => 'badges#index', :as => 'user_name_badges'
   get 'users/:user_name/leaderboard' => 'leaderboards#index', :as => 'user_name_leaderboard'
   get 'users/:user_name' => 'users#show', :as => 'user_name'
+  get 'users/:user_name/edit' => 'users#edit', :as => 'user_name_edit'
 
   resources :pictures, :only => [:index, :create, :destroy]
 

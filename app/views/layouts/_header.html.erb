@@ -1,8 +1,5 @@
-<% unless controller_name == "pages" %>
-	
-
+<% unless controller.action_name == "homepage" %>
 	<div class="header">
-		
 		<% if controller_name == "sessions"  || controller_name == "password_resets" %>
 			<div id="pagewrap">
 				<ul class="nav">
@@ -11,13 +8,8 @@
 					</li>
 				</ul>
 			</div>
-			
 		<% else %>
-		
-		
-
 		<div id="pagewrap">
-
 			<ul class="nav">
 				<li class="home">
 					<%= link_to image_tag("header_logo_white.svg"), root_path, :class => "logo_effect"%>
@@ -33,10 +25,9 @@
 						<li><%= link_to 'Contact', contact_path %></li>
 					</ul>
 				</li>		
-						
+				<% if current_user %>		
 				<li class="icons_header">
 					<%= image_tag("menu.png", :alt => "menu") %>
-				  <% if current_user %>
 						<ul>
 							<li><%= link_to "Dashboard", root_path %></li>
 							
@@ -47,36 +38,24 @@
 				   		    <li><%= link_to "Leaderboards", user_name_leaderboard_path(current_user.user_name) %></li>
 
 				    	    <li><%= link_to "Uitloggen", logout_path, :method => :delete %></li>			
-				    </ul>
-
-					<% end %>
+				  	  </ul>
 				</li>
-				
-
 				<li class="icons_header">
 					<%= form_tag ("/search_results"), :method => "get", :class=>"navbar-form" do %>
         				<%= text_field_tag ("search"), params[:search], :class => 'search-input span2', :placeholder => 'Zoek naar gebruikers...' %>&nbsp
-       					<%= image_submit_tag("search.png") %></li></ul>
+       					<%= image_submit_tag("search.png") %>
     				<% end %>
 				</li>
+				<% end %>
 			</ul>
-    				
-
-				
-			</ul>
-
-		
 		</div>
 		<% end %>
-		
+	</div>
 <% end %>
 		
 		
-		
-	
-	<!-- <%= link_to "Gebruikers", users_path %> -->
 
-	</div>
+
 
 
 

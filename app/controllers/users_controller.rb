@@ -32,17 +32,18 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @user = User.find(params[:id])
+    get_user
   end
 
   def update
-    get_user
+    find_user
     respond_to do |format|
       if @user.update_attributes(params[:user])
        flash[:success] = 'Uw profiel is succesvol aangepast.'
-       format.html { redirect_to(@user) }
+       format.html { redirect_to user_name_path(current_user.user_name) }
       else
-        format.html  { render :action => "edit", :notice => 'Er is iets misgegaan. Mogelijk zijn niet alle velden correct ingevuld.' }
+       flash[:alert] = 'Er is iets misgegaan. Mogelijk zijn niet alle velden correct ingevuld.'
+       format.html { render :edit }
       end       
     end
   end 
