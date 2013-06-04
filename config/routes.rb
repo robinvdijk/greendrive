@@ -59,13 +59,15 @@ Greendrive::Application.routes.draw do
   match 'contact' => 'contact#create', :as => 'contact', :via => :post
   match 'homepage' => 'pages#homepage'
   
-  resources :sessions
+  match 'logout' => 'sessions#destroy', :as => 'logout'
+
   controller :sessions do
     get "login" => "sessions#new" 
     post "login" => "sessions#create"
     delete "logout" => "sessions#destroy"
-end
-
+  end
+  resources :sessions
+  
    match "*path" => redirect("/") #Wrongly typed URL returns to root_path, keep it at the bottom of all the routes.
    
   # The priority is based upon order of creation:
