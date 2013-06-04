@@ -1,3 +1,4 @@
+<% provide(:title, 'Badge toevoegen') %>
 <%= form_for(@badge) do |f| %>
   
 	<% if @badge.errors.any? %>
@@ -15,6 +16,11 @@
 		<li>
 			<h2>Badge toevoegen</h2>
 		</li>	
+
+		<li>
+			<%= f.label :title, "Titel" %><br />
+			<%= f.text_field :title, class: 'field' %>
+		</li>
 		<li>
 			<%= f.label :subject, "Onderwerp" %><br />
 			<%= f.text_field :subject, class: 'field' %>

@@ -17,13 +17,18 @@
 				</tr>
 				<% @users.each do |user| %>
 					<tr>
-						<td><%= user.user_name%></td>
+						<td class="leaderboards_td1"><%= user.user_name%></td>
 						<% if user.score %>
-							<td><%= user.score %></td>
+							<td class="leaderboards_td2"><%= user.score %> punten</td>
 						<% else %>
-							<td>0</td>
+							<td class="leaderboards_td2">0 punten</td>
 						<% end %>
-						<td>Ratio data</td>
+
+						<% if user.ratio %>
+							<td class="leaderboards_td3"><%= user.ratio %>%</td>
+						<% else %>
+							<td class="leaderboards_td3">Onbekend</td>
+						<% end %>
 					</tr>
 				<% end %>
 			</table>

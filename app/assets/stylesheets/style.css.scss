@@ -282,7 +282,7 @@ LEADERBOARDS
 	margin-left:500px;
 }
 
-.period_name{
+.period_name{ /*This makes sure the sort-arrow doesn't disappear*/
 	display: inline;
 }
 
@@ -305,11 +305,32 @@ table.leaderboards{
 	padding:0;
 }
 
+.leaderboards tr{
+	border-bottom: solid 1px #ABABAB;
+}
+
+.leaderboards th{
+	padding-left: 15px;
+}
 .leaderboards th .current {
   background-repeat: no-repeat;
   background-position: 45px -5px;
   height:auto;
   display:block;
+}
+
+.leaderboards_td1{
+ border-right: solid 1px #ABABAB;
+padding-left: 15px;
+}
+
+.leaderboards_td2{
+border-right: solid 1px #ABABAB;
+padding-left: 15px;
+}
+
+.leaderboards_td3{
+padding-left: 15px;
 }
 
 .leaderboards th .asc, .leaderboards th .desc {
@@ -332,7 +353,6 @@ tbody tr:nth-child(even) {
 .sort_types{
 	border-bottom: 1px solid grey;
 }
-
 
 /************************************************************************************
 SEARCH RESULTS
@@ -378,7 +398,9 @@ FAQ
 	}
 }		
 
-/*************************************************************************************/
+/************************************************************************************
+SEARCH RESULTS
+*************************************************************************************/
 
 .search_results{
 	margin-bottom:10px;

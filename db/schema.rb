@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130603222827) do
+ActiveRecord::Schema.define(:version => 20130604134827) do
 
   create_table "achievements", :force => true do |t|
     t.integer  "badge_id"
@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(:version => 20130603222827) do
     t.string   "avatar"
     t.integer  "points"
     t.string   "subject"
-    t.string   "theme"
     t.string   "description"
+    t.string   "theme"
   end
 
   create_table "cars", :force => true do |t|
@@ -53,8 +53,8 @@ ActiveRecord::Schema.define(:version => 20130603222827) do
     t.string   "username"
     t.string   "password"
     t.string   "model"
-    t.float    "last_week"
-    t.float    "last_month"
+    t.float    "last_week",           :default => 0.0
+    t.float    "last_month",          :default => 0.0
     t.integer  "last_week_electric",  :default => 0
     t.integer  "last_month_electric", :default => 0
     t.integer  "last_year",           :default => 0
@@ -62,6 +62,11 @@ ActiveRecord::Schema.define(:version => 20130603222827) do
     t.integer  "last_week_fossile",   :default => 0
     t.integer  "last_month_fossile",  :default => 0
     t.integer  "last_year_fossile",   :default => 0
+  end
+
+  create_table "dashboards", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "intervals", :force => true do |t|
@@ -88,6 +93,23 @@ ActiveRecord::Schema.define(:version => 20130603222827) do
     t.string   "license_plate"
     t.float    "mileage_electric",     :default => 0.0
     t.float    "mileage_fossile",      :default => 0.0
+  end
+
+  create_table "taggings", :force => true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       :limit => 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
+
+  create_table "tags", :force => true do |t|
+    t.string "name"
   end
 
   create_table "traces", :force => true do |t|
@@ -126,6 +148,7 @@ ActiveRecord::Schema.define(:version => 20130603222827) do
     t.string   "middle_name"
     t.integer  "score"
     t.string   "rank"
+    t.string   "ratio"
   end
 
 end
