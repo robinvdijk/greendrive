@@ -1,5 +1,6 @@
 class CarsController < ApplicationController
   skip_authorization_check
+  before_filter :get_user
   
   def new
     @car = Car.new  

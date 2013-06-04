@@ -46,10 +46,10 @@ ActiveRecord::Schema.define(:version => 20130603222827) do
     t.integer  "user_id"
     t.integer  "segment_id"
     t.integer  "mileage",             :default => 1
-    t.integer  "mileage_electric"
-    t.integer  "mileage_fossile"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "mileage_electric",    :default => 0
+    t.integer  "mileage_fossile",     :default => 0
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
     t.string   "username"
     t.string   "password"
     t.string   "model"

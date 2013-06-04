@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_user
-  before_filter :get_user, :get_car
  
   check_authorization
   skip_authorization_check :only => [:root]
@@ -12,7 +11,7 @@ class ApplicationController < ActionController::Base
   end
   
   def get_car
-    @car = Car.where(:user_id => params[:id]).first
+    @car = Car.where('user_id = ?', current_user.id).first
   end
   
   def get_badges

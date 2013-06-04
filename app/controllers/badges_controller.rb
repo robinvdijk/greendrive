@@ -1,21 +1,16 @@
 class BadgesController < ApplicationController
     skip_authorization_check
-    before_filter :get_badges
+    before_filter :get_user, :get_car, :get_badges
 
   def index   
   end
   
-  def new_badge
-    @badge = Badge.new   
-  end
-  
   def new
-    new_badge
-    @badges = Badge.all
+    @badge = Badge.new
   end
   
   def create
-    new_badge(params[:badge])
+    @badge = Badge.new(params[:badge])
     if @badge.save
       redirect_to new_badge_path
     else
