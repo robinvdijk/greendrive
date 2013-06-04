@@ -36,20 +36,6 @@ http://www.dynamicdrive.com/dynamicindex4/thumbnail2.htm-->
 		<% end %>
 	</div>
 
-	<div class="badge" id="general">
-			<% @badges_fossile.each do |badge| %>
-				<%= image_tag badge.avatar_url(), class: 'avatar' %>		
-				
-				<div class="badge_description">
-					<%= badge.description %>
-				</div>
-				<!-- <% if badge.value == 0 %>
-				<% else %>
-				<p><%= badge.value %> fossiele kilometer badge </p>				 
-				<p>Punten: <%= badge.points %></p>
-				<% end %> -->
-			<% end %>
-		</div>
 
 		<div class="badge" id="divers">
 			<% @badges_mileage.each do |badge| %>

@@ -1,4 +1,3 @@
-job_type :rake, "cd :path && PATH=/usr/local/bin:$PATH RAILS_ENV=:environment bundle exec rake :task :output"
 set :environment, 'production' 
 
 

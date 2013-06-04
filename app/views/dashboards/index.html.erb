@@ -31,17 +31,6 @@
 				</li>
 				
 				<li class="badge_dash">
-					<% @badges_fossile.each do |badge| %>
-						<%= image_tag badge.avatar_url(), class: 'avatar' %>		
-						<!-- <% if badge.value == 0 %>
-						<% else %>
-						<p><%= badge.value %> fossiele kilometer badge </p>				 
-						<p>Punten: <%= badge.points %></p>
-						<% end %> -->
-					<% end %>
-				</li>
-				
-				<li class="badge_dash">
 					<% @badges_ratio.each do |badge| %>
 						<%= image_tag badge.avatar_url(), class: 'avatar' %>		
 						<!-- <% if badge.value == 0 %>
