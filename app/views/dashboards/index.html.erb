@@ -30,7 +30,7 @@
 				</li>
 				
 				<li class="badge_dash">
-					<% @badges_fossile.each do |badge| %>
+					<% @badges_ratio.each do |badge| %>
 						<%= image_tag badge.avatar_url() %>		
 						<!-- <% if badge.value == 0 %>
 						<% else %>
@@ -89,7 +89,7 @@
 					<li class="center"><%= link_to 'Bekijk badges', user_name_badges_path(@user.user_name) %></li>
 					<li class="center"><%= link_to 'Bekijk profiel', user_name_path(@user.user_name)%></li>
 					<% if can? :destroy, @user %>
-						<li class="center" style="background:none"><%= link_to 'Uitloggen', root_url%></li>	
+						<li class="center" style="background:none"><%= link_to 'Uitloggen', logout_path, method: :destroy %></li>	
 					<% end %>
 				</ul>	
 			</div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130604134827) do
+ActiveRecord::Schema.define(:version => 20130604131952) do
 
   create_table "achievements", :force => true do |t|
     t.integer  "badge_id"
