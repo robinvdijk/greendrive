@@ -1,8 +1,10 @@
-job_type :rake, "cd :path && PATH=/usr/local/bin:$PATH RAILS_ENV=:environment bundle exec rake :task :output"
+set :output, "log/cron.log"
+
 set :environment, 'production' 
+env :PATH, '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games'
 
 
-every 15.minutes do
+every 2.minutes do
   runner "Segment.cron"
 end
 
