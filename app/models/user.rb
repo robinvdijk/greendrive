@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
   validates :email, :presence => true, :uniqueness => true, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i}
   validates :terms_of_service, :acceptance => {:accept => true}
   validates :terms_of_privacy, :acceptance => {:accept => true}
+  validates_acceptance_of :terms_of_service
   
   before_create { generate_token(:auth_token) }
   mount_uploader :avatar, AvatarUploader

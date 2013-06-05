@@ -95,7 +95,7 @@ small {
 	color: #313131;
 	font-size: small;
 	a {
-		color: $green;}
+		color: $green !important;}
 }
 
 
@@ -422,10 +422,11 @@ FAQ
 #container_faq {
 	width:80%;
 	margin:auto;
-	border:2px solid rgba(128, 128, 128, 0.3);
+	border:1px solid rgba(128, 128, 128, 0.3);
 	border-radius:5px;
-	margin-top:10%;
-	padding:10px;
+	margin-top:3.2%;
+	padding:0 3.2%;
+	background-color:rgba(255,255,255,0.5);
 	ul li {
 		width:100%;
 	}
@@ -627,8 +628,14 @@ iframe {
 	width: 78%;
 	margin: auto;
 }
-
-
+/************************************************************************************
+CONTACT PAGE
+*************************************************************************************/
+.contact_border {
+	@extend .profile_border;
+	height:750px;
+	padding:0 3.2%; 
+}
 /************************************************************************************
 BADGES PAGE
 *************************************************************************************/
@@ -819,16 +826,6 @@ TUTORIAL
 		position:absolute;
 		margin-top:33px;
 	}
-	> .buttons {
-		top:8px;
-		background-color: transparent !important;
-		margin:0;
-		padding:0 0 0 10px;
-		left:57.4%;
-		a {
-			padding:4px 60px !important;
-		}
-	}
 }
 
 #tutorial_start:target {
@@ -898,6 +895,17 @@ TUTORIAL
 	a {
 		padding:4px 15px;
 	}
+  #buttons_end {
+ 		background-color: transparent !important;
+ 		margin-top:10%;
+		right:-96%;
+ 		width:191%;
+		padding-left:0;
+		display:block;
+ 		a {
+ 			padding:4px 60px !important;
+ 		}
+ 	}
 }
 /*************************************************************************************
 DASHBOARD

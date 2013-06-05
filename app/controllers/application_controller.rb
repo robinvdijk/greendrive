@@ -57,6 +57,7 @@ class ApplicationController < ActionController::Base
     end
 	end
   
+  
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, :alert => exception.default_message = "U bent niet bevoegd deze pagina te bekijken."
   end
