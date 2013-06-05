@@ -26,8 +26,7 @@ class UsersController < ApplicationController
         redirect_to new_car_path
       else
         flash[:alert] = "Niet alle velden zijn correct ingevuld."
-        # render 'new'
-        redirect_to new_session_path
+        render :new
       end
   end
   

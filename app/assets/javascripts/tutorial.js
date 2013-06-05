@@ -1,19 +1,20 @@
 $(document).ready(function() {
+	
+	$(window).load(function() {
+		if($('body#first_visit, body#show_tutorial').length){
+			$('#help').click();
+		}
+	});
+
 
 	var hl = 'highlight';	
-	
+
 	// var next = $(".button:contains(Volgende)");	
 	// var prev = $(".button:contains(Vorige)");
 
 
 	//--------------------First--Page--Trigger-----------
-	$('#new_car .button').click(function(){ 
-		window.location = '/users';
-		$('#new_car').toggle();
-		$('#blanket').toggle();		
-		$('#tutorial_1').slideToggle(800); 
-	});
-	
+
 	$('#help').on('click', function(){ 
 		$('#blanket').toggle();		
 		$('#tutorial_1').slideToggle(800); 
@@ -47,7 +48,7 @@ $(document).ready(function() {
 		$('#profile').toggleClass(hl)
 	});
 	
-	$('#tutorial_3 ').on('click', '.next', function(){ 
+	$('#tutorial_3').on('click', '.next', function(){ 
 		$('#tutorial_3').toggle();
 		$('#chart').toggleClass();
 		$('#tutorial_4').toggle().animate({ right:'35.6%' }, 800);
@@ -55,10 +56,10 @@ $(document).ready(function() {
 		$('#tutorial_6').toggle().animate({ left:'80.8%' }, 800);
 		$('#badges').toggleClass(hl).animate({ opacity:1 }, 800);
 		$('.nav_dashboard').toggleClass(hl).animate({ opacity:1 }, 800);
-		$('#buttons').toggleClass();	
+		$('#buttons_end').animate({ right:'96%'}, 800);	
 	});
 	// //--------------------Fourth--Page-------------------
-	$('#tutorial_6').on('click', '.prev', function(){
+	$('#buttons_end').on('click', '.prev', function(){
 		$('#tutorial_3').toggle();
 		$('#chart').toggleClass();
 		$('#tutorial_4').toggle();
@@ -68,7 +69,7 @@ $(document).ready(function() {
 		$('#badges').toggleClass(hl);
 	});
 	
-	$('#tutorial_6').on('click', '.next', function(){
+	$('#buttons_end').on('click', '.next', function(){
 		$('#tutorial_4').toggle();
 		$('#tutorial_5').toggle();
 		$('#tutorial_6').toggle();		

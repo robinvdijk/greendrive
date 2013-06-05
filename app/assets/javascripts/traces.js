@@ -1,21 +1,3 @@
-
-// // select all desired input fields and attach tooltips to them
-//       $("#myform :input").tip({
-//  
-//       // place tooltip on the right edge
-//       position: "center right",
-//  
-//       // a little tweaking of the position
-//       offset: [-2, 10],
-//  
-//       // use the built-in fadeIn/fadeOut effect
-//       effect: "fade",
-//  
-//       // custom opacity setting
-//       opacity: 0.7
-//  
-//       });
-
   // Load the Visualization API library and the piechart library.
   google.load('visualization', '1.0', {'packages':['corechart']});
   google.setOnLoadCallback(drawChart);

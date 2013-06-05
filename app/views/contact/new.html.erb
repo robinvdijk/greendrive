@@ -1,42 +1,44 @@
 
 <div id="pagewrap">
-	<div class="wrapper fullwidth">
-		<div id="contact">
+	<div class="contact_border">
+		<div class="wrapper fullwidth">
+			<div id="contact">
 			
 		
-		<h1>Vragen, klachten of opmerkingen ?</h1>
-		<h3>Laat een bericht achter en wij nemen contact met je op!</h3>
+			<h1>Vragen, klachten of opmerkingen ?</h1>
+			<h3>Laat een bericht achter en wij nemen contact met je op!</h3>
 		
-		<hr>	
+			<hr>	
 		
-			<div id="form_contact">
+				<div id="form_contact">
 	
-				<%= form_for (@message), :url => contact_path do |f| %>
+					<%= form_for (@message), :url => contact_path do |f| %>
 
-				<ul>
-					<li>
-						<%= f.label :name, 'Naam' %><br>
-					  <%= f.text_field :name, :class => "field" %>
-					</li>
-				  <li>
-			      <%= f.label :subject, 'Onderwerp' %><br>
-			      <%= f.text_field :subject, :class => "field" %>
-				  </li>
-				  <li>
-			      <%= f.label :email, 'E-mail' %><br>
-			      <%= f.email_field :email, :class => "field" %>
-				  </li>
-				  <li>
-			      <%= f.label :body, 'Tekst'%><br>
-			      <%= f.text_area :body, :class => "field_text" %>
-					</li>
-				 	<li>
-				    <%= f.submit "Verzenden", :class => "button_indent" %>
-				 	</li>
-				</ul>	
+					<ul>
+						<li>
+							<%= f.label :name, 'Naam' %><br>
+						  <%= f.text_field :name, :class => "field" %>
+						</li>
+					  <li>
+				      <%= f.label :subject, 'Onderwerp' %><br>
+				      <%= f.text_field :subject, :class => "field" %>
+					  </li>
+					  <li>
+				      <%= f.label :email, 'E-mail' %><br>
+				      <%= f.email_field :email, :class => "field" %>
+					  </li>
+					  <li>
+				      <%= f.label :body, 'Tekst'%><br>
+				      <%= f.text_area :body, :class => "field_text" %>
+						</li>
+					 	<li>
+					    <%= f.submit "Verzenden", :class => "button_indent" %>
+					 	</li>
+					</ul>	
 	
-				<% end %>
+					<% end %>
 			
+				</div>
 			</div>
 		</div>
 	</div>
