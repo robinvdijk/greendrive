@@ -1,5 +1,8 @@
 require 'bundler/capistrano'
 load 'deploy/assets'
+
+require "whenever/capistrano"
+
  
 set :application, "greendrive"
 set :ip_address, "149.210.131.83"
