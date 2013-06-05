@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
       @users = User.all    
     else
       if params[:search]
-        @users =  User.where("email LIKE ?", '%' + params[:search] + '%')              
+        @users =  User.where("user_name || first_name || last_name LIKE ?", '%' + params[:search] + '%')              
       end  
     end                             
   end

@@ -278,15 +278,21 @@ li.icons_header {
 /************************************************************************************
 LEADERBOARDS
 *************************************************************************************/
-.period_select{
+/*.period_select{
 	margin-left:500px;
 }
 
-.period_name{ /*This makes sure the sort-arrow doesn't disappear*/
+.period_name{ This makes sure the sort-arrow doesn't disappear
 	display: inline;
+}*/
+
+.current_user_title{
+	margin:15px;
 }
 
 #col_leaderboards{
+	width: 75%;
+	margin-left:120px;
 	background: $white; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
  	background:rgba(255,255,255,0.5);
  	border:1px solid rgba(128, 128, 128, .3);
@@ -295,28 +301,48 @@ LEADERBOARDS
   		margin:2% 0 0 2%;
   		padding: 0;
   	}
+
+  	p{
+  		margin:2% 2% 3% 2%;
+  		padding:0;
+  	}
+
 }
 
-table.leaderboards{
+table.leaderboards, .leaderboards_current_user{
 	border-collapse: collapse;
 	width:550px;
 	text-align: left;
-	margin:0 0 2% 2%;
+	margin:0 0 5% 2%;
 	padding:0;
 }
 
-.leaderboards tr{
-	border-bottom: solid 1px #ABABAB;
-}
 
-.leaderboards th{
+.leaderboards_td1{
+	border-right: solid 1px green;
 	padding-left: 15px;
 }
-.leaderboards th .current {
-  background-repeat: no-repeat;
-  background-position: 45px -5px;
-  height:auto;
-  display:block;
+
+.leaderboards_td2{
+	border-right: solid 1px green;
+	padding-left: 15px;
+}
+
+.leaderboards_td3{
+	padding-left: 15px;
+}
+
+.leaderboards th, td {
+	color: #313131;
+}
+
+.leaderboards td{
+	border-left: solid 1px green;
+		border-right: solid 1px green;
+}
+
+.leaderboards tr{
+	border-bottom: solid 1px green;
 }
 
 .leaderboards_td1, .leaderboards_td2, .leaderboards_td3, .leaderboards_td4{
@@ -324,10 +350,26 @@ table.leaderboards{
 padding-left: 15px;
 }
 
-.leaderboards_td4{
-padding-left: 15px;
+.leaderboards_current_user{
+	margin-top:15px;
+	th {
+		padding-left: 15px;
+		color:#313131;
+	}
+	td {
+	border: 1px solid green;
+	}
+}
+.leaderboards th{
+	padding-left: 15px;
 }
 
+.leaderboards th .current {
+	background-repeat: no-repeat;
+	background-position: 45px -5px;
+	height:auto;
+	display:block;
+}
 .leaderboards th .asc, .leaderboards th .desc {
 	padding:0;
 	/*padding-right: 40px;*/
@@ -341,13 +383,20 @@ padding-left: 15px;
 	background-image: url(/assets/sort_d.png);
 }
 
-tbody tr:nth-child(even) {
-   background-color: rgba(128, 128, 128, 0.3);
+tbody tr:nth-of-type(even) {
+   background-color: $green;
+   td{
+	   	color:white;
+	}
+   	a:visited{
+   		color:white;
+   	}
 }
 
 .sort_types{
 	border-bottom: 1px solid grey;
 }
+
 
 /************************************************************************************
 SEARCH RESULTS
@@ -598,6 +647,10 @@ BADGES PAGE
 
 .badge_description {
 	display:none;
+}
+
+.badge_subject{
+	color:green;
 }
 
 .badge_block {

@@ -36,7 +36,7 @@
 							
 				 		   	<li><%= link_to "Mijn profiel", user_name_path(current_user.user_name) %></li>
 
-				   		    <li><%= link_to "Leaderboards", user_name_leaderboard_path(current_user.user_name) %></li>
+				   		    <li><%= link_to "Leaderboards", leaderboards_path %></li>
 
 				    	    <li><%= link_to "Uitloggen", logout_path, :method => :delete %></li>			
 				  	  </ul>
