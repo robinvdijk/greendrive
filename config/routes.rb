@@ -3,12 +3,12 @@ Greendrive::Application.routes.draw do
   # root :to => 'dashboards#index', :user_name => 'test' # moet nog variable gemaakt worden. En zonder current_user werkt de root niet :/
   
   root :to => 'application#root'
-    
-  get 'users/:user_name/dashboard' => 'dashboards#index', :as => 'user_name_dashboard'
-  get 'users/:user_name/badges' => 'badges#index', :as => 'user_name_badges'
-  get 'users/:user_name/leaderboard' => 'leaderboards#index', :as => 'user_name_leaderboard'
-  get 'users/:user_name' => 'users#show', :as => 'user_name'
-  get 'users/:user_name/edit' => 'users#edit', :as => 'user_name_edit'
+
+  get 'gebruikers/:user_name/dashboard' => 'dashboards#index', :as => 'user_name_dashboard'
+  get 'gebruikers/:user_name/badges' => 'badges#index', :as => 'user_name_badges'
+  get 'leaderboards' => 'leaderboards#index', :as => 'user_name_leaderboard'
+  get 'gebruikers/:user_name' => 'users#show', :as => 'user_name'
+  get 'gebruikers/:user_name/bewerken' => 'users#edit', :as => 'user_name_edit'
 
   resources :pictures, :only => [:index, :create, :destroy]
 

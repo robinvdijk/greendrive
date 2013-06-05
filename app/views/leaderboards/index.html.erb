@@ -3,21 +3,26 @@
 	<div class="wrapper grid">
 		<article id="col_leaderboards">
 		<h1>Leaderboards</h1>
-			<ul class="period_select">
+
+		<p>
+			In de leaderboards staan de top 10 spelers met het hoogste punten aantal. De punten kunnen worden verdient door het behalen van verschillende niveaus van badges en worden bij het totaal opgeteld. U kunt op de naam van een speler klikken om naar het desbetreffende dashboard te gaan.
+		</p>
+
+<!-- 			<ul class="period_select">
 				<li class="period_name">Overall |</li>
 				<li class="period_name">Deze maand |</li>
 				<li class="period_name">Deze week</li>
-			</ul>
+			</ul> -->
 			
-			<table class="leaderboards"%>
+			<table class="leaderboards">
 				<tr class="sort_types">
-					<th><%= sortable "user_name", "Naam" %></th>
+					<th>Naam</th>
 					<th><%= sortable "score" %></th>
 					<th><%= sortable "ratio" %></th>
 				</tr>
 				<% @users.each do |user| %>
 					<tr>
-						<td class="leaderboards_td1"><%= user.user_name%></td>
+						<td class="leaderboards_td1"><%= link_to user.user_name, user_name_dashboard_path(user.user_name)%></td>
 						<% if user.score %>
 							<td class="leaderboards_td2"><%= user.score %> punten</td>
 						<% else %>
@@ -33,6 +38,40 @@
 				<% end %>
 			</table>
 			
+
+
+			<h1>Uw behaalde resultaten</h1>
+			<p>
+				Hier zijn uw resultaten te vinden om te kunnen vergelijken met de top 10 spelers. 
+			</p>
+
+			<table class="leaderboards_current_user">
+					<tr class="sort_types">
+					<th>Naam</th>
+					<th>Score</th>
+					<th>Ratio</th>
+				</tr>
+
+				<tr>
+					<td class="leaderboards_td1">
+						<%= link_to current_user.user_name, user_name_dashboard_path(current_user.user_name) %>
+					</td>
+
+					<% if current_user.score %>
+						<td class="leaderboards_td2"><%= current_user.score %></td>
+					<% else %>
+						<td class="leaderboards_td2">0 punten</td>
+					<% end %>
+
+					<% if current_user.ratio %>
+						<td class="leaderboards_td3"><%= current_user.ratio %>%</td>
+					<% else %>
+						<td class="leaderboards_td3">Onbekend</td>
+					<% end %>
+				</tr>
+			</table>
 		</article>
+
+
 	</div>
 </div>

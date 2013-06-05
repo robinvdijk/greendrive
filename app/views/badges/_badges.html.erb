@@ -24,7 +24,7 @@ http://www.dynamicdrive.com/dynamicindex4/thumbnail2.htm-->
 	<div class="badge" id="divers">
 		<% @badges_ratio.each do |badge| %>
 			<%= image_tag badge.avatar_url(), class: 'avatar' %>	
-			
+			<div class="badge_subject"><%= badge.subject %></div>
 			<div class="badge_description">
 				<%= badge.description %>
 			</div>	
