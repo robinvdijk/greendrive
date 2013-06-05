@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
-   skip_authorization_check
-  # load_and_authorize_resource
+    skip_authorization_check
+ 
   # skip_authorize_resource :only => :new
 
   def index

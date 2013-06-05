@@ -59,6 +59,8 @@ class Segment < ActiveRecord::Base
                        henk2 = self.mileage * (1 - self.drive_electric_ratio)
                        self.mileage_fossile = (self.mileage_fossile + henk2).to_i
                        car.mileage_fossile += henk2.to_i
+                       
+                       car.mileage_ratio = 100 * car.mileage_electric / car.mileage
                      
     
                     else
@@ -71,7 +73,11 @@ class Segment < ActiveRecord::Base
                     car.save
                 
                     self.save
+                    
+                
+                    
                   end
+            
                 end
               end
               

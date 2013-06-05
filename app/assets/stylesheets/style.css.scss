@@ -282,7 +282,7 @@ LEADERBOARDS
 	margin-left:500px;
 }
 
-.period_name{
+.period_name{ /*This makes sure the sort-arrow doesn't disappear*/
 	display: inline;
 }
 
@@ -305,11 +305,27 @@ table.leaderboards{
 	padding:0;
 }
 
+.leaderboards tr{
+	border-bottom: solid 1px #ABABAB;
+}
+
+.leaderboards th{
+	padding-left: 15px;
+}
 .leaderboards th .current {
   background-repeat: no-repeat;
   background-position: 45px -5px;
   height:auto;
   display:block;
+}
+
+.leaderboards_td1, .leaderboards_td2, .leaderboards_td3, .leaderboards_td4{
+ border-right: solid 1px #ABABAB;
+padding-left: 15px;
+}
+
+.leaderboards_td4{
+padding-left: 15px;
 }
 
 .leaderboards th .asc, .leaderboards th .desc {
@@ -332,7 +348,6 @@ tbody tr:nth-child(even) {
 .sort_types{
 	border-bottom: 1px solid grey;
 }
-
 
 /************************************************************************************
 SEARCH RESULTS
@@ -379,7 +394,9 @@ FAQ
 	}
 }		
 
-/*************************************************************************************/
+/************************************************************************************
+SEARCH RESULTS
+*************************************************************************************/
 
 .search_results{
 	margin-bottom:10px;
@@ -500,7 +517,7 @@ HOMEPAGE
 }
 
 #block_1 {
-	background-image: url("icon_pas.svg");
+	background-image: url("icon_charger.svg");
 }
 #block_2 {
 	background-image: url("icon_car.svg");
@@ -512,16 +529,16 @@ HOMEPAGE
 	background-image: url("icon_town.svg");
 }
 #block_5 {
-	background-image: url("icon_badge.svg");
+	background-image: url("icon_battery.svg");
 }
 #block_6 {
-	background-image: url("icon_highscore.svg");
+	background-image: url("icon_head.svg");
 }
 #block_7 {
-	background-image: url("icon_chart.svg");
+	background-image: url("icon_tank.svg");
 }
 #block_8 {
-	background-image: url("icon_share.svg");
+	background-image: url("icon_pas.svg");
 }
 
 #container_explains {
