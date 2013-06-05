@@ -127,6 +127,7 @@ ActiveRecord::Schema.define(:version => 20130604131952) do
     t.string   "middle_name"
     t.integer  "score"
     t.string   "rank"
+    t.string   "ratio"
   end
 
 end

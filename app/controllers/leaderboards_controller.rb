@@ -13,10 +13,14 @@ class LeaderboardsController < ApplicationController
 	#The "include?"-part is there because when a user manually changed the sortquery in the URL to
 	#something that doesn't exist, the app wil not crash. Instead, it refers back to the default.
 	def sort_column
-		User.column_names.include?(params[:sort]) ? params[:sort] : "score"
+    User.column_names.include?(params[:sort]) ? params[:sort] : "score"
+
 	end
 
 	def sort_direction
 		%w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
 	end
 end
+
+
+

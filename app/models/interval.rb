@@ -1,16 +1,16 @@
 class Interval < ActiveRecord::Base
   
-  def week_cron
+  def self.week_cron
     interval = Interval.new
     interval.week
   end
   
-  def month_cron
+  def self.month_cron
     interval = Interval.new
     interval.month
   end
   
-  def year_cron
+  def self.year_cron
     interval = Interval.new
     interval.year
   end
@@ -47,3 +47,4 @@ class Interval < ActiveRecord::Base
   
   
 end
+
