@@ -1,3 +1,5 @@
+set :output, "log/cron.log"
+
 set :environment, 'production' 
 
 
