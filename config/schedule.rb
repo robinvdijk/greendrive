@@ -1,6 +1,7 @@
 set :output, "log/cron.log"
 
 set :environment, 'production' 
+env :PATH, '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games'
 
 
 every 2.minutes do

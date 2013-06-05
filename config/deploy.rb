@@ -1,6 +1,7 @@
 require 'bundler/capistrano'
 load 'deploy/assets'
 
+set :whenever_command, "bundle exec whenever"
 require "whenever/capistrano"
 
  
