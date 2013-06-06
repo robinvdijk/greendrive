@@ -3,9 +3,9 @@ class Car < ActiveRecord::Base
   
   belongs_to :user
 
-  validates :username, :presence => true, :uniqueness => true
+  validates :username, :presence => true# , :uniqueness => true
   validates :password, :presence => true
-  validates :license_plate, :presence => true, :uniqueness => true
+  validates :license_plate, :presence => true# , :uniqueness => true
   validates :model, :presence => true
 end
 

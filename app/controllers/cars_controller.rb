@@ -12,7 +12,7 @@ class CarsController < ApplicationController
       flash[:success] = "De auto is succesvol gekoppeld en u bent succesvol ingelogd."
 
       redirect_to user_name_dashboard_path(current_user.user_name, first_visit: true)
-      
+      @car.license_plate.to_Uppercase
       username = @car.username 
       password = @car.password
     else

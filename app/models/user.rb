@@ -19,18 +19,18 @@ class User < ActiveRecord::Base
   validates :last_name, :presence => true
   validates :user_name, :presence => true, :uniqueness => true, :length => {:minimum => 4,:maximum => 20}, :format => {:with => /[a-zA-Z0-9]$/}
   validates :email, :presence => true, :uniqueness => true, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i}
-  validates_acceptance_of :terms_of_service, :on => :create, :allow_nil => false
+  validates_acceptance_of :terms_of_service, :on => :create# , :allow_nil => false
   
   before_create { generate_token(:auth_token) }
   mount_uploader :avatar, AvatarUploader
 
-def self.search(search)
-  if search
-    where('user_name || first_name || last_name LIKE ?' "%#{search}%", :format => {:with => /[\f]$/}) 
-  else
-    scoped
-  end
-end
+# def self.search(search)
+#   if search
+#     where('user_name || first_name || last_name LIKE ?' "%#{search}%", :format => {:with => /[\f]$/}) 
+#   else
+#     scoped
+#   end
+# end
 
 
 # def self.search(search)
