@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   #Password: Length between 6-20 characters, which consists of [at least] 1 lowercase, 1 uppercase and 1 special character OR digit
   validates :first_name, :presence => true
   validates :last_name, :presence => true
-  validates :user_name, :presence => true, :uniqueness => true, :length => {:minimum => 4,:maximum => 20}
+  validates :user_name, :presence => true, :uniqueness => true, :length => {:minimum => 4,:maximum => 20}, :format => {:with => /[a-zA-Z0-9]$/}
   validates :email, :presence => true, :uniqueness => true, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i}
   validates :terms_of_service, :acceptance => {:accept => true}
   validates :terms_of_privacy, :acceptance => {:accept => true}
@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
 
 def self.search(search)
   if search
-    where('user_name LIKE ?' "%#{search}%") 
+    where('user_name || first_name || last_name LIKE ?' "%#{search}%", :format => {:with => /[\f]$/}) 
   else
     scoped
   end

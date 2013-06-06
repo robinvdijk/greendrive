@@ -29,17 +29,7 @@
 					<% end %>
 				</li>
 				
-				<li class="badge_dash">
-					<% @badges_fossile.each do |badge| %>
-						<%= image_tag badge.avatar_url(), class: 'avatar' %>		
-						<!-- <% if badge.value == 0 %>
-						<% else %>
-						<p><%= badge.value %> fossiele kilometer badge </p>				 
-						<p>Punten: <%= badge.points %></p>
-						<% end %> -->
-					<% end %>
-				</li>
-				
+			
 				<li class="badge_dash">
 					<% @badges_mileage.each do |badge| %>
 						<%= image_tag badge.avatar_url(), class: 'avatar' %>		
@@ -89,7 +79,7 @@
 					<li class="center"><%= link_to 'Bekijk badges', user_name_badges_path(@user.user_name) %></li>
 					<li class="center"><%= link_to 'Bekijk profiel', user_name_path(@user.user_name)%></li>
 					<% if can? :destroy, @user %>
-						<li class="center" style="background:none"><%= link_to 'Uitloggen', root_url%></li>	
+						<li class="center" style="background:none"><%= link_to 'Uitloggen', logout_path, :method => :delete %></li>	
 					<% end %>
 				</ul>	
 			</div>

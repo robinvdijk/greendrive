@@ -13,8 +13,7 @@
 			<ul class="nav">
 				<li class="home">
 					<%= link_to image_tag("header_logo_white.svg"), root_path, :class => "logo_effect"%>
-				</li>
-				
+				</li>	
 				<li class="icons_header" id="help_header">
 					<%= image_tag("help.svg")%>
 					<ul>
@@ -25,7 +24,7 @@
 						<li><%= link_to 'Contact', contact_path %></li>
 						<% end %>
 					</ul>
-				</li>		
+				</li>
 				<% if current_user %>		
 				<li class="icons_header">
 					<%= image_tag("menu.png", :alt => "menu") %>

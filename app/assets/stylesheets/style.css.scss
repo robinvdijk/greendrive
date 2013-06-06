@@ -275,6 +275,28 @@ li.icons_header {
 	top: 4px;
 }
 
+li.welcome_user{
+	float:left;
+	top:4px;
+	left:40px;
+	color:white;
+	font-size: 22px;
+}
+
+/************************************************************************************
+CONNECT CAR
+*************************************************************************************/
+.connect_car{
+	background-color:rgba(255,255,255,0.5);
+	height:auto;
+	width:25%;
+	margin-left: 35%;
+	margin-top:2%;
+	padding: 0 2% 2% 2%;
+	border:1px solid rgba(128, 128, 128, .3);
+  	border-radius:5px;
+}
+
 /************************************************************************************
 LEADERBOARDS
 *************************************************************************************/
@@ -328,7 +350,7 @@ table.leaderboards, .leaderboards_current_user{
 	padding-left: 15px;
 }
 
-.leaderboards_td3{
+.leaderboards_td3, .leaderboards_td5{
 	padding-left: 15px;
 }
 
@@ -388,6 +410,9 @@ tbody tr:nth-of-type(even) {
    td{
 	   	color:white;
 	}
+   	a{
+   		color:white;
+   	}
    	a:visited{
    		color:white;
    	}

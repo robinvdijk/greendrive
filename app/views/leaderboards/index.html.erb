@@ -20,7 +20,7 @@
 					<th><%= sortable "score" %></th>
 					<th><%= sortable "mileage_ratio", "Ratio" %></th>
 					<th><%= sortable "mileage_electric", "Elektrisch" %></th>
-					<th><%= sortable "mileage", "Overall" %></th>
+					<th><%= sortable "mileage", "Totaal" %></th>
 				</tr>
 				<% @users.each do |user| %>
 					<tr>
@@ -65,6 +65,8 @@
 					<th>Naam</th>
 					<th>Score</th>
 					<th>Ratio</th>
+					<th>Elektrisch</th>
+					<th>Totaal</th>
 				</tr>
 
 				<tr>
@@ -72,17 +74,29 @@
 						<%= link_to current_user.user_name, user_name_dashboard_path(current_user.user_name) %>
 					</td>
 
-					<% if current_user.score %>
-						<td class="leaderboards_td2"><%= current_user.score %></td>
-					<% else %>
-						<td class="leaderboards_td2">0 punten</td>
-					<% end %>
+						<% if current_user.score %>
+							<td class="leaderboards_td2"><%= current_user.score %> punten</td>
+						<% else %>
+							<td class="leaderboards_td2">0 punten</td>
+						<% end %>
 
-					<% if current_user.ratio %>
-						<td class="leaderboards_td3"><%= current_user.ratio %>%</td>
-					<% else %>
-						<td class="leaderboards_td3">Onbekend</td>
-					<% end %>
+						<% if current_user.car.mileage_ratio %>
+							<td class="leaderboards_td3"><%= current_user.car.mileage_ratio %>%</td>
+						<% else %>
+							<td class="leaderboards_td3">0 %</td>
+						<% end %>
+						
+						<% if current_user.car.mileage_ratio %>
+							<td class="leaderboards_td4"><%= current_user.car.mileage_electric %> km</td>
+						<% else %>
+							<td class="leaderboards_td4">0 km</td>
+						<% end %>
+						
+						<% if current_user.car.mileage %>
+							<td class="leaderboards_td5"><%= current_user.car.mileage %> km</td>
+						<% else %>
+							<td class="leaderboards_td5">0 km</td>
+						<% end %>
 				</tr>
 			</table>
 		</article>

@@ -17,15 +17,14 @@
 							<% end %>
 						</li>
 						<li class="center">
-							<h3><small class="green">Gebruikersnaam</small><br />
-								<%= @user.user_name %></h3>
+							<strong class="green">Gebruikersnaam</strong><br />
+								<%= @user.user_name %>
 						</li>
 						<li class="center">
-							<h3><small class="green">Model auto</small><br /><%= @car.model %></h3>
+							<strong class="green">Model auto</strong><br /><%= @car.model %>
 						</li>
 						<li class="center">
-							<h3><small class="green">Kenteken</small><br /><%= @car.license_plate %>
-	</h3>	
+							<strong class="green">Kenteken</strong><br /><%= @car.license_plate %>
 						</li>
 						<!-- <li class="center">
 							<h3><%= link_to 'Badges', :class => "button" %></h3>
@@ -44,19 +43,19 @@
 					<% end %>
 			
 					<li class="left">
-						<h3><small class="green">Naam</small><br />
-							<%= @user.first_name %> <%= @user.middle_name%> <%= @user.last_name %></h3>
+						<strong class="green">Naam</strong><br />
+							<%= @user.first_name %> <%= @user.middle_name%> <%= @user.last_name %>
 					</li>
 					<li class="left">
-						<h3><small class="green">E-mail</small><br />
-							<%= mail_to @user.email, @user.email %></h3>
+						<strong class="green">E-mail</strong><br />
+							<%= mail_to @user.email, @user.email %>
 					</li>
 					<li class="left">
-					  	<h3><small class="green">Geboortedatum</small><br />
+					  	<strong class="green">Geboortedatum</strong><br />
 					  		<% if @user.birthday.blank? %>
 					  			<p>Er is geen geboortedatum ingevuld.</p>
 					  		<% else %>
-					    		<%= @user.birthday.strftime("%e-%-m-%Y")%></h3>
+					    		<%= @user.birthday.strftime("%e-%-m-%Y")%>
 					    	<% end %>
 					</li>
 						

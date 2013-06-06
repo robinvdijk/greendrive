@@ -1,17 +1,18 @@
 <div class="span14">
 	<div class="well">
 		<div class="search_results_page">
-		<% if params[:search].empty? %>
-		<% provide(:title, "Er is geen zoekopdracht opgegeven.") %> 
-			  <h1>Er is geen zoekopdracht opgegeven.</h1>
-			</div>
-		<% else  %>
-			<% provide(:title, "Zoekresultaten voor " + params[:search]) %> 
-			<h1>Zoekresultaten voor "<%= params[:search] %>"</h1>
-			<% if @users.any? %>
-				<%= render @users %>
+			<% case %>
+				<% when params[:search].empty? %>
+					<% provide(:title, "Er is geen zoekopdracht opgegeven.") %> 
+			  		<h1>Er is geen zoekopdracht opgegeven.</h1>
+			  	<% when @users.blank? %>
+			  		<% provide(:title, "Geen gebruikers gevonden.") %>
+			  		<h1>Er zijn geen gebruikers gevonden.</h1>
+			  	<% when @users.any? %>
+			  		<% provide(:title, "Zoekresultaten voor " + params[:search]) %>
+			  		<h1>Zoekresultaten voor "<%= params[:search] %>"</h1>
+			  		<%= render @users %>
 			<% end %>
-		<% end %>
-		<div>
+		</div>
 	</div>
 </div>

@@ -3,7 +3,7 @@ class LeaderboardsController < ApplicationController
 	helper_method :sort_column, :sort_direction
 
 	def index
-		@users = User.order(sort_column + " " + sort_direction)
+		@users = User.order(sort_column + " " + sort_direction).limit(10)
 	end
 
 	private 
