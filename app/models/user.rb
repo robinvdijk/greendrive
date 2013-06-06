@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   
-  attr_accessible :provider, :rank, :terms_of_service, :image_cache, :terms_of_privacy, :uid, :role, :admin, :user, :email, :first_name, :middle_name, :last_name, :password_confirmation, :password, :user_name, :avatar, :birthday, :score
+  attr_accessible :provider, :rank, :terms_of_service, :image_cache, :uid, :role, :admin, :user, :email, :first_name, :middle_name, :last_name, :password_confirmation, :password, :user_name, :avatar, :birthday, :score
 
   has_secure_password 
 
@@ -12,17 +12,14 @@ class User < ActiveRecord::Base
   has_many :achievements
   has_many :badges, through: :achievements
 
-  validates_presence_of :password, :except => [:edit, :update] #Werkt niet grrr
-  validates_presence_of :password_confirmation, :except => [:edit, :update] #Werkt niet grrr
+
   validates_format_of :password, :with => /(?=^.{6,20}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/
   #Password: Length between 6-20 characters, which consists of [at least] 1 lowercase, 1 uppercase and 1 special character OR digit
   validates :first_name, :presence => true
   validates :last_name, :presence => true
   validates :user_name, :presence => true, :uniqueness => true, :length => {:minimum => 4,:maximum => 20}
   validates :email, :presence => true, :uniqueness => true, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i}
-  validates :terms_of_service, :acceptance => {:accept => true}
-  validates :terms_of_privacy, :acceptance => {:accept => true}
-  validates_acceptance_of :terms_of_service
+  validates_acceptance_of :terms_of_service, :on => :create, :allow_nil => false
   
   before_create { generate_token(:auth_token) }
   mount_uploader :avatar, AvatarUploader
