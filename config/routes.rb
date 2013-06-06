@@ -1,7 +1,5 @@
 Greendrive::Application.routes.draw do  
   
-  # root :to => 'dashboards#index', :user_name => 'test' # moet nog variable gemaakt worden. En zonder current_user werkt de root niet :/
-  
   root :to => 'application#root'
 
   get 'gebruikers/:user_name/dashboard' => 'dashboards#index', :as => 'user_name_dashboard'
