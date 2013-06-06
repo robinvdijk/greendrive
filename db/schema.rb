@@ -11,19 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130604131952) do
+ActiveRecord::Schema.define(:version => 20130606133429) do
 
   create_table "achievements", :force => true do |t|
     t.integer  "badge_id"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "authentications", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "uid"
-    t.string   "provider"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -63,19 +55,10 @@ ActiveRecord::Schema.define(:version => 20130604131952) do
     t.integer  "last_month_fossile",  :default => 0
     t.integer  "last_year_fossile",   :default => 0
     t.integer  "mileage_ratio",       :default => 0
+    t.integer  "rank"
   end
 
   create_table "dashboards", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "intervals", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "leaderboards", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

@@ -1,4 +1,4 @@
-class Interval < ActiveRecord::Base
+class Interval
   
   def self.week_cron
     interval = Interval.new

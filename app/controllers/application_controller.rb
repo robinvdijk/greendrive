@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
     @car = Car.where('user_id = ?', get_user.id).first
   end
   
+  def get_car_2
+    @car = Car.where('user_id = ?', current_user.id)
+  end
+  
   def get_badges
     @badges_electric = Badge.where('subject = ? and value <= ?', 'Mileage Electric', @car.mileage_electric)
     @badges_mileage = Badge.where('subject = ? and value <= ?', 'Mileage', @car.mileage)
