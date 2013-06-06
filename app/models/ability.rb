@@ -9,6 +9,7 @@ class Ability
       can :read, :all
       can :update, User, :id => user.id
       can :destroy, User, :id => user.id
+      can :destroy, :session
       case user.role
       when 'admin'
         can :manage, :all
