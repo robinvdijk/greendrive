@@ -9,8 +9,13 @@
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag 'application', :media => "all" %>
 </head>
+
+<% if params[:first_visit] || params[:show_tutorial] %>
+<body id="first_visit">
+<% else %>
 <body>
-	
+<% end  %>
+			
 		<%= render "layouts/header" %>
 		
 <div id="pagewrap">
@@ -31,10 +36,12 @@
 		
 		<%= yield %>
 
-<div id="footer">
-	<p>Copyright &copy; 2013 Greendrivers |<%= link_to ' Algemene voorwaarden ' %>|<%= link_to ' Contact ', contact_path %>|<%= link_to ' FAQ ', faq_path %></p>
-</div>
 
+<div id="footer">
+	<p>
+		Copyright &copy; 2013 Greendrivers |<%= link_to ' Algemene voorwaarden ' %>|<%= link_to ' Contact ', contact_path %>|<%= link_to ' FAQ ', faq_path %>
+	</p>
+</div>
 </body>
 </html>
 

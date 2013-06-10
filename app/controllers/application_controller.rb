@@ -11,7 +11,11 @@ class ApplicationController < ActionController::Base
   end
   
   def get_car
-    @car = Car.where('user_id = ?', current_user.id).first
+    @car = Car.where('user_id = ?', get_user.id).first
+  end
+  
+  def get_car_2
+    @car = Car.where('user_id = ?', current_user.id)
   end
   
   # def get_badges
@@ -26,7 +30,7 @@ class ApplicationController < ActionController::Base
       @users = User.all    
     else
       if params[:search]
-        @users =  User.where("email LIKE ?", '%' + params[:search] + '%')              
+        @users =  User.where("user_name || first_name || last_name LIKE ?", '%' + params[:search] + '%')              
       end  
     end                             
   end
@@ -56,6 +60,7 @@ class ApplicationController < ActionController::Base
       redirect_to homepage_path
     end
 	end
+  
   
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, :alert => exception.default_message = "U bent niet bevoegd deze pagina te bekijken."

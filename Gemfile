@@ -6,11 +6,7 @@ gem 'cancan'
 
 gem 'rails_best_practices'
 gem "flot-rails"
-gem 'friendly_id'
 
-gem 'susy'
-gem 'compass', '>= 0.12.2'
-gem 'compass-rails', '>= 1.0.3'
 gem 'httparty'
 gem 'json'
 gem 'capistrano'
@@ -20,13 +16,9 @@ gem 'whenever', :require => false
 gem 'carrierwave'
 gem 'mini_magick', '~> 3.5.0'
 
-gem 'rails-i18n'
-
 gem "jquery-rails"
 
 gem 'googlecharts', :require => 'gchart'
-
-gem 'gon'
 
 group :development do 
   gem 'sqlite3'
@@ -36,25 +28,23 @@ group :production do
   gem 'pg'
 end
 
-gem "nifty-generators", :group => :development
-gem 'mongrel', '1.2.0.pre2'
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier', '>= 1.0.3'
+  gem 'susy'
+  gem 'compass', '>= 0.12.2'
+  gem 'compass-rails', '>= 1.0.3'
 end
-
-gem 'jquery-rails'
 
 #user password encrypter
 gem "bcrypt-ruby", :require => "bcrypt"
 
-#multi authentication + facebook authentication
-gem 'omniauth', '~> 1.1.1'
-gem 'omniauth-facebook', '~> 1.4.0'
+# #multi authentication + facebook authentication
+# gem 'omniauth', '~> 1.1.1'
+# gem 'omniauth-facebook', '~> 1.4.0'
 
 # Behaviour driven development framework, describing user behaviour patterns
   gem "rspec-rails"

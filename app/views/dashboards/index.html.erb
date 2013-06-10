@@ -4,7 +4,6 @@
 	<div id="blanket"></div>	
 
 		<div id="col_dashboard_left">
-			
 			<div id='chart'>
 				<ul class='chart_info'>
 					<li class='nav_interval'><a href="#" id="week">Vorige week</a></li> |
@@ -21,7 +20,14 @@
 						
 			<ul id="badges" class="center">	
 
+
 					<%= raw current_user.badges.most_recent.map {|badge| image_tag badge.avatar_url(), :class => "badge_display" }.to_sentence %>
+
+				
+		
+				
+			</ul>	
+
 		</div>
 		<div id="col_dashboard_right">
 			<div id="profile">
@@ -57,8 +63,8 @@
 				<ul>
 					<li class="center"><%= link_to 'Bekijk badges', user_name_badges_path(@user.user_name) %></li>
 					<li class="center"><%= link_to 'Bekijk profiel', user_name_path(@user.user_name)%></li>
-					<% if can? :destroy, @user %>
-						<li class="center" style="background:none"><%= link_to 'Uitloggen', root_url%></li>	
+					<% if can? :destroy, :session %>
+						<li class="center" style="background:none"><%= link_to 'Uitloggen', logout_path, method: :destroy %></li>
 					<% end %>
 				</ul>	
 			</div>
@@ -96,10 +102,10 @@
 				<div class="arrow_box_top">Zoeken</div>
 				<div class="arrow_box_top">Menu</div>
 				<div class="arrow_box_top">Help</div>
-			</div>
-			<div class="buttons">
-				<a href="#" class="prev">Vorige</a>
-				<a href="#" class="next">Afsluiten</a>	
+				<div id="buttons_end">
+					<a href="#" class="prev">Vorige</a>
+					<a href="#" class="next">Afsluiten</a>	
+				</div>
 			</div>
 		</div>
 

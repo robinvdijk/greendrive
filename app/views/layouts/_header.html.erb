@@ -13,18 +13,19 @@
 			<ul class="nav">
 				<li class="home">
 					<%= link_to image_tag("header_logo_white.svg"), root_path, :class => "logo_effect"%>
-				</li>
-				
+				</li>	
 				<li class="icons_header" id="help_header">
 					<%= image_tag("help.svg")%>
 					<ul>
-						<% if controller_name == 'dashboards' %>
-							<li><a href="#" id='help'>Tutorial</a></li>
-						<% end %>
+						<% if current_user %>
+						<li><%= link_to 'Tutorial', user_name_dashboard_path(current_user.user_name, show_tutorial: true), id: 'help' %></li>					<li><%= link_to 'FAQ', faq_path %></li>
+						<li><%= link_to 'Contact', contact_path %></li>
+						<% else %>
 						<li><%= link_to 'FAQ', faq_path %></li>
 						<li><%= link_to 'Contact', contact_path %></li>
+						<% end %>
 					</ul>
-				</li>		
+				</li>
 				<% if current_user %>		
 				<li class="icons_header">
 					<%= image_tag("menu.png", :alt => "menu") %>
@@ -35,9 +36,10 @@
 							
 				 		   	<li><%= link_to "Mijn profiel", user_name_path(current_user.user_name) %></li>
 
-				   		    <li><%= link_to "Leaderboards", user_name_leaderboard_path(current_user.user_name) %></li>
-
-				    	    <li><%= link_to "Uitloggen", logout_path, :method => :delete %></li>			
+				   		    <li><%= link_to "Leaderboards", leaderboards_path %></li>
+				   		    <% if can? :destroy, :session %>
+				    	    	<li><%= link_to "Uitloggen", logout_path, :method => :destroy %></li>
+				    	    <% end %>			
 				  	  </ul>
 				</li>
 				<li class="icons_header">
@@ -52,7 +54,7 @@
 		<% end %>
 	</div>
 <% end %>
-		
+
 		
 
 

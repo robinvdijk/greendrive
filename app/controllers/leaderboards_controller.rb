@@ -1,9 +1,8 @@
 class LeaderboardsController < ApplicationController
 	load_and_authorize_resource
-	helper_method :sort_column, :sort_direction
-
+	helper_method :sort_column, :sort_direction, :get_car_2
 	def index
-		@users = User.order(sort_column + " " + sort_direction)
+		@users = User.order(sort_column + " " + sort_direction).limit(10)
 	end
 
 	private 
@@ -18,7 +17,7 @@ class LeaderboardsController < ApplicationController
 	end
 
 	def sort_direction
-		%w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
+		%w[desc].include?(params[:direction]) ? params[:direction] : "desc"
 	end
 end
 

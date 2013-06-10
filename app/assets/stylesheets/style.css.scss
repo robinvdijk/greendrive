@@ -95,7 +95,7 @@ small {
 	color: #313131;
 	font-size: small;
 	a {
-		color: $green;}
+		color: $green !important;}
 }
 
 
@@ -275,18 +275,46 @@ li.icons_header {
 	top: 4px;
 }
 
+li.welcome_user{
+	float:left;
+	top:4px;
+	left:40px;
+	color:white;
+	font-size: 22px;
+}
+
+/************************************************************************************
+CONNECT CAR
+*************************************************************************************/
+.connect_car{
+	background-color:rgba(255,255,255,0.5);
+	height:auto;
+	width:25%;
+	margin-left: 35%;
+	margin-top:2%;
+	padding: 0 2% 2% 2%;
+	border:1px solid rgba(128, 128, 128, .3);
+  	border-radius:5px;
+}
+
 /************************************************************************************
 LEADERBOARDS
 *************************************************************************************/
-.period_select{
+/*.period_select{
 	margin-left:500px;
 }
 
-.period_name{ /*This makes sure the sort-arrow doesn't disappear*/
+.period_name{ This makes sure the sort-arrow doesn't disappear
 	display: inline;
+}*/
+
+.current_user_title{
+	margin:15px;
 }
 
 #col_leaderboards{
+	width: 75%;
+	margin-left:120px;
 	background: $white; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
  	background:rgba(255,255,255,0.5);
  	border:1px solid rgba(128, 128, 128, .3);
@@ -295,39 +323,49 @@ LEADERBOARDS
   		margin:2% 0 0 2%;
   		padding: 0;
   	}
+
+  	p{
+  		margin:2% 2% 3% 2%;
+  		padding:0;
+  	}
+
 }
 
-table.leaderboards{
+table.leaderboards, .leaderboards_current_user{
 	border-collapse: collapse;
-	width:550px;
+	width:705px;
 	text-align: left;
-	margin:0 0 2% 2%;
+	margin:0 0 5% 2%;
 	padding:0;
 }
 
-.leaderboards tr{
-	border-bottom: solid 1px #ABABAB;
+
+.leaderboards_td0, .leaderboards_td1, .leaderboards_td2, .leaderboards_td3, .leaderboards_td5{
+	padding-left: 15px;
 }
 
+.leaderboards td{
+	border: none;
+}
+
+.leaderboards_current_user{
+	margin-top:15px;
+	th {
+		padding-left: 15px;
+		color:#313131;
+	}
+	
+}
 .leaderboards th{
 	padding-left: 15px;
 }
+
 .leaderboards th .current {
-  background-repeat: no-repeat;
-  background-position: 45px -5px;
-  height:auto;
-  display:block;
+	background-repeat: no-repeat;
+	background-position: 45px -5px;
+	height:auto;
+	display:block;
 }
-
-.leaderboards_td1, .leaderboards_td2, .leaderboards_td3, .leaderboards_td4{
- border-right: solid 1px #ABABAB;
-padding-left: 15px;
-}
-
-.leaderboards_td4{
-padding-left: 15px;
-}
-
 .leaderboards th .asc, .leaderboards th .desc {
 	padding:0;
 	/*padding-right: 40px;*/
@@ -341,13 +379,41 @@ padding-left: 15px;
 	background-image: url(/assets/sort_d.png);
 }
 
-tbody tr:nth-child(even) {
-   background-color: rgba(128, 128, 128, 0.3);
+tbody tr:nth-of-type(even) {
+   background-color: $green;
+   td{
+	   	color:white;
+	}
+   	a{
+   		color:white;
+   	}
+   	a:visited{
+   		color:white;
+   	}
 }
 
-.sort_types{
-	border-bottom: 1px solid grey;
+
+
+.radius_left {
+	border-radius: 4px 0 0 4px;
 }
+
+.radius_right {
+	border-radius: 0 4px 4px 0;
+}
+
+#ranks {
+	position: absolute !important;
+	margin: -257px 0 0 45px;
+}
+
+#current_rank {
+	position: absolute;
+	margin: -79px 0 0 45px;
+}
+
+
+
 
 /************************************************************************************
 SEARCH RESULTS
@@ -373,10 +439,11 @@ FAQ
 #container_faq {
 	width:80%;
 	margin:auto;
-	border:2px solid rgba(128, 128, 128, 0.3);
+	border:1px solid rgba(128, 128, 128, 0.3);
 	border-radius:5px;
-	margin-top:10%;
-	padding:10px;
+	margin-top:3.2%;
+	padding:0 3.2%;
+	background-color:rgba(255,255,255,0.5);
 	ul li {
 		width:100%;
 	}
@@ -578,8 +645,14 @@ iframe {
 	width: 78%;
 	margin: auto;
 }
-
-
+/************************************************************************************
+CONTACT PAGE
+*************************************************************************************/
+.contact_border {
+	@extend .profile_border;
+	height:750px;
+	padding:0 3.2%; 
+}
 /************************************************************************************
 BADGES PAGE
 *************************************************************************************/
@@ -591,6 +664,10 @@ BADGES PAGE
 
 .badge_description {
 	display:none;
+}
+
+.badge_subject{
+	color:green;
 }
 
 .badge_block {
@@ -767,16 +844,6 @@ TUTORIAL
 		position:absolute;
 		margin-top:33px;
 	}
-	> .buttons {
-		top:8px;
-		background-color: transparent !important;
-		margin:0;
-		padding:0 0 0 10px;
-		left:57.4%;
-		a {
-			padding:4px 60px !important;
-		}
-	}
 }
 
 #tutorial_start:target {
@@ -846,6 +913,17 @@ TUTORIAL
 	a {
 		padding:4px 15px;
 	}
+  #buttons_end {
+ 		background-color: transparent !important;
+ 		margin-top:10%;
+		right:-96%;
+ 		width:191%;
+		padding-left:0;
+		display:block;
+ 		a {
+ 			padding:4px 60px !important;
+ 		}
+ 	}
 }
 /*************************************************************************************
 DASHBOARD

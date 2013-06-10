@@ -1,6 +1,8 @@
+<% provide(:title, "Auto koppelen") %>
 <div id="pagewrap">
 	<div class="wrapper fullwidth">
-		<%= form_for(@car) do |f| %>
+		<div class="connect_car">
+			<%= form_for(@car) do |f| %>
 		
 			<ul>
 				<li>
@@ -37,6 +39,6 @@
 			
 		<% end %>
 					
-		
+		</div>
 	</div>
 </div>

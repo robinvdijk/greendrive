@@ -1,7 +1,26 @@
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>
+function readURL(input) {
+if (input.files && input.files[0]) {
+var reader = new FileReader();
+
+reader.onload = function (e) {
+$('.avatar_pre')
+.attr('src', e.target.result)
+;
+};
+
+reader.readAsDataURL(input.files[0]);
+}
+}
+</script>
+
+
+</head>
 <div id="pagewrap">
 	<div class="wrapper grid3">
 		<article class="col">
-			
 				<%= form_tag sessions_path do %>
 				<ul>
 					<li>
@@ -10,14 +29,14 @@
 					
 					<li>
 						<%= label :email, 'Email'%><br />
-						<%= text_field_tag :email, params[:email], :class => 'field aligncenter', :placeholder => "Emailadres" %><br />
-					</li>
+						<%= email_field_tag :email, params[:email], :class => 'field aligncenter', :placeholder => "E-mailadres" %><br />
+					</li> 
 					<li>	
 						<%= label :password, 'Wachtwoord'%><br />
 						<%= password_field_tag :password, '', :class => 'field', :placeholder => "Wachtwoord" %>
 					</li>
 					<li class="center">
-						<%= link_to "Wachtwoord vergeten?", new_password_reset_path %></p>
+						<p><%= link_to "Wachtwoord vergeten?", new_password_reset_path %></p>
 					</li>
 					<li class="center">
 						<%= check_box_tag :remember_me, 1, params[:remember_me] %>
@@ -39,110 +58,112 @@
 					
 		</article>
 				
-
-		<article class="col">
-			<div id="register">
-				<div class="aligncenter">
+			<article class="col">
+				<div id="register">
+					<div class="aligncenter">
+					
+					<%= form_for(@user) do |f| %>
+						<div id="vertical-line">
+							
 				
-				<%= form_for(@user) do |f| %>
-				
-					<div id="vertical-line">
-						
-			
-						<ul>
-							<li>
-								<h2>Registreren</h2>
-							</li>
-							<li>
-							    <%= f.label :first_name, 'Voornaam *' %></strong><br>
-							    <%= f.text_field :first_name, :class => 'field' %>
-							</li>
-							<li>
-	    						<%= f.label :middle_name, 'Tussenvoegsel' %><br />
-	    						<%= f.text_field :middle_name, class: 'field' %>
-	    					</li>
-							<li>
-				  			    <%= f.label :last_name, 'Achternaam *' %></strong><br>
-				  			    <%= f.text_field :last_name, :class => 'field' %>
-							</li>
-							<li>
-				  			    <%= f.label :email, 'E-mail *' %></strong><br />
-				  			    <%= f.text_field :email, :autofocus => true, :class => 'field' %>
+							<ul>
+								<li>
+									<h2>Registreren</h2>
 								</li>
-							<li>
-				  			    <%= f.label :user_name, 'Gebruikersnaam *' %></strong><br />
-										<div class="tooltip"><%= f.text_field :user_name, :title => "De gebruikersnaam moet minimaal 4 en maximaal 20 tekens bevatten.", :class => 'field' %>
-										</div>
-							</li>
-							<li>
-						      <%= f.label :birthday, 'Geboortedatum' %><br />
-						      <%= f.date_select("birthday", :start_year => Date.current.year - 18, 
-						                                    :end_year => Date.current.year - 90,
-						                                    :order => [:day, :month, :year],
-						                                    :prompt => {:day => 'Dag', :month => 'Maand', :year => 'Jaar'},
-						                                    :use_month_names => ['Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Jlii', 'Augustus',
-						                                    'September', 'Oktober', 'November', 'December']) %>
-					    </li>
-							<li>
-							    <%= f.label :password, 'Wachtwoord *' %></strong><br />
-							    <%= f.password_field :password, :title => "Het wachtwoord moet minimaal 6 karakters bevatten, waarvan 1 hoofdletter, 1 kleine letter en 1 getal.", :class => 'field' %>
-							    <div class='help_text' class='username_help_text'>
+								<li>
+								    <%= f.label :first_name, 'Voornaam *' %><br>
+								    <%= f.text_field :first_name, :class => 'field' %>
+								</li>
+								<li>
+									<%= f.label :middle_name, 'Tussenvoegsel' %><br>
+									<%= f.text_field :middle_name, :class => 'field'%>
+								<li>
+					  			    <%= f.label :last_name, 'Achternaam *' %><br>
+					  			    <%= f.text_field :last_name, :class => 'field' %>
+								</li>
+								<li>
+					  			    <%= f.label :email, 'E-mail *' %><br />
+					  			    <%= f.email_field :email, :class => 'field' %>
+									</li>
+								<li>
+					  			    <%= f.label :user_name, 'Gebruikersnaam *' %><br />
+									<%= f.text_field :user_name, :class => 'field' %>
+									<div class='help_text' class='username_help_text'>
+										<h2>Gebruikersnaam</h2>
+										<p>Uw gebruikersnaam moet uniek zijn en moet minimaal 4 en maximaal 20 tekens bevatten.</p>
+          							</div>
+								</li>
+								<li>
+							      <%= f.label :birthday, 'Geboortedatum' %><br />
+							      <%= f.date_select("birthday", :start_year => Date.current.year - 18, 
+							                                    :end_year => Date.current.year - 90,
+							                                    :order => [:day, :month, :year],
+							                                    :prompt => {:day => 'Dag', :month => 'Maand', :year => 'Jaar'},
+							                                    :use_month_names => ['Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus',
+							                                    'September', 'Oktober', 'November', 'December']) %>
+						    </li>
+								<li>
+								    <%= f.label :password, 'Wachtwoord *' %><br />
+								    <%= f.password_field :password, :title => "Het wachtwoord moet minimaal 6 karakters bevatten, waarvan 1 hoofdletter, 1 kleine letter en 1 getal.", :class => 'field' %>
+								    <div class='help_text' class='username_help_text'>
 										<h2>Wachtwoord</h2>
                 						<p>Uw wachtwoord bestaat uit:</p>
               							<p>- Minimaal 6 tekens</p>
                 						<p>- Minimaal 1 hoofdletter en 1 kleine letter</p>
                 						<p>- Minimaal 1 getal</p>
           							</div>
-							</li>
-							<li>
-							    <%= f.label :password_confirmation, 'Wachtwoord verificatie *' %></strong><br />
-							    <%= f.password_field :password_confirmation, :title => "Het wachtwoord moet minimaal 6 karakters bevatten, waarvan 1 hoofdletter, 1 kleine letter en 1 getal.", :class => 'field' %>
-  								<div class='help_text' class='username_help_text'>
+								</li>
+								<li>
+								   <%= f.label :password_confirmation, 'Wachtwoord herhalen *' %><br />
+								   <%= f.password_field :password_confirmation, :title => "Het wachtwoord moet minimaal 6 karakters bevatten, waarvan 1 hoofdletter, 1 kleine letter en 1 getal.", :class => 'field' %>
+								   <div class='help_text' class='username_help_text'>
 										<h2>Wachtwoord</h2>
                 						<p>Uw wachtwoord bestaat uit:</p>
               							<p>- Minimaal 6 tekens</p>
                 						<p>- Minimaal 1 hoofdletter en 1 kleine letter</p>
                 						<p>- Minimaal 1 getal</p>
           							</div>
-							</li>
-						</ul>
+								</li>
+							</ul>
+							<p class="register_text">De met * gemarkeerde velden zijn verplicht.</p>
+						</div>
 					</div>
 				</div>
-			</div>
-		</article>
-			
-		<article class="col">
-			<div id="register">	
-				<div class="aligncenter">
-					<ul>
-						<li>
-							<%= image_tag("avatar.png", :alt => "default-avatar", :class => "avatar_pre") %>
-						</li>
-						<li>
-						<%= f.file_field :avatar%>
-						</li>
-						<li>
-						<small><%= check_box :terms_of_service, 'true' %>
-							
-						Ik ga akkoord met de <!-- &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp -->	<a href="#" onclick="popup('terms_info')">voorwaarden</a> *
-						
-							<div id="blanket"></div> <!-- the black opacity screen around the popup -->
-						
-							<div id="terms_info">
-								<a href="#" onclick="popup('terms_info')">Close</a>
-							</div>	
-						</li>
-						<li class="center">	
-					      	<%= f.submit "Account aanmaken", :class => 'button' %>
-						</li>
-					<% end %>
-				</div>
+			</article>
 				
-			</div>
-		</article>	
+			<article class="col">
+				<div id="register">	
+					<div class="aligncenter">
+						<ul>
+							<li>
+								<%= image_tag("avatar.png", :alt => "default-avatar", :class => "avatar_pre") %>
+							</li>
+							<li>
+								<%= f.file_field :avatar, :onchange => "javascript: readURL(this);" %>
+							</li>
 
-		
-</div>
+							<li>
+								<small><%= check_box :terms_of_service, 'true' %>
+
+								Ik ga akkoord met de <!-- &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp -->	<a href="#" onclick="popup('terms_info')", class="link">voorwaarden</a> *
+
+									<div id="blanket"></div> <!-- the black opacity screen around the popup -->
+
+									<div id="terms_info">
+										<a href="#" onclick="popup('terms_info')">Sluiten</a>
+									</div>	
+								</small>
+							</li>
+							<li class="center">	
+						      	<%= f.submit "Account aanmaken", :class => 'button_register' %>
+							</li>
+						</ul>
+						<% end %>
+					</div>
+					
+				</div>
+			</article>	
+		</div>
 </div>	
 	 
 	 
