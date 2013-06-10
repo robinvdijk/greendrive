@@ -35,3 +35,14 @@
 	</ul>
 </div>
 
+<div id="year_date">
+	<div id="chart_div4" data-car_miles_year='<%= @car_miles_year.to_json %>' style="width:500px; height:250px"></div>
+	<ul class='chart_stats'>
+
+		<li class=col_chart><p>Elektrisch</p> <%= @car.last_year_electric %> km </li>
+		<li class=col_chart><p>Fossiel</p> <%= @car.last_year_fossile %> km </li>
+		<li class=col_chart style='border:none'><p>Totaal</p> <%= @car.last_year %> km </li>
+
+	</ul>
+</div>
+

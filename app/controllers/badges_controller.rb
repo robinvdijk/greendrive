@@ -1,8 +1,9 @@
 class BadgesController < ApplicationController
     skip_authorization_check
-    before_filter :get_user, :get_car, :get_badges
+    before_filter :get_user, :get_car
 
-  def index   
+  def index  
+    @badge_green = Badge.where('theme = ?', 'groen') 
   end
   
   def new
@@ -17,5 +18,17 @@ class BadgesController < ApplicationController
       render 'new'
     end
   end
+  
+  def find_green
+    select(:badges, :theme, 'algemeen')
+
+  end
+  
+  def find_general
+    Badge.where('theme = ?', 'algemeen')
+  end
 
 end
+
+
+# <%= raw current_user.badges.electric.map {|badge| image_tag badge.avatar_url(), :class => "badge_display" }.to_sentence %>

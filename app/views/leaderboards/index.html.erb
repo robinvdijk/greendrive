@@ -19,7 +19,7 @@
 				</tr>
 				<% @users.each do |user| %>
 					<tr>
-						<td class="leaderboards_td1"><%= user.user_name %></td>
+						<td class="leaderboards_td1 radius_left"><%= user.user_name %></td>
 						<% if user.score %>
 							<td class="leaderboards_td2"><%= user.score %> punten</td>
 						<% else %>
@@ -39,7 +39,7 @@
 						<% end %>
 						
 						<% if user.car.mileage %>
-							<td class="leaderboards_td5"><%= user.car.mileage %> km</td>
+							<td class="leaderboards_td5 radius_right"><%= user.car.mileage %> km</td>
 						<% else %>
 							<td class="leaderboards_td5">0 km</td>
 						<% end %>

@@ -14,11 +14,11 @@ class ApplicationController < ActionController::Base
     @car = Car.where('user_id = ?', current_user.id).first
   end
   
-  def get_badges
-    @badges_electric = Badge.where('subject = ? and value <= ?', 'Mileage Electric', @car.mileage_electric)
-    @badges_mileage = Badge.where('subject = ? and value <= ?', 'Mileage', @car.mileage)
-    @badges_ratio = Badge.where('subject = ? and value <= ?', 'Mileage Ratio', 100 * @car.mileage_ratio)
-  end
+  # def get_badges
+  #   @badges_electric = Badge.where('user_id = ?', current_user.id)
+  #   @badges_mileage = Badge.where('subject = ? and value <= ?', 'Mileage', @car.mileage)
+  #   @badges_ratio = Badge.where('subject = ? and value <= ?', 'Mileage Ratio', 100 * @car.mileage_ratio)
+  # end
 
   def search_results
     authorize! :read, :all

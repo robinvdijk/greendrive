@@ -21,6 +21,7 @@ class Interval < ActiveRecord::Base
     cars.each do |car|
       car.last_week = car.mileage - car.last_week
       car.last_week_electric = car.mileage_electric - car.last_week_electric
+      car.last_week_fossile = car.mileage_fossile - car.last_week_fossile
       car.save
     end
   end
@@ -31,6 +32,8 @@ class Interval < ActiveRecord::Base
     cars.each do |car|
       car.last_month = car.mileage - car.last_week
       car.last_month_electric = car.mileage_electric - car.last_month_electric
+      car.last_month_fossile = car.mileage_fossile - car.last_month_fossile
+      
       car.save
     end
   end
@@ -41,11 +44,14 @@ class Interval < ActiveRecord::Base
     cars.each do |car|
       car.last_year = car.mileage - car.last_year
       car.last_year_electric = car.mileage_electric - car.last_year_electric
+      car.last_year_fossile = car.mileage_fossile - car.last_year_fossile
+      
       car.save
     end
   end
   
   
 end
+
 
 

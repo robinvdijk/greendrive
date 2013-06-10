@@ -1,8 +1,8 @@
 $(document).ready(function() {
 	
-		$('.badge img').mouseenter(function(){
+		$('.badge_collection img').mouseenter(function(){
 			t = $(this)
-			badge = $(this).closest('.badge');
+			badge = $(this).closest('.badge_collection');
 			description = $(badge).find('.badge_description');
 				
 				$('#sidebar_badge_info').html(t.clone(t));

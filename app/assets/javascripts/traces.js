@@ -26,8 +26,9 @@
 	   var car_miles = $('#chart_div1').data('car_miles');
 		 var car_miles_week = $('#chart_div2').data('car_miles_week');
 		 var car_miles_month = $('#chart_div3').data('car_miles_month');
-
-     // Create the data table.
+		 var car_miles_year = $('#chart_div4').data('car_miles_year');
+     
+		 // Create the data table.
      var data = new google.visualization.DataTable();
 	     data.addColumn('string', 'Ratio');    
 	     data.addColumn('number', 'Slices');
@@ -52,6 +53,15 @@
 	     data3.addRows([
 	       ['Elektrisch', car_miles_month.electric],
 	       ['Fossiel', car_miles_month.fossile],
+				 ['Empty', 0]                 
+     	 ]);
+			 
+     var data4 = new google.visualization.DataTable();
+	     data4.addColumn('string', 'Ratio');    
+	     data4.addColumn('number', 'Slices');
+	     data4.addRows([
+	       ['Elektrisch', car_miles_year.electric],
+	       ['Fossiel', car_miles_year.fossile],
 				 ['Empty', 0]                 
      	 ]);
 			 
@@ -84,5 +94,7 @@
      chart.draw(data2, options);
      var chart = new google.visualization.PieChart(document.getElementById('chart_div3'));
      chart.draw(data3, options);
+     var chart = new google.visualization.PieChart(document.getElementById('chart_div4'));
+     chart.draw(data4, options);
    }
 

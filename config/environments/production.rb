@@ -66,7 +66,6 @@ Greendrive::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   
-  config.action_mailer.default_url_options = { :host => "rocky-woodland-7345.herokuapp.com" }
 
   config.action_mailer.raise_delivery_errors = true
   
@@ -77,7 +76,20 @@ Greendrive::Application.configure do
   # Precompile additional assets
   config.assets.precompile += %w( .svg .eot .woff .ttf )
   
+  config.action_mailer.default_url_options = { :host => "creacces.nl" }
   
-  
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :authentication => :plain,
+    :user_name => "noreply.greendrive@gmail.com",
+    :password => "green2012",
+    :domain => "gmail.com",
+    :enable_starttls_auto => true
+
+  }
   
 end

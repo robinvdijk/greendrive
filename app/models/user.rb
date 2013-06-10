@@ -12,9 +12,9 @@ class User < ActiveRecord::Base
   has_many :achievements
   has_many :badges, through: :achievements
 
-  validates_presence_of :password, :except => [:edit, :update] #Werkt niet grrr
-  validates_presence_of :password_confirmation, :except => [:edit, :update] #Werkt niet grrr
-  validates_format_of :password, :with => /(?=^.{6,20}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/
+  # validates_presence_of :password, :except => [:edit, :update] #Werkt niet grrr
+  # validates_presence_of :password_confirmation, :except => [:edit, :update] #Werkt niet grrr
+  # validates_format_of :password, :with => /(?=^.{6,20}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/
   #Password: Length between 6-20 characters, which consists of [at least] 1 lowercase, 1 uppercase and 1 special character OR digit
   validates :first_name, :presence => true
   validates :last_name, :presence => true

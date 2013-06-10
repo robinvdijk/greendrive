@@ -9,6 +9,7 @@
 				<ul class='chart_info'>
 					<li class='nav_interval'><a href="#" id="week">Vorige week</a></li> |
 					<li class='nav_interval'><a href="#" id="month">Vorige maand</a></li> |
+					<li class='nav_interval'><a href="#" id="year">Vorig jaar</a></li> |
 					<li class='nav_interval'><a href="#" id="all">Alles</a></li>
 				</ul>
 				<div id="legenda">
@@ -19,30 +20,8 @@
 			</div>
 						
 			<ul id="badges" class="center">	
-				<li class="badge_dash">
-					<% @badges_electric.each do |badge| %>
-						<%= image_tag badge.avatar_url(), class: 'avatar' %>		
-						<!-- <% if badge.value == 0 %>
-						<% else %>
-						<p><%= badge.value %> elektrische kilometer badge </p>	  
-						<p>Punten: <%= badge.points %></p>
-						<% end %> -->
-					<% end %>
-				</li>
-				
-				<li class="badge_dash">
-					<% @badges_ratio.each do |badge| %>
-						<%= image_tag badge.avatar_url(), class: 'avatar' %>		
-						<!-- <% if badge.value == 0 %>
-						<% else %>
-						<p><%= badge.value %> fossiele kilometer badge </p>				 
-						<p>Punten: <%= badge.points %></p>
-						<% end %> -->
-					<% end %>
-				</li>
-		
-				
-			</ul>	
+
+					<%= raw current_user.badges.most_recent.map {|badge| image_tag badge.avatar_url(), :class => "badge_display" }.to_sentence %>
 		</div>
 		<div id="col_dashboard_right">
 			<div id="profile">

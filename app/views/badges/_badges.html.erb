@@ -6,49 +6,26 @@ http://www.dynamicdrive.com/dynamicindex4/thumbnail2.htm-->
 
 
 <div class="badge_collection">
-			<div class="badge" id="green">
-			<% @badges_electric.each do |badge| %>
-				<%= image_tag badge.avatar_url(), class: 'avatar' %>		
-				
-				<div class="badge_description">
-					<%= badge.description %>
-				</div>
-				<!-- <% if badge.value == 0 %>
-				<% else %>
-				<p><%= badge.value %> elektrische kilometer badge </p>	  
-				<p>Punten: <%= badge.points %></p>
-				<% end %> -->
-			<% end %>
-	</div>
 	
-	<div class="badge" id="divers">
-		<% @badges_ratio.each do |badge| %>
-			<%= image_tag badge.avatar_url(), class: 'avatar' %>	
-			
-			<div class="badge_description">
-				<%= badge.description %>
-			</div>	
-			<!-- <% if badge.value == 0 %>
-			<% else %>
-			<p><%= badge.value %> totaal kilometer badge </p>				 
-			<p>Punten: <%= badge.points %></p>
-			<% end %> -->
-		<% end %>
-	</div>
+	
+	
+	<%= raw current_user.badges.electric.map {|badge| image_tag badge.avatar_url(), :class => "badge_display", :id => "green"}.to_sentence%>
+	
+	
+	<%= raw current_user.badges.ratio.map {|badge| badge.description + (image_tag badge.avatar_url(), :class => "badge_display", :id => "green")}.to_sentence%>
+	<%= raw current_user.badges.mileage.map {|badge| image_tag badge.avatar_url(), :class => "badge_display", :id => "general"}.to_sentence %>
+	<%= raw current_user.badges.world.map {|badge| badge.description + (image_tag badge.avatar_url(), :class => "badge_display", :id => "divers")}.to_sentence %>
+	
+	
+	
 
+	
 
-		<div class="badge" id="divers">
-			<% @badges_mileage.each do |badge| %>
-				<%= image_tag badge.avatar_url(), class: 'avatar' %>			
-				<div class="badge_description">
-					<%= badge.description %>
-				</div>
-				<!-- <% if badge.value == 0 %>
-				<% else %>
-				<p><%= badge.value %> totaal kilometer badge </p>				 
-				<p>Punten: <%= badge.points %></p>
-				<% end %> -->
-			<% end %>
-		</div>
 </div>
 
+
+
+
+<!-- <div class="badge_description">
+	<%= raw current_user.badges.map {|badge| badge.description} %>
+</div> -->
