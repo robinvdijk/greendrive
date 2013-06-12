@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	
 	$(window).load(function() {
-		if($('body#tutorial').length){
+		if($('body#first_visit').length){
 			$('#help').click();
 		}
 	});
