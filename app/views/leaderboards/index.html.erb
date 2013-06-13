@@ -17,39 +17,37 @@
 			<table class="leaderboards">
 				<tr class="sort_types">
 					<th>Naam</th>
-					<th><%= sortable "score" %></th>
+					<th><%= sortable "score", "Score" %></th>
 					<th><%= sortable "mileage_ratio", "Ratio" %></th>
 					<th><%= sortable "mileage_electric", "Elektrisch" %></th>
 					<th><%= sortable "mileage", "Totaal" %></th>
 				</tr>
-				<% @users.each do |user| %>
+				<% @cars.each do |car| %>
+				<% points = car.user.badges.map {|badge| badge.points}.reduce(:+) %>
 					<tr>
 
 
 
-						<td class="leaderboards_td1 radius_left"><%= link_to user.user_name, user_name_dashboard_path(user.user_name)%></td>
+						<td class="leaderboards_td1 radius_left"><%= link_to car.user.user_name, user_name_dashboard_path(car.user.user_name)%></td>
 
 
-						<% if user.score %>
-							<td class="leaderboards_td2"><%= user.score %> punten</td>
-						<% else %>
-							<td class="leaderboards_td2">0 punten</td>
-						<% end %>
 
-						<% if user.car.mileage_ratio %>
-							<td class="leaderboards_td3"><%= user.car.mileage_ratio %>%</td>
+							<td class="leaderboards_td2"><%= car.score %> punten</td>
+
+						<% if car.mileage_ratio %>
+							<td class="leaderboards_td3"><%= car.mileage_ratio %>%</td>
 						<% else %>
 							<td class="leaderboards_td3">0 %</td>
 						<% end %>
 						
-						<% if user.car.mileage_ratio %>
-							<td class="leaderboards_td4"><%= user.car.mileage_electric %> km</td>
+						<% if car.mileage_ratio %>
+							<td class="leaderboards_td4"><%= car.mileage_electric %> km</td>
 						<% else %>
 							<td class="leaderboards_td4">0 km</td>
 						<% end %>
 						
-						<% if user.car.mileage %>
-							<td class="leaderboards_td5 radius_right"><%= user.car.mileage %> km</td>
+						<% if car.mileage %>
+							<td class="leaderboards_td5 radius_right"><%= car.mileage %> km</td>
 						<% else %>
 							<td class="leaderboards_td5">0 km</td>
 						<% end %>
@@ -78,11 +76,9 @@
 						<%= link_to current_user.user_name, user_name_dashboard_path(current_user.user_name) %>
 					</td>
 
-						<% if current_user.score %>
-							<td class="leaderboards_td2"><%= current_user.score %> punten</td>
-						<% else %>
-							<td class="leaderboards_td2">0 punten</td>
-						<% end %>
+					
+							<td class="leaderboards_td2"><%= @points_current.reduce(:+) %> punten</td>
+					
 
 						<% if current_user.car.mileage_ratio %>
 							<td class="leaderboards_td3"><%= current_user.car.mileage_ratio %>%</td>

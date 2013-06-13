@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     @user.role = 'user'
       if @user.save
         cookies[:auth_token] = @user.auth_token
-        # UserMailer.welcome_email(@user).deliver # (werkt nog niet op vps)
+        UserMailer.welcome_email(@user).deliver
         flash[:succes] = "Welkom " + @user.user_name + ". U ben succesvol ingelogd. Er is tevens een welkomst e-mail verstuurd naar uw e-mailadres."
         redirect_to new_car_path
       else

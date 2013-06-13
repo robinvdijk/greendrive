@@ -340,7 +340,7 @@ table.leaderboards, .leaderboards_current_user{
 }
 
 
-.leaderboards_td0, .leaderboards_td1, .leaderboards_td2, .leaderboards_td3, .leaderboards_td5{
+.leaderboards_td0, .leaderboards_td1, .leaderboards_td2, .leaderboards_td3, .leaderboards_td4, .leaderboards_td5{
 	padding-left: 15px;
 }
 
@@ -664,6 +664,8 @@ BADGES PAGE
 
 .badge_description {
 	display:none;
+	float:left;
+	padding: 0 0 10px 10px;
 }
 
 .badge_subject{
@@ -727,6 +729,8 @@ STICKY SCROLL
 
 #sidebar_badge_info{
 	margin-top: 14.4%;
+	img {
+		margin-left: 10px;}
 }
 
 
@@ -1021,6 +1025,11 @@ DASHBOARD
 	float:left;
 	padding: 11px;
 	text-indent: -9999px; 
+}
+
+.badge_container {
+	float: left;
+	padding: 10px 10px 0 10px;
 }
 /*************************************************************************************
 	Buttons

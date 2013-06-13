@@ -2,7 +2,8 @@ class LeaderboardsController < ApplicationController
 	load_and_authorize_resource
 	helper_method :sort_column, :sort_direction, :get_car_2
 	def index
-		@users = User.order(sort_column + " " + sort_direction).limit(10)
+		@cars = Car.order(sort_column + " " + sort_direction).limit(10)
+    @points_current = current_user.badges.map {|badge| badge.points}
 	end
 
 	private 
@@ -12,7 +13,7 @@ class LeaderboardsController < ApplicationController
 	#The "include?"-part is there because when a user manually changed the sortquery in the URL to
 	#something that doesn't exist, the app wil not crash. Instead, it refers back to the default.
 	def sort_column
-    User.column_names.include?(params[:sort]) ? params[:sort] : "score"
+    Car.column_names.include?(params[:sort]) ? params[:sort] : "score"
 
 	end
 
