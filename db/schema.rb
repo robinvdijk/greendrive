@@ -11,7 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130611112742) do
+
+ActiveRecord::Schema.define(:version => 20130610141154) do
+
 
   create_table "achievements", :force => true do |t|
     t.integer  "badge_id"
@@ -56,7 +58,10 @@ ActiveRecord::Schema.define(:version => 20130611112742) do
     t.integer  "last_year_fossile",   :default => 0
     t.integer  "mileage_ratio",       :default => 0
     t.integer  "rank"
+<<<<<<< HEAD
     t.integer  "score",               :default => 0
+=======
+>>>>>>> e968322a5663bf20d74a0a880b226b1f63260939
   end
 
   create_table "segments", :force => true do |t|

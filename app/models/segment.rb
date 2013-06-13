@@ -30,13 +30,19 @@ class Segment < ActiveRecord::Base
 
   # response2 = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/GetNewSegments?token=#{auth_token}&companyId=#{company_id}&max_segment_id=#{self.remote_id}")
     
-
+  def test
+    response2 = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/GetNewSegments?token=#{auth_token}&companyId=#{company_id}&page=1")
+    data = JSON.parse(response2.body)
+    puts data
+  end
         
   def henk
     
       40.times do |i|
             response2 = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/GetNewSegments?token=#{auth_token}&companyId=#{company_id}&page=#{i}")
             data = JSON.parse(response2.body)
+            
+            puts data
     
             for segment in data['Segments']
               
@@ -73,8 +79,6 @@ class Segment < ActiveRecord::Base
                     car.save
                 
                     self.save
-                    
-                
                     
                   end
             
