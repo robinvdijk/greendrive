@@ -9,13 +9,13 @@ class Segment < ActiveRecord::Base
   belongs_to :user
   
   def self.cron
-    segment = Segment.new
-    segment.init
-    segment.henk
-    puts "cronjob finished"
+        
+      segment = Segment.new
+      segment.init
+      segment.getdata
+      puts "cronjob finished"
+    
   end
-   
-
   
   def init
      response = HTTParty.get("http://360-ev.com/Services/Authentication.svc/json/Authenticate?username=greenflux2012&password=green2012") 
@@ -36,13 +36,10 @@ class Segment < ActiveRecord::Base
     puts data
   end
         
-  def henk
+  def getdata
     
-      40.times do |i|
-            response2 = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/GetNewSegments?token=#{auth_token}&companyId=#{company_id}&page=#{i}")
+            response2 = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/GetNewSegments?token=#{auth_token}&companyId=#{company_id}&max_segment_id=#{self.remote_id}")
             data = JSON.parse(response2.body)
-            
-            puts data
     
             for segment in data['Segments']
               
@@ -89,11 +86,9 @@ class Segment < ActiveRecord::Base
               
               
               
-              if data.blank?
-                break
-              end
+             
               
-          end
+
           
   end
   
