@@ -10,6 +10,7 @@ end
 
 every 20.minutes do
   runner "Achievement.getbadges"
+end
 
 every :week do
   runner "Interval.week_cron"
