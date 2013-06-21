@@ -6,7 +6,7 @@ require "whenever/capistrano"
 
  
 set :application, "greendrive"
-set :ip_address, "149.210.131.83"
+set :ip_address, "149.210.141.143"
  
 set :deploy_to, "/home/deploy/#{application}"
 set :user, 'deploy'

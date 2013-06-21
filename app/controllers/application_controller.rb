@@ -11,11 +11,7 @@ class ApplicationController < ActionController::Base
   end
   
   def get_car
-    @car = Car.where('user_id = ?', get_user.id).first
-  end
-  
-  def get_car_2
-    @car = Car.where('user_id = ?', current_user.id)
+    @car = Car.where('user_id = ?', current_user.id).first
   end
   
   # def get_badges

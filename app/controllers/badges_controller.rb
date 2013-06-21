@@ -19,16 +19,9 @@ class BadgesController < ApplicationController
     end
   end
   
-  def find_green
-    select(:badges, :theme, 'algemeen')
 
-  end
-  
-  def find_general
-    Badge.where('theme = ?', 'algemeen')
-  end
 
 end
 
 
-# <%= raw current_user.badges.electric.map {|badge| image_tag badge.avatar_url(), :class => "badge_display" }.to_sentence %>
+

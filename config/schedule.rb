@@ -8,6 +8,9 @@ every 15.minutes do
   runner "Segment.cron"
 end
 
+every 20.minutes do
+  runner "Achievement.getbadges"
+
 every :week do
   runner "Interval.week_cron"
 end
