@@ -51,7 +51,7 @@ class Segment < ActiveRecord::Base
     # response2 = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/GetSegmentsInRange?token=#{auth_token}&companyId=#{company_id}&page=1&utc_from=2013-06-10 13:00&utc_to=2013-06-18 13:00")
             
     response = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/MarkAsReceived?token=#{auth_token}&companyId=#{company_id}&max_segment_id=891542")    
-      
+    if response.headers['content-length'].to_i >= 2
     data = JSON.parse(response.body)
     puts data
     
@@ -109,9 +109,10 @@ class Segment < ActiveRecord::Base
       
       end
       
-    
+    else
+      puts "hello"
 
-      
+    end
 
     
 
