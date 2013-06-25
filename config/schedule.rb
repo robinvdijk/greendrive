@@ -4,12 +4,8 @@ set :environment, 'development'
 # env :PATH, '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games'
 
 
-every 1.minute do
+every 15.minutes do
   runner "Segment.cron"
-end
-
-every 20.minutes do
-  runner "Achievement.getbadges"
 end
 
 every :week do

@@ -14,6 +14,7 @@ class Segment < ActiveRecord::Base
       segment = Segment.new
       segment.init
       segment.getdata
+      Achievement.getbadges
       puts "cronjob finished"
     
   end
@@ -24,7 +25,7 @@ class Segment < ActiveRecord::Base
      auth = JSON.parse(response.body)
      self.auth_token = auth['AuthToken']
      self.company_id = auth['CompanyId']
-   
+     self.remote_id = Segment.last.remote_id
      self.save
   end
    
@@ -40,28 +41,21 @@ class Segment < ActiveRecord::Base
         self.remote_id = segment['ID'] # 239493 
         self.mileage = segment['mileage'] / 1000
         self.drive_electric_ratio = segment['driveElectricRatio']
+        
       end
     end
   end
         
   def getdata
-    # response2 = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/GetNewSegments?token=#{auth_token}&companyId=#{company_id}&page=1")
-    # headers 'Content-Type' => "application/json"    
-            
-    # response2 = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/GetSegmentsInRange?token=#{auth_token}&companyId=#{company_id}&page=1&utc_from=2013-06-10 13:00&utc_to=2013-06-18 13:00")
-            
-    response = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/MarkAsReceived?token=#{auth_token}&companyId=#{company_id}&max_segment_id=891542")    
-    if response.headers['content-length'].to_i >= 2
+    
+    20.times do |i|
+    
+    response = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/GetNewSegments?token=#{auth_token}&companyId=#{company_id}&page=#{i}")            
+
     data = JSON.parse(response.body)
-    puts data
-    
-      #<HTTParty::Response:0x..fa parsed_response=-2, @response=#<Net::HTTPOK 200 OK readbody=true>, @headers={"cache-control"=>["private"], "content-length"=>["2"], "content-type"=>["application/json; charset=utf-8"], "server"=>["Microsoft-IIS/7.5"], "x-aspnet-version"=>["4.0.30319"], "x-powered-by"=>["ASP.NET"], "date"=>["Sun, 23 Jun 2013 18:15:48 GMT"], "connection"=>["close"]}>
-    
-      # response = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/MarkAsReceived?token=by93Q1ZJL1hYMDVDb3NhcXZxbjltZ29SdmpoR2djdlhPbzQxREFpTTNja2p1eVZBcEFVOWxnPT01&companyId=13722&max_segment_id=848563")    
-    
 
 
-      
+          
       for segment in data['Segments']
       
     
@@ -109,16 +103,17 @@ class Segment < ActiveRecord::Base
       
       end
       
-    else
-      puts "hello"
+    
 
-    end
+
 
     
 
 
+   HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/MarkAsReceived?token=#{auth_token}&companyId=#{company_id}&max_segment_id=#{self.remote_id}")    
              
               
+  end
   end
           
 
