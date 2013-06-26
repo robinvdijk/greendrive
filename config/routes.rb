@@ -9,13 +9,12 @@ Greendrive::Application.routes.draw do
   get 'gebruikers/:user_name/bewerken' => 'users#edit', :as => 'user_name_edit'
 
   resources :pictures, :only => [:index, :create, :destroy]
-
   resources :authentications
 
   resources :password_resets
   
   match "/search_results/" => "application#search_results", :via => :get, :as =>"search_results"
-
+  match "/empty" => "application#download"
     # match '/auth/:provider/callback', to: 'sessions#create_facebook'
     # # match '/auth/facebook_session', to: 'sessions#create_facebook_session'
     # match 'auth/failure', to: redirect('/')

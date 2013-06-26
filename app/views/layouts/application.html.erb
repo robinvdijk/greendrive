@@ -39,10 +39,15 @@
 
 <div id="footer">
 	<p>
-		Copyright &copy; 2013 Greendrivers |<%= link_to ' Algemene voorwaarden ',  'public/Algemene-voorwaarden.pdf'  %>|<%= link_to ' Contact ', contact_path %>|<%= link_to ' FAQ ', faq_path %>
+		Copyright &copy; 2013 Greendrivers |<%= link_to " Algemene Voorwaarden ", :controller => 'application', :action => 'download' %>
+		|<%= link_to ' Contact ', contact_path %>
+		|<%= link_to ' FAQ ', faq_path %>
 	</p>
 </div>
 </body>
 </html>
+
+
+
 
 

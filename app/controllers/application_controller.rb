@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
  
   check_authorization
-  skip_authorization_check :only => [:root]
+  skip_authorization_check :only => [:root, :download]
   # load_and_authorize_resource
   
   def get_user
@@ -56,6 +56,12 @@ class ApplicationController < ActionController::Base
       redirect_to homepage_path
     end
 	end
+  
+  def download
+    send_file(Rails.root.join('public', 'Algemene-voorwaarden.pdf'), :type =>'application/pdf', :disposition => 'inline')
+
+    
+  end
   
   
   rescue_from CanCan::AccessDenied do |exception|

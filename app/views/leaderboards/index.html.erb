@@ -23,7 +23,7 @@
 					<th><%= sortable "mileage", "Totaal" %></th>
 				</tr>
 				<% @cars.each do |car| %>
-				<% points = car.user.badges.map {|badge| badge.points}.reduce(:+) %>
+
 					<tr>
 
 
@@ -31,9 +31,12 @@
 						<td class="leaderboards_td1 radius_left"><%= link_to car.user.user_name, user_name_dashboard_path(car.user.user_name)%></td>
 
 
-
+						<% if car.score %>
 							<td class="leaderboards_td2"><%= car.score %> punten</td>
-
+						<% else %>
+							<td class="leaderboards_td2">0 punten</td>
+						<% end %>
+						
 						<% if car.mileage_ratio %>
 							<td class="leaderboards_td3"><%= car.mileage_ratio %>%</td>
 						<% else %>
@@ -76,8 +79,11 @@
 						<%= link_to current_user.user_name, user_name_dashboard_path(current_user.user_name) %>
 					</td>
 
-					
-							<td class="leaderboards_td2"><%= @points_current.reduce(:+) %> punten</td>
+						<% if current_user.car.score %>
+							<td class="leaderboards_td2"><%= current_user.car.score %> punten</td>
+						<% else %>
+							<td class="leaderboards_td2">0 punten</td>
+						<% end %>
 					
 
 						<% if current_user.car.mileage_ratio %>
