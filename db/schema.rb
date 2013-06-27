@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130619112106) do
+ActiveRecord::Schema.define(:version => 20130627132725) do
 
   create_table "achievements", :force => true do |t|
     t.integer  "badge_id"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20130619112106) do
     t.string   "subject"
     t.string   "theme"
     t.string   "description"
+    t.string   "title"
   end
 
   create_table "cars", :force => true do |t|

@@ -41,12 +41,16 @@
 			<%= f.text_field :value, class: 'field' %>
 		</li>
 		<li>
-			<%= f.label :points, "Points" %><br />
+			<%= f.label :points, "Punten" %><br />
 			<%= f.text_field :points, class: 'field' %>
 		</li>
 		<li>
-			<%= f.label :description, "Description" %><br />
-			<%= f.text_area :description, class: 'field'%>
+			<%= f.label :title, "Titel" %><br />
+			<%= f.text_field :title, class: 'field'%>
+		</li>
+		<li>
+			<%= f.label :description, "Beschrijving" %><br />
+			<%= f.text_area :description, class: 'field_text'%>
 		</li>
 		<li>
 				<%= f.file_field :avatar%>

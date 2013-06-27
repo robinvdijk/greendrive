@@ -11,7 +11,7 @@ http://www.dynamicdrive.com/dynamicindex4/thumbnail2.htm-->
 		<div class="badge_container">
 			<%= image_tag current_user.badges.electric.first.avatar_url(), :class => "badge_display", :id => "green" %>
 			<div class="badge_description">
-			<h2><%= current_user.badges.electric.first.subject %></h2>
+			<h2><%= current_user.badges.electric.first.title %></h2>
 			<%= current_user.badges.electric.first.description %>
 			</div>
 		</div>
@@ -19,7 +19,7 @@ http://www.dynamicdrive.com/dynamicindex4/thumbnail2.htm-->
 		<div class="badge_container">
 			<%= image_tag current_user.badges.ratio.first.avatar_url(), :class => "badge_display", :id => "green" %>
 			<div class="badge_description">
-			<h2><%= current_user.badges.ratio.first.subject %></h2>
+			<h2><%= current_user.badges.ratio.first.title %></h2>
 			<%= current_user.badges.ratio.first.description %>
 			</div>
 		</div>
@@ -27,7 +27,7 @@ http://www.dynamicdrive.com/dynamicindex4/thumbnail2.htm-->
 		<div class="badge_container">
 			<%= image_tag current_user.badges.mileage.first.avatar_url(), :class => "badge_display", :id => "general" %>
 			<div class="badge_description">
-			<h2><%= current_user.badges.mileage.first.subject %></h2>
+			<h2><%= current_user.badges.mileage.first.title %></h2>
 			<%= current_user.badges.mileage.first.description %>
 			</div>
 		</div>
@@ -36,7 +36,7 @@ http://www.dynamicdrive.com/dynamicindex4/thumbnail2.htm-->
 		<div class="badge_container">
 			<%= image_tag current_user.badges.world.first.avatar_url(), :class => "badge_display", :id => "divers" %>
 			<div class="badge_description">
-			<h2><%= current_user.badges.world.first.subject %> </h2>
+			<h2><%= current_user.badges.world.first.title %> </h2>
 			<%= current_user.badges.world.first.description %>
 			</div>
 		</div>
