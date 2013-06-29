@@ -40,11 +40,11 @@
 						<% end %>
 					</li>
 	
-					<li class="center"><%= link_to @user.user_name, user_path(@user) %></li>
+					<li class="center"><%= link_to current_user.user_name, user_path(@user) %></li>
 		
-					<li class="center"><%= @user.first_name %> <%= @user.middle_name%> <%= @user.last_name %></li>
+					<li class="center"><%= current_user.first_name %> <%= current_user.middle_name%> <%= current_user.last_name %></li>
 	
-					<li class="center"><%= @car.model %></li>
+					<li class="center"><%= current_user.car.model %></li>
 	
 				</ul>
 			</div>

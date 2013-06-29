@@ -341,7 +341,7 @@ table.leaderboards, .leaderboards_current_user{
 
 
 .leaderboards_td0, .leaderboards_td1, .leaderboards_td2, .leaderboards_td3, .leaderboards_td4, .leaderboards_td5{
-	padding: 8px 15px;
+	padding: 8px 0 8px 15px;
 }
 
 .leaderboards td{
@@ -390,6 +390,7 @@ tbody tr:nth-of-type(even) {
 
 .radius_left {
 	border-radius: 4px 0 0 4px;
+	
 }
 
 .radius_right {
@@ -988,6 +989,7 @@ DASHBOARD
 #profile {
 	border:1px solid rgba(128, 128, 128, .3);
 	border-radius: 5px;
+	height: 405px;
 	margin-bottom: 9%;
 	background:rgba(255,255,255,0.5);
 }
