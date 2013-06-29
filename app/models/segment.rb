@@ -25,7 +25,6 @@ class Segment < ActiveRecord::Base
      auth = JSON.parse(response.body)
      self.auth_token = auth['AuthToken']
      self.company_id = auth['CompanyId']
-     self.remote_id = Segment.last.remote_id
      self.save
   end
    
