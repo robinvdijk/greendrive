@@ -5,8 +5,9 @@ class Car < ActiveRecord::Base
 
   validates :username, :presence => true# , :uniqueness => true
   validates :password, :presence => true
-  validates :license_plate, :presence => true# , :uniqueness => true
+  validates :license_plate, :presence => true, :uniqueness => true
   validates :model, :presence => true
+  
 end
 
 

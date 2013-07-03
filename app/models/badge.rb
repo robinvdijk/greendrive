@@ -14,6 +14,8 @@ class Badge < ActiveRecord::Base
   scope :ratio, where(:subject => 'mileage_ratio').limit(1).order('created_at desc')
   scope :mileage, where(:subject => 'mileage').limit(1).order('created_at desc')
   scope :world, where(:subject => 'around_the_world').limit(1).order('created_at desc')
+  scope :tutorial, where(:subject => 'tutorial').limit(1).order('created_at desc')
+  
   
   
   scope :most_recent, order("created_at desc").limit(3)

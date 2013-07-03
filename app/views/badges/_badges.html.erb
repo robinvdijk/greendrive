@@ -6,41 +6,66 @@ http://www.dynamicdrive.com/dynamicindex4/thumbnail2.htm-->
 
 
 <div class="badge_collection">
+		
 
-	<% if badges %>
 		<div class="badge_container">
-			<%= image_tag current_user.badges.electric.first.avatar_url(), :class => "badge_display", :id => "green" %>
+		
+			
+			<%= image_tag @user.badges.electric.first.avatar_url(), :class => "badge_display", :id => "green" %>
 			<div class="badge_description">
-			<h2><%= current_user.badges.electric.first.title %></h2>
-			<%= current_user.badges.electric.first.description %>
+			<h2><%= @user.badges.electric.first.title %></h2>
+			<%= @user.badges.electric.first.description %>
 			</div>
 		</div>
 
+
+		<% if @user.car.mileage >= 1000 %>
 		<div class="badge_container">
-			<%= image_tag current_user.badges.ratio.first.avatar_url(), :class => "badge_display", :id => "green" %>
+		
+			<%= image_tag @user.badges.ratio.first.avatar_url(), :class => "badge_display", :id => "green" %>
 			<div class="badge_description">
-			<h2><%= current_user.badges.ratio.first.title %></h2>
-			<%= current_user.badges.ratio.first.description %>
+			<h2><%= @user.badges.ratio.first.title %></h2>
+			<%= @user.badges.ratio.first.description %><br>
+			
+
+			</div>
+		</div>
+		<% end %>
+
+	
+
+		<div class="badge_container">
+			<%= image_tag @user.badges.mileage.first.avatar_url(), :class => "badge_display", :id => "general" %>
+			<div class="badge_description">
+			<h2><%= @user.badges.mileage.first.title %></h2>
+			<%= @user.badges.mileage.first.description %><br>
+
+
+			</div>
+		</div>
+
+	
+		<% if @user.car.mileage >= 40037 %>
+		<div class="badge_container">
+			<%= image_tag @user.badges.world.first.avatar_url(), :class => "badge_display", :id => "divers" %>
+			<div class="badge_description">
+			<h2><%= @user.badges.world.first.title %> </h2>
+			<%= @user.badges.world.first.description %><br>
+			
+			</div>
+		</div>
+		<% end %>
+		
+		<div class="badge_container">
+			<%= image_tag @user.badges.tutorial.first.avatar_url(), :class => "badge_display", :id => "divers" %>
+			<div class="badge_description">
+			<h2><%= @user.badges.tutorial.first.title %> </h2>
+			<%= @user.badges.tutorial.first.description %><br>
+			
 			</div>
 		</div>
 		
-		<div class="badge_container">
-			<%= image_tag current_user.badges.mileage.first.avatar_url(), :class => "badge_display", :id => "general" %>
-			<div class="badge_description">
-			<h2><%= current_user.badges.mileage.first.title %></h2>
-			<%= current_user.badges.mileage.first.description %>
-			</div>
-		</div>
-	
-	
-		<div class="badge_container">
-			<%= image_tag current_user.badges.world.first.avatar_url(), :class => "badge_display", :id => "divers" %>
-			<div class="badge_description">
-			<h2><%= current_user.badges.world.first.title %> </h2>
-			<%= current_user.badges.world.first.description %>
-			</div>
-		</div>
-	<% end %>
+
 	
 	
 	

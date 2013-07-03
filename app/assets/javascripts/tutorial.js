@@ -75,7 +75,8 @@ $(document).ready(function() {
 		$('#tutorial_6').toggle();		
 		$('.nav_dashboard').toggleClass(hl);
 		$('#badges').toggleClass(hl);
-		$('#blanket').toggle();	
+		$('#blanket').toggle();
+	
 	});
 	
 });

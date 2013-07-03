@@ -26,6 +26,10 @@
 						<li class="center">
 							<strong class="green">Kenteken</strong><br /><%= @user.car.license_plate %>
 						</li>
+						<li class="center">
+							<strong class="green">Deelname sinds</strong><br /><%= @user.created_at.strftime("%d %b. %Y") %>
+						</li>
+						
 						<!-- <li class="center">
 							<h3><%= link_to 'Badges', :class => "button" %></h3>
 						</li> -->			

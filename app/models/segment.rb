@@ -25,6 +25,7 @@ class Segment < ActiveRecord::Base
      auth = JSON.parse(response.body)
      self.auth_token = auth['AuthToken']
      self.company_id = auth['CompanyId']
+     self.remote_id = Segment.last.remote_id
      self.save
   end
    
@@ -47,24 +48,26 @@ class Segment < ActiveRecord::Base
         
   def getdata
     
-    20.times do |i|
     
+    20.times do |i|
+      
     response = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/GetNewSegments?token=#{auth_token}&companyId=#{company_id}&page=#{i}")            
 
     data = JSON.parse(response.body)
-
-
+    puts data
           
       for segment in data['Segments']
       
-    
-        
+        unless segment['MaxID'] == self.remote_id
+
         
         car = Car.where('license_plate = ?', segment['licence_plate']).first
         
         self.remote_id = segment['ID'] # 239493 
         self.mileage = segment['mileage'] / 1000
         self.drive_electric_ratio = segment['driveElectricRatio']
+        
+        
     
         if car     
           if self.mileage > 0
@@ -90,6 +93,7 @@ class Segment < ActiveRecord::Base
                 car.mileage_fossile += self.mileage
               
               end
+              
       
               car.save
               self.save
@@ -99,20 +103,14 @@ class Segment < ActiveRecord::Base
           end
         end
         
+        response = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/MarkAsReceived?token=#{auth_token}&companyId=#{company_id}&max_segment_id=#{self.remote_id}")    
+        
+        
+        end
+      
       
       end
-      
-    
-
-
-
-    
-
-
-   HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/MarkAsReceived?token=#{auth_token}&companyId=#{company_id}&max_segment_id=#{self.remote_id}")    
-             
-              
-  end
+    end
   end
           
 

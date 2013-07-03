@@ -3,7 +3,6 @@ class BadgesController < ApplicationController
     before_filter :get_user, :get_car
 
   def index  
-    @badge_green = Badge.where('theme = ?', 'groen') 
   end
   
   def new

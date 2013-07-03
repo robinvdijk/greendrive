@@ -21,7 +21,7 @@
 			<ul id="badges" class="center">	
 
 
-					<%= raw current_user.badges.most_recent.map {|badge| image_tag badge.avatar_url(), :class => "badge_display" }.to_sentence %>
+					<%= raw @user.badges.most_recent.map {|badge| image_tag badge.avatar_url(), :class => "badge_display" }.to_sentence %>
 
 				
 		
@@ -93,7 +93,8 @@
 				<div class="arrow_box_top">Help</div>
 				<div id="buttons_end">
 					<a href="#" class="prev">Vorige</a>
-					<a href="#" class="next">Afsluiten</a>	
+					<a href="#" class="next">Afsluiten</a>
+
 				</div>
 			</div>
 		</div>

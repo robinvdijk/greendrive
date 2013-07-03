@@ -15,6 +15,8 @@ class CarsController < ApplicationController
 
       username = @car.username 
       password = @car.password
+      
+      Achievement.getbadges
     else
       render 'new'
     end
