@@ -1,5 +1,11 @@
 	  	<ul class="search_results">
-	  		<li class="search_results_left"><%= image_tag user.avatar_url(:thumb), :class => "avatar" %></li>
+	  		<li class="search_results_left">
+					<% if user.avatar? %>
+						<%= image_tag user.avatar_url(:thumb), :class => "avatar" %>
+					<% else %>
+						<%= image_tag("avatar.png", :alt => "default-avatar", :class => "avatar") %>
+					<% end %>
+			</li>
 	  		<li class="search_results_middle">
 	  			<p><strong><%= user.first_name %> <%= user.middle_name %> <%= user.last_name %></strong></p>
 	  			<p><%= user.user_name %></p>
@@ -9,3 +15,5 @@
 	  			<p><%= link_to 'Dashboard bekijken', user_name_dashboard_path(user.user_name), :class => 'link' %></p>
 	  		</li>
 	  	</ul>
+
+

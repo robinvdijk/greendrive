@@ -67,6 +67,8 @@ group :test do
   
   #clears the database of the test environment after each action.
   gem 'database_cleaner'
+  gem 'activerecord-reset-pk-sequence'
+  
   
 end
 
