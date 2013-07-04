@@ -16,6 +16,7 @@ class BadgesController < ApplicationController
     else
       render 'new'
     end
+    
   end
   
 
