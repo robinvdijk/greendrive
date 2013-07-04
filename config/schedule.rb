@@ -1,10 +1,10 @@
 set :output, "log/cron.log"
 
-set :environment, 'development' 
-# env :PATH, '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games'
+set :environment, 'production' 
+env :PATH, '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games'
 
 
-every 1.minute do
+every 15.minute do
   runner "Segment.cron"
 end
 
