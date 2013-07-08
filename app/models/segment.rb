@@ -13,9 +13,12 @@ class Segment < ActiveRecord::Base
         
       segment = Segment.new
       segment.init
+      segment.mark
+      
       segment.getdata
       Achievement.getbadges
-      puts "cronjob finished"
+
+      puts "mark finished"
     
   end
   
@@ -33,40 +36,46 @@ class Segment < ActiveRecord::Base
   # response2 = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/GetNewSegments?token=#{auth_token}&companyId=#{company_id}&max_segment_id=#{self.remote_id}")
     
   def test
-    200.times do |i|
-      response2 = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/GetNewSegments?token=#{auth_token}&companyId=#{company_id}&page=#{i}")
+
+      response2 = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/MarkAsReceived?token=#{auth_token}&companyId=#{company_id}&max_segment_id=#{self.remote_id}")    
       data = JSON.parse(response2.body)
       puts data
-      for segment in data['Segments']
-        self.remote_id = segment['ID'] # 239493 
-        self.mileage = segment['mileage'] / 1000
-        self.drive_electric_ratio = segment['driveElectricRatio']
-        
-      end
-    end
+      
+      
   end
-        
+
+          
+  def mark
+
+      
+    HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/MarkAsReceived?token=#{self.auth_token}&companyId=#{self.company_id}&max_segment_id=#{Segment.last.remote_id}")    
+    
+  end
+  
   def getdata
     
     
-    20.times do |i|
       
-    response = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/GetNewSegments?token=#{auth_token}&companyId=#{company_id}&page=#{i}")            
+    response = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/GetNewSegments?token=#{auth_token}&companyId=#{company_id}&page=1")            
 
     data = JSON.parse(response.body)
     puts data
+    
+
+    
+    self.remote_id = data['MaxID']
+    
+    
           
       for segment in data['Segments']
       
-        unless segment['MaxID'] == self.remote_id
 
         
         car = Car.where('license_plate = ?', segment['licence_plate']).first
         
-        self.remote_id = segment['ID'] # 239493 
+        
         self.mileage = segment['mileage'] / 1000
         self.drive_electric_ratio = segment['driveElectricRatio']
-        
         
     
         if car     
@@ -76,20 +85,20 @@ class Segment < ActiveRecord::Base
             unless self.drive_electric_ratio == nil
               
               if self.drive_electric_ratio > 0 
-                 henk = self.mileage * self.drive_electric_ratio
+                 elektrisch = self.mileage * self.drive_electric_ratio
                            
-                 self.mileage_electric = (self.mileage_electric + henk).to_i
-                 car.mileage_electric += henk.to_i
+
+                 car.mileage_electric += elektrisch.to_i
                                           
-                 henk2 = self.mileage * (1 - self.drive_electric_ratio)
-                 self.mileage_fossile = (self.mileage_fossile + henk2).to_i
-                 car.mileage_fossile += henk2.to_i
+                 fossiel = self.mileage * (1 - self.drive_electric_ratio)
+
+                 car.mileage_fossile += fossiel.to_i
              
                  car.mileage_ratio = 100 * car.mileage_electric / car.mileage
 
               else
           
-                self.mileage_fossile = self.mileage_fossile + self.mileage
+
                 car.mileage_fossile += self.mileage
               
               end
@@ -103,17 +112,22 @@ class Segment < ActiveRecord::Base
           end
         end
         
-        response = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/MarkAsReceived?token=#{auth_token}&companyId=#{company_id}&max_segment_id=#{self.remote_id}")    
         
-        
-        end
-      
-      
       end
-    end
-  end
-          
 
+      
+      
+
+
+    
+    
+    
+  end
+  
+  
+  
+  
+  
   
   
   
