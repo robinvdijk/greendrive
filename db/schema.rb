@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130708105315) do
+ActiveRecord::Schema.define(:version => 20130829134846) do
 
   create_table "achievements", :force => true do |t|
     t.integer  "badge_id"
@@ -47,8 +47,8 @@ ActiveRecord::Schema.define(:version => 20130708105315) do
     t.string   "username"
     t.string   "password"
     t.string   "model"
-    t.integer  "last_week"
-    t.integer  "last_month"
+    t.integer  "last_week",           :default => 0
+    t.integer  "last_month",          :default => 0
     t.integer  "last_week_electric",  :default => 0
     t.integer  "last_month_electric", :default => 0
     t.integer  "last_year",           :default => 0

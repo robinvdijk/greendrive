@@ -2,47 +2,40 @@ class Segment < ActiveRecord::Base
   require 'httparty'
   require 'json' 
 
-  
   has_one :car
-  
-  attr_accessible :id, :user_id, :title, :auth_token, :company_id, :mileage, :drive_electric_ratio, :created_at, :updated_at, :mileage_electric, :mileage_fossile, :license_plate
-  
-  belongs_to :user
-  
-  def self.cron
-        
-      segment = Segment.new
-      segment.init
-      segment.mark
-      
-      segment.getdata
-      Achievement.getbadges
 
-      puts "mark finished"
-    
+  attr_accessible :id, :user_id, :title, :auth_token, :company_id, :mileage, :drive_electric_ratio,
+                  :created_at, :updated_at, :mileage_electric, :mileage_fossile, :license_plate
+
+  belongs_to :user
+
+  def self.cron
+    segment = Segment.new
+    segment.init
+    segment.mark
+
+    segment.getdata
+    Achievement.getbadges
+
+    puts "mark finished"
   end
   
   def init
-     response = HTTParty.get("http://360-ev.com/Services/Authentication.svc/json/Authenticate?username=greenflux2012&password=green2012") 
-   
-     auth = JSON.parse(response.body)
-     self.auth_token = auth['AuthToken']
-     self.company_id = auth['CompanyId']
-     self.remote_id = Segment.last.remote_id
-     self.save
+    username = 'greenflux2012' # user.api_username
+    password = 'green2012'     # user.api_password
+
+    response = HTTParty.get("http://360-ev.com/Services/Authentication.svc/json/Authenticate?username=#{username}&password=#{password}") 
+
+    auth = JSON.parse(response.body)
+    self.auth_token = auth['AuthToken']
+    self.company_id = auth['CompanyId']
+    self.remote_id = Segment.last.remote_id
+    self.save
   end
    
 
   # response2 = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/GetNewSegments?token=#{auth_token}&companyId=#{company_id}&max_segment_id=#{self.remote_id}")
-    
-  def test
-
-      response2 = HTTParty.get("http://360-ev.com/Services/SegmentData.svc/json/MarkAsReceived?token=#{auth_token}&companyId=#{company_id}&max_segment_id=#{self.remote_id}")    
-      data = JSON.parse(response2.body)
-      puts data
-      
-      
-  end
+  
 
           
   def mark
